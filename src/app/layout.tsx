@@ -4,6 +4,7 @@ import "./globals.css";
 import { LanguageProvider } from '@/contexts/language-context';
 import { ThemeProvider } from '@/contexts/theme-context';
 import { QueryProvider } from '@/components/providers/query-provider';
+import { SessionProvider } from 'next-auth/react';
 import { Toaster } from '@/components/ui/sonner';
 
 const geistSans = Geist({
@@ -74,18 +75,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <QueryProvider>
-          <ThemeProvider>
-            <LanguageProvider>
-              {children}
-              <Toaster />
-            </LanguageProvider>
-          </ThemeProvider>
-        </QueryProvider>
-      </body>
+                        <body
+                    className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+                  >
+                    <SessionProvider>
+                      <QueryProvider>
+                        <ThemeProvider>
+                          <LanguageProvider>
+                            {children}
+                            <Toaster />
+                          </LanguageProvider>
+                        </ThemeProvider>
+                      </QueryProvider>
+                    </SessionProvider>
+                  </body>
     </html>
   );
 }
