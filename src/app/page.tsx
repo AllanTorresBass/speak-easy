@@ -15,7 +15,7 @@ import {
   CheckCircle
 } from 'lucide-react';
 
-export default function LandingPage() {
+export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       {/* Header */}
@@ -141,7 +141,8 @@ export default function LandingPage() {
               <CardHeader>
                 <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/20 rounded-lg flex items-center justify-center mb-4">
                   <GraduationCap className="w-6 h-6 text-purple-600 dark:text-purple-400" />
-                </CardTitle>
+                </div>
+                <CardTitle>Interactive Grammar Lessons</CardTitle>
                 <CardDescription>
                   Interactive grammar lessons with real-world examples and practice exercises. 
                   Master English structure step by step.
@@ -153,7 +154,8 @@ export default function LandingPage() {
               <CardHeader>
                 <div className="w-12 h-12 bg-green-100 dark:bg-green-900/20 rounded-lg flex items-center justify-center mb-4">
                   <Target className="w-6 h-6 text-green-600 dark:text-green-400" />
-                </CardTitle>
+                </div>
+                <CardTitle>Personalized Practice</CardTitle>
                 <CardDescription>
                   Personalized practice sessions that adapt to your learning pace and focus 
                   on areas that need improvement.
@@ -165,7 +167,8 @@ export default function LandingPage() {
               <CardHeader>
                 <div className="w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-lg flex items-center justify-center mb-4">
                   <BarChart3 className="w-6 h-6 text-orange-600 dark:text-orange-400" />
-                </CardTitle>
+                </div>
+                <CardTitle>Progress Tracking</CardTitle>
                 <CardDescription>
                   Track your progress with detailed analytics and insights. 
                   See your improvement over time and celebrate milestones.
@@ -177,7 +180,8 @@ export default function LandingPage() {
               <CardHeader>
                 <div className="w-12 h-12 bg-red-100 dark:bg-red-900/20 rounded-lg flex items-center justify-center mb-4">
                   <Globe className="w-6 h-6 text-red-600 dark:text-red-400" />
-                </CardTitle>
+                </div>
+                <CardTitle>Multi-Language Support</CardTitle>
                 <CardDescription>
                   Multi-language support for learners from different backgrounds. 
                   Interface available in English, Spanish, French, and German.
@@ -189,7 +193,8 @@ export default function LandingPage() {
               <CardHeader>
                 <div className="w-12 h-12 bg-indigo-100 dark:bg-indigo-900/20 rounded-lg flex items-center justify-center mb-4">
                   <Play className="w-6 h-6 text-indigo-600 dark:text-indigo-400" />
-                </CardTitle>
+                </div>
+                <CardTitle>Audio & Interactive</CardTitle>
                 <CardDescription>
                   Audio pronunciation guides and interactive exercises. 
                   Practice speaking and listening with confidence.
@@ -325,4 +330,4 @@ export default function LandingPage() {
       </footer>
     </div>
   );
-} 
+}

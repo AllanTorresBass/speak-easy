@@ -36,28 +36,82 @@ git clone https://github.com/AllanTorresBass/speak-easy.git
 
 # Navigate to the project directory
 cd speak-easy
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
 ```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ## 📁 Project Structure
 
 ```
 speak-easy/
-├── json/                          # Structured learning content
-│   ├── 10n/                      # Vocabulary lists (25+ lists)
-│   ├── grammar/                  # Grammar materials
-│   │   ├── basic-structure/      # Fundamental grammar concepts
-│   │   ├── complex-structure/    # Advanced grammar topics
-│   │   ├── cause-effect/         # Logical relationship concepts
-│   │   ├── concepts/             # Industry-specific concepts
-│   │   └── verb-conjugation/     # Verb forms and tenses
-│   └── interview/                # Interview preparation materials
-├── md/                           # Markdown documentation
-│   ├── basic-structure/          # Basic grammar explanations
-│   ├── complex-structure/        # Advanced grammar topics
-│   ├── concepts/                 # Concept explanations
-│   └── interview/                # Interview guides
-└── promova/                      # Additional learning resources
+├── src/
+│   ├── app/                    # Next.js App Router
+│   │   ├── (auth)/            # Authentication routes
+│   │   ├── (dashboard)/       # Dashboard routes
+│   │   ├── api/               # API endpoints
+│   │   ├── globals.css        # Global styles
+│   │   ├── layout.tsx         # Root layout
+│   │   └── page.tsx           # Landing page
+│   ├── components/            # React components
+│   │   ├── ui/               # shadcn/ui components
+│   │   ├── layout/           # Layout components
+│   │   ├── forms/            # Form components
+│   │   ├── learning/         # Learning-specific components
+│   │   └── common/           # Shared components
+│   ├── lib/                  # Utility libraries
+│   │   ├── utils.ts          # Helper functions
+│   │   ├── db.ts             # Database connection
+│   │   └── query-client.ts   # React Query client
+│   ├── hooks/                # Custom React hooks
+│   ├── contexts/             # React contexts
+│   │   ├── language-context.tsx  # Multi-language support
+│   │   └── theme-context.tsx     # Dark/light mode
+│   ├── types/                # TypeScript definitions
+│   └── data/                 # Learning content
+├── json/                     # Vocabulary and grammar data
+├── md/                       # Markdown documentation
+└── promova/                  # Additional learning resources
 ```
+
+## 🛠️ Tech Stack
+
+- **Framework**: Next.js 15.4.6 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **UI Components**: shadcn/ui component library
+- **Icons**: Lucide React
+- **State Management**: TanStack Query (React Query)
+- **Database**: Neon (PostgreSQL)
+- **Authentication**: NextAuth.js (planned)
+- **Deployment**: Vercel-ready
+
+## 🎯 Current Status
+
+✅ **Phase 1 Complete**: Core Infrastructure & Landing Page
+- [x] Next.js project setup with App Router
+- [x] All dependencies installed and configured
+- [x] shadcn/ui component library (20+ components)
+- [x] TypeScript types and interfaces
+- [x] Database connection (Neon PostgreSQL)
+- [x] React Query client configuration
+- [x] Multi-language support (EN, ES, FR, DE)
+- [x] Dark/light theme system
+- [x] Beautiful responsive landing page
+- [x] SEO optimization and metadata
+
+🔄 **Phase 2 In Progress**: Core Features
+- [ ] Authentication system
+- [ ] Dashboard layout and navigation
+- [ ] Vocabulary learning interface
+- [ ] Grammar lesson system
+- [ ] Progress tracking
+- [ ] User management
 
 ## 📖 How to Use
 
@@ -76,33 +130,24 @@ speak-easy/
 - Master grammar concepts before moving forward
 - Practice speaking and writing with learned concepts
 
-## 🎯 Learning Objectives
+## 🔧 Development
 
-### **Beginner Level**
-- Master basic sentence structure
-- Learn essential vocabulary (500+ words)
-- Understand fundamental grammar rules
-- Build confidence in basic communication
+### Available Scripts
+```bash
+npm run dev          # Start development server
+npm run build        # Build for production
+npm run start        # Start production server
+npm run lint         # Run ESLint
+```
 
-### **Intermediate Level**
-- Expand vocabulary to 1000+ words
-- Master complex sentence structures
-- Understand cause-effect relationships
-- Improve professional communication skills
-
-### **Advanced Level**
-- Master advanced grammar concepts
-- Expand industry-specific vocabulary
-- Perfect interview and presentation skills
-- Achieve native-like fluency
-
-## 🔧 Customization
-
-The learning materials can be customized for:
-- **Different proficiency levels**
-- **Specific industries or professions**
-- **Personal learning goals**
-- **Classroom or self-study use**
+### Environment Variables
+Create a `.env.local` file with:
+```env
+NEXT_PUBLIC_APP_URL=http://localhost:3000
+DATABASE_URL=your_neon_database_url
+NEXTAUTH_SECRET=your_nextauth_secret_key
+NEXTAUTH_URL=http://localhost:3000
+```
 
 ## 🤝 Contributing
 
@@ -114,13 +159,6 @@ We welcome contributions to improve SpeakEasy! Here's how you can help:
 4. **Push to the branch** (`git push origin feature/amazing-feature`)
 5. **Open a Pull Request**
 
-### **Areas for Contribution**
-- Additional vocabulary lists
-- Grammar exercises and examples
-- Industry-specific content
-- Translation improvements
-- Learning methodology enhancements
-
 ## 📝 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
@@ -131,20 +169,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **Language Teachers** for methodology insights
 - **Open Source Community** for collaboration tools
 - **GitHub** for hosting and version control
-
-## 📞 Support
-
-If you have questions, suggestions, or need help:
-
-- **Create an issue** on GitHub
-- **Join discussions** in the community
-- **Share your learning journey** with others
-
-## 🌟 Success Stories
-
-> *"SpeakEasy helped me prepare for my job interview in English. The structured approach made learning so much easier!"* - Maria, Software Developer
-
-> *"I've improved my English vocabulary by 300+ words in just 2 weeks using the vocabulary lists."* - Carlos, UX Designer
 
 ---
 
