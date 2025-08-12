@@ -95,6 +95,13 @@ const mockQuickActions = [
     color: 'bg-green-500 hover:bg-green-600'
   },
   {
+    title: 'Promova Lists',
+    description: '25 comprehensive vocabulary lists',
+    icon: BookMarked,
+    href: '/vocabulary/promova',
+    color: 'bg-indigo-500 hover:bg-indigo-600'
+  },
+  {
     title: 'Grammar Check',
     description: 'Review grammar concepts',
     icon: Brain,
@@ -215,7 +222,7 @@ export default function DashboardPage() {
         <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
           Quick Actions
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
           {mockQuickActions.map((action) => (
             <Link key={action.title} href={action.href}>
               <Card className="h-full hover:shadow-lg transition-shadow cursor-pointer">

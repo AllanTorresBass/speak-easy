@@ -1,15 +1,29 @@
 'use client';
 
-import { useState } from 'react';
-import { useSession, signOut } from 'next-auth/react';
-import { Button } from '@/components/ui/button';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
+import { useState, useEffect } from 'react';
 import { Sidebar } from './sidebar';
 import { Breadcrumbs } from './breadcrumbs';
+import { Button } from '@/components/ui/button';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
+import { 
+  Menu, 
+  Globe, 
+  Sun, 
+  Moon, 
+  User, 
+  Settings, 
+  LogOut,
+  Volume2,
+  VolumeX,
+  Volume1,
+  BookMarked
+} from 'lucide-react';
+import Link from 'next/link';
 import { useThemeToggle } from '@/contexts/theme-context';
 import { useLanguage } from '@/contexts/language-context';
-import { BookOpen, LogOut, Settings, Sun, Moon, Globe, User } from 'lucide-react';
+import { useSession, signOut } from 'next-auth/react';
+import { audioPronunciation } from '@/lib/audio-pronunciation';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 interface MainLayoutProps {
   children: React.ReactNode;
@@ -43,12 +57,12 @@ export function MainLayout({ children }: MainLayoutProps) {
                 onClick={() => setSidebarCollapsed(!sidebarCollapsed)}
                 className="lg:hidden"
               >
-                <BookOpen className="h-5 w-5" />
+                <Menu className="h-5 w-5" />
               </Button>
               
               <div className="hidden md:flex items-center space-x-2">
                 <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-                  <BookOpen className="w-5 h-5 text-white" />
+                  <Menu className="w-5 h-5 text-white" />
                 </div>
                 <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                   SpeakEasy
@@ -57,6 +71,49 @@ export function MainLayout({ children }: MainLayoutProps) {
             </div>
 
             <div className="flex items-center space-x-4">
+              {/* Promova Quick Access */}
+              <Button variant="outline" size="sm" asChild>
+                <Link href="/vocabulary/promova">
+                  <BookMarked className="w-4 h-4 mr-2" />
+                  Promova
+                </Link>
+              </Button>
+              
+              {/* Volume Control */}
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="ghost" size="sm">
+                    <Volume2 className="w-4 h-4" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end" className="w-48">
+                  <DropdownMenuLabel>Audio Settings</DropdownMenuLabel>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem onClick={() => audioPronunciation.updateSettings({ volume: 1.0 })}>
+                    <Volume2 className="w-4 h-4 mr-2" />
+                    Full Volume
+                  </DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => audioPronunciation.updateSettings({ volume: 0.7 })}>
+                    <Volume1 className="w-4 h-4 mr-2" />
+                    Medium Volume
+                  </DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => audioPronunciation.updateSettings({ volume: 0.4 })}>
+                    <VolumeX className="w-4 h-4 mr-2" />
+                    Low Volume
+                  </DropdownMenuItem>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem onClick={() => audioPronunciation.updateSettings({ speed: 0.8 })}>
+                    Slow Speed
+                  </DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => audioPronunciation.updateSettings({ speed: 1.0 })}>
+                    Normal Speed
+                  </DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => audioPronunciation.updateSettings({ speed: 1.2 })}>
+                    Fast Speed
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+              
               {/* Language Selector */}
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>

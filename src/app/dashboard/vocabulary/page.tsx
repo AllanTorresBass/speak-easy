@@ -1,12 +1,16 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Input } from '@/components/ui/input';
+import { PromovaVocabularyCard } from '@/components/learning/promova-vocabulary-card';
+import { useVocabularyLists, useUserProgress } from '@/hooks/use-vocabulary';
+import { useSession } from 'next-auth/react';
 import {
   BookOpen,
   Target,
@@ -29,7 +33,8 @@ import {
   Share2,
   Filter,
   SortAsc,
-  SortDesc
+  SortDesc,
+  BookMarked
 } from 'lucide-react';
 
 // Mock data - in a real app, this would come from your API
@@ -122,6 +127,10 @@ const mockRecentWords = [
 ];
 
 export default function VocabularyPage() {
+  const { data: session } = useSession();
+  const { data: vocabularyLists, isLoading: listsLoading, error: listsError } = useVocabularyLists();
+  const { data: userProgress, isLoading: progressLoading } = useUserProgress(session?.user?.id || '');
+  
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedDifficulty, setSelectedDifficulty] = useState('all');
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -200,10 +209,14 @@ export default function VocabularyPage() {
 
       {/* Main Content Tabs */}
       <Tabs defaultValue="lists" className="w-full">
-        <TabsList className="grid w-full grid-cols-4 mb-6">
+        <TabsList className="grid w-full grid-cols-5 mb-6">
           <TabsTrigger value="lists" className="flex items-center space-x-2">
             <BookOpen className="h-4 w-4" />
             <span>Word Lists</span>
+          </TabsTrigger>
+          <TabsTrigger value="promova" className="flex items-center space-x-2">
+            <BookMarked className="h-4 w-4" />
+            <span>Promova</span>
           </TabsTrigger>
           <TabsTrigger value="practice" className="flex items-center space-x-2">
             <Target className="h-4 w-4" />
@@ -219,7 +232,7 @@ export default function VocabularyPage() {
           </TabsTrigger>
         </TabsList>
 
-        <TabsContent value="lists" className="space-y-6">
+                <TabsContent value="lists" className="space-y-6">
           {/* Search and Filters */}
           <div className="flex flex-col sm:flex-row gap-4">
             <div className="flex-1">
@@ -288,7 +301,7 @@ export default function VocabularyPage() {
                     <div className="flex items-center justify-between text-sm">
                       <span className="text-muted-foreground">Progress</span>
                       <span className="font-medium">{list.progress}%</span>
-                    </div>
+                      </div>
                     <Progress value={list.progress} className="h-2" />
                     <div className="flex items-center justify-between text-sm">
                       <span className="text-muted-foreground">Last Studied</span>
@@ -315,6 +328,48 @@ export default function VocabularyPage() {
               </Card>
             ))}
           </div>
+        </TabsContent>
+
+        <TabsContent value="promova" className="space-y-6">
+          {/* Promova Header */}
+          <div className="text-center py-8">
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <BookMarked className="h-12 w-12 text-blue-600" />
+              <h2 className="text-3xl font-bold">Promova Vocabulary</h2>
+            </div>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Access 25 comprehensive vocabulary lists with essential English words and phrases, 
+              organized by difficulty level from beginner to advanced.
+            </p>
+          </div>
+
+          {/* Promova Stats */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <Card>
+              <CardContent className="p-6 text-center">
+                <BookMarked className="h-8 w-8 text-blue-600 mx-auto mb-2" />
+                <h3 className="text-2xl font-bold">25 Lists</h3>
+                <p className="text-muted-foreground">Comprehensive coverage</p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="p-6 text-center">
+                <Star className="h-8 w-8 text-green-600 mx-auto mb-2" />
+                <h3 className="text-2xl font-bold">3 Levels</h3>
+                <p className="text-muted-foreground">Beginner to advanced</p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="p-6 text-center">
+                <BookOpen className="h-8 w-8 text-purple-600 mx-auto mb-2" />
+                <h3 className="text-2xl font-bold">1000+ Words</h3>
+                <p className="text-muted-foreground">Essential vocabulary</p>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Promova Lists */}
+          <PromovaVocabularySection />
         </TabsContent>
 
         <TabsContent value="practice" className="space-y-6">
@@ -469,6 +524,143 @@ export default function VocabularyPage() {
           </div>
         </TabsContent>
       </Tabs>
+    </div>
+  );
+}
+
+// Promova Vocabulary Section Component
+function PromovaVocabularySection() {
+  const { data: session } = useSession();
+  const { data: vocabularyLists, isLoading: listsLoading, error: listsError } = useVocabularyLists();
+  const { data: userProgress, isLoading: progressLoading } = useUserProgress(session?.user?.id || '');
+  
+  const [searchTerm, setSearchTerm] = useState('');
+  const [difficultyFilter, setDifficultyFilter] = useState<string>('all');
+
+  // Filter Promova vocabulary lists
+  const promovaLists = vocabularyLists?.filter(list => list.id.startsWith('promova-')) || [];
+  
+  const filteredLists = promovaLists.filter(list => {
+    const matchesSearch = list.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         list.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         list.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
+    
+    const matchesDifficulty = difficultyFilter === 'all' || list.difficulty === difficultyFilter;
+    
+    return matchesSearch && matchesDifficulty;
+  });
+
+  // Get progress for a specific list
+  const getProgress = (listId: string) => {
+    return userProgress?.find(progress => progress.vocabularyListId === listId);
+  };
+
+  if (listsLoading) {
+    return (
+      <div className="space-y-6">
+        <div className="flex items-center justify-between">
+          <h3 className="text-xl font-semibold">Promova Vocabulary Lists</h3>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {[...Array(6)].map((_, i) => (
+            <Card key={i} className="animate-pulse">
+              <CardHeader>
+                <div className="h-6 bg-gray-200 dark:bg-gray-700 rounded w-3/4"></div>
+                <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded w-1/2"></div>
+              </CardHeader>
+              <CardContent>
+                <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded w-full mb-2"></div>
+                <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded w-2/3"></div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
+  if (listsError) {
+    return (
+      <div className="text-center py-12">
+        <div className="text-red-500 text-xl mb-4">Error loading Promova vocabulary lists</div>
+        <Button onClick={() => window.location.reload()}>Try Again</Button>
+      </div>
+    );
+  }
+
+  return (
+    <div className="space-y-6">
+      {/* Search and Filters */}
+      <div className="flex flex-col sm:flex-row gap-4">
+        <div className="relative flex-1">
+          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
+          <Input
+            placeholder="Search Promova vocabulary lists..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="pl-10"
+          />
+        </div>
+        <select
+          value={difficultyFilter}
+          onChange={(e) => setDifficultyFilter(e.target.value)}
+          className="px-3 py-2 border border-input bg-background rounded-md text-sm"
+        >
+          <option value="all">All Levels</option>
+          <option value="beginner">Beginner</option>
+          <option value="intermediate">Intermediate</option>
+          <option value="advanced">Advanced</option>
+        </select>
+        <Button asChild>
+          <Link href="/vocabulary/promova">
+            <BookMarked className="w-4 h-4 mr-2" />
+            Advanced Search
+          </Link>
+        </Button>
+      </div>
+
+      {/* Results Count */}
+      <div className="text-sm text-muted-foreground">
+        Showing {filteredLists.length} of {promovaLists.length} Promova vocabulary lists
+      </div>
+
+      {/* Promova Lists Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {filteredLists.map((list) => {
+          const progress = getProgress(list.id);
+          
+          return (
+            <PromovaVocabularyCard
+              key={list.id}
+              list={list}
+              progress={progress ? {
+                wordsLearned: progress.wordsLearned,
+                totalWords: progress.totalWords,
+                masteryLevel: progress.masteryLevel,
+                averageScore: progress.averageScore,
+                lastStudied: progress.lastStudied,
+              } : undefined}
+            />
+          );
+        })}
+      </div>
+
+      {/* Empty State */}
+      {filteredLists.length === 0 && (
+        <div className="text-center py-12">
+          <BookMarked className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
+          <h3 className="text-lg font-medium mb-2">No Promova lists found</h3>
+          <p className="text-muted-foreground mb-4">
+            Try adjusting your search or filters
+          </p>
+          <Button onClick={() => {
+            setSearchTerm('');
+            setDifficultyFilter('all');
+          }}>
+            Clear Filters
+          </Button>
+        </div>
+      )}
     </div>
   );
 } 

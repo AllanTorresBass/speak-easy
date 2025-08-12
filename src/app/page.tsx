@@ -12,8 +12,11 @@ import {
   Sun,
   Play,
   ArrowRight,
-  CheckCircle
+  CheckCircle,
+  Volume2,
+  BookMarked
 } from 'lucide-react';
+import { AudioTestButton } from '@/components/common/audio-test-button';
 
 export default function Home() {
   return (
@@ -91,6 +94,11 @@ export default function Home() {
                 Watch Demo
               </Link>
             </Button>
+          </div>
+          
+          {/* Audio Test Button */}
+          <div className="mt-6">
+            <AudioTestButton />
           </div>
           
           <div className="mt-12 flex items-center justify-center space-x-8 text-sm text-gray-500 dark:text-gray-400">

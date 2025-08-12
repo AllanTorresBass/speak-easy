@@ -1,56 +1,76 @@
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { VocabularyList, VocabularyWord, UserProgress } from '@/types';
+import { loadPromovaVocabulary, loadPromovaVocabularyList } from '@/lib/promova-data';
 
 // Mock API functions - in production, these would call your actual API endpoints
 const fetchVocabularyLists = async (): Promise<VocabularyList[]> => {
-  // Simulate API call delay
-  await new Promise(resolve => setTimeout(resolve, 500));
-  
-  // Return mock data for now - in production, this would fetch from your JSON files
-  return [
-    {
-      id: '1',
-      title: 'Basic Vocabulary - Level 1',
-      description: 'Essential words for beginners',
-      difficulty: 'beginner',
-      wordCount: 25,
-      estimatedTime: 15,
-      tags: ['basic', 'essential', 'beginner'],
-      createdAt: new Date('2024-01-01'),
-      updatedAt: new Date('2024-01-01'),
-    },
-    {
-      id: '2',
-      title: 'Intermediate Words - Level 2',
-      description: 'Common words for daily conversation',
-      difficulty: 'intermediate',
-      wordCount: 30,
-      estimatedTime: 20,
-      tags: ['intermediate', 'conversation', 'daily'],
-      createdAt: new Date('2024-01-02'),
-      updatedAt: new Date('2024-01-02'),
-    },
-    {
-      id: '3',
-      title: 'Advanced Vocabulary - Level 3',
-      description: 'Complex words for advanced learners',
-      difficulty: 'advanced',
-      wordCount: 35,
-      estimatedTime: 25,
-      tags: ['advanced', 'complex', 'professional'],
-      createdAt: new Date('2024-01-03'),
-      updatedAt: new Date('2024-01-03'),
-    },
-  ];
+  try {
+    // Load Promova vocabulary lists
+    const promovaLists = await loadPromovaVocabulary();
+    
+    // Combine with existing mock data
+    const mockLists = [
+      {
+        id: '1',
+        title: 'Basic Vocabulary - Level 1',
+        description: 'Essential words for beginners',
+        difficulty: 'beginner' as const,
+        category: 'basic',
+        language: 'en',
+        wordCount: 25,
+        estimatedTime: 15,
+        tags: ['basic', 'essential', 'beginner'],
+        createdAt: new Date('2024-01-01'),
+      },
+      {
+        id: '2',
+        title: 'Intermediate Words - Level 2',
+        description: 'Common words for daily conversation',
+        difficulty: 'intermediate' as const,
+        category: 'intermediate',
+        language: 'en',
+        wordCount: 30,
+        estimatedTime: 20,
+        tags: ['intermediate', 'conversation', 'daily'],
+        createdAt: new Date('2024-01-02'),
+      },
+      {
+        id: '3',
+        title: 'Advanced Vocabulary - Level 3',
+        description: 'Complex words for advanced learners',
+        difficulty: 'advanced' as const,
+        category: 'advanced',
+        language: 'en',
+        wordCount: 35,
+        estimatedTime: 25,
+        tags: ['advanced', 'complex', 'professional'],
+        createdAt: new Date('2024-01-03'),
+      },
+    ];
+    
+    return [...promovaLists, ...mockLists];
+  } catch (error) {
+    console.error('Error fetching vocabulary lists:', error);
+    return [];
+  }
 };
 
 const fetchVocabularyList = async (id: string): Promise<VocabularyList & { words: VocabularyWord[] }> => {
+  // Check if this is a Promova list
+  if (id.startsWith('promova-')) {
+    const promovaList = await loadPromovaVocabularyList(id);
+    if (promovaList) {
+      return promovaList;
+    }
+  }
+  
   await new Promise(resolve => setTimeout(resolve, 300));
   
-  // Mock vocabulary words
+  // Mock vocabulary words for non-Promova lists
   const words: VocabularyWord[] = [
     {
       id: '1',
+      listId: id,
       word: 'accomplish',
       translation: 'lograr, cumplir',
       definition: 'To succeed in doing something, especially after trying hard',
@@ -58,12 +78,13 @@ const fetchVocabularyList = async (id: string): Promise<VocabularyList & { words
       difficulty: 'intermediate',
       partOfSpeech: 'verb',
       synonyms: ['achieve', 'complete', 'fulfill'],
-      antonyms: ['fail', 'abandon'],
       pronunciation: '/əˈkʌm.plɪʃ/',
-      audioUrl: null,
+      difficultyRank: 2,
+      createdAt: new Date(),
     },
     {
       id: '2',
+      listId: id,
       word: 'endeavor',
       translation: 'esfuerzo, empeño',
       definition: 'A serious attempt to do something',
@@ -71,12 +92,13 @@ const fetchVocabularyList = async (id: string): Promise<VocabularyList & { words
       difficulty: 'intermediate',
       partOfSpeech: 'noun',
       synonyms: ['attempt', 'effort', 'undertaking'],
-      antonyms: ['abandonment', 'neglect'],
       pronunciation: '/ɪnˈdev.ər/',
-      audioUrl: null,
+      difficultyRank: 2,
+      createdAt: new Date(),
     },
     {
       id: '3',
+      listId: id,
       word: 'perseverance',
       translation: 'perseverancia, constancia',
       definition: 'Persistence in doing something despite difficulty',
@@ -84,9 +106,9 @@ const fetchVocabularyList = async (id: string): Promise<VocabularyList & { words
       difficulty: 'advanced',
       partOfSpeech: 'noun',
       synonyms: ['persistence', 'determination', 'tenacity'],
-      antonyms: ['giving up', 'quitting'],
       pronunciation: '/ˌpɜː.sɪˈvɪə.rəns/',
-      audioUrl: null,
+      difficultyRank: 3,
+      createdAt: new Date(),
     },
   ];
 
@@ -95,11 +117,12 @@ const fetchVocabularyList = async (id: string): Promise<VocabularyList & { words
     title: `Vocabulary List ${id}`,
     description: `Sample vocabulary list with ${words.length} words`,
     difficulty: 'intermediate',
+    category: 'sample',
+    language: 'en',
     wordCount: words.length,
     estimatedTime: Math.ceil(words.length * 0.6),
     tags: ['sample', 'learning'],
     createdAt: new Date(),
-    updatedAt: new Date(),
     words,
   };
 };

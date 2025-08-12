@@ -21,6 +21,7 @@ import {
 } from 'lucide-react';
 import { useVocabularyLists, useUserProgress } from '@/hooks/use-vocabulary';
 import { useSession } from 'next-auth/react';
+import { PromovaVocabularyCard } from './promova-vocabulary-card';
 
 export function VocabularyList() {
   const { data: session } = useSession();
@@ -116,12 +117,20 @@ export function VocabularyList() {
             Choose from our curated vocabulary lists to expand your English skills
           </p>
         </div>
-        <Button asChild>
-          <Link href="/vocabulary/practice">
-            <Play className="w-4 h-4 mr-2" />
-            Start Practice
-          </Link>
-        </Button>
+        <div className="flex gap-3">
+          <Button variant="outline" asChild>
+            <Link href="/vocabulary/promova">
+              <BookMarked className="w-4 h-4 mr-2" />
+              Promova Search
+            </Link>
+          </Button>
+          <Button asChild>
+            <Link href="/vocabulary/practice">
+              <Play className="w-4 h-4 mr-2" />
+              Start Practice
+            </Link>
+          </Button>
+        </div>
       </div>
 
       {/* Filters and Search */}
@@ -168,6 +177,25 @@ export function VocabularyList() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredLists.map((list) => {
           const progress = getProgress(list.id);
+          
+          // Use Promova component for Promova lists
+          if (list.id.startsWith('promova-')) {
+            return (
+              <PromovaVocabularyCard
+                key={list.id}
+                list={list}
+                progress={progress ? {
+                  wordsLearned: progress.wordsLearned,
+                  totalWords: progress.totalWords,
+                  masteryLevel: progress.masteryLevel,
+                  averageScore: progress.averageScore,
+                  lastStudied: progress.lastStudied,
+                } : undefined}
+              />
+            );
+          }
+          
+          // Use regular component for other lists
           const progressPercentage = progress ? (progress.wordsLearned / progress.totalWords) * 100 : 0;
           
           return (

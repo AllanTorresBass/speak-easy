@@ -40,6 +40,12 @@ const navigation = [
                 description: 'Word lists and practice'
               },
               { 
+                name: 'Promova Vocabulary', 
+                href: '/vocabulary/promova', 
+                icon: BookMarked,
+                description: '25 comprehensive vocabulary lists'
+              },
+              { 
                 name: 'Grammar', 
                 href: '/dashboard/grammar', 
                 icon: GraduationCap,

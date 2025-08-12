@@ -9,6 +9,7 @@ export interface AudioSettings {
   autoPlay: boolean;
   showPhonetics: boolean;
   highlightWords: boolean;
+  isInfiniteLoop?: boolean; // Flag to prevent interrupting current audio
 }
 
 export interface PronunciationData {
@@ -49,7 +50,10 @@ export class AudioPronunciationSystem {
   };
 
   private constructor() {
-    this.initializeSpeechSynthesis();
+    // Only initialize on client side
+    if (typeof window !== 'undefined') {
+      this.initializeSpeechSynthesis();
+    }
   }
 
   public static getInstance(): AudioPronunciationSystem {
@@ -122,8 +126,11 @@ export class AudioPronunciationSystem {
       return;
     }
 
-    // Stop any currently playing audio
-    this.stopCurrentAudio();
+    // For infinite loops, don't stop current audio - let it finish naturally
+    const shouldStopCurrent = !settings?.isInfiniteLoop;
+    if (shouldStopCurrent) {
+      this.stopCurrentAudio();
+    }
 
     try {
       const utterance = new SpeechSynthesisUtterance(text);
