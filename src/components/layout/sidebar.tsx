@@ -102,7 +102,7 @@ export function Sidebar({ collapsed, onToggle }: SidebarProps) {
     <div className={cn(
       "flex flex-col bg-card border-r transition-all duration-300",
       collapsed ? "w-16" : "w-64"
-    )}>
+    )} >
       {/* Header */}
       <div className="flex items-center justify-between p-4 border-b">
         {!collapsed && (

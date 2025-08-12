@@ -136,7 +136,7 @@ const mockUpcomingGoals = [
 
 export default function DashboardPage() {
   return (
-    <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
       {/* Welcome Header */}
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
@@ -151,7 +151,7 @@ export default function DashboardPage() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8">
         <Card className="h-full">
           <CardContent className="p-4">
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center space-x-3">
               <BookOpen className="h-5 w-5 text-blue-600 flex-shrink-0" />
               <div className="min-w-0 flex-1">
                 <p className="text-2xl font-bold">{mockStats.completedLessons}/{mockStats.totalLessons}</p>
@@ -166,7 +166,7 @@ export default function DashboardPage() {
 
         <Card className="h-full">
           <CardContent className="p-4">
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center space-x-3">
               <Clock className="h-5 w-5 text-green-600 flex-shrink-0" />
               <div className="min-w-0 flex-1">
                 <p className="text-2xl font-bold">{mockStats.totalStudyTime}h</p>
@@ -181,7 +181,7 @@ export default function DashboardPage() {
 
         <Card className="h-full">
           <CardContent className="p-4">
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center space-x-3">
               <Flame className="h-5 w-5 text-orange-600 flex-shrink-0" />
               <div className="min-w-0 flex-1">
                 <p className="text-2xl font-bold">{mockStats.currentStreak}</p>
@@ -196,7 +196,7 @@ export default function DashboardPage() {
 
         <Card className="h-full">
           <CardContent className="p-4">
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center space-x-3">
               <Target className="h-5 w-5 text-purple-600 flex-shrink-0" />
               <div className="min-w-0 flex-1">
                 <p className="text-2xl font-bold">{mockStats.totalScore}%</p>
