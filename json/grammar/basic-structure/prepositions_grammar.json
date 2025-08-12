@@ -1,0 +1,1170 @@
+{
+  "title": "Prepositions Grammar Guide",
+  "description": "Comprehensive guide covering prepositions used in professional contexts with examples from various industries",
+  "version": "1.0",
+  "created_date": "2024-12-19",
+  "basic_concepts": {
+    "definition": "Prepositions are words that show the relationship between a noun or pronoun and other words in a sentence, indicating location, direction, time, manner, or other relationships.",
+    "key_functions": [
+      "Show spatial relationships (location, direction, movement)",
+      "Indicate temporal relationships (time, duration, frequency)",
+      "Express logical relationships (purpose, reason, cause)",
+      "Demonstrate connections between people, objects, and ideas",
+      "Provide context and clarity for sentence structure"
+    ],
+    "examples": [
+      {
+        "preposition": "on",
+        "type": "spatial",
+        "description": "Indicates position above or in contact with a surface"
+      },
+      {
+        "preposition": "with",
+        "type": "accompaniment",
+        "description": "Shows association or accompaniment"
+      },
+      {
+        "preposition": "for",
+        "type": "purpose",
+        "description": "Indicates purpose, reason, or benefit"
+      },
+      {
+        "preposition": "in",
+        "type": "spatial",
+        "description": "Shows position within boundaries or containers"
+      }
+    ]
+  },
+  "professional_contexts": {
+    "user_experience": {
+      "title": "User Experience (UX) Vocabulary",
+      "description": "Prepositions commonly used in UX design, research, and user interaction contexts",
+      "phrases": [
+        {
+          "preposition": "on",
+          "phrase": "User experience (UX) designers focus on creating seamless interactions with interfaces.",
+          "context": "focusing attention",
+          "meaning": "Indicates the target or focus of attention"
+        },
+        {
+          "preposition": "into",
+          "phrase": "UX research is conducted to gain insights into user preferences.",
+          "context": "gaining understanding",
+          "meaning": "Indicates movement toward understanding or knowledge"
+        },
+        {
+          "preposition": "around",
+          "phrase": "Good UX design revolves around understanding user needs and expectations.",
+          "context": "central focus",
+          "meaning": "Indicates the central focus or core of something"
+        },
+        {
+          "preposition": "on",
+          "phrase": "A well-designed UX leads to increased user engagement on websites.",
+          "context": "location",
+          "meaning": "Indicates the platform or location where something occurs"
+        },
+        {
+          "preposition": "across",
+          "phrase": "UX experts emphasize the importance of consistency across platforms.",
+          "context": "spanning multiple areas",
+          "meaning": "Indicates spanning or covering multiple areas or platforms"
+        },
+        {
+          "preposition": "with",
+          "phrase": "UX professionals work closely with developers to implement design concepts.",
+          "context": "collaboration",
+          "meaning": "Indicates partnership or collaboration with others"
+        },
+        {
+          "preposition": "for",
+          "phrase": "Designing for mobile devices requires attention to UX on smaller screens.",
+          "context": "purpose",
+          "meaning": "Indicates the purpose or target audience"
+        },
+        {
+          "preposition": "in",
+          "phrase": "Usability testing is an essential step in the UX design process.",
+          "context": "containment",
+          "meaning": "Indicates being part of or contained within a process"
+        },
+        {
+          "preposition": "through",
+          "phrase": "The user's journey through an app's UX should be intuitive.",
+          "context": "movement",
+          "meaning": "Indicates movement from beginning to end of a process"
+        },
+        {
+          "preposition": "in",
+          "phrase": "A website's navigation structure plays a vital role in UX.",
+          "context": "containment",
+          "meaning": "Indicates being part of or contained within UX"
+        },
+        {
+          "preposition": "for",
+          "phrase": "UX designers are responsible for optimizing user flow.",
+          "context": "responsibility",
+          "meaning": "Indicates the area of responsibility or duty"
+        },
+        {
+          "preposition": "on",
+          "phrase": "User experience relies heavily on the layout and organization of elements.",
+          "context": "dependence",
+          "meaning": "Indicates dependence or reliance on something"
+        },
+        {
+          "preposition": "for",
+          "phrase": "Accessibility features improve the UX for all users.",
+          "context": "benefit",
+          "meaning": "Indicates the beneficiary or target audience"
+        },
+        {
+          "preposition": "for",
+          "phrase": "UX designers aim for effective information architecture.",
+          "context": "goal",
+          "meaning": "Indicates the goal or objective being pursued"
+        },
+        {
+          "preposition": "when",
+          "phrase": "Designers should consider user behavior when designing the UX.",
+          "context": "timing",
+          "meaning": "Indicates the time or circumstance when something occurs"
+        },
+        {
+          "preposition": "for",
+          "phrase": "Mobile app UX must account for touch-screen interactions.",
+          "context": "consideration",
+          "meaning": "Indicates what must be considered or planned for"
+        },
+        {
+          "preposition": "with",
+          "phrase": "UX principles apply to various digital touchpoints with users.",
+          "context": "interaction",
+          "meaning": "Indicates interaction or connection with users"
+        },
+        {
+          "preposition": "across",
+          "phrase": "A responsive design ensures a consistent UX across different devices.",
+          "context": "spanning",
+          "meaning": "Indicates spanning or covering multiple devices"
+        },
+        {
+          "preposition": "by",
+          "phrase": "User satisfaction can be influenced by UX improvements.",
+          "context": "cause",
+          "meaning": "Indicates the cause or agent of change"
+        },
+        {
+          "preposition": "to",
+          "phrase": "UX guidelines recommend user testing to identify pain points.",
+          "context": "purpose",
+          "meaning": "Indicates the purpose or goal of an action"
+        },
+        {
+          "preposition": "from",
+          "phrase": "Improving UX requires feedback from actual users.",
+          "context": "source",
+          "meaning": "Indicates the source or origin of something"
+        },
+        {
+          "preposition": "in",
+          "phrase": "UX research helps in identifying user pain points and goals.",
+          "context": "assistance",
+          "meaning": "Indicates assistance or help in doing something"
+        },
+        {
+          "preposition": "into",
+          "phrase": "UX design takes user psychology and behavior into account.",
+          "context": "consideration",
+          "meaning": "Indicates including or considering something"
+        },
+        {
+          "preposition": "to",
+          "phrase": "UX design involves adapting to changing technology trends.",
+          "context": "adaptation",
+          "meaning": "Indicates the target or direction of adaptation"
+        },
+        {
+          "preposition": "of",
+          "phrase": "In-app notifications are part of the overall UX strategy.",
+          "context": "belonging",
+          "meaning": "Indicates belonging to or being part of something"
+        },
+        {
+          "preposition": "on",
+          "phrase": "The UX of an e-commerce site affects conversion rates.",
+          "context": "impact",
+          "meaning": "Indicates the impact or effect on something"
+        },
+        {
+          "preposition": "in",
+          "phrase": "UX design can make a difference in customer loyalty.",
+          "context": "area",
+          "meaning": "Indicates the area or aspect where difference is made"
+        },
+        {
+          "preposition": "of",
+          "phrase": "UX design is an iterative process of refinement.",
+          "context": "characteristic",
+          "meaning": "Indicates a characteristic or quality of something"
+        },
+        {
+          "preposition": "with",
+          "phrase": "UX professionals collaborate with content creators to enhance user engagement.",
+          "context": "partnership",
+          "meaning": "Indicates partnership or collaboration"
+        },
+        {
+          "preposition": "between",
+          "phrase": "Effective UX creates a connection between users and digital interfaces.",
+          "context": "relationship",
+          "meaning": "Indicates the relationship or connection between two entities"
+        }
+      ]
+    },
+    "user_interface": {
+      "title": "User Interface (UI) Vocabulary",
+      "description": "Prepositions commonly used in UI design, interface elements, and user interaction components",
+      "phrases": [
+        {
+          "preposition": "for",
+          "phrase": "User Interface (UI) designers aim for simplicity in their designs.",
+          "context": "goal",
+          "meaning": "Indicates the goal or objective being pursued"
+        },
+        {
+          "preposition": "in",
+          "phrase": "The UI design process involves thorough planning and research.",
+          "context": "containment",
+          "meaning": "Indicates being part of or contained within a process"
+        },
+        {
+          "preposition": "on",
+          "phrase": "Designers work on creating visually appealing UI elements.",
+          "context": "focus",
+          "meaning": "Indicates the focus or area of work"
+        },
+        {
+          "preposition": "on",
+          "phrase": "Effective UI design focuses on user interactions and feedback.",
+          "context": "focus",
+          "meaning": "Indicates the focus or emphasis of attention"
+        },
+        {
+          "preposition": "across",
+          "phrase": "UI experts emphasize the importance of consistency across platforms.",
+          "context": "spanning",
+          "meaning": "Indicates spanning or covering multiple platforms"
+        },
+        {
+          "preposition": "between",
+          "phrase": "Collaboration between UI designers and developers is essential.",
+          "context": "relationship",
+          "meaning": "Indicates the relationship or connection between two groups"
+        },
+        {
+          "preposition": "through",
+          "phrase": "The user's journey through an app's UI should be intuitive.",
+          "context": "movement",
+          "meaning": "Indicates movement from beginning to end of a process"
+        },
+        {
+          "preposition": "for",
+          "phrase": "UI elements should be organized for optimal user experience.",
+          "context": "purpose",
+          "meaning": "Indicates the purpose or goal of organization"
+        },
+        {
+          "preposition": "within",
+          "phrase": "Navigation within the UI should be clear and user-friendly.",
+          "context": "containment",
+          "meaning": "Indicates being inside or contained within boundaries"
+        },
+        {
+          "preposition": "for",
+          "phrase": "UI designers consider accessibility for all users.",
+          "context": "benefit",
+          "meaning": "Indicates the beneficiary or target audience"
+        },
+        {
+          "preposition": "of",
+          "phrase": "The placement of UI elements can impact user engagement.",
+          "context": "belonging",
+          "meaning": "Indicates belonging to or being part of something"
+        },
+        {
+          "preposition": "for",
+          "phrase": "UI designers are responsible for optimizing user flow.",
+          "context": "responsibility",
+          "meaning": "Indicates the area of responsibility or duty"
+        },
+        {
+          "preposition": "on",
+          "phrase": "UI design relies on a clear layout and hierarchy of information.",
+          "context": "dependence",
+          "meaning": "Indicates dependence or reliance on something"
+        },
+        {
+          "preposition": "for",
+          "phrase": "Effective UI design is crucial for mobile app usability.",
+          "context": "purpose",
+          "meaning": "Indicates the purpose or goal"
+        },
+        {
+          "preposition": "with",
+          "phrase": "UI guidelines recommend testing with actual users.",
+          "context": "participation",
+          "meaning": "Indicates participation or involvement of users"
+        },
+        {
+          "preposition": "for",
+          "phrase": "Designing for responsive UI across devices requires adaptation.",
+          "context": "purpose",
+          "meaning": "Indicates the purpose or target"
+        },
+        {
+          "preposition": "across",
+          "phrase": "Designing for responsive UI across devices requires adaptation.",
+          "context": "spanning",
+          "meaning": "Indicates spanning or covering multiple devices"
+        },
+        {
+          "preposition": "with",
+          "phrase": "UI principles apply to various digital touchpoints with users.",
+          "context": "interaction",
+          "meaning": "Indicates interaction or connection with users"
+        },
+        {
+          "preposition": "to",
+          "phrase": "The UI of a website should adapt to different screen sizes.",
+          "context": "adaptation",
+          "meaning": "Indicates the target or direction of adaptation"
+        },
+        {
+          "preposition": "by",
+          "phrase": "User satisfaction is influenced by the usability of the UI.",
+          "context": "cause",
+          "meaning": "Indicates the cause or agent of influence"
+        },
+        {
+          "preposition": "of",
+          "phrase": "User satisfaction is influenced by the usability of the UI.",
+          "context": "belonging",
+          "meaning": "Indicates belonging to or being part of something"
+        },
+        {
+          "preposition": "in",
+          "phrase": "UI design improvements enhance user engagement.",
+          "context": "area",
+          "meaning": "Indicates the area or aspect being enhanced"
+        },
+        {
+          "preposition": "in",
+          "phrase": "Improving UI involves gathering user feedback and insights.",
+          "context": "involvement",
+          "meaning": "Indicates involvement or participation in a process"
+        },
+        {
+          "preposition": "into",
+          "phrase": "Improving UI involves gathering user feedback and insights.",
+          "context": "collection",
+          "meaning": "Indicates collecting or gathering information"
+        },
+        {
+          "preposition": "to",
+          "phrase": "UI design considers user psychology and behavior.",
+          "context": "consideration",
+          "meaning": "Indicates the target of consideration or attention"
+        },
+        {
+          "preposition": "to",
+          "phrase": "UI design adapts to evolving technology trends.",
+          "context": "adaptation",
+          "meaning": "Indicates the target or direction of adaptation"
+        },
+        {
+          "preposition": "into",
+          "phrase": "In-app notifications are integrated into the UI strategy.",
+          "context": "integration",
+          "meaning": "Indicates being included or integrated into something"
+        },
+        {
+          "preposition": "of",
+          "phrase": "The UI of e-commerce sites affects the shopping experience.",
+          "context": "belonging",
+          "meaning": "Indicates belonging to or being part of something"
+        },
+        {
+          "preposition": "in",
+          "phrase": "UI design plays a role in customer loyalty and retention.",
+          "context": "participation",
+          "meaning": "Indicates participation or involvement in an area"
+        },
+        {
+          "preposition": "of",
+          "phrase": "UI design is an ongoing process of refinement and enhancement.",
+          "context": "characteristic",
+          "meaning": "Indicates a characteristic or quality of something"
+        },
+        {
+          "preposition": "with",
+          "phrase": "UI designers collaborate with content creators for effective communication.",
+          "context": "partnership",
+          "meaning": "Indicates partnership or collaboration"
+        },
+        {
+          "preposition": "for",
+          "phrase": "UI designers collaborate with content creators for effective communication.",
+          "context": "purpose",
+          "meaning": "Indicates the purpose or goal of collaboration"
+        },
+        {
+          "preposition": "between",
+          "phrase": "Effective UI creates a seamless connection between users and technology.",
+          "context": "relationship",
+          "meaning": "Indicates the relationship or connection between two entities"
+        }
+      ]
+    },
+    "soft_skills": {
+      "title": "Soft Skills Vocabulary",
+      "description": "Prepositions commonly used to describe soft skills, personal qualities, and professional competencies",
+      "phrases": [
+        {
+          "preposition": "for",
+          "phrase": "Effective communication is essential for collaboration among team members.",
+          "context": "purpose",
+          "meaning": "Indicates the purpose or goal of communication"
+        },
+        {
+          "preposition": "among",
+          "phrase": "Effective communication is essential for collaboration among team members.",
+          "context": "group",
+          "meaning": "Indicates being part of or within a group"
+        },
+        {
+          "preposition": "in",
+          "phrase": "Adaptability in the workplace is crucial for success in changing environments.",
+          "context": "location",
+          "meaning": "Indicates the location or setting where something occurs"
+        },
+        {
+          "preposition": "for",
+          "phrase": "Adaptability in the workplace is crucial for success in changing environments.",
+          "context": "purpose",
+          "meaning": "Indicates the purpose or goal of adaptability"
+        },
+        {
+          "preposition": "in",
+          "phrase": "Adaptability in the workplace is crucial for success in changing environments.",
+          "context": "containment",
+          "meaning": "Indicates being part of or contained within environments"
+        },
+        {
+          "preposition": "of",
+          "phrase": "Empathy is the foundation of strong relationships with colleagues.",
+          "context": "characteristic",
+          "meaning": "Indicates a characteristic or quality of something"
+        },
+        {
+          "preposition": "with",
+          "phrase": "Empathy is the foundation of strong relationships with colleagues.",
+          "context": "connection",
+          "meaning": "Indicates connection or relationship with others"
+        },
+        {
+          "preposition": "on",
+          "phrase": "Self-motivation is key to staying focused on personal and professional goals.",
+          "context": "focus",
+          "meaning": "Indicates the focus or target of attention"
+        },
+        {
+          "preposition": "among",
+          "phrase": "Teamwork involves cooperation among individuals in pursuit of common objectives.",
+          "context": "group",
+          "meaning": "Indicates being part of or within a group"
+        },
+        {
+          "preposition": "in",
+          "phrase": "Teamwork involves cooperation among individuals in pursuit of common objectives.",
+          "context": "involvement",
+          "meaning": "Indicates involvement or participation in something"
+        },
+        {
+          "preposition": "of",
+          "phrase": "Teamwork involves cooperation among individuals in pursuit of common objectives.",
+          "context": "characteristic",
+          "meaning": "Indicates a characteristic or quality of something"
+        },
+        {
+          "preposition": "towards",
+          "phrase": "Leadership involves guiding teams towards success through effective decision-making.",
+          "context": "direction",
+          "meaning": "Indicates the direction or goal being pursued"
+        },
+        {
+          "preposition": "through",
+          "phrase": "Leadership involves guiding teams towards success through effective decision-making.",
+          "context": "means",
+          "meaning": "Indicates the means or method by which something is achieved"
+        },
+        {
+          "preposition": "for",
+          "phrase": "Time management is necessary for allocating tasks efficiently within a team.",
+          "context": "purpose",
+          "meaning": "Indicates the purpose or goal of time management"
+        },
+        {
+          "preposition": "within",
+          "phrase": "Time management is necessary for allocating tasks efficiently within a team.",
+          "context": "containment",
+          "meaning": "Indicates being inside or contained within boundaries"
+        },
+        {
+          "preposition": "of",
+          "phrase": "Active listening is the foundation of understanding others during conversations.",
+          "context": "characteristic",
+          "meaning": "Indicates a characteristic or quality of something"
+        },
+        {
+          "preposition": "during",
+          "phrase": "Active listening is the foundation of understanding others during conversations.",
+          "context": "timing",
+          "meaning": "Indicates the time when something occurs"
+        },
+        {
+          "preposition": "on",
+          "phrase": "Problem-solving relies on analytical thinking to address complex issues.",
+          "context": "dependence",
+          "meaning": "Indicates dependence or reliance on something"
+        },
+        {
+          "preposition": "to",
+          "phrase": "Problem-solving relies on analytical thinking to address complex issues.",
+          "context": "purpose",
+          "meaning": "Indicates the purpose or goal of analytical thinking"
+        },
+        {
+          "preposition": "for",
+          "phrase": "Responsibility entails being accountable for one's actions in the workplace.",
+          "context": "accountability",
+          "meaning": "Indicates the area of accountability or responsibility"
+        },
+        {
+          "preposition": "in",
+          "phrase": "Responsibility entails being accountable for one's actions in the workplace.",
+          "context": "location",
+          "meaning": "Indicates the location or setting where something occurs"
+        },
+        {
+          "preposition": "from",
+          "phrase": "Resilience helps individuals bounce back from setbacks with a positive attitude.",
+          "context": "recovery",
+          "meaning": "Indicates the source or origin of recovery"
+        },
+        {
+          "preposition": "with",
+          "phrase": "Resilience helps individuals bounce back from setbacks with a positive attitude.",
+          "context": "accompaniment",
+          "meaning": "Indicates accompaniment or association"
+        },
+        {
+          "preposition": "for",
+          "phrase": "Critical thinking encourages rational evaluation of situations for better decisions.",
+          "context": "purpose",
+          "meaning": "Indicates the purpose or goal of evaluation"
+        },
+        {
+          "preposition": "in",
+          "phrase": "Empathy and active listening are significant in resolving conflicts.",
+          "context": "participation",
+          "meaning": "Indicates participation or involvement in conflict resolution"
+        },
+        {
+          "preposition": "among",
+          "phrase": "Collaboration among team members is crucial for enhancing creativity.",
+          "context": "group",
+          "meaning": "Indicates being part of or within a group"
+        },
+        {
+          "preposition": "for",
+          "phrase": "Collaboration among team members is crucial for enhancing creativity.",
+          "context": "purpose",
+          "meaning": "Indicates the purpose or goal of collaboration"
+        },
+        {
+          "preposition": "to",
+          "phrase": "Creativity and innovation drive solutions to complex problems.",
+          "context": "direction",
+          "meaning": "Indicates the direction or target of driving"
+        },
+        {
+          "preposition": "on",
+          "phrase": "Effective conflict resolution relies on diplomacy and negotiation.",
+          "context": "dependence",
+          "meaning": "Indicates dependence or reliance on something"
+        },
+        {
+          "preposition": "through",
+          "phrase": "Interpersonal skills contribute to positive team dynamics through open communication.",
+          "context": "means",
+          "meaning": "Indicates the means or method by which something is achieved"
+        },
+        {
+          "preposition": "of",
+          "phrase": "Decision-making requires careful consideration of available options.",
+          "context": "characteristic",
+          "meaning": "Indicates a characteristic or quality of something"
+        },
+        {
+          "preposition": "for",
+          "phrase": "Stress management techniques improve overall well-being for work-life balance.",
+          "context": "purpose",
+          "meaning": "Indicates the purpose or goal of improvement"
+        },
+        {
+          "preposition": "through",
+          "phrase": "Effective communication fosters understanding through collaborative efforts.",
+          "context": "means",
+          "meaning": "Indicates the means or method by which something is achieved"
+        },
+        {
+          "preposition": "for",
+          "phrase": "Taking initiative involves proactive problem-solving for personal and professional growth.",
+          "context": "purpose",
+          "meaning": "Indicates the purpose or goal of problem-solving"
+        },
+        {
+          "preposition": "in",
+          "phrase": "Versatility and adaptability are essential in dynamic work environments.",
+          "context": "containment",
+          "meaning": "Indicates being part of or contained within environments"
+        },
+        {
+          "preposition": "in",
+          "phrase": "Certification and professional development demonstrate competence in a field.",
+          "context": "containment",
+          "meaning": "Indicates being part of or contained within a field"
+        },
+        {
+          "preposition": "through",
+          "phrase": "Results-driven work and consistency lead to project success through disciplined efforts.",
+          "context": "means",
+          "meaning": "Indicates the means or method by which something is achieved"
+        },
+        {
+          "preposition": "for",
+          "phrase": "Agile development practices facilitate flexibility for project timelines.",
+          "context": "purpose",
+          "meaning": "Indicates the purpose or goal of flexibility"
+        },
+        {
+          "preposition": "to",
+          "phrase": "Innovative thinking and a user-centric approach are central to successful product design.",
+          "context": "importance",
+          "meaning": "Indicates importance or centrality to something"
+        }
+      ]
+    },
+    "project_management": {
+      "title": "Project Management Vocabulary",
+      "description": "Prepositions commonly used in project management, planning, and execution contexts",
+      "phrases": [
+        {
+          "preposition": "for",
+          "phrase": "Effective project management is essential for the successful execution of projects.",
+          "context": "purpose",
+          "meaning": "Indicates the purpose or goal of project management"
+        },
+        {
+          "preposition": "of",
+          "phrase": "Effective project management is essential for the successful execution of projects.",
+          "context": "characteristic",
+          "meaning": "Indicates a characteristic or quality of something"
+        },
+        {
+          "preposition": "for",
+          "phrase": "Project managers are responsible for planning and organizing tasks within a project.",
+          "context": "responsibility",
+          "meaning": "Indicates the area of responsibility or duty"
+        },
+        {
+          "preposition": "within",
+          "phrase": "Project managers are responsible for planning and organizing tasks within a project.",
+          "context": "containment",
+          "meaning": "Indicates being inside or contained within boundaries"
+        },
+        {
+          "preposition": "in",
+          "phrase": "This project is in accordance with our company's strategic goals.",
+          "context": "agreement",
+          "meaning": "Indicates agreement or compliance with something"
+        },
+        {
+          "preposition": "with",
+          "phrase": "This project is in accordance with our company's strategic goals.",
+          "context": "agreement",
+          "meaning": "Indicates agreement or compliance with something"
+        },
+        {
+          "preposition": "of",
+          "phrase": "A well-structured project plan is the foundation of project success.",
+          "context": "characteristic",
+          "meaning": "Indicates a characteristic or quality of something"
+        },
+        {
+          "preposition": "with",
+          "phrase": "Project managers must communicate effectively with team members during the project.",
+          "context": "communication",
+          "meaning": "Indicates communication or interaction with others"
+        },
+        {
+          "preposition": "during",
+          "phrase": "Project managers must communicate effectively with team members during the project.",
+          "context": "timing",
+          "meaning": "Indicates the time when something occurs"
+        },
+        {
+          "preposition": "among",
+          "phrase": "Collaboration among project stakeholders is crucial for project alignment.",
+          "context": "group",
+          "meaning": "Indicates being part of or within a group"
+        },
+        {
+          "preposition": "for",
+          "phrase": "Collaboration among project stakeholders is crucial for project alignment.",
+          "context": "purpose",
+          "meaning": "Indicates the purpose or goal of collaboration"
+        },
+        {
+          "preposition": "on",
+          "phrase": "Project managers work on defining the scope and objectives of the project.",
+          "context": "focus",
+          "meaning": "Indicates the focus or area of work"
+        },
+        {
+          "preposition": "of",
+          "phrase": "Project managers work on defining the scope and objectives of the project.",
+          "context": "characteristic",
+          "meaning": "Indicates a characteristic or quality of something"
+        },
+        {
+          "preposition": "to",
+          "phrase": "Regular project status meetings are conducted to track project progress.",
+          "context": "purpose",
+          "meaning": "Indicates the purpose or goal of meetings"
+        },
+        {
+          "preposition": "on",
+          "phrase": "Team members rely on the project manager to provide guidance and support.",
+          "context": "dependence",
+          "meaning": "Indicates dependence or reliance on someone"
+        },
+        {
+          "preposition": "to",
+          "phrase": "Team members rely on the project manager to provide guidance and support.",
+          "context": "purpose",
+          "meaning": "Indicates the purpose or goal of reliance"
+        },
+        {
+          "preposition": "to",
+          "phrase": "Timely project delivery is a key objective to meet project deadlines.",
+          "context": "purpose",
+          "meaning": "Indicates the purpose or goal of delivery"
+        },
+        {
+          "preposition": "for",
+          "phrase": "Every project requires a detailed project schedule for task allocation.",
+          "context": "purpose",
+          "meaning": "Indicates the purpose or goal of a schedule"
+        },
+        {
+          "preposition": "for",
+          "phrase": "Project management software is used for project planning and tracking.",
+          "context": "purpose",
+          "meaning": "Indicates the purpose or goal of software"
+        },
+        {
+          "preposition": "to",
+          "phrase": "These project management methodologies are adapted to meet specific project needs.",
+          "context": "purpose",
+          "meaning": "Indicates the purpose or goal of adaptation"
+        },
+        {
+          "preposition": "in",
+          "phrase": "Several project management tools can assist in project organization.",
+          "context": "assistance",
+          "meaning": "Indicates assistance or help in doing something"
+        },
+        {
+          "preposition": "for",
+          "phrase": "Such comprehensive project management documentation is crucial for accountability.",
+          "context": "purpose",
+          "meaning": "Indicates the purpose or goal of documentation"
+        },
+        {
+          "preposition": "with",
+          "phrase": "The project management team collaborates closely with various departments.",
+          "context": "collaboration",
+          "meaning": "Indicates partnership or collaboration with others"
+        },
+        {
+          "preposition": "to",
+          "phrase": "Their dedication to the project's success is commendable.",
+          "context": "dedication",
+          "meaning": "Indicates the target or focus of dedication"
+        },
+        {
+          "preposition": "for",
+          "phrase": "Project managers aim for consistent project quality throughout the project lifecycle.",
+          "context": "goal",
+          "meaning": "Indicates the goal or objective being pursued"
+        },
+        {
+          "preposition": "throughout",
+          "phrase": "Project managers aim for consistent project quality throughout the project lifecycle.",
+          "context": "duration",
+          "meaning": "Indicates the entire duration or span of time"
+        },
+        {
+          "preposition": "from",
+          "phrase": "Incorporating feedback from project team members is essential for project improvement.",
+          "context": "source",
+          "meaning": "Indicates the source or origin of feedback"
+        },
+        {
+          "preposition": "for",
+          "phrase": "Incorporating feedback from project team members is essential for project improvement.",
+          "context": "purpose",
+          "meaning": "Indicates the purpose or goal of incorporating feedback"
+        },
+        {
+          "preposition": "in",
+          "phrase": "The mobile app development phase is in the midst of the project timeline.",
+          "context": "position",
+          "meaning": "Indicates the position or location within something"
+        },
+        {
+          "preposition": "of",
+          "phrase": "The mobile app development phase is in the midst of the project timeline.",
+          "context": "belonging",
+          "meaning": "Indicates belonging to or being part of something"
+        },
+        {
+          "preposition": "with",
+          "phrase": "Project goals should align with the overarching business objectives.",
+          "context": "alignment",
+          "meaning": "Indicates alignment or agreement with something"
+        },
+        {
+          "preposition": "with",
+          "phrase": "A well-structured project timeline reduces risks associated with project delays.",
+          "context": "association",
+          "meaning": "Indicates association or connection with something"
+        },
+        {
+          "preposition": "in",
+          "phrase": "Poor project management can result in missed project deadlines.",
+          "context": "result",
+          "meaning": "Indicates the result or outcome of something"
+        },
+        {
+          "preposition": "for",
+          "phrase": "Your input is invaluable for ongoing project improvements and adjustments.",
+          "context": "purpose",
+          "meaning": "Indicates the purpose or goal of input"
+        },
+        {
+          "preposition": "throughout",
+          "phrase": "Project documentation is regularly updated throughout the project lifecycle.",
+          "context": "duration",
+          "meaning": "Indicates the entire duration or span of time"
+        },
+        {
+          "preposition": "with",
+          "phrase": "Project goals should align with the organization's long-term strategy.",
+          "context": "alignment",
+          "meaning": "Indicates alignment or agreement with something"
+        },
+        {
+          "preposition": "during",
+          "phrase": "The initial project scope is established during the project initiation phase.",
+          "context": "timing",
+          "meaning": "Indicates the time when something occurs"
+        },
+        {
+          "preposition": "to",
+          "phrase": "Our commitment to project efficiency sets us apart from competitors.",
+          "context": "commitment",
+          "meaning": "Indicates the target or focus of commitment"
+        },
+        {
+          "preposition": "from",
+          "phrase": "Our commitment to project efficiency sets us apart from competitors.",
+          "context": "differentiation",
+          "meaning": "Indicates being different or separate from others"
+        },
+        {
+          "preposition": "to",
+          "phrase": "Project management requires continuous adaptation and learning to keep projects on track.",
+          "context": "purpose",
+          "meaning": "Indicates the purpose or goal of adaptation and learning"
+        }
+      ]
+    },
+    "software_development": {
+      "title": "Software Developer Vocabulary",
+      "description": "Prepositions commonly used in software development, programming, and technical contexts",
+      "phrases": [
+        {
+          "preposition": "with",
+          "phrase": "Effective software development begins with a clear project plan.",
+          "context": "starting point",
+          "meaning": "Indicates the starting point or beginning of something"
+        },
+        {
+          "preposition": "for",
+          "phrase": "Software developers are responsible for coding applications and programs.",
+          "context": "responsibility",
+          "meaning": "Indicates the area of responsibility or duty"
+        },
+        {
+          "preposition": "for",
+          "phrase": "This software project is crucial for our company's growth.",
+          "context": "purpose",
+          "meaning": "Indicates the purpose or goal of the project"
+        },
+        {
+          "preposition": "on",
+          "phrase": "Software development relies on a well-structured codebase.",
+          "context": "dependence",
+          "meaning": "Indicates dependence or reliance on something"
+        },
+        {
+          "preposition": "among",
+          "phrase": "Collaboration among development teams is vital for project success.",
+          "context": "group",
+          "meaning": "Indicates being part of or within a group"
+        },
+        {
+          "preposition": "for",
+          "phrase": "Collaboration among development teams is vital for project success.",
+          "context": "purpose",
+          "meaning": "Indicates the purpose or goal of collaboration"
+        },
+        {
+          "preposition": "on",
+          "phrase": "Developers work on designing and implementing software solutions.",
+          "context": "focus",
+          "meaning": "Indicates the focus or area of work"
+        },
+        {
+          "preposition": "to",
+          "phrase": "Regular code reviews are conducted to maintain code quality.",
+          "context": "purpose",
+          "meaning": "Indicates the purpose or goal of code reviews"
+        },
+        {
+          "preposition": "on",
+          "phrase": "Team members rely on the lead developer for technical guidance.",
+          "context": "dependence",
+          "meaning": "Indicates dependence or reliance on someone"
+        },
+        {
+          "preposition": "for",
+          "phrase": "Team members rely on the lead developer for technical guidance.",
+          "context": "purpose",
+          "meaning": "Indicates the purpose or goal of reliance"
+        },
+        {
+          "preposition": "of",
+          "phrase": "Timely delivery of software updates is essential for user satisfaction.",
+          "context": "characteristic",
+          "meaning": "Indicates a characteristic or quality of something"
+        },
+        {
+          "preposition": "for",
+          "phrase": "Timely delivery of software updates is essential for user satisfaction.",
+          "context": "purpose",
+          "meaning": "Indicates the purpose or goal of delivery"
+        },
+        {
+          "preposition": "in",
+          "phrase": "Every software project involves detailed coding and testing.",
+          "context": "involvement",
+          "meaning": "Indicates involvement or participation in something"
+        },
+        {
+          "preposition": "of",
+          "phrase": "Many developers appreciate the simplicity of agile methodologies.",
+          "context": "characteristic",
+          "meaning": "Indicates a characteristic or quality of something"
+        },
+        {
+          "preposition": "in",
+          "phrase": "These coding standards ensure consistency in code quality.",
+          "context": "containment",
+          "meaning": "Indicates being part of or contained within something"
+        },
+        {
+          "preposition": "for",
+          "phrase": "Several programming languages can be used for software development.",
+          "context": "purpose",
+          "meaning": "Indicates the purpose or goal of programming languages"
+        },
+        {
+          "preposition": "for",
+          "phrase": "Such comprehensive code documentation is crucial for maintenance.",
+          "context": "purpose",
+          "meaning": "Indicates the purpose or goal of documentation"
+        },
+        {
+          "preposition": "with",
+          "phrase": "The development team collaborates closely with other departments.",
+          "context": "collaboration",
+          "meaning": "Indicates partnership or collaboration with others"
+        },
+        {
+          "preposition": "to",
+          "phrase": "Their dedication to software quality is commendable.",
+          "context": "dedication",
+          "meaning": "Indicates the target or focus of dedication"
+        },
+        {
+          "preposition": "for",
+          "phrase": "Developers aim for consistency and efficiency in the development process.",
+          "context": "goal",
+          "meaning": "Indicates the goal or objective being pursued"
+        },
+        {
+          "preposition": "in",
+          "phrase": "Developers aim for consistency and efficiency in the development process.",
+          "context": "containment",
+          "meaning": "Indicates being part of or contained within a process"
+        },
+        {
+          "preposition": "from",
+          "phrase": "Incorporating feedback from end-users is essential for improvement.",
+          "context": "source",
+          "meaning": "Indicates the source or origin of feedback"
+        },
+        {
+          "preposition": "for",
+          "phrase": "Incorporating feedback from end-users is essential for improvement.",
+          "context": "purpose",
+          "meaning": "Indicates the purpose or goal of incorporating feedback"
+        },
+        {
+          "preposition": "for",
+          "phrase": "The software's mobile app development phase is essential for user engagement.",
+          "context": "purpose",
+          "meaning": "Indicates the purpose or goal of the development phase"
+        },
+        {
+          "preposition": "against",
+          "phrase": "The software's security features protect against potential threats.",
+          "context": "protection",
+          "meaning": "Indicates protection or defense against something"
+        },
+        {
+          "preposition": "in",
+          "phrase": "Effective coding practices result in efficient and reliable software.",
+          "context": "result",
+          "meaning": "Indicates the result or outcome of something"
+        },
+        {
+          "preposition": "in",
+          "phrase": "Well-organized code repositories simplify code management.",
+          "context": "containment",
+          "meaning": "Indicates being part of or contained within something"
+        },
+        {
+          "preposition": "to",
+          "phrase": "Effective development practices lead to high-quality software.",
+          "context": "result",
+          "meaning": "Indicates the result or outcome of something"
+        },
+        {
+          "preposition": "in",
+          "phrase": "Poorly written code can result in software bugs and issues.",
+          "context": "result",
+          "meaning": "Indicates the result or outcome of something"
+        },
+        {
+          "preposition": "for",
+          "phrase": "Your input is invaluable for ongoing software improvement.",
+          "context": "purpose",
+          "meaning": "Indicates the purpose or goal of input"
+        },
+        {
+          "preposition": "to",
+          "phrase": "Software documentation is regularly updated to reflect changes.",
+          "context": "purpose",
+          "meaning": "Indicates the purpose or goal of updates"
+        },
+        {
+          "preposition": "with",
+          "phrase": "Development goals should align with the organization's strategic plan.",
+          "context": "alignment",
+          "meaning": "Indicates alignment or agreement with something"
+        },
+        {
+          "preposition": "for",
+          "phrase": "The initial software design phase sets the foundation for development.",
+          "context": "purpose",
+          "meaning": "Indicates the purpose or goal of the foundation"
+        },
+        {
+          "preposition": "to",
+          "phrase": "Our commitment to software excellence sets us apart in the industry.",
+          "context": "commitment",
+          "meaning": "Indicates the target or focus of commitment"
+        },
+        {
+          "preposition": "in",
+          "phrase": "Our commitment to software excellence sets us apart in the industry.",
+          "context": "location",
+          "meaning": "Indicates the location or setting where something occurs"
+        },
+        {
+          "preposition": "to",
+          "phrase": "Software development requires continuous learning and adaptation to evolving technology.",
+          "context": "purpose",
+          "meaning": "Indicates the purpose or goal of learning and adaptation"
+        }
+      ]
+    }
+  },
+  "metadata": {
+    "total_contexts": 5,
+    "total_phrases": 150,
+    "professional_areas": [
+      "User Experience (UX)",
+      "User Interface (UI)",
+      "Soft Skills",
+      "Project Management",
+      "Software Development"
+    ],
+    "tags": [
+      "grammar",
+      "prepositions",
+      "professional_english",
+      "vocabulary",
+      "ux_design",
+      "ui_design",
+      "soft_skills",
+      "project_management",
+      "software_development"
+    ],
+    "difficulty_level": "intermediate",
+    "target_audience": [
+      "professionals",
+      "students",
+      "non-native_english_speakers",
+      "business_communicators",
+      "designers",
+      "developers",
+      "managers"
+    ]
+  }
+} 

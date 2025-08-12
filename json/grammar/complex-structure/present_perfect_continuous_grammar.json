@@ -1,0 +1,624 @@
+{
+  "title": "Present Perfect Continuous Tense Grammar Guide",
+  "description": "Comprehensive guide covering present perfect continuous tense usage in professional contexts across various industries",
+  "version": "1.0",
+  "created_date": "2024-12-19",
+  "basic_concepts": {
+    "definition": "The present perfect continuous tense is a verb form that expresses actions or states that began in the past, have been ongoing, and continue into the present, emphasizing the duration and ongoing nature of the activity.",
+    "key_functions": [
+      "Express ongoing actions that started in the past and continue now",
+      "Emphasize the duration and continuous nature of activities",
+      "Show actions that have been happening repeatedly over time",
+      "Indicate temporary situations that are still in progress",
+      "Express actions that have been ongoing and may continue",
+      "Highlight the process and effort involved in ongoing activities",
+      "Show actions that have been happening up to the present moment",
+      "Emphasize the continuous nature of professional development and improvement"
+    ],
+    "formation_rules": [
+      {
+        "rule": "Affirmative form",
+        "structure": "Subject + have/has + been + present participle (-ing)",
+        "examples": ["I have been implementing", "Our team has been working", "Users have been providing"]
+      },
+      {
+        "rule": "Negative form",
+        "structure": "Subject + have/has + not + been + present participle (-ing)",
+        "examples": ["I have not been implementing", "Our team has not been working", "Users have not been providing"]
+      },
+      {
+        "rule": "Question form",
+        "structure": "Have/Has + subject + been + present participle (-ing)?",
+        "examples": ["Have I been implementing?", "Has our team been working?", "Have users been providing?"]
+      }
+    ],
+    "common_time_expressions": [
+      "recently", "lately", "for the past [time period]", "since [specific time]", "over the last [time period]", "continuously", "ongoing", "steadily"
+    ],
+    "key_differences_from_simple_present_perfect": [
+      "Emphasizes ongoing nature vs. completed actions",
+      "Focuses on duration vs. result",
+      "Shows continuous effort vs. finished outcome",
+      "Indicates temporary situations vs. permanent states",
+      "Highlights process vs. achievement"
+    ],
+    "when_to_use": [
+      "Actions that started in the past and are still continuing",
+      "Actions that have been happening repeatedly over time",
+      "Temporary situations that are still in progress",
+      "Actions emphasizing duration and continuous effort",
+      "Ongoing professional development and improvement",
+      "Continuous processes and iterative work"
+    ]
+  },
+  "professional_contexts": {
+    "user_experience": {
+      "title": "User Experience (UX) Vocabulary",
+      "description": "Present perfect continuous tense sentences commonly used in UX design, research, and user interaction contexts",
+      "sentences": [
+        {
+          "verb": "been implementing",
+          "sentence": "Our team has been implementing new features to enhance user interaction.",
+          "context": "feature development",
+          "meaning": "The team has been continuously working on adding new features to improve user interaction",
+          "present_relevance": "The implementation process is ongoing and will continue",
+          "duration_emphasis": "Focuses on the continuous effort over time",
+          "professional_implication": "Shows ongoing commitment to user experience improvement",
+          "structure_analysis": "Subject + has + been + present participle + object + purpose"
+        },
+        {
+          "verb": "been providing",
+          "sentence": "Users have been providing valuable feedback on the latest updates.",
+          "context": "user feedback collection",
+          "meaning": "Users have been continuously giving feedback on recent updates",
+          "present_relevance": "Feedback collection is ongoing and valuable",
+          "duration_emphasis": "Emphasizes continuous user engagement and feedback",
+          "professional_implication": "Demonstrates ongoing user engagement and feedback loop",
+          "structure_analysis": "Subject + have + been + present participle + object + context"
+        },
+        {
+          "verb": "been incorporating",
+          "sentence": "I have been incorporating user suggestions into the ongoing development.",
+          "context": "development process",
+          "meaning": "I have been continuously adding user suggestions to the development work",
+          "present_relevance": "The incorporation process is ongoing and will continue",
+          "duration_emphasis": "Shows continuous effort to include user input",
+          "professional_implication": "Demonstrates commitment to user-driven development",
+          "structure_analysis": "Subject + have + been + present participle + object + context"
+        },
+        {
+          "verb": "been focusing",
+          "sentence": "The customer support team has been focusing on improving response times.",
+          "context": "customer support improvement",
+          "meaning": "The support team has been continuously working on reducing response times",
+          "present_relevance": "The focus on improvement is ongoing and active",
+          "duration_emphasis": "Emphasizes sustained attention to response time improvement",
+          "professional_implication": "Shows ongoing commitment to customer service excellence",
+          "structure_analysis": "Subject + has + been + present participle + object + goal"
+        },
+        {
+          "verb": "been working on",
+          "sentence": "We have been working on creating a smoother and more intuitive interface.",
+          "context": "interface development",
+          "meaning": "We have been continuously developing a better interface",
+          "present_relevance": "The development work is ongoing and will continue",
+          "duration_emphasis": "Emphasizes the continuous effort in interface development",
+          "professional_implication": "Demonstrates ongoing commitment to interface improvement",
+          "structure_analysis": "Subject + have + been + present participle + object + goal"
+        },
+        {
+          "verb": "been experiencing",
+          "sentence": "Users have been experiencing a more streamlined onboarding process.",
+          "context": "onboarding improvement",
+          "meaning": "Users have been continuously going through an improved onboarding process",
+          "present_relevance": "Users are currently experiencing the improved process",
+          "duration_emphasis": "Shows ongoing user experience with the improved process",
+          "professional_implication": "Indicates successful ongoing implementation of improvements",
+          "structure_analysis": "Subject + have + been + present participle + object + benefit"
+        },
+        {
+          "verb": "been optimizing",
+          "sentence": "The development team has been optimizing the software for better performance.",
+          "context": "performance optimization",
+          "meaning": "The team has been continuously improving software performance",
+          "present_relevance": "The optimization work is ongoing and will continue",
+          "duration_emphasis": "Emphasizes continuous effort in performance improvement",
+          "professional_implication": "Shows ongoing commitment to software performance",
+          "structure_analysis": "Subject + has + been + present participle + object + goal"
+        },
+        {
+          "verb": "been integrating",
+          "sentence": "I have been integrating advanced features to enrich the user experience.",
+          "context": "feature integration",
+          "meaning": "I have been continuously adding advanced features to improve user experience",
+          "present_relevance": "The integration process is ongoing and will continue",
+          "duration_emphasis": "Shows continuous effort in feature enhancement",
+          "professional_implication": "Demonstrates ongoing commitment to user experience enrichment",
+          "structure_analysis": "Subject + have + been + present participle + object + purpose"
+        },
+        {
+          "verb": "been cultivating",
+          "sentence": "The team has been cultivating a more collaborative approach to problem-solving.",
+          "context": "team collaboration",
+          "meaning": "The team has been continuously developing a collaborative problem-solving culture",
+          "present_relevance": "The cultivation of collaboration is ongoing and active",
+          "duration_emphasis": "Emphasizes sustained effort in building collaboration",
+          "professional_implication": "Shows ongoing commitment to team collaboration",
+          "structure_analysis": "Subject + has + been + present participle + object + goal"
+        },
+        {
+          "verb": "been noticing",
+          "sentence": "Users have been noticing improvements in the responsiveness of our system.",
+          "context": "system responsiveness",
+          "meaning": "Users have been continuously observing better system responsiveness",
+          "present_relevance": "Users are currently experiencing improved responsiveness",
+          "duration_emphasis": "Shows ongoing user awareness of improvements",
+          "professional_implication": "Indicates successful ongoing system improvements",
+          "structure_analysis": "Subject + have + been + present participle + object + improvement"
+        }
+      ]
+    },
+    "user_interface": {
+      "title": "User Interface (UI) Vocabulary",
+      "description": "Present perfect continuous tense sentences commonly used in UI design, interface elements, and user interaction components",
+      "sentences": [
+        {
+          "verb": "been working on",
+          "sentence": "Our team has been working on implementing a cleaner and more intuitive user interface.",
+          "context": "interface implementation",
+          "meaning": "The team has been continuously developing a cleaner and more intuitive interface",
+          "present_relevance": "The interface development is ongoing and will continue",
+          "duration_emphasis": "Emphasizes continuous effort in interface improvement",
+          "professional_implication": "Shows ongoing commitment to interface design excellence",
+          "structure_analysis": "Subject + has + been + present participle + object + goal"
+        },
+        {
+          "verb": "been providing",
+          "sentence": "Users have been providing valuable feedback as we've been updating the navigation features.",
+          "context": "feedback during updates",
+          "meaning": "Users have been continuously giving feedback during navigation updates",
+          "present_relevance": "Feedback collection is ongoing during the update process",
+          "duration_emphasis": "Shows continuous user engagement during updates",
+          "professional_implication": "Demonstrates ongoing user involvement in navigation development",
+          "structure_analysis": "Subject + have + been + present participle + object + context"
+        },
+        {
+          "verb": "been incorporating",
+          "sentence": "I have been incorporating user suggestions into the ongoing development of the user interface.",
+          "context": "interface development",
+          "meaning": "I have been continuously adding user suggestions to interface development",
+          "present_relevance": "The incorporation of suggestions is ongoing and will continue",
+          "duration_emphasis": "Shows continuous effort to include user input",
+          "professional_implication": "Demonstrates commitment to user-driven interface design",
+          "structure_analysis": "Subject + have + been + present participle + object + context"
+        },
+        {
+          "verb": "been focusing",
+          "sentence": "The development team has been focusing on making the user interface more responsive for mobile users.",
+          "context": "mobile responsiveness",
+          "meaning": "The team has been continuously working on mobile interface responsiveness",
+          "present_relevance": "The focus on mobile responsiveness is ongoing and active",
+          "duration_emphasis": "Emphasizes sustained attention to mobile user experience",
+          "professional_implication": "Shows ongoing commitment to mobile user experience",
+          "structure_analysis": "Subject + has + been + present participle + object + goal"
+        },
+        {
+          "verb": "been streamlining",
+          "sentence": "We have been streamlining the user interface for a smoother interaction.",
+          "context": "interface streamlining",
+          "meaning": "We have been continuously simplifying the interface for better interaction",
+          "present_relevance": "The streamlining process is ongoing and will continue",
+          "duration_emphasis": "Emphasizes continuous effort in interface simplification",
+          "professional_implication": "Demonstrates ongoing commitment to user interaction improvement",
+          "structure_analysis": "Subject + have + been + present participle + object + goal"
+        },
+        {
+          "verb": "been experiencing",
+          "sentence": "Users have been experiencing a more cohesive and visually appealing user interface.",
+          "context": "interface aesthetics",
+          "meaning": "Users have been continuously using an improved interface design",
+          "present_relevance": "Users are currently experiencing the improved interface",
+          "duration_emphasis": "Shows ongoing user experience with the improved design",
+          "professional_implication": "Indicates successful ongoing interface design improvements",
+          "structure_analysis": "Subject + have + been + present participle + object + benefit"
+        },
+        {
+          "verb": "been working on",
+          "sentence": "The design team has been working on implementing a more user-friendly layout for the user interface.",
+          "context": "layout improvement",
+          "meaning": "The design team has been continuously developing a more user-friendly layout",
+          "present_relevance": "The layout development is ongoing and will continue",
+          "duration_emphasis": "Emphasizes continuous effort in layout improvement",
+          "professional_implication": "Shows ongoing commitment to user-friendly design",
+          "structure_analysis": "Subject + has + been + present participle + object + goal"
+        },
+        {
+          "verb": "been integrating",
+          "sentence": "I have been integrating user feedback to make the user interface more adaptable.",
+          "context": "feedback integration",
+          "meaning": "I have been continuously adding user feedback to improve interface adaptability",
+          "present_relevance": "The integration of feedback is ongoing and will continue",
+          "duration_emphasis": "Shows continuous effort in feedback utilization",
+          "professional_implication": "Demonstrates commitment to user-driven interface adaptation",
+          "structure_analysis": "Subject + have + been + present participle + object + goal"
+        },
+        {
+          "verb": "been evolving",
+          "sentence": "The team has been evolving the user interface to meet the changing preferences of users.",
+          "context": "interface evolution",
+          "meaning": "The team has been continuously updating the interface based on user preferences",
+          "present_relevance": "The interface evolution is ongoing and will continue",
+          "duration_emphasis": "Emphasizes continuous adaptation to user needs",
+          "professional_implication": "Shows ongoing commitment to user preference adaptation",
+          "structure_analysis": "Subject + has + been + present participle + object + goal"
+        },
+        {
+          "verb": "been noticing",
+          "sentence": "Users have been noticing the team's efforts to make the user interface more user-centric.",
+          "context": "user-centric design",
+          "meaning": "Users have been continuously observing the team's focus on user-centric design",
+          "present_relevance": "Users are currently aware of the team's user-centric efforts",
+          "duration_emphasis": "Shows ongoing user awareness of design improvements",
+          "professional_implication": "Indicates successful ongoing user-centric design implementation",
+          "structure_analysis": "Subject + have + been + present participle + object + observation"
+        }
+      ]
+    },
+    "soft_skills": {
+      "title": "Soft Skills Vocabulary",
+      "description": "Present perfect continuous tense sentences commonly used in soft skills, communication, and interpersonal contexts",
+      "sentences": [
+        {
+          "verb": "been cultivating",
+          "sentence": "Our team has been cultivating more empathetic communication skills.",
+          "context": "communication skill development",
+          "meaning": "The team has been continuously developing more empathetic communication abilities",
+          "present_relevance": "The development of empathetic skills is ongoing and will continue",
+          "duration_emphasis": "Emphasizes continuous effort in skill development",
+          "professional_implication": "Shows ongoing commitment to empathetic communication",
+          "structure_analysis": "Subject + has + been + present participle + object + goal"
+        },
+        {
+          "verb": "been noticing",
+          "sentence": "Users have been noticing the team's increased responsiveness to their concerns.",
+          "context": "responsiveness improvement",
+          "meaning": "Users have been continuously observing the team's better response to concerns",
+          "present_relevance": "Users are currently experiencing improved responsiveness",
+          "duration_emphasis": "Shows ongoing user awareness of improvement",
+          "professional_implication": "Indicates successful ongoing responsiveness improvement",
+          "structure_analysis": "Subject + have + been + present participle + object + observation"
+        },
+        {
+          "verb": "been working on",
+          "sentence": "I have been working on being more patient and understanding in interactions.",
+          "context": "personal development",
+          "meaning": "I have been continuously developing patience and understanding in interactions",
+          "present_relevance": "The personal development work is ongoing and will continue",
+          "duration_emphasis": "Emphasizes continuous effort in personal improvement",
+          "professional_implication": "Shows ongoing commitment to personal growth",
+          "structure_analysis": "Subject + have + been + present participle + object + goal"
+        },
+        {
+          "verb": "been developing",
+          "sentence": "The support representatives have been developing more diplomatic approaches to conflicts.",
+          "context": "conflict resolution",
+          "meaning": "The support team has been continuously improving their conflict resolution approaches",
+          "present_relevance": "The development of diplomatic approaches is ongoing and will continue",
+          "duration_emphasis": "Emphasizes continuous effort in approach improvement",
+          "professional_implication": "Shows ongoing commitment to better conflict resolution",
+          "structure_analysis": "Subject + have + been + present participle + object + goal"
+        },
+        {
+          "verb": "been focusing on",
+          "sentence": "We have been focusing on more effective and transparent communication strategies.",
+          "context": "communication strategy",
+          "meaning": "We have been continuously working on improving communication effectiveness and transparency",
+          "present_relevance": "The focus on communication improvement is ongoing and active",
+          "duration_emphasis": "Emphasizes sustained attention to communication improvement",
+          "professional_implication": "Shows ongoing commitment to better communication",
+          "structure_analysis": "Subject + have + been + present participle + object + goal"
+        },
+        {
+          "verb": "been appreciating",
+          "sentence": "Users have been appreciating the team's ongoing efforts to become more resourceful.",
+          "context": "resourcefulness development",
+          "meaning": "Users have been continuously valuing the team's efforts to improve resourcefulness",
+          "present_relevance": "Users are currently appreciating the ongoing development",
+          "duration_emphasis": "Shows ongoing user appreciation of development efforts",
+          "professional_implication": "Indicates successful ongoing skill development",
+          "structure_analysis": "Subject + have + been + present participle + object + appreciation"
+        },
+        {
+          "verb": "been emphasizing",
+          "sentence": "The team has been emphasizing more inclusive practices in engaging with user input.",
+          "context": "inclusive practices",
+          "meaning": "The team has been continuously highlighting inclusive practices in user engagement",
+          "present_relevance": "The emphasis on inclusivity is ongoing and active",
+          "duration_emphasis": "Emphasizes sustained focus on inclusive practices",
+          "professional_implication": "Shows ongoing commitment to inclusivity",
+          "structure_analysis": "Subject + has + been + present participle + object + context"
+        },
+        {
+          "verb": "been working on",
+          "sentence": "I have been working on being more open-minded and adaptable to changes.",
+          "context": "personal adaptability",
+          "meaning": "I have been continuously developing openness and adaptability to changes",
+          "present_relevance": "The personal development work is ongoing and will continue",
+          "duration_emphasis": "Emphasizes continuous effort in personal improvement",
+          "professional_implication": "Shows ongoing commitment to personal adaptability",
+          "structure_analysis": "Subject + have + been + present participle + object + goal"
+        },
+        {
+          "verb": "been noticing",
+          "sentence": "Users have been noticing the team's more innovative and creative problem-solving.",
+          "context": "problem-solving improvement",
+          "meaning": "Users have been continuously observing the team's improved problem-solving approaches",
+          "present_relevance": "Users are currently aware of improved problem-solving",
+          "duration_emphasis": "Shows ongoing user awareness of improvement",
+          "professional_implication": "Indicates successful ongoing problem-solving enhancement",
+          "structure_analysis": "Subject + have + been + present participle + object + observation"
+        },
+        {
+          "verb": "been embracing",
+          "sentence": "The customer support team has been embracing a more collaborative and teamwork-oriented approach.",
+          "context": "teamwork approach",
+          "meaning": "The support team has been continuously adopting a collaborative teamwork approach",
+          "present_relevance": "The adoption of teamwork approach is ongoing and will continue",
+          "duration_emphasis": "Emphasizes continuous effort in approach adoption",
+          "professional_implication": "Shows ongoing commitment to collaborative teamwork",
+          "structure_analysis": "Subject + has + been + present participle + object + goal"
+        }
+      ]
+    },
+    "project_management": {
+      "title": "Project Management Vocabulary",
+      "description": "Present perfect continuous tense sentences commonly used in project management, planning, and execution contexts",
+      "sentences": [
+        {
+          "verb": "been implementing",
+          "sentence": "Our team has been implementing new features to enhance user interaction in project management.",
+          "context": "project management features",
+          "meaning": "The team has been continuously adding new features to improve user interaction in project management",
+          "present_relevance": "The implementation process is ongoing and will continue",
+          "duration_emphasis": "Emphasizes continuous effort in feature implementation",
+          "professional_implication": "Shows ongoing commitment to project management improvement",
+          "structure_analysis": "Subject + has + been + present participle + object + purpose + context"
+        },
+        {
+          "verb": "been providing",
+          "sentence": "Users have been providing valuable feedback on the ongoing updates in project management.",
+          "context": "project management feedback",
+          "meaning": "Users have been continuously giving feedback on project management updates",
+          "present_relevance": "Feedback collection is ongoing during updates",
+          "duration_emphasis": "Shows continuous user engagement in project management",
+          "professional_implication": "Demonstrates ongoing user involvement in project management development",
+          "structure_analysis": "Subject + have + been + present participle + object + context"
+        },
+        {
+          "verb": "been incorporating",
+          "sentence": "I have been incorporating user suggestions into the ongoing development of project tasks.",
+          "context": "project task development",
+          "meaning": "I have been continuously adding user suggestions to project task development",
+          "present_relevance": "The incorporation of suggestions is ongoing and will continue",
+          "duration_emphasis": "Shows continuous effort to include user input",
+          "professional_implication": "Demonstrates commitment to user-driven project development",
+          "structure_analysis": "Subject + have + been + present participle + object + context"
+        },
+        {
+          "verb": "been focusing",
+          "sentence": "The project management team has been focusing on making the workflow more collaborative.",
+          "context": "workflow collaboration",
+          "meaning": "The team has been continuously working on improving workflow collaboration",
+          "present_relevance": "The focus on collaboration improvement is ongoing and active",
+          "duration_emphasis": "Emphasizes sustained attention to workflow collaboration",
+          "professional_implication": "Shows ongoing commitment to collaborative workflows",
+          "structure_analysis": "Subject + has + been + present participle + object + goal"
+        },
+        {
+          "verb": "been streamlining",
+          "sentence": "We have been streamlining project timelines for better user engagement.",
+          "context": "timeline optimization",
+          "meaning": "We have been continuously optimizing project timelines to improve user engagement",
+          "present_relevance": "The streamlining process is ongoing and will continue",
+          "duration_emphasis": "Emphasizes continuous effort in timeline optimization",
+          "professional_implication": "Demonstrates ongoing commitment to user engagement improvement",
+          "structure_analysis": "Subject + have + been + present participle + object + goal"
+        },
+        {
+          "verb": "been experiencing",
+          "sentence": "Users have been experiencing a more transparent communication strategy in project updates.",
+          "context": "communication transparency",
+          "meaning": "Users have been continuously experiencing improved communication transparency in project updates",
+          "present_relevance": "Users are currently experiencing improved transparency",
+          "duration_emphasis": "Shows ongoing user experience with improved communication",
+          "professional_implication": "Indicates successful ongoing communication improvement",
+          "structure_analysis": "Subject + have + been + present participle + object + benefit + context"
+        },
+        {
+          "verb": "been evolving",
+          "sentence": "The project management approach has been evolving to meet the changing needs of users.",
+          "context": "approach adaptation",
+          "meaning": "The project management approach has been continuously changing to adapt to user needs",
+          "present_relevance": "The evolution of the approach is ongoing and will continue",
+          "duration_emphasis": "Emphasizes continuous adaptation to user needs",
+          "professional_implication": "Shows ongoing commitment to user need adaptation",
+          "structure_analysis": "Subject + has + been + present participle + object + goal"
+        },
+        {
+          "verb": "been integrating",
+          "sentence": "I have been integrating user feedback to make the project plan more adaptable.",
+          "context": "project plan adaptation",
+          "meaning": "I have been continuously adding user feedback to improve project plan adaptability",
+          "present_relevance": "The integration of feedback is ongoing and will continue",
+          "duration_emphasis": "Shows continuous effort in feedback utilization",
+          "professional_implication": "Demonstrates commitment to user-driven project planning",
+          "structure_analysis": "Subject + have + been + present participle + object + goal"
+        },
+        {
+          "verb": "been cultivating",
+          "sentence": "The team has been cultivating a more inclusive approach to project collaboration.",
+          "context": "collaboration inclusivity",
+          "meaning": "The team has been continuously developing a more inclusive approach to project collaboration",
+          "present_relevance": "The cultivation of inclusivity is ongoing and will continue",
+          "duration_emphasis": "Emphasizes continuous effort in building inclusive collaboration",
+          "professional_implication": "Shows ongoing commitment to inclusive project collaboration",
+          "structure_analysis": "Subject + has + been + present participle + object + goal"
+        },
+        {
+          "verb": "been noticing",
+          "sentence": "Users have been noticing improvements in project accountability.",
+          "context": "project accountability",
+          "meaning": "Users have been continuously observing better project accountability",
+          "present_relevance": "Users are currently aware of improved accountability",
+          "duration_emphasis": "Shows ongoing user awareness of improvement",
+          "professional_implication": "Indicates successful ongoing accountability improvement",
+          "structure_analysis": "Subject + have + been + present participle + object + improvement"
+        }
+      ]
+    },
+    "software_development": {
+      "title": "Software Development Vocabulary",
+      "description": "Present perfect continuous tense sentences commonly used in software development, coding, and technical contexts",
+      "sentences": [
+        {
+          "verb": "been implementing",
+          "sentence": "Our software developer has been implementing more efficient coding practices.",
+          "context": "coding practices",
+          "meaning": "The developer has been continuously adding more efficient coding practices",
+          "present_relevance": "The implementation of efficient practices is ongoing and will continue",
+          "duration_emphasis": "Emphasizes continuous effort in practice improvement",
+          "professional_implication": "Shows ongoing commitment to coding efficiency",
+          "structure_analysis": "Subject + has + been + present participle + object + goal"
+        },
+        {
+          "verb": "been appreciating",
+          "sentence": "Users have been appreciating the proficiency of the developer in coding.",
+          "context": "developer proficiency",
+          "meaning": "Users have been continuously valuing the developer's coding proficiency",
+          "present_relevance": "Users are currently appreciating the developer's skills",
+          "duration_emphasis": "Shows ongoing user appreciation of developer skills",
+          "professional_implication": "Indicates successful ongoing developer skill development",
+          "structure_analysis": "Subject + have + been + present participle + object + appreciation"
+        },
+        {
+          "verb": "been adapting",
+          "sentence": "The developer has been adapting to changing technologies with ongoing learning.",
+          "context": "technology adaptation",
+          "meaning": "The developer has been continuously adjusting to new technologies through learning",
+          "present_relevance": "The adaptation to new technologies is ongoing and will continue",
+          "duration_emphasis": "Emphasizes continuous effort in technology adaptation",
+          "professional_implication": "Shows ongoing commitment to continuous learning",
+          "structure_analysis": "Subject + has + been + present participle + object + method"
+        },
+        {
+          "verb": "been incorporating",
+          "sentence": "I have been incorporating user feedback to improve the developer's efficiency.",
+          "context": "developer efficiency",
+          "meaning": "I have been continuously adding user feedback to improve developer efficiency",
+          "present_relevance": "The incorporation of feedback is ongoing and will continue",
+          "duration_emphasis": "Shows continuous effort in feedback utilization",
+          "professional_implication": "Demonstrates commitment to developer improvement",
+          "structure_analysis": "Subject + have + been + present participle + object + goal"
+        },
+        {
+          "verb": "been undergoing",
+          "sentence": "The codebase has been undergoing significant improvements under the developer.",
+          "context": "codebase improvement",
+          "meaning": "The codebase has been continuously experiencing significant improvements",
+          "present_relevance": "The improvement process is ongoing and will continue",
+          "duration_emphasis": "Emphasizes continuous nature of codebase improvements",
+          "professional_implication": "Shows ongoing commitment to codebase quality",
+          "structure_analysis": "Subject + has + been + present participle + object + context"
+        },
+        {
+          "verb": "been experiencing",
+          "sentence": "Users have been experiencing a more responsive application on various devices.",
+          "context": "application responsiveness",
+          "meaning": "Users have been continuously using a more responsive application across devices",
+          "present_relevance": "Users are currently experiencing improved responsiveness",
+          "duration_emphasis": "Shows ongoing user experience with improved responsiveness",
+          "professional_implication": "Indicates successful ongoing responsiveness improvement",
+          "structure_analysis": "Subject + have + been + present participle + object + benefit + context"
+        },
+        {
+          "verb": "been implementing",
+          "sentence": "Our team has been implementing more innovative features into the software.",
+          "context": "feature innovation",
+          "meaning": "The team has been continuously adding innovative features to the software",
+          "present_relevance": "The implementation of innovative features is ongoing and will continue",
+          "duration_emphasis": "Emphasizes continuous effort in feature innovation",
+          "professional_implication": "Shows ongoing commitment to software innovation",
+          "structure_analysis": "Subject + has + been + present participle + object + goal + context"
+        },
+        {
+          "verb": "been becoming",
+          "sentence": "The developer has been becoming more experienced in handling complex issues.",
+          "context": "experience development",
+          "meaning": "The developer has been continuously gaining experience in handling complex issues",
+          "present_relevance": "The development of experience is ongoing and will continue",
+          "duration_emphasis": "Emphasizes continuous growth in experience",
+          "professional_implication": "Shows ongoing commitment to skill development",
+          "structure_analysis": "Subject + has + been + present participle + object + context"
+        },
+        {
+          "verb": "been cultivating",
+          "sentence": "We have been cultivating a more versatile skill set in our software developer.",
+          "context": "skill development",
+          "meaning": "We have been continuously developing a more versatile skill set in our developer",
+          "present_relevance": "The cultivation of versatile skills is ongoing and will continue",
+          "duration_emphasis": "Emphasizes continuous effort in skill development",
+          "professional_implication": "Shows ongoing commitment to developer skill enhancement",
+          "structure_analysis": "Subject + have + been + present participle + object + goal + context"
+        },
+        {
+          "verb": "been updating",
+          "sentence": "I have been updating the documentation to be more thorough and user-friendly.",
+          "context": "documentation improvement",
+          "meaning": "I have been continuously improving the documentation for thoroughness and user-friendliness",
+          "present_relevance": "The documentation updates are ongoing and will continue",
+          "duration_emphasis": "Emphasizes continuous effort in documentation improvement",
+          "professional_implication": "Shows ongoing commitment to documentation quality",
+          "structure_analysis": "Subject + have + been + present participle + object + goal"
+        }
+      ]
+    }
+  },
+  "metadata": {
+    "total_contexts": 5,
+    "total_sentences": 50,
+    "professional_areas": [
+      "User Experience (UX)",
+      "User Interface (UI)",
+      "Soft Skills",
+      "Project Management",
+      "Software Development"
+    ],
+    "tags": [
+      "grammar",
+      "present_perfect_continuous_tense",
+      "professional_english",
+      "verb_tenses",
+      "ongoing_actions",
+      "duration_emphasis",
+      "continuous_processes",
+      "iterative_work",
+      "professional_development",
+      "ux_design",
+      "ui_design",
+      "soft_skills",
+      "project_management",
+      "software_development"
+    ],
+    "difficulty_level": "intermediate",
+    "target_audience": [
+      "professionals",
+      "students",
+      "non-native_english_speakers",
+      "business_communicators",
+      "designers",
+      "developers",
+      "managers",
+      "writers"
+    ]
+  }
+} 

@@ -1,0 +1,445 @@
+{
+  "title": "Advanced Sentences Grammar Guide",
+  "description": "Comprehensive guide covering advanced sentence structures used in professional contexts with examples from various industries",
+  "version": "1.0",
+  "created_date": "2024-12-19",
+  "basic_concepts": {
+    "definition": "Advanced sentences are complex sentence structures that incorporate multiple clauses, sophisticated vocabulary, and intricate grammatical patterns to convey nuanced professional concepts and relationships.",
+    "key_functions": [
+      "Combine multiple ideas and concepts in a single sentence",
+      "Show complex relationships between different elements",
+      "Demonstrate sophisticated language proficiency",
+      "Convey nuanced professional meanings",
+      "Enhance communication clarity and precision"
+    ],
+    "examples": [
+      {
+        "structure_type": "compound-complex sentence",
+        "example": "The holistic approach encompasses usability and emotional design, offering a comprehensive perspective.",
+        "description": "Combines multiple independent and dependent clauses"
+      },
+      {
+        "structure_type": "parallel structure",
+        "example": "combining content strategy and user flow analysis",
+        "description": "Uses balanced grammatical forms for emphasis"
+      }
+    ]
+  },
+  "professional_contexts": {
+    "user_experience": {
+      "title": "User Experience (UX) Vocabulary",
+      "description": "Advanced sentence structures commonly used in UX design, research, and user interaction contexts",
+      "phrases": [
+        {
+          "structure_type": "compound-complex",
+          "clause_breakdown": "The holistic approach to user experience encompasses not only usability but also emotional design elements, offering a comprehensive perspective on user satisfaction.",
+          "phrase": "The holistic approach to user experience encompasses not only usability but also emotional design elements, offering a comprehensive perspective on user satisfaction.",
+          "context": "describing UX approach",
+          "meaning": "Explains the comprehensive nature of UX design"
+        },
+        {
+          "structure_type": "complex",
+          "clause_breakdown": "Advanced UX designers strive to create cognitive interfaces that adapt to individual user preferences, resulting in highly personalized experiences.",
+          "phrase": "Advanced UX designers strive to create cognitive interfaces that adapt to individual user preferences, resulting in highly personalized experiences.",
+          "context": "describing advanced UX design",
+          "meaning": "Explains the goal and outcome of advanced UX design"
+        },
+        {
+          "structure_type": "compound",
+          "clause_breakdown": "User experience architects employ information architecture principles, combining content strategy and user flow analysis for optimal content delivery.",
+          "phrase": "User experience architects employ information architecture principles, combining content strategy and user flow analysis for optimal content delivery.",
+          "context": "describing UX architecture",
+          "meaning": "Explains methods and purpose of UX architecture"
+        },
+        {
+          "structure_type": "complex",
+          "clause_breakdown": "Effective usability testing is a multifaceted process, which involves user personas, user scenarios, and A/B testing to identify areas for improvement.",
+          "phrase": "Effective usability testing is a multifaceted process, which involves user personas, user scenarios, and A/B testing to identify areas for improvement.",
+          "context": "describing usability testing",
+          "meaning": "Explains the complexity and components of usability testing"
+        },
+        {
+          "structure_type": "compound",
+          "clause_breakdown": "Strategic user experience design integrates user research findings, wireframing, and prototyping to deliver user-centered solutions.",
+          "phrase": "Strategic user experience design integrates user research findings, wireframing, and prototyping to deliver user-centered solutions.",
+          "context": "describing strategic UX design",
+          "meaning": "Explains the integration of multiple UX processes"
+        },
+        {
+          "structure_type": "complex",
+          "clause_breakdown": "Innovative UX approaches utilize the psychology of color, typography, and micro-interactions to enhance user engagement and emotional resonance.",
+          "phrase": "Innovative UX approaches utilize the psychology of color, typography, and micro-interactions to enhance user engagement and emotional resonance.",
+          "context": "describing innovative UX approaches",
+          "meaning": "Explains the psychological elements and goals of UX design"
+        },
+        {
+          "structure_type": "compound",
+          "clause_breakdown": "User journey mapping visualizes the entire user experience, guiding UX designers in identifying pain points and areas of delight.",
+          "phrase": "User journey mapping visualizes the entire user experience, guiding UX designers in identifying pain points and areas of delight.",
+          "context": "describing user journey mapping",
+          "meaning": "Explains the purpose and outcome of journey mapping"
+        },
+        {
+          "structure_type": "complex",
+          "clause_breakdown": "Cross-platform consistency, achieved through responsive design and adaptive layouts, ensures a seamless user experience across various devices.",
+          "phrase": "Cross-platform consistency, achieved through responsive design and adaptive layouts, ensures a seamless user experience across various devices.",
+          "context": "describing cross-platform consistency",
+          "meaning": "Explains how consistency is achieved and its benefits"
+        },
+        {
+          "structure_type": "compound",
+          "clause_breakdown": "UX professionals employ heuristic evaluations, involving expert reviews, to uncover usability issues and provide actionable insights for refinement.",
+          "phrase": "UX professionals employ heuristic evaluations, involving expert reviews, to uncover usability issues and provide actionable insights for refinement.",
+          "context": "describing heuristic evaluations",
+          "meaning": "Explains the process and purpose of heuristic evaluations"
+        },
+        {
+          "structure_type": "complex",
+          "clause_breakdown": "The iterative design process in UX emphasizes continuous improvement, driven by user feedback and usability data analysis.",
+          "phrase": "The iterative design process in UX emphasizes continuous improvement, driven by user feedback and usability data analysis.",
+          "context": "describing iterative design",
+          "meaning": "Explains the focus and driving factors of iterative design"
+        }
+      ]
+    },
+    "user_interface": {
+      "title": "User Interface (UI) Vocabulary",
+      "description": "Advanced sentence structures commonly used in UI design, interface elements, and user interaction components",
+      "phrases": [
+        {
+          "structure_type": "compound-complex",
+          "clause_breakdown": "Advanced UI designers employ microinteractions and motion design to create engaging user interfaces that delight users with subtle animations and feedback cues.",
+          "phrase": "Advanced UI designers employ microinteractions and motion design to create engaging user interfaces that delight users with subtle animations and feedback cues.",
+          "context": "describing advanced UI design",
+          "meaning": "Explains the methods and outcomes of advanced UI design"
+        },
+        {
+          "structure_type": "complex",
+          "clause_breakdown": "UI accessibility standards, such as WCAG guidelines, ensure that digital products provide equal access to all users, including those with disabilities.",
+          "phrase": "UI accessibility standards, such as WCAG guidelines, ensure that digital products provide equal access to all users, including those with disabilities.",
+          "context": "describing UI accessibility",
+          "meaning": "Explains the purpose and beneficiaries of accessibility standards"
+        },
+        {
+          "structure_type": "compound",
+          "clause_breakdown": "User interface architects integrate responsive design principles and adaptive layouts to provide a seamless and consistent experience across various devices, including smartphones, tablets, and desktops.",
+          "phrase": "User interface architects integrate responsive design principles and adaptive layouts to provide a seamless and consistent experience across various devices, including smartphones, tablets, and desktops.",
+          "context": "describing UI architecture",
+          "meaning": "Explains the integration of design principles and their benefits"
+        },
+        {
+          "structure_type": "complex",
+          "clause_breakdown": "Incorporating the principles of gestalt psychology, UI designers aim to enhance visual perception, grouping, and closure in interface elements for a more intuitive and user-friendly experience.",
+          "phrase": "Incorporating the principles of gestalt psychology, UI designers aim to enhance visual perception, grouping, and closure in interface elements for a more intuitive and user-friendly experience.",
+          "context": "describing gestalt psychology in UI",
+          "meaning": "Explains the psychological principles and their application goals"
+        },
+        {
+          "structure_type": "compound",
+          "clause_breakdown": "Progressive disclosure techniques reveal information gradually, streamlining complex user interfaces and reducing cognitive load for users interacting with intricate systems.",
+          "phrase": "Progressive disclosure techniques reveal information gradually, streamlining complex user interfaces and reducing cognitive load for users interacting with intricate systems.",
+          "context": "describing progressive disclosure",
+          "meaning": "Explains the technique and its benefits for users"
+        },
+        {
+          "structure_type": "complex",
+          "clause_breakdown": "The strategic use of color theory in UI design influences user emotions and perceptions, fostering a deeper connection between users and digital products.",
+          "phrase": "The strategic use of color theory in UI design influences user emotions and perceptions, fostering a deeper connection between users and digital products.",
+          "context": "describing color theory in UI",
+          "meaning": "Explains the impact and purpose of strategic color use"
+        },
+        {
+          "structure_type": "compound",
+          "clause_breakdown": "UI designers leverage affordances and signifiers to provide clear and intuitive interactions, guiding users through complex interfaces with minimal effort.",
+          "phrase": "UI designers leverage affordances and signifiers to provide clear and intuitive interactions, guiding users through complex interfaces with minimal effort.",
+          "context": "describing affordances and signifiers",
+          "meaning": "Explains the tools and goals of UI design"
+        },
+        {
+          "structure_type": "complex",
+          "clause_breakdown": "Cross-channel consistency, achieved through omnichannel design, ensures a unified experience across web, mobile apps, and other digital touchpoints in the user journey.",
+          "phrase": "Cross-channel consistency, achieved through omnichannel design, ensures a unified experience across web, mobile apps, and other digital touchpoints in the user journey.",
+          "context": "describing cross-channel consistency",
+          "meaning": "Explains how consistency is achieved and its benefits"
+        },
+        {
+          "structure_type": "compound",
+          "clause_breakdown": "A/B testing and multivariate testing methodologies enable UI designers to refine interface elements and layouts, optimizing conversion rates and user engagement.",
+          "phrase": "A/B testing and multivariate testing methodologies enable UI designers to refine interface elements and layouts, optimizing conversion rates and user engagement.",
+          "context": "describing testing methodologies",
+          "meaning": "Explains the purpose and outcomes of testing methods"
+        },
+        {
+          "structure_type": "complex",
+          "clause_breakdown": "Cognitive load theory in UI design focuses on minimizing the mental effort required from users to complete tasks, resulting in a more efficient and user-centric experience.",
+          "phrase": "Cognitive load theory in UI design focuses on minimizing the mental effort required from users to complete tasks, resulting in a more efficient and user-centric experience.",
+          "context": "describing cognitive load theory",
+          "meaning": "Explains the focus and outcome of cognitive load theory"
+        }
+      ]
+    },
+    "soft_skills": {
+      "title": "Soft Skills Vocabulary",
+      "description": "Advanced sentence structures commonly used to describe soft skills, personal qualities, and professional competencies",
+      "phrases": [
+        {
+          "structure_type": "complex",
+          "clause_breakdown": "Effective communication, with its multifaceted components such as active listening, empathetic responses, and clear articulation, forms the bedrock of successful interpersonal relationships.",
+          "phrase": "Effective communication, with its multifaceted components such as active listening, empathetic responses, and clear articulation, forms the bedrock of successful interpersonal relationships.",
+          "context": "describing effective communication",
+          "meaning": "Explains the components and importance of communication"
+        },
+        {
+          "structure_type": "compound",
+          "clause_breakdown": "The integration of emotional intelligence into leadership practices results in leaders who not only excel in decision-making but also understand and manage their own emotions and those of their teams.",
+          "phrase": "The integration of emotional intelligence into leadership practices results in leaders who not only excel in decision-making but also understand and manage their own emotions and those of their teams.",
+          "context": "describing emotional intelligence in leadership",
+          "meaning": "Explains the integration and outcomes of emotional intelligence"
+        },
+        {
+          "structure_type": "complex",
+          "clause_breakdown": "Adaptability and resilience, marked by the ability to thrive in rapidly changing environments and recover gracefully from setbacks, are defining traits of high-performing professionals.",
+          "phrase": "Adaptability and resilience, marked by the ability to thrive in rapidly changing environments and recover gracefully from setbacks, are defining traits of high-performing professionals.",
+          "context": "describing adaptability and resilience",
+          "meaning": "Explains the characteristics and importance of these traits"
+        },
+        {
+          "structure_type": "compound",
+          "clause_breakdown": "Critical thinking, a skill honed through analytical reasoning, problem-solving, and innovative ideation, enables individuals to make well-informed decisions even in complex scenarios.",
+          "phrase": "Critical thinking, a skill honed through analytical reasoning, problem-solving, and innovative ideation, enables individuals to make well-informed decisions even in complex scenarios.",
+          "context": "describing critical thinking",
+          "meaning": "Explains the development and benefits of critical thinking"
+        },
+        {
+          "structure_type": "compound",
+          "clause_breakdown": "The synergy between self-motivation and time management empowers individuals to set and achieve ambitious goals while maintaining a balanced work-life routine.",
+          "phrase": "The synergy between self-motivation and time management empowers individuals to set and achieve ambitious goals while maintaining a balanced work-life routine.",
+          "context": "describing self-motivation and time management",
+          "meaning": "Explains the relationship and benefits of these skills"
+        },
+        {
+          "structure_type": "compound",
+          "clause_breakdown": "Effective stress management encompasses strategies such as mindfulness, deep breathing techniques, and physical wellness practices, promoting overall well-being.",
+          "phrase": "Effective stress management encompasses strategies such as mindfulness, deep breathing techniques, and physical wellness practices, promoting overall well-being.",
+          "context": "describing stress management",
+          "meaning": "Explains the strategies and benefits of stress management"
+        },
+        {
+          "structure_type": "compound",
+          "clause_breakdown": "Highly skilled leaders harness their charisma, influencing teams through their powerful presence and inspirational guidance, while fostering team cohesion and motivation.",
+          "phrase": "Highly skilled leaders harness their charisma, influencing teams through their powerful presence and inspirational guidance, while fostering team cohesion and motivation.",
+          "context": "describing leadership charisma",
+          "meaning": "Explains how leaders use charisma and its effects"
+        },
+        {
+          "structure_type": "complex",
+          "clause_breakdown": "Teamwork, enhanced by effective collaboration, is exemplified by diverse teams that leverage each member's unique strengths to achieve collective excellence.",
+          "phrase": "Teamwork, enhanced by effective collaboration, is exemplified by diverse teams that leverage each member's unique strengths to achieve collective excellence.",
+          "context": "describing teamwork",
+          "meaning": "Explains the enhancement and examples of teamwork"
+        },
+        {
+          "structure_type": "complex",
+          "clause_breakdown": "Responsibility, intertwined with a strong ethical foundation, reinforces accountability for one's actions and decisions, contributing to a culture of trust and reliability.",
+          "phrase": "Responsibility, intertwined with a strong ethical foundation, reinforces accountability for one's actions and decisions, contributing to a culture of trust and reliability.",
+          "context": "describing responsibility",
+          "meaning": "Explains the foundation and outcomes of responsibility"
+        },
+        {
+          "structure_type": "compound",
+          "clause_breakdown": "Creativity and innovation thrive in an environment that nurtures brainstorming, idea incubation, and a culture of experimentation, yielding groundbreaking solutions.",
+          "phrase": "Creativity and innovation thrive in an environment that nurtures brainstorming, idea incubation, and a culture of experimentation, yielding groundbreaking solutions.",
+          "context": "describing creativity and innovation",
+          "meaning": "Explains the environment and outcomes of creative processes"
+        }
+      ]
+    },
+    "project_management": {
+      "title": "Project Management Vocabulary",
+      "description": "Advanced sentence structures commonly used in project management, planning, and execution contexts",
+      "phrases": [
+        {
+          "structure_type": "compound",
+          "clause_breakdown": "Strategic project management entails the alignment of project objectives with overarching organizational goals, ensuring a unified focus on long-term success.",
+          "phrase": "Strategic project management entails the alignment of project objectives with overarching organizational goals, ensuring a unified focus on long-term success.",
+          "context": "describing strategic project management",
+          "meaning": "Explains the alignment and focus of strategic project management"
+        },
+        {
+          "structure_type": "compound",
+          "clause_breakdown": "Effective project managers exhibit exceptional leadership qualities, facilitating team collaboration and steering projects toward timely and successful completion.",
+          "phrase": "Effective project managers exhibit exceptional leadership qualities, facilitating team collaboration and steering projects toward timely and successful completion.",
+          "context": "describing effective project managers",
+          "meaning": "Explains the qualities and actions of effective project managers"
+        },
+        {
+          "structure_type": "complex",
+          "clause_breakdown": "The integration of Agile project management methodologies, characterized by iterative development and adaptive planning, enhances flexibility in managing complex projects.",
+          "phrase": "The integration of Agile project management methodologies, characterized by iterative development and adaptive planning, enhances flexibility in managing complex projects.",
+          "context": "describing Agile integration",
+          "meaning": "Explains the characteristics and benefits of Agile integration"
+        },
+        {
+          "structure_type": "compound",
+          "clause_breakdown": "Project scope validation, achieved through robust requirements gathering and stakeholder engagement, reduces the risk of scope creep and ensures project alignment.",
+          "phrase": "Project scope validation, achieved through robust requirements gathering and stakeholder engagement, reduces the risk of scope creep and ensures project alignment.",
+          "context": "describing project scope validation",
+          "meaning": "Explains the process and benefits of scope validation"
+        },
+        {
+          "structure_type": "compound",
+          "clause_breakdown": "The successful execution of large-scale projects necessitates robust risk management practices, involving risk assessment, mitigation planning, and contingency strategies.",
+          "phrase": "The successful execution of large-scale projects necessitates robust risk management practices, involving risk assessment, mitigation planning, and contingency strategies.",
+          "context": "describing large-scale project execution",
+          "meaning": "Explains the requirements and components of risk management"
+        },
+        {
+          "structure_type": "complex",
+          "clause_breakdown": "Resource allocation, which optimizes personnel, time, and budget allocation, is a pivotal aspect of project management that determines project efficiency.",
+          "phrase": "Resource allocation, which optimizes personnel, time, and budget allocation, is a pivotal aspect of project management that determines project efficiency.",
+          "context": "describing resource allocation",
+          "meaning": "Explains the optimization and importance of resource allocation"
+        },
+        {
+          "structure_type": "compound",
+          "clause_breakdown": "Project managers employ earned value analysis to assess project performance, comparing planned values to actual progress for cost and schedule control.",
+          "phrase": "Project managers employ earned value analysis to assess project performance, comparing planned values to actual progress for cost and schedule control.",
+          "context": "describing earned value analysis",
+          "meaning": "Explains the purpose and process of earned value analysis"
+        },
+        {
+          "structure_type": "compound",
+          "clause_breakdown": "Effective communication, an integral element of project success, encompasses transparent stakeholder updates, risk alerts, and issue resolution plans.",
+          "phrase": "Effective communication, an integral element of project success, encompasses transparent stakeholder updates, risk alerts, and issue resolution plans.",
+          "context": "describing effective communication in projects",
+          "meaning": "Explains the importance and components of project communication"
+        },
+        {
+          "structure_type": "complex",
+          "clause_breakdown": "Critical path analysis, a sophisticated project scheduling technique, identifies the sequence of tasks that determine the project's overall duration, highlighting potential bottlenecks.",
+          "phrase": "Critical path analysis, a sophisticated project scheduling technique, identifies the sequence of tasks that determine the project's overall duration, highlighting potential bottlenecks.",
+          "context": "describing critical path analysis",
+          "meaning": "Explains the technique and its purpose in project scheduling"
+        },
+        {
+          "structure_type": "compound",
+          "clause_breakdown": "The application of Lean project management principles, driven by waste reduction and continuous process improvement, optimizes project workflows and resource utilization.",
+          "phrase": "The application of Lean project management principles, driven by waste reduction and continuous process improvement, optimizes project workflows and resource utilization.",
+          "context": "describing Lean project management",
+          "meaning": "Explains the driving principles and benefits of Lean management"
+        }
+      ]
+    },
+    "software_development": {
+      "title": "Software Developer Vocabulary",
+      "description": "Advanced sentence structures commonly used in software development, programming, and technical contexts",
+      "phrases": [
+        {
+          "structure_type": "compound",
+          "clause_breakdown": "Modern software development practices emphasize continuous integration and continuous delivery (CI/CD) pipelines, automating the building, testing, and deployment of code changes.",
+          "phrase": "Modern software development practices emphasize continuous integration and continuous delivery (CI/CD) pipelines, automating the building, testing, and deployment of code changes.",
+          "context": "describing CI/CD practices",
+          "meaning": "Explains the emphasis and automation of modern development practices"
+        },
+        {
+          "structure_type": "compound",
+          "clause_breakdown": "Software architects are responsible for shaping the overall system structure, defining key components, and ensuring scalability and maintainability.",
+          "phrase": "Software architects are responsible for shaping the overall system structure, defining key components, and ensuring scalability and maintainability.",
+          "context": "describing software architects",
+          "meaning": "Explains the responsibilities and goals of software architects"
+        },
+        {
+          "structure_type": "compound",
+          "clause_breakdown": "Effective code refactoring, grounded in design patterns and code smells, enhances code quality, readability, and long-term maintainability.",
+          "phrase": "Effective code refactoring, grounded in design patterns and code smells, enhances code quality, readability, and long-term maintainability.",
+          "context": "describing code refactoring",
+          "meaning": "Explains the foundation and benefits of code refactoring"
+        },
+        {
+          "structure_type": "compound",
+          "clause_breakdown": "Machine learning algorithms, integrated into software solutions, enable intelligent decision-making and predictive analytics, adding value to diverse applications.",
+          "phrase": "Machine learning algorithms, integrated into software solutions, enable intelligent decision-making and predictive analytics, adding value to diverse applications.",
+          "context": "describing machine learning integration",
+          "meaning": "Explains the integration and benefits of machine learning"
+        },
+        {
+          "structure_type": "compound",
+          "clause_breakdown": "API documentation, complete with comprehensive endpoints, authentication methods, and usage examples, empowers developers to leverage external services seamlessly.",
+          "phrase": "API documentation, complete with comprehensive endpoints, authentication methods, and usage examples, empowers developers to leverage external services seamlessly.",
+          "context": "describing API documentation",
+          "meaning": "Explains the completeness and benefits of API documentation"
+        },
+        {
+          "structure_type": "compound",
+          "clause_breakdown": "The application of design principles like the SOLID principles and DRY (Don't Repeat Yourself) improves code modularity and facilitates efficient code changes.",
+          "phrase": "The application of design principles like the SOLID principles and DRY (Don't Repeat Yourself) improves code modularity and facilitates efficient code changes.",
+          "context": "describing design principles",
+          "meaning": "Explains the application and benefits of design principles"
+        },
+        {
+          "structure_type": "compound",
+          "clause_breakdown": "Version control systems, such as Git, provide robust branching and merging capabilities, supporting collaborative software development in distributed teams.",
+          "phrase": "Version control systems, such as Git, provide robust branching and merging capabilities, supporting collaborative software development in distributed teams.",
+          "context": "describing version control systems",
+          "meaning": "Explains the capabilities and support of version control systems"
+        },
+        {
+          "structure_type": "compound",
+          "clause_breakdown": "Scalable microservices architectures, implemented with containers and orchestration tools like Docker and Kubernetes, optimize resource utilization and system responsiveness.",
+          "phrase": "Scalable microservices architectures, implemented with containers and orchestration tools like Docker and Kubernetes, optimize resource utilization and system responsiveness.",
+          "context": "describing microservices architectures",
+          "meaning": "Explains the implementation and benefits of microservices"
+        },
+        {
+          "structure_type": "complex",
+          "clause_breakdown": "Security vulnerabilities, when identified through thorough code auditing and penetration testing, lead to the implementation of rigorous security measures.",
+          "phrase": "Security vulnerabilities, when identified through thorough code auditing and penetration testing, lead to the implementation of rigorous security measures.",
+          "context": "describing security vulnerability identification",
+          "meaning": "Explains the process and outcome of vulnerability identification"
+        },
+        {
+          "structure_type": "compound",
+          "clause_breakdown": "Agile development methodologies, including Scrum and Kanban, enhance development team flexibility and adaptability, promoting iterative product enhancements.",
+          "phrase": "Agile development methodologies, including Scrum and Kanban, enhance development team flexibility and adaptability, promoting iterative product enhancements.",
+          "context": "describing Agile methodologies",
+          "meaning": "Explains the enhancement and promotion of Agile methods"
+        }
+      ]
+    }
+  },
+  "metadata": {
+    "total_contexts": 5,
+    "total_phrases": 50,
+    "professional_areas": [
+      "User Experience (UX)",
+      "User Interface (UI)",
+      "Soft Skills",
+      "Project Management",
+      "Software Development"
+    ],
+    "tags": [
+      "grammar",
+      "advanced_sentences",
+      "professional_english",
+      "vocabulary",
+      "compound_sentences",
+      "complex_sentences",
+      "compound_complex_sentences",
+      "ux_design",
+      "ui_design",
+      "soft_skills",
+      "project_management",
+      "software_development"
+    ],
+    "difficulty_level": "advanced",
+    "target_audience": [
+      "professionals",
+      "advanced_students",
+      "non-native_english_speakers",
+      "business_communicators",
+      "designers",
+      "developers",
+      "managers"
+    ]
+  }
+} 

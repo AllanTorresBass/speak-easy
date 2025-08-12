@@ -1,0 +1,676 @@
+{
+  "title": "Complete Verb Conjugation Guide",
+  "description": "Comprehensive guide covering verb conjugations across all tenses, modal verbs, and conjugation patterns with English-Spanish translations",
+  "version": "1.0",
+  "created_date": "2024-12-19",
+  "total_verbs": 50,
+  "conjugation_categories": {
+    "basic_forms": {
+      "title": "Basic Verb Forms",
+      "description": "Fundamental verb forms that serve as the foundation for all conjugations",
+      "forms": [
+        {
+          "form": "infinitive",
+          "description": "Base form of the verb (to + verb)",
+          "example": "to finish, to commit, to verify"
+        },
+        {
+          "form": "simple_past",
+          "description": "Past tense form of the verb",
+          "example": "finished, committed, verified"
+        },
+        {
+          "form": "past_participle",
+          "description": "Past participle form used in perfect tenses",
+          "example": "finished, committed, verified"
+        },
+        {
+          "form": "verb_ing",
+          "description": "Present participle form used in continuous tenses",
+          "example": "finishing, committing, verifying"
+        }
+      ]
+    },
+    "simple_tenses": {
+      "title": "Simple Tenses",
+      "description": "Basic verb forms without auxiliary verbs",
+      "tenses": [
+        {
+          "tense": "present_simple",
+          "description": "Basic present tense form",
+          "structure": "Subject + base form (with 3rd person singular -s)",
+          "examples": [
+            {
+              "english": "I finish",
+              "spanish": "terminé",
+              "usage": "Habitual actions, general truths"
+            },
+            {
+              "english": "I commit",
+              "spanish": "me comprometo",
+              "usage": "Current commitments or actions"
+            },
+            {
+              "english": "I verify",
+              "spanish": "verifico",
+              "usage": "Regular verification activities"
+            }
+          ]
+        },
+        {
+          "tense": "past_simple",
+          "description": "Basic past tense form",
+          "structure": "Subject + simple past form",
+          "examples": [
+            {
+              "english": "I finished",
+              "spanish": "finalicé",
+              "usage": "Completed actions in the past"
+            },
+            {
+              "english": "I committed",
+              "spanish": "me comprometí",
+              "usage": "Past commitments or actions"
+            },
+            {
+              "english": "I verified",
+              "spanish": "verifiqué",
+              "usage": "Past verification activities"
+            }
+          ]
+        }
+      ]
+    },
+    "continuous_tenses": {
+      "title": "Continuous Tenses",
+      "description": "Tenses that emphasize ongoing or continuous actions",
+      "tenses": [
+        {
+          "tense": "present_continuous",
+          "description": "Actions happening now or around the present time",
+          "structure": "Subject + am/is/are + verb-ing",
+          "examples": [
+            {
+              "english": "I'm finishing",
+              "spanish": "estoy terminando",
+              "usage": "Action currently in progress"
+            },
+            {
+              "english": "I am committing",
+              "spanish": "me estoy comprometiendo",
+              "usage": "Currently making a commitment"
+            },
+            {
+              "english": "I am verifying",
+              "spanish": "estoy verificando",
+              "usage": "Currently in the process of verification"
+            }
+          ]
+        },
+        {
+          "tense": "past_continuous",
+          "description": "Actions that were ongoing in the past",
+          "structure": "Subject + was/were + verb-ing",
+          "examples": [
+            {
+              "english": "I was finishing",
+              "spanish": "estaba finalizando",
+              "usage": "Action was in progress at a specific past time"
+            },
+            {
+              "english": "I was committing",
+              "spanish": "yo estaba comprometiendo",
+              "usage": "Was in the process of committing"
+            },
+            {
+              "english": "I was verifying",
+              "spanish": "estaba verificando",
+              "usage": "Was in the process of verification"
+            }
+          ]
+        },
+        {
+          "tense": "future_continuous",
+          "description": "Actions that will be ongoing in the future",
+          "structure": "Subject + will be + verb-ing",
+          "examples": [
+            {
+              "english": "I will be finishing",
+              "spanish": "estaré terminando",
+              "usage": "Action will be in progress at a future time"
+            },
+            {
+              "english": "I will be committing",
+              "spanish": "estaré comprometido",
+              "usage": "Will be in the process of committing"
+            },
+            {
+              "english": "I will be verifying",
+              "spanish": "estaré verificando",
+              "usage": "Will be in the process of verification"
+            }
+          ]
+        }
+      ]
+    },
+    "perfect_tenses": {
+      "title": "Perfect Tenses",
+      "description": "Tenses that connect past actions to the present or other time periods",
+      "tenses": [
+        {
+          "tense": "present_perfect",
+          "description": "Actions completed in the past with present relevance",
+          "structure": "Subject + have/has + past participle",
+          "examples": [
+            {
+              "english": "I have finished",
+              "spanish": "he terminado",
+              "usage": "Action completed with current relevance"
+            },
+            {
+              "english": "I have committed",
+              "spanish": "he cometido",
+              "usage": "Commitment made with ongoing impact"
+            },
+            {
+              "english": "I have verified",
+              "spanish": "he verificado",
+              "usage": "Verification completed with current validity"
+            }
+          ]
+        },
+        {
+          "tense": "present_perfect_continuous",
+          "description": "Actions that began in the past and continue to the present",
+          "structure": "Subject + have/has been + verb-ing",
+          "examples": [
+            {
+              "english": "I have been finishing",
+              "spanish": "he estado terminando",
+              "usage": "Ongoing completion process"
+            },
+            {
+              "english": "I have been committing",
+              "spanish": "he estado cometiendo",
+              "usage": "Ongoing commitment process"
+            },
+            {
+              "english": "I have been verifying",
+              "spanish": "he estado verificando",
+              "usage": "Ongoing verification process"
+            }
+          ]
+        },
+        {
+          "tense": "past_perfect",
+          "description": "Actions completed before another past action",
+          "structure": "Subject + had + past participle",
+          "examples": [
+            {
+              "english": "I had finished",
+              "spanish": "había terminado",
+              "usage": "Action completed before another past event"
+            },
+            {
+              "english": "I had committed",
+              "spanish": "había cometido",
+              "usage": "Commitment made before another past event"
+            },
+            {
+              "english": "I had verified",
+              "spanish": "había verificado",
+              "usage": "Verification completed before another past event"
+            }
+          ]
+        },
+        {
+          "tense": "future_perfect",
+          "description": "Actions that will be completed by a future time",
+          "structure": "Subject + will have + past participle",
+          "examples": [
+            {
+              "english": "I will have finished",
+              "spanish": "habré terminado",
+              "usage": "Action will be completed by a future time"
+            },
+            {
+              "english": "I will have committed",
+              "spanish": "yo abré comprometido",
+              "usage": "Commitment will be made by a future time"
+            },
+            {
+              "english": "I will have verified",
+              "spanish": "habré verificado",
+              "usage": "Verification will be completed by a future time"
+            }
+          ]
+        }
+      ]
+    },
+    "modal_verbs": {
+      "title": "Modal Verbs",
+      "description": "Auxiliary verbs that express possibility, necessity, ability, or permission",
+      "modals": [
+        {
+          "modal": "should",
+          "description": "Expresses advice, recommendation, or obligation",
+          "conjugations": [
+            {
+              "tense": "present",
+              "english": "I should finish",
+              "spanish": "debería terminar",
+              "usage": "Advice or recommendation"
+            },
+            {
+              "tense": "present_progressive",
+              "english": "I should be finishing",
+              "spanish": "debería estar terminando",
+              "usage": "Ongoing action that should be happening"
+            },
+            {
+              "tense": "perfect",
+              "english": "I should have finished",
+              "spanish": "debería haber terminado",
+              "usage": "Past action that should have been completed"
+            }
+          ]
+        },
+        {
+          "modal": "must",
+          "description": "Expresses strong necessity or obligation",
+          "conjugations": [
+            {
+              "tense": "present",
+              "english": "I must finish",
+              "spanish": "debo terminar",
+              "usage": "Strong obligation or necessity"
+            },
+            {
+              "tense": "present_progressive",
+              "english": "I must be finishing",
+              "spanish": "debo estar terminando",
+              "usage": "Ongoing action that is necessary"
+            },
+            {
+              "tense": "perfect",
+              "english": "I must have finished",
+              "spanish": "debo haber terminado",
+              "usage": "Past action that was necessary"
+            }
+          ]
+        },
+        {
+          "modal": "can",
+          "description": "Expresses ability, possibility, or permission",
+          "conjugations": [
+            {
+              "tense": "present",
+              "english": "I can finish",
+              "spanish": "puedo terminar",
+              "usage": "Ability or possibility"
+            },
+            {
+              "tense": "present_progressive",
+              "english": "I can be finishing",
+              "spanish": "puedo estar terminando",
+              "usage": "Ability to be in the process of finishing"
+            }
+          ]
+        },
+        {
+          "modal": "could",
+          "description": "Expresses past ability, possibility, or polite requests",
+          "conjugations": [
+            {
+              "tense": "present",
+              "english": "I could finish",
+              "spanish": "podría terminar",
+              "usage": "Polite request or possibility"
+            },
+            {
+              "tense": "perfect",
+              "english": "I could have finished",
+              "spanish": "podría haber terminado",
+              "usage": "Past possibility that wasn't realized"
+            }
+          ]
+        },
+        {
+          "modal": "may",
+          "description": "Expresses possibility or permission",
+          "conjugations": [
+            {
+              "tense": "perfect",
+              "english": "I may have finished",
+              "spanish": "puede que haya terminado",
+              "usage": "Possibility in the past"
+            },
+            {
+              "tense": "perfect_progressive",
+              "english": "I may have been finishing",
+              "spanish": "puede que haya estado terminando",
+              "usage": "Possibility of ongoing past action"
+            }
+          ]
+        }
+      ]
+    },
+    "semi_modal_verbs": {
+      "title": "Semi-Modal Verbs",
+      "description": "Verb phrases that function like modal verbs",
+      "semi_modals": [
+        {
+          "semi_modal": "have_to",
+          "description": "Expresses necessity or obligation",
+          "conjugations": [
+            {
+              "tense": "present_simple",
+              "english": "I have to finish",
+              "spanish": "tengo que terminar",
+              "usage": "Current necessity or obligation"
+            },
+            {
+              "tense": "past_simple",
+              "english": "I had to finish",
+              "spanish": "tenía que terminar",
+              "usage": "Past necessity or obligation"
+            },
+            {
+              "tense": "future_simple",
+              "english": "I will have to finish",
+              "spanish": "tendré que terminar",
+              "usage": "Future necessity or obligation"
+            },
+            {
+              "tense": "conditional_present",
+              "english": "I would have to finish",
+              "spanish": "tendría que terminar",
+              "usage": "Hypothetical necessity"
+            }
+          ]
+        }
+      ]
+    },
+    "future_tenses": {
+      "title": "Future Tenses",
+      "description": "Various ways to express future actions and intentions",
+      "tenses": [
+        {
+          "tense": "future_simple",
+          "description": "Basic future tense using 'will'",
+          "structure": "Subject + will + base form",
+          "examples": [
+            {
+              "english": "I will finish",
+              "spanish": "terminaré",
+              "usage": "Definite future action"
+            },
+            {
+              "english": "I will commit",
+              "spanish": "me comprometeré",
+              "usage": "Future commitment"
+            },
+            {
+              "english": "I will verify",
+              "spanish": "verificaré",
+              "usage": "Future verification action"
+            }
+          ]
+        },
+        {
+          "tense": "future_going_to",
+          "description": "Future tense using 'going to' for planned actions",
+          "structure": "Subject + am/is/are going to + base form",
+          "examples": [
+            {
+              "english": "I'm going to finish",
+              "spanish": "voy a terminar",
+              "usage": "Planned future action"
+            },
+            {
+              "english": "I am going to commit",
+              "spanish": "me voy a comprometer",
+              "usage": "Planned future commitment"
+            },
+            {
+              "english": "I am going to verify",
+              "spanish": "voy a verificar",
+              "usage": "Planned future verification"
+            }
+          ]
+        }
+      ]
+    },
+    "conditional_tenses": {
+      "title": "Conditional Tenses",
+      "description": "Tenses that express hypothetical or conditional situations",
+      "tenses": [
+        {
+          "tense": "conditional_present",
+          "description": "Hypothetical present or future situations",
+          "structure": "Subject + would + base form",
+          "examples": [
+            {
+              "english": "I would finish",
+              "spanish": "terminaría",
+              "usage": "Hypothetical completion"
+            },
+            {
+              "english": "I would commit",
+              "spanish": "Yo me comprometería",
+              "usage": "Hypothetical commitment"
+            },
+            {
+              "english": "I would verify",
+              "spanish": "verificaría",
+              "usage": "Hypothetical verification"
+            }
+          ]
+        },
+        {
+          "tense": "conditional_perfect",
+          "description": "Hypothetical past situations",
+          "structure": "Subject + would have + past participle",
+          "examples": [
+            {
+              "english": "I would have finished",
+              "spanish": "hubiera finalizado",
+              "usage": "Hypothetical past completion"
+            },
+            {
+              "english": "I would have committed",
+              "spanish": "hubiere comprometido",
+              "usage": "Hypothetical past commitment"
+            },
+            {
+              "english": "I would have verified",
+              "spanish": "hubiera verificado",
+              "usage": "Hypothetical past verification"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "verb_examples": {
+    "title": "Complete Verb Conjugation Examples",
+    "description": "Detailed conjugations for 50 common verbs across all tenses",
+    "verbs": [
+      {
+        "infinitive": "finish",
+        "simple_past": "finished",
+        "past_participle": "finished",
+        "verb_ing": "finishing",
+        "conjugations": {
+          "present_simple": {
+            "english": "I finish",
+            "spanish": "terminé"
+          },
+          "present_continuous": {
+            "english": "I'm finishing",
+            "spanish": "estoy terminando"
+          },
+          "present_perfect": {
+            "english": "I have finished",
+            "spanish": "he terminado"
+          },
+          "present_perfect_continuous": {
+            "english": "I have been finishing",
+            "spanish": "he estado terminando"
+          },
+          "past_simple": {
+            "english": "I finished",
+            "spanish": "finalicé"
+          },
+          "past_continuous": {
+            "english": "I was finishing",
+            "spanish": "estaba finalizando"
+          },
+          "past_perfect": {
+            "english": "I had finished",
+            "spanish": "había terminado"
+          },
+          "past_perfect_continuous": {
+            "english": "I have been finishing",
+            "spanish": "había estado terminado"
+          },
+          "future_simple": {
+            "english": "I will finish",
+            "spanish": "terminaré"
+          },
+          "future_going_to": {
+            "english": "I'm going finish",
+            "spanish": "voy a terminar"
+          },
+          "future_continuous": {
+            "english": "I will be finishing",
+            "spanish": "estaré terminando"
+          },
+          "future_perfect": {
+            "english": "I will have finished",
+            "spanish": "habré terminado"
+          },
+          "future_perfect_continuous": {
+            "english": "I will have been finishing",
+            "spanish": "habré estado terminando"
+          },
+          "conditional_present": {
+            "english": "I would finish",
+            "spanish": "terminaría"
+          },
+          "conditional_perfect": {
+            "english": "I would have finished",
+            "spanish": "hubiera finalizado"
+          }
+        }
+      },
+      {
+        "infinitive": "commit",
+        "simple_past": "committed",
+        "past_participle": "committed",
+        "verb_ing": "committing",
+        "conjugations": {
+          "present_simple": {
+            "english": "I commit",
+            "spanish": "me comprometo"
+          },
+          "present_continuous": {
+            "english": "I am committing",
+            "spanish": "me estoy comprometiendo"
+          },
+          "present_perfect": {
+            "english": "I have committed",
+            "spanish": "he cometido"
+          },
+          "past_simple": {
+            "english": "I committed",
+            "spanish": "me comprometí"
+          },
+          "past_continuous": {
+            "english": "I was commenting",
+            "spanish": "yo estaba comprometiendo"
+          },
+          "future_simple": {
+            "english": "I will commit",
+            "spanish": "me comprometeré"
+          },
+          "future_going_to": {
+            "english": "I am going to commit",
+            "spanish": "me voy a comprometer"
+          }
+        }
+      },
+      {
+        "infinitive": "verify",
+        "simple_past": "verified",
+        "past_participle": "verified",
+        "verb_ing": "verifying",
+        "conjugations": {
+          "present_simple": {
+            "english": "I verify",
+            "spanish": "verifico"
+          },
+          "present_continuous": {
+            "english": "I am verifying",
+            "spanish": "estoy verificando"
+          },
+          "present_perfect": {
+            "english": "I have verified",
+            "spanish": "he verificado"
+          },
+          "past_simple": {
+            "english": "I verified",
+            "spanish": "verifiqué"
+          },
+          "future_simple": {
+            "english": "I will verify",
+            "spanish": "verificaré"
+          }
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "total_categories": 8,
+    "total_verb_forms": 4,
+    "total_tenses": 12,
+    "total_modals": 5,
+    "professional_areas": [
+      "Language Learning",
+      "Grammar Education",
+      "English as a Second Language",
+      "Spanish Language Learning",
+      "Linguistics",
+      "Translation Studies"
+    ],
+    "tags": [
+      "verb_conjugation",
+      "english_grammar",
+      "spanish_translation",
+      "verb_tenses",
+      "modal_verbs",
+      "continuous_tenses",
+      "perfect_tenses",
+      "future_tenses",
+      "conditional_tenses",
+      "language_learning",
+      "grammar_reference",
+      "verb_forms",
+      "conjugation_patterns",
+      "auxiliary_verbs",
+      "semi_modal_verbs"
+    ],
+    "difficulty_level": "intermediate_to_advanced",
+    "target_audience": [
+      "english_language_learners",
+      "spanish_speakers_learning_english",
+      "english_teachers",
+      "linguistics_students",
+      "translation_professionals",
+      "grammar_enthusiasts",
+      "language_educators",
+      "esl_students",
+      "advanced_english_learners"
+    ]
+  }
+} 

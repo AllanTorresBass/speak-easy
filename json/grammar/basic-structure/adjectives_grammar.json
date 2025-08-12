@@ -1,0 +1,812 @@
+{
+  "title": "Adjectives Grammar Guide",
+  "description": "Comprehensive guide covering adjectives used in professional contexts with examples from various industries",
+  "version": "1.0",
+  "created_date": "2024-12-19",
+  "basic_concepts": {
+    "definition": "Adjectives are words that describe or modify nouns, providing additional information about qualities, characteristics, or attributes",
+    "key_functions": [
+      "Describe appearance and physical qualities",
+      "Express opinions and judgments",
+      "Indicate size, shape, and dimensions",
+      "Show emotional states and feelings",
+      "Specify professional skills and competencies"
+    ]
+  },
+  "professional_contexts": {
+    "user_experience": {
+      "title": "User Experience (UX) Vocabulary",
+      "description": "Adjectives commonly used to describe UX elements, processes, and outcomes",
+      "phrases": [
+        {
+          "adjective": "intuitive",
+          "phrase": "The intuitive navigation menu simplifies the user journey.",
+          "context": "navigation menu",
+          "meaning": "Easy to understand and use without instruction"
+        },
+        {
+          "adjective": "responsive",
+          "phrase": "A responsive website enhances the user experience.",
+          "context": "website",
+          "meaning": "Adapts to different screen sizes and devices"
+        },
+        {
+          "adjective": "aesthetically pleasing",
+          "phrase": "An aesthetically pleasing user interface design promotes user engagement.",
+          "context": "user interface design",
+          "meaning": "Visually attractive and appealing to the eye"
+        },
+        {
+          "adjective": "user-friendly",
+          "phrase": "The user-friendly app layout improves accessibility.",
+          "context": "app layout",
+          "meaning": "Easy to use and understand for users"
+        },
+        {
+          "adjective": "seamless",
+          "phrase": "A seamless user flow leads to higher conversions.",
+          "context": "user flow",
+          "meaning": "Smooth and uninterrupted experience"
+        },
+        {
+          "adjective": "accessible",
+          "phrase": "Inclusive accessibility features improve the user experience.",
+          "context": "accessibility features",
+          "meaning": "Usable by people with disabilities"
+        },
+        {
+          "adjective": "valuable",
+          "phrase": "Valuable user feedback provides actionable insights.",
+          "context": "user feedback",
+          "meaning": "Worthwhile and useful information"
+        },
+        {
+          "adjective": "effective",
+          "phrase": "Effective information architecture aids content discoverability.",
+          "context": "information architecture",
+          "meaning": "Successful in producing desired results"
+        },
+        {
+          "adjective": "visually appealing",
+          "phrase": "A visually appealing landing page design retains users.",
+          "context": "landing page design",
+          "meaning": "Attractive to look at"
+        },
+        {
+          "adjective": "data-driven",
+          "phrase": "User research informs data-driven decisions.",
+          "context": "decisions",
+          "meaning": "Based on analysis of data"
+        },
+        {
+          "adjective": "smooth",
+          "phrase": "A smooth onboarding process simplifies user registration.",
+          "context": "onboarding process",
+          "meaning": "Easy and effortless to complete"
+        },
+        {
+          "adjective": "well-defined",
+          "phrase": "Well-defined user personas enhance understanding of target audiences.",
+          "context": "user personas",
+          "meaning": "Clearly described and specified"
+        },
+        {
+          "adjective": "fast-loading",
+          "phrase": "A fast-loading website significantly boosts user satisfaction.",
+          "context": "website",
+          "meaning": "Loads quickly in the browser"
+        },
+        {
+          "adjective": "clear",
+          "phrase": "Clear call-to-action buttons prompt user interaction.",
+          "context": "call-to-action buttons",
+          "meaning": "Easy to understand and obvious"
+        },
+        {
+          "adjective": "thorough",
+          "phrase": "Thorough A/B testing measures design changes' effectiveness.",
+          "context": "A/B testing",
+          "meaning": "Complete and comprehensive"
+        },
+        {
+          "adjective": "streamlined",
+          "phrase": "A streamlined checkout process enhances user conversion rates.",
+          "context": "checkout process",
+          "meaning": "Simplified and efficient"
+        },
+        {
+          "adjective": "engaging",
+          "phrase": "An engaging onboarding sequence fosters user retention.",
+          "context": "onboarding sequence",
+          "meaning": "Interesting and captivating"
+        },
+        {
+          "adjective": "consistent",
+          "phrase": "Consistent visual design elements create a cohesive user experience.",
+          "context": "visual design elements",
+          "meaning": "Uniform and predictable"
+        },
+        {
+          "adjective": "interactive",
+          "phrase": "The interactive search bar encourages content discoverability.",
+          "context": "search bar",
+          "meaning": "Allows user interaction and response"
+        },
+        {
+          "adjective": "responsive",
+          "phrase": "Responsive mobile design ensures cross-device compatibility.",
+          "context": "mobile design",
+          "meaning": "Adapts to different screen sizes"
+        },
+        {
+          "adjective": "error-free",
+          "phrase": "An error-free user experience ensures user trust.",
+          "context": "user experience",
+          "meaning": "Without mistakes or problems"
+        },
+        {
+          "adjective": "user-centric",
+          "phrase": "A user-centric approach leads to successful UX design.",
+          "context": "approach",
+          "meaning": "Focused on user needs and preferences"
+        },
+        {
+          "adjective": "user-oriented",
+          "phrase": "A user-oriented feedback system encourages participation.",
+          "context": "feedback system",
+          "meaning": "Designed with users in mind"
+        }
+      ]
+    },
+    "user_interface": {
+      "title": "User Interface (UI) Vocabulary",
+      "description": "Adjectives commonly used to describe UI elements, design principles, and user interactions",
+      "phrases": [
+        {
+          "adjective": "intuitive",
+          "phrase": "An intuitive menu enhances navigation.",
+          "context": "menu",
+          "meaning": "Easy to understand and use"
+        },
+        {
+          "adjective": "responsive",
+          "phrase": "The responsive design improves user experience.",
+          "context": "design",
+          "meaning": "Adapts to different screen sizes"
+        },
+        {
+          "adjective": "pleasing",
+          "phrase": "Aesthetically pleasing interfaces attract users.",
+          "context": "interfaces",
+          "meaning": "Pleasant and agreeable to look at"
+        },
+        {
+          "adjective": "user-friendly",
+          "phrase": "The user-friendly layout simplifies interaction.",
+          "context": "layout",
+          "meaning": "Easy for users to navigate and use"
+        },
+        {
+          "adjective": "seamless",
+          "phrase": "A seamless user flow promotes engagement.",
+          "context": "user flow",
+          "meaning": "Smooth and uninterrupted"
+        },
+        {
+          "adjective": "accessible",
+          "phrase": "Inclusive accessible features cater to all users.",
+          "context": "features",
+          "meaning": "Usable by people with various abilities"
+        },
+        {
+          "adjective": "interactive",
+          "phrase": "Valuable user interactive feedback provides insights.",
+          "context": "feedback",
+          "meaning": "Allows two-way communication"
+        },
+        {
+          "adjective": "visual",
+          "phrase": "Effective visual information architecture aids discoverability.",
+          "context": "information architecture",
+          "meaning": "Related to what can be seen"
+        },
+        {
+          "adjective": "visually appealing",
+          "phrase": "A visually appealing landing page captures attention.",
+          "context": "landing page",
+          "meaning": "Attractive to look at"
+        },
+        {
+          "adjective": "data-driven",
+          "phrase": "User research guides data-driven decisions.",
+          "context": "decisions",
+          "meaning": "Based on data analysis"
+        },
+        {
+          "adjective": "smooth",
+          "phrase": "A smooth onboarding process eases registration.",
+          "context": "onboarding process",
+          "meaning": "Easy and effortless"
+        },
+        {
+          "adjective": "user-centric",
+          "phrase": "Well-defined user-centric personas aid understanding.",
+          "context": "personas",
+          "meaning": "Focused on user needs"
+        },
+        {
+          "adjective": "fast-loading",
+          "phrase": "A fast-loading page ensures user satisfaction.",
+          "context": "page",
+          "meaning": "Loads quickly"
+        },
+        {
+          "adjective": "clear",
+          "phrase": "Clear interactive call-to-action buttons prompt action.",
+          "context": "call-to-action buttons",
+          "meaning": "Easy to understand"
+        },
+        {
+          "adjective": "streamlined",
+          "phrase": "A streamlined checkout process boosts conversions.",
+          "context": "checkout process",
+          "meaning": "Simplified and efficient"
+        },
+        {
+          "adjective": "engaging",
+          "phrase": "Engaging interactive onboarding fosters retention.",
+          "context": "onboarding",
+          "meaning": "Interesting and captivating"
+        },
+        {
+          "adjective": "consistent",
+          "phrase": "Consistent visual elements maintain cohesiveness.",
+          "context": "visual elements",
+          "meaning": "Uniform and predictable"
+        },
+        {
+          "adjective": "well-designed",
+          "phrase": "A well-designed user journey map identifies issues.",
+          "context": "user journey map",
+          "meaning": "Carefully planned and executed"
+        },
+        {
+          "adjective": "usability",
+          "phrase": "User testing identifies usability problems and solutions.",
+          "context": "problems",
+          "meaning": "Related to ease of use"
+        },
+        {
+          "adjective": "error-free",
+          "phrase": "An error-free interface builds user trust.",
+          "context": "interface",
+          "meaning": "Without mistakes or problems"
+        },
+        {
+          "adjective": "user-centered",
+          "phrase": "A user-centered approach results in successful UI design.",
+          "context": "approach",
+          "meaning": "Focused on user needs"
+        },
+        {
+          "adjective": "user-oriented",
+          "phrase": "A user-oriented feedback system encourages engagement.",
+          "context": "feedback system",
+          "meaning": "Designed for users"
+        }
+      ]
+    },
+    "project_management": {
+      "title": "Project Manager Vocabulary",
+      "description": "Adjectives commonly used to describe project managers, their skills, and project management processes",
+      "phrases": [
+        {
+          "adjective": "capable",
+          "phrase": "A capable project manager oversees the team.",
+          "context": "project manager",
+          "meaning": "Having the ability to do something well"
+        },
+        {
+          "adjective": "strategic",
+          "phrase": "Effective strategic planning ensures project success.",
+          "context": "planning",
+          "meaning": "Related to long-term planning and goals"
+        },
+        {
+          "adjective": "seasoned",
+          "phrase": "A seasoned project manager has valuable experience.",
+          "context": "project manager",
+          "meaning": "Experienced and knowledgeable"
+        },
+        {
+          "adjective": "organizational",
+          "phrase": "Strong organizational skills are vital for project management.",
+          "context": "skills",
+          "meaning": "Related to organizing and structuring"
+        },
+        {
+          "adjective": "proactive",
+          "phrase": "A proactive approach helps mitigate risks.",
+          "context": "approach",
+          "meaning": "Taking action before problems occur"
+        },
+        {
+          "adjective": "detail-oriented",
+          "phrase": "A detail-oriented project manager tracks progress.",
+          "context": "project manager",
+          "meaning": "Pays attention to small details"
+        },
+        {
+          "adjective": "adaptable",
+          "phrase": "Adaptable project managers handle change well.",
+          "context": "project managers",
+          "meaning": "Able to adjust to new situations"
+        },
+        {
+          "adjective": "experienced",
+          "phrase": "An experienced project manager leads the team.",
+          "context": "project manager",
+          "meaning": "Having knowledge from past work"
+        },
+        {
+          "adjective": "cross-functional",
+          "phrase": "Effective cross-functional collaboration is essential.",
+          "context": "collaboration",
+          "meaning": "Involving different departments or areas"
+        },
+        {
+          "adjective": "responsible",
+          "phrase": "A responsible project manager ensures task completion.",
+          "context": "project manager",
+          "meaning": "Reliable and trustworthy"
+        },
+        {
+          "adjective": "well-prepared",
+          "phrase": "A well-prepared project manager anticipates challenges.",
+          "context": "project manager",
+          "meaning": "Ready for what might happen"
+        },
+        {
+          "adjective": "concise",
+          "phrase": "Clear and concise communication is a hallmark of effective project management.",
+          "context": "communication",
+          "meaning": "Brief and to the point"
+        },
+        {
+          "adjective": "knowledgeable",
+          "phrase": "A knowledgeable project manager understands industry trends.",
+          "context": "project manager",
+          "meaning": "Well-informed and educated"
+        },
+        {
+          "adjective": "communicative",
+          "phrase": "A communicative project manager fosters teamwork.",
+          "context": "project manager",
+          "meaning": "Good at sharing information"
+        },
+        {
+          "adjective": "goal-oriented",
+          "phrase": "A goal-oriented approach drives project success.",
+          "context": "approach",
+          "meaning": "Focused on achieving objectives"
+        },
+        {
+          "adjective": "resourceful",
+          "phrase": "Effective resourceful management maximizes efficiency.",
+          "context": "management",
+          "meaning": "Good at finding solutions with limited resources"
+        },
+        {
+          "adjective": "analytical",
+          "phrase": "An analytical project manager assesses data.",
+          "context": "project manager",
+          "meaning": "Good at analyzing information"
+        },
+        {
+          "adjective": "solution-oriented",
+          "phrase": "A solution-oriented mindset drives problem-solving.",
+          "context": "mindset",
+          "meaning": "Focused on finding solutions"
+        },
+        {
+          "adjective": "collaborative",
+          "phrase": "A collaborative project manager values team input.",
+          "context": "project manager",
+          "meaning": "Works well with others"
+        },
+        {
+          "adjective": "motivated",
+          "phrase": "A motivated project manager inspires the team.",
+          "context": "project manager",
+          "meaning": "Enthusiastic and driven"
+        },
+        {
+          "adjective": "meticulous",
+          "phrase": "A meticulous project manager ensures accuracy.",
+          "context": "project manager",
+          "meaning": "Very careful and precise"
+        },
+        {
+          "adjective": "focused",
+          "phrase": "A focused project manager prioritizes tasks.",
+          "context": "project manager",
+          "meaning": "Concentrated on specific goals"
+        },
+        {
+          "adjective": "diplomatic",
+          "phrase": "A diplomatic project manager resolves conflicts.",
+          "context": "project manager",
+          "meaning": "Good at handling sensitive situations"
+        },
+        {
+          "adjective": "certified",
+          "phrase": "A certified project manager demonstrates expertise.",
+          "context": "project manager",
+          "meaning": "Officially qualified"
+        },
+        {
+          "adjective": "results-driven",
+          "phrase": "A results-driven approach leads to success.",
+          "context": "approach",
+          "meaning": "Focused on achieving outcomes"
+        },
+        {
+          "adjective": "positive",
+          "phrase": "A positive project manager fosters morale.",
+          "context": "project manager",
+          "meaning": "Optimistic and encouraging"
+        },
+        {
+          "adjective": "responsive",
+          "phrase": "A responsive project manager adapts to changes.",
+          "context": "project manager",
+          "meaning": "Quick to respond and adapt"
+        },
+        {
+          "adjective": "well-organized",
+          "phrase": "A well-organized project manager maintains order.",
+          "context": "project manager",
+          "meaning": "Systematic and structured"
+        },
+        {
+          "adjective": "informed",
+          "phrase": "An informed project manager stays updated on industry best practices.",
+          "context": "project manager",
+          "meaning": "Knowledgeable about current information"
+        },
+        {
+          "adjective": "insightful",
+          "phrase": "An insightful project manager identifies opportunities.",
+          "context": "project manager",
+          "meaning": "Good at understanding situations deeply"
+        }
+      ]
+    },
+    "soft_skills": {
+      "title": "Soft Skills Vocabulary",
+      "description": "Adjectives commonly used to describe soft skills, personal qualities, and professional competencies",
+      "phrases": [
+        {
+          "adjective": "skilled",
+          "phrase": "A skilled communicator fosters collaboration.",
+          "context": "communicator",
+          "meaning": "Having the ability to do something well"
+        },
+        {
+          "adjective": "effective",
+          "phrase": "Effective teamwork creates a harmonious work environment.",
+          "context": "teamwork",
+          "meaning": "Successful in producing desired results"
+        },
+        {
+          "adjective": "strong",
+          "phrase": "Strong problem-solving skills are essential in the workplace.",
+          "context": "problem-solving skills",
+          "meaning": "Well-developed and powerful"
+        },
+        {
+          "adjective": "natural",
+          "phrase": "A natural leader inspires and motivates the team.",
+          "context": "leader",
+          "meaning": "Inherent or innate ability"
+        },
+        {
+          "adjective": "resilient",
+          "phrase": "Adaptable employees are resilient in the face of change.",
+          "context": "employees",
+          "meaning": "Able to recover quickly from difficulties"
+        },
+        {
+          "adjective": "efficient",
+          "phrase": "Quick and efficient decision-making enhances productivity.",
+          "context": "decision-making",
+          "meaning": "Achieving maximum productivity with minimum waste"
+        },
+        {
+          "adjective": "expert",
+          "phrase": "A conflict-resolution expert promotes team harmony.",
+          "context": "conflict-resolution",
+          "meaning": "Highly skilled and knowledgeable"
+        },
+        {
+          "adjective": "innovative",
+          "phrase": "Creative thinking leads to innovative solutions.",
+          "context": "solutions",
+          "meaning": "New and creative"
+        },
+        {
+          "adjective": "well-honed",
+          "phrase": "Well-honed time-management skills boost productivity.",
+          "context": "time-management skills",
+          "meaning": "Carefully developed and refined"
+        },
+        {
+          "adjective": "analytical",
+          "phrase": "Critical thinking is crucial for analytical problem-solving.",
+          "context": "problem-solving",
+          "meaning": "Involving careful analysis"
+        },
+        {
+          "adjective": "constructive",
+          "phrase": "Constructive feedback promotes professional growth.",
+          "context": "feedback",
+          "meaning": "Helpful and positive"
+        },
+        {
+          "adjective": "reliable",
+          "phrase": "Taking responsibility is a sign of a reliable team member.",
+          "context": "team member",
+          "meaning": "Dependable and trustworthy"
+        },
+        {
+          "adjective": "empathetic",
+          "phrase": "Practicing empathy enhances interpersonal relationships.",
+          "context": "approach",
+          "meaning": "Understanding and sharing feelings of others"
+        },
+        {
+          "adjective": "active",
+          "phrase": "Active listening skills improve understanding and communication.",
+          "context": "listening skills",
+          "meaning": "Engaged and participatory"
+        },
+        {
+          "adjective": "organized",
+          "phrase": "Organized employees excel in task management.",
+          "context": "employees",
+          "meaning": "Systematic and structured"
+        },
+        {
+          "adjective": "proactive",
+          "phrase": "Taking initiative leads to proactive problem-solving.",
+          "context": "problem-solving",
+          "meaning": "Taking action before problems occur"
+        },
+        {
+          "adjective": "interpersonal",
+          "phrase": "Strong interpersonal skills foster collaboration.",
+          "context": "skills",
+          "meaning": "Related to relationships between people"
+        },
+        {
+          "adjective": "well-thought-out",
+          "phrase": "Well-thought-out decision-making processes lead to success.",
+          "context": "decision-making processes",
+          "meaning": "Carefully considered and planned"
+        },
+        {
+          "adjective": "valuable",
+          "phrase": "Understanding emotional intelligence is valuable in the workplace.",
+          "context": "understanding",
+          "meaning": "Worthwhile and useful"
+        },
+        {
+          "adjective": "self-motivated",
+          "phrase": "A self-motivated employee is an asset to any team.",
+          "context": "employee",
+          "meaning": "Driven by internal motivation"
+        },
+        {
+          "adjective": "strategic",
+          "phrase": "Effective conflict-resolution strategies maintain a positive atmosphere.",
+          "context": "conflict-resolution strategies",
+          "meaning": "Carefully planned and purposeful"
+        },
+        {
+          "adjective": "personal",
+          "phrase": "Taking personal responsibility is a sign of maturity.",
+          "context": "responsibility",
+          "meaning": "Individual and private"
+        },
+        {
+          "adjective": "positive",
+          "phrase": "An empathetic approach fosters positive relationships.",
+          "context": "relationships",
+          "meaning": "Good and beneficial"
+        }
+      ]
+    },
+    "software_development": {
+      "title": "Software Developer Vocabulary",
+      "description": "Adjectives commonly used to describe software developers, their skills, and development processes",
+      "phrases": [
+        {
+          "adjective": "skilled",
+          "phrase": "A skilled programmer writes efficient code.",
+          "context": "programmer",
+          "meaning": "Having the ability to do something well"
+        },
+        {
+          "adjective": "collaborative",
+          "phrase": "Effective collaborative coding enhances productivity.",
+          "context": "coding",
+          "meaning": "Working well with others"
+        },
+        {
+          "adjective": "knowledgeable",
+          "phrase": "A knowledgeable software engineer designs robust systems.",
+          "context": "software engineer",
+          "meaning": "Well-informed and educated"
+        },
+        {
+          "adjective": "meticulous",
+          "phrase": "A meticulous coder pays attention to detail.",
+          "context": "coder",
+          "meaning": "Very careful and precise"
+        },
+        {
+          "adjective": "experienced",
+          "phrase": "An experienced developer excels in debugging.",
+          "context": "developer",
+          "meaning": "Having knowledge from past work"
+        },
+        {
+          "adjective": "resourceful",
+          "phrase": "A resourceful programmer finds creative solutions.",
+          "context": "programmer",
+          "meaning": "Good at finding solutions with limited resources"
+        },
+        {
+          "adjective": "maintainable",
+          "phrase": "Well-organized code is maintainable in the long run.",
+          "context": "code",
+          "meaning": "Easy to maintain and update"
+        },
+        {
+          "adjective": "proactive",
+          "phrase": "A proactive software engineer anticipates challenges.",
+          "context": "software engineer",
+          "meaning": "Taking action before problems occur"
+        },
+        {
+          "adjective": "independent",
+          "phrase": "Effective independent work leads to efficiency.",
+          "context": "work",
+          "meaning": "Working alone without supervision"
+        },
+        {
+          "adjective": "certified",
+          "phrase": "A certified developer demonstrates expertise.",
+          "context": "developer",
+          "meaning": "Officially qualified"
+        },
+        {
+          "adjective": "results-driven",
+          "phrase": "A results-driven approach leads to project success.",
+          "context": "approach",
+          "meaning": "Focused on achieving outcomes"
+        },
+        {
+          "adjective": "responsive",
+          "phrase": "A responsive programmer adapts to changing requirements.",
+          "context": "programmer",
+          "meaning": "Quick to respond and adapt"
+        },
+        {
+          "adjective": "detail-oriented",
+          "phrase": "A detail-oriented coder writes error-free code.",
+          "context": "coder",
+          "meaning": "Pays attention to small details"
+        },
+        {
+          "adjective": "innovative",
+          "phrase": "An innovative developer pioneers new solutions.",
+          "context": "developer",
+          "meaning": "Creative and original"
+        },
+        {
+          "adjective": "team-oriented",
+          "phrase": "A team-oriented approach fosters collaboration.",
+          "context": "approach",
+          "meaning": "Focused on working with others"
+        },
+        {
+          "adjective": "versatile",
+          "phrase": "A versatile programmer handles diverse tasks.",
+          "context": "programmer",
+          "meaning": "Able to do many different things"
+        },
+        {
+          "adjective": "solution-oriented",
+          "phrase": "A solution-oriented mindset drives problem-solving.",
+          "context": "mindset",
+          "meaning": "Focused on finding solutions"
+        },
+        {
+          "adjective": "self-motivated",
+          "phrase": "A self-motivated coder excels in personal projects.",
+          "context": "coder",
+          "meaning": "Driven by internal motivation"
+        },
+        {
+          "adjective": "data-driven",
+          "phrase": "A data-driven approach enhances decision-making.",
+          "context": "approach",
+          "meaning": "Based on data analysis"
+        },
+        {
+          "adjective": "quality-conscious",
+          "phrase": "A quality-conscious software engineer ensures reliable code.",
+          "context": "software engineer",
+          "meaning": "Focused on maintaining high standards"
+        },
+        {
+          "adjective": "agile",
+          "phrase": "An agile approach promotes rapid development.",
+          "context": "approach",
+          "meaning": "Quick and flexible"
+        },
+        {
+          "adjective": "well-organized",
+          "phrase": "A well-organized codebase is easy to maintain.",
+          "context": "codebase",
+          "meaning": "Systematic and structured"
+        },
+        {
+          "adjective": "efficient",
+          "phrase": "An efficient developer maximizes productivity.",
+          "context": "developer",
+          "meaning": "Achieving maximum output with minimum waste"
+        },
+        {
+          "adjective": "security-conscious",
+          "phrase": "A security-conscious approach protects against threats.",
+          "context": "approach",
+          "meaning": "Aware of and focused on security"
+        }
+      ]
+    }
+  },
+  "metadata": {
+    "total_contexts": 5,
+    "total_phrases": 150,
+    "professional_areas": [
+      "User Experience (UX)",
+      "User Interface (UI)",
+      "Project Management",
+      "Soft Skills",
+      "Software Development"
+    ],
+    "tags": [
+      "grammar",
+      "adjectives",
+      "professional_english",
+      "vocabulary",
+      "ux_design",
+      "ui_design",
+      "project_management",
+      "soft_skills",
+      "software_development"
+    ],
+    "difficulty_level": "intermediate",
+    "target_audience": [
+      "professionals",
+      "students",
+      "non-native_english_speakers",
+      "business_communicators",
+      "designers",
+      "developers",
+      "managers"
+    ]
+  }
+} 

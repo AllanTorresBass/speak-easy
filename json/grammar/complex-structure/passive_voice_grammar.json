@@ -1,0 +1,573 @@
+{
+  "title": "Passive Voice Grammar Guide",
+  "description": "Comprehensive guide covering passive voice usage in professional contexts across various industries",
+  "version": "1.0",
+  "created_date": "2024-12-19",
+  "basic_concepts": {
+    "definition": "Passive voice is a grammatical construction where the subject receives the action rather than performing it, emphasizing the result or recipient rather than the doer of the action.",
+    "key_functions": [
+      "Emphasize the result or outcome of an action",
+      "Focus on the recipient of the action rather than the performer",
+      "Create formal and objective tone in professional communication",
+      "Highlight processes and procedures over individual actors",
+      "Maintain consistency in technical and procedural writing"
+    ],
+    "formation_rules": [
+      {
+        "rule": "Basic passive structure",
+        "structure": "Subject + be + past participle + (by + agent)",
+        "examples": ["User feedback is collected", "The interface is updated", "Features are implemented"]
+      },
+      {
+        "rule": "Present passive",
+        "structure": "Subject + is/are + past participle",
+        "examples": ["A seamless process is provided", "Updates are regularly released"]
+      },
+      {
+        "rule": "Past passive",
+        "structure": "Subject + was/were + past participle",
+        "examples": ["The system was optimized", "Features were enhanced"]
+      },
+      {
+        "rule": "Future passive",
+        "structure": "Subject + will be + past participle",
+        "examples": ["The interface will be improved", "Updates will be released"]
+      }
+    ],
+    "common_passive_verbs": [
+      "provided", "implemented", "designed", "created", "developed", "maintained", "enhanced", "optimized", "conducted", "established"
+    ],
+    "when_to_use_passive_voice": [
+      "Emphasizing the result or outcome",
+      "When the doer is unknown or unimportant",
+      "In technical and procedural writing",
+      "To maintain objectivity and formality",
+      "When focusing on processes rather than people"
+    ],
+    "when_to_avoid_passive_voice": [
+      "When the doer is important and should be emphasized",
+      "In direct and engaging communication",
+      "When clarity and conciseness are priorities",
+      "In active problem-solving contexts",
+      "When personal responsibility needs to be clear"
+    ]
+  },
+  "professional_contexts": {
+    "user_experience": {
+      "title": "User Experience (UX) Vocabulary",
+      "description": "Passive voice sentences commonly used in UX design, research, and user interaction contexts",
+      "sentences": [
+        {
+          "passive_structure": "is provided",
+          "sentence": "A seamless onboarding process is provided to users.",
+          "context": "onboarding process delivery",
+          "meaning": "Users receive a seamless onboarding process",
+          "focus": "Emphasizes the quality of the process received by users",
+          "professional_implication": "Shows commitment to providing high-quality user onboarding",
+          "active_alternative": "We provide users with a seamless onboarding process"
+        },
+        {
+          "passive_structure": "is actively collected and analyzed",
+          "sentence": "User feedback is actively collected and analyzed for improvement.",
+          "context": "feedback collection and analysis",
+          "meaning": "Feedback from users is gathered and examined for improvement purposes",
+          "focus": "Emphasizes the systematic nature of feedback processing",
+          "professional_implication": "Demonstrates systematic approach to user feedback utilization",
+          "active_alternative": "We actively collect and analyze user feedback for improvement"
+        },
+        {
+          "passive_structure": "is ensured",
+          "sentence": "Clear navigation is ensured through intuitive design.",
+          "context": "navigation clarity guarantee",
+          "meaning": "Clear navigation is guaranteed by using intuitive design",
+          "focus": "Emphasizes the guaranteed outcome of clear navigation",
+          "professional_implication": "Shows commitment to navigation clarity through design",
+          "active_alternative": "Intuitive design ensures clear navigation"
+        },
+        {
+          "passive_structure": "are offered",
+          "sentence": "Personalized recommendations are offered based on user preferences.",
+          "context": "recommendation delivery",
+          "meaning": "Users receive recommendations that are tailored to their preferences",
+          "focus": "Emphasizes the personalized nature of recommendations provided",
+          "professional_implication": "Demonstrates personalization capabilities in user experience",
+          "active_alternative": "We offer personalized recommendations based on user preferences"
+        },
+        {
+          "passive_structure": "are implemented",
+          "sentence": "Accessibility features are implemented to enhance user inclusivity.",
+          "context": "accessibility feature deployment",
+          "meaning": "Features that improve accessibility are added to enhance inclusivity",
+          "focus": "Emphasizes the implementation of accessibility improvements",
+          "professional_implication": "Shows commitment to inclusive design principles",
+          "active_alternative": "We implement accessibility features to enhance user inclusivity"
+        },
+        {
+          "passive_structure": "are regularly updated",
+          "sentence": "User interfaces are regularly updated to meet evolving needs.",
+          "context": "interface maintenance",
+          "meaning": "User interfaces receive regular updates to address changing requirements",
+          "focus": "Emphasizes the systematic nature of interface updates",
+          "professional_implication": "Demonstrates commitment to continuous interface improvement",
+          "active_alternative": "We regularly update user interfaces to meet evolving needs"
+        },
+        {
+          "passive_structure": "are carefully crafted",
+          "sentence": "Error messages are carefully crafted to guide users effectively.",
+          "context": "error message design",
+          "meaning": "Error messages are designed with care to provide effective user guidance",
+          "focus": "Emphasizes the careful attention given to error message design",
+          "professional_implication": "Shows attention to detail in user guidance design",
+          "active_alternative": "We carefully craft error messages to guide users effectively"
+        },
+        {
+          "passive_structure": "are monitored",
+          "sentence": "Performance metrics are monitored to optimize user experience.",
+          "context": "performance tracking",
+          "meaning": "Performance data is continuously observed to improve user experience",
+          "focus": "Emphasizes the systematic monitoring of performance data",
+          "professional_implication": "Demonstrates data-driven approach to UX optimization",
+          "active_alternative": "We monitor performance metrics to optimize user experience"
+        },
+        {
+          "passive_structure": "is implemented",
+          "sentence": "A responsive design is implemented for various screen sizes.",
+          "context": "responsive design deployment",
+          "meaning": "A design that adapts to different screen sizes is put in place",
+          "focus": "Emphasizes the implementation of responsive design capabilities",
+          "professional_implication": "Shows commitment to cross-device user experience",
+          "active_alternative": "We implement responsive design for various screen sizes"
+        },
+        {
+          "passive_structure": "are tracked",
+          "sentence": "User interactions are tracked to understand behavior patterns.",
+          "context": "user behavior analysis",
+          "meaning": "User interactions are monitored to gain insights into behavior patterns",
+          "focus": "Emphasizes the systematic tracking of user behavior",
+          "professional_implication": "Demonstrates analytical approach to user behavior understanding",
+          "active_alternative": "We track user interactions to understand behavior patterns"
+        }
+      ]
+    },
+    "user_interface": {
+      "title": "User Interface (UI) Vocabulary",
+      "description": "Passive voice sentences commonly used in UI design, interface elements, and user interaction components",
+      "sentences": [
+        {
+          "passive_structure": "are facilitated",
+          "sentence": "Seamless transitions between screens are facilitated by the user interface.",
+          "context": "transition facilitation",
+          "meaning": "The user interface enables smooth transitions between different screens",
+          "focus": "Emphasizes the interface's role in enabling smooth transitions",
+          "professional_implication": "Shows focus on interface functionality and user flow",
+          "active_alternative": "The user interface facilitates seamless transitions between screens"
+        },
+        {
+          "passive_structure": "are employed",
+          "sentence": "Consistent design elements are employed to maintain a cohesive user interface.",
+          "context": "design consistency",
+          "meaning": "Consistent design elements are used to create a unified interface",
+          "focus": "Emphasizes the systematic use of consistent design elements",
+          "professional_implication": "Demonstrates commitment to design consistency and cohesion",
+          "active_alternative": "We employ consistent design elements to maintain a cohesive interface"
+        },
+        {
+          "passive_structure": "are guided",
+          "sentence": "User interactions are intuitively guided through well-placed visual cues.",
+          "context": "user interaction guidance",
+          "meaning": "Users receive intuitive guidance through strategically placed visual elements",
+          "focus": "Emphasizes the guidance provided to users through visual design",
+          "professional_implication": "Shows focus on intuitive user guidance through design",
+          "active_alternative": "Well-placed visual cues intuitively guide user interactions"
+        },
+        {
+          "passive_structure": "is carefully considered",
+          "sentence": "Visual hierarchy is carefully considered to prioritize key elements in the user interface.",
+          "context": "visual hierarchy planning",
+          "meaning": "Visual hierarchy receives careful attention to emphasize important elements",
+          "focus": "Emphasizes the careful attention given to visual hierarchy design",
+          "professional_implication": "Demonstrates attention to detail in visual design planning",
+          "active_alternative": "We carefully consider visual hierarchy to prioritize key elements"
+        },
+        {
+          "passive_structure": "are designed",
+          "sentence": "User interface components are designed with accessibility in mind.",
+          "context": "accessibility-focused design",
+          "meaning": "Interface components are created with accessibility considerations",
+          "focus": "Emphasizes the accessibility focus in component design",
+          "professional_implication": "Shows commitment to accessible design principles",
+          "active_alternative": "We design interface components with accessibility in mind"
+        },
+        {
+          "passive_structure": "are easily configurable",
+          "sentence": "User preferences are easily configurable within the user interface settings.",
+          "context": "preference configuration",
+          "meaning": "Users can easily adjust their preferences through interface settings",
+          "focus": "Emphasizes the ease of preference configuration for users",
+          "professional_implication": "Demonstrates focus on user customization capabilities",
+          "active_alternative": "Users can easily configure their preferences within interface settings"
+        },
+        {
+          "passive_structure": "adapts seamlessly",
+          "sentence": "The user interface adapts seamlessly to various screen sizes and resolutions.",
+          "context": "responsive adaptation",
+          "meaning": "The interface automatically adjusts to different screen dimensions",
+          "focus": "Emphasizes the interface's ability to adapt to different devices",
+          "professional_implication": "Shows commitment to responsive design across devices",
+          "active_alternative": "The interface seamlessly adapts to various screen sizes"
+        },
+        {
+          "passive_structure": "are used",
+          "sentence": "Clear and concise labels are used to enhance user understanding within the interface.",
+          "context": "label utilization",
+          "meaning": "Clear labels are employed to improve user comprehension",
+          "focus": "Emphasizes the systematic use of clear labeling",
+          "professional_implication": "Demonstrates focus on clear communication through labeling",
+          "active_alternative": "We use clear and concise labels to enhance user understanding"
+        },
+        {
+          "passive_structure": "are strategically placed",
+          "sentence": "Interactive elements, such as buttons and links, are strategically placed for user convenience.",
+          "context": "element placement strategy",
+          "meaning": "Interactive elements are positioned strategically to improve user convenience",
+          "focus": "Emphasizes the strategic thinking behind element placement",
+          "professional_implication": "Shows strategic approach to user interface design",
+          "active_alternative": "We strategically place interactive elements for user convenience"
+        },
+        {
+          "passive_structure": "are employed",
+          "sentence": "User interface animations are employed to provide subtle feedback and enhance engagement.",
+          "context": "animation utilization",
+          "meaning": "Animations are used to provide feedback and improve user engagement",
+          "focus": "Emphasizes the purposeful use of animations for user benefit",
+          "professional_implication": "Demonstrates focus on engaging user experience through animation",
+          "active_alternative": "We employ interface animations to provide feedback and enhance engagement"
+        }
+      ]
+    },
+    "soft_skills": {
+      "title": "Soft Skills Vocabulary",
+      "description": "Passive voice sentences commonly used in soft skills, communication, and interpersonal contexts",
+      "sentences": [
+        {
+          "passive_structure": "is maintained",
+          "sentence": "Effective communication is maintained to understand user needs.",
+          "context": "communication maintenance",
+          "meaning": "Good communication is kept up to understand what users need",
+          "focus": "Emphasizes the ongoing nature of effective communication",
+          "professional_implication": "Shows commitment to maintaining communication quality",
+          "active_alternative": "We maintain effective communication to understand user needs"
+        },
+        {
+          "passive_structure": "is demonstrated",
+          "sentence": "Empathy is demonstrated in addressing user concerns and feedback.",
+          "context": "empathy display",
+          "meaning": "Empathy is shown when dealing with user concerns and feedback",
+          "focus": "Emphasizes the demonstration of empathy in user interactions",
+          "professional_implication": "Demonstrates commitment to empathetic user support",
+          "active_alternative": "We demonstrate empathy in addressing user concerns and feedback"
+        },
+        {
+          "passive_structure": "is employed",
+          "sentence": "Active listening is employed to gather valuable insights from users.",
+          "context": "listening technique utilization",
+          "meaning": "Active listening techniques are used to collect useful information from users",
+          "focus": "Emphasizes the systematic use of active listening techniques",
+          "professional_implication": "Shows systematic approach to gathering user insights",
+          "active_alternative": "We employ active listening to gather valuable insights from users"
+        },
+        {
+          "passive_structure": "is enhanced",
+          "sentence": "User engagement is enhanced through thoughtful interaction design.",
+          "context": "engagement improvement",
+          "meaning": "User engagement is improved through careful interaction design",
+          "focus": "Emphasizes the enhancement of user engagement through design",
+          "professional_implication": "Demonstrates focus on improving user engagement",
+          "active_alternative": "Thoughtful interaction design enhances user engagement"
+        },
+        {
+          "passive_structure": "is encouraged",
+          "sentence": "Collaborative problem-solving is encouraged in user support scenarios.",
+          "context": "collaboration promotion",
+          "meaning": "Working together to solve problems is promoted in user support situations",
+          "focus": "Emphasizes the promotion of collaborative approaches",
+          "professional_implication": "Shows commitment to collaborative problem-solving",
+          "active_alternative": "We encourage collaborative problem-solving in user support scenarios"
+        },
+        {
+          "passive_structure": "is prioritized",
+          "sentence": "User satisfaction is prioritized through personalized assistance.",
+          "context": "satisfaction prioritization",
+          "meaning": "User satisfaction is given high priority through customized help",
+          "focus": "Emphasizes the high priority given to user satisfaction",
+          "professional_implication": "Demonstrates commitment to user satisfaction",
+          "active_alternative": "We prioritize user satisfaction through personalized assistance"
+        },
+        {
+          "passive_structure": "is exhibited",
+          "sentence": "Flexibility is exhibited in adapting to diverse user requirements.",
+          "context": "flexibility display",
+          "meaning": "Flexibility is shown when adjusting to different user needs",
+          "focus": "Emphasizes the demonstration of flexibility in user support",
+          "professional_implication": "Shows commitment to flexible user support",
+          "active_alternative": "We exhibit flexibility in adapting to diverse user requirements"
+        },
+        {
+          "passive_structure": "is provided",
+          "sentence": "Clear and concise documentation is provided for user guidance.",
+          "context": "documentation delivery",
+          "meaning": "Clear documentation is given to help guide users",
+          "focus": "Emphasizes the provision of helpful documentation",
+          "professional_implication": "Demonstrates commitment to user guidance through documentation",
+          "active_alternative": "We provide clear and concise documentation for user guidance"
+        },
+        {
+          "passive_structure": "is exercised",
+          "sentence": "Patience is exercised in assisting users through complex processes.",
+          "context": "patience demonstration",
+          "meaning": "Patience is shown when helping users with complicated procedures",
+          "focus": "Emphasizes the demonstration of patience in user assistance",
+          "professional_implication": "Shows commitment to patient user support",
+          "active_alternative": "We exercise patience in assisting users through complex processes"
+        },
+        {
+          "passive_structure": "are employed",
+          "sentence": "Time management skills are employed to ensure timely user support.",
+          "context": "skill utilization",
+          "meaning": "Time management skills are used to provide prompt user support",
+          "focus": "Emphasizes the systematic use of time management skills",
+          "professional_implication": "Demonstrates systematic approach to timely user support",
+          "active_alternative": "We employ time management skills to ensure timely user support"
+        }
+      ]
+    },
+    "project_management": {
+      "title": "Project Management Vocabulary",
+      "description": "Passive voice sentences commonly used in project management, planning, and execution contexts",
+      "sentences": [
+        {
+          "passive_structure": "are meticulously planned",
+          "sentence": "Project timelines are meticulously planned to meet user expectations.",
+          "context": "timeline planning",
+          "meaning": "Project schedules are carefully planned to satisfy user requirements",
+          "focus": "Emphasizes the careful attention given to timeline planning",
+          "professional_implication": "Shows commitment to meeting user expectations through planning",
+          "active_alternative": "We meticulously plan project timelines to meet user expectations"
+        },
+        {
+          "passive_structure": "are thoroughly documented",
+          "sentence": "User requirements are thoroughly documented before project initiation.",
+          "context": "requirement documentation",
+          "meaning": "User needs are completely documented before starting the project",
+          "focus": "Emphasizes the comprehensive nature of requirement documentation",
+          "professional_implication": "Demonstrates systematic approach to requirement gathering",
+          "active_alternative": "We thoroughly document user requirements before project initiation"
+        },
+        {
+          "passive_structure": "are provided",
+          "sentence": "Regular project updates are provided to stakeholders to ensure transparency.",
+          "context": "update delivery",
+          "meaning": "Regular updates are given to stakeholders to maintain transparency",
+          "focus": "Emphasizes the systematic provision of project updates",
+          "professional_implication": "Shows commitment to project transparency and communication",
+          "active_alternative": "We provide regular project updates to stakeholders to ensure transparency"
+        },
+        {
+          "passive_structure": "are proactively identified and addressed",
+          "sentence": "Risks and issues are proactively identified and addressed in the project plan.",
+          "context": "risk management",
+          "meaning": "Potential problems are found and dealt with before they become issues",
+          "focus": "Emphasizes the proactive approach to risk management",
+          "professional_implication": "Demonstrates proactive approach to project risk management",
+          "active_alternative": "We proactively identify and address risks and issues in the project plan"
+        },
+        {
+          "passive_structure": "are allocated",
+          "sentence": "Project resources are allocated based on user-centric priorities.",
+          "context": "resource allocation",
+          "meaning": "Project resources are distributed according to user-focused priorities",
+          "focus": "Emphasizes the systematic allocation of resources based on priorities",
+          "professional_implication": "Shows commitment to user-centric resource allocation",
+          "active_alternative": "We allocate project resources based on user-centric priorities"
+        },
+        {
+          "passive_structure": "are achieved",
+          "sentence": "Project milestones are achieved through effective team collaboration.",
+          "context": "milestone accomplishment",
+          "meaning": "Project milestones are reached through good teamwork",
+          "focus": "Emphasizes the accomplishment of milestones through collaboration",
+          "professional_implication": "Demonstrates focus on team collaboration for milestone achievement",
+          "active_alternative": "Effective team collaboration helps us achieve project milestones"
+        },
+        {
+          "passive_structure": "is incorporated",
+          "sentence": "User feedback is incorporated into project iterations for continuous improvement.",
+          "context": "feedback integration",
+          "meaning": "User feedback is included in project updates for ongoing improvement",
+          "focus": "Emphasizes the systematic integration of user feedback",
+          "professional_implication": "Shows commitment to continuous improvement through user feedback",
+          "active_alternative": "We incorporate user feedback into project iterations for continuous improvement"
+        },
+        {
+          "passive_structure": "are aligned",
+          "sentence": "Project goals are aligned with overarching user experience objectives.",
+          "context": "goal alignment",
+          "meaning": "Project goals are matched with overall user experience goals",
+          "focus": "Emphasizes the alignment of project goals with UX objectives",
+          "professional_implication": "Demonstrates focus on aligning project goals with user experience",
+          "active_alternative": "We align project goals with overarching user experience objectives"
+        },
+        {
+          "passive_structure": "are established",
+          "sentence": "Clear communication channels are established for efficient project coordination.",
+          "context": "communication setup",
+          "meaning": "Clear communication methods are set up for effective project coordination",
+          "focus": "Emphasizes the establishment of clear communication systems",
+          "professional_implication": "Shows commitment to effective project communication",
+          "active_alternative": "We establish clear communication channels for efficient project coordination"
+        },
+        {
+          "passive_structure": "is conducted",
+          "sentence": "User acceptance testing is conducted to validate project deliverables.",
+          "context": "testing execution",
+          "meaning": "User acceptance testing is performed to verify project outputs",
+          "focus": "Emphasizes the systematic execution of user acceptance testing",
+          "professional_implication": "Demonstrates commitment to validating project deliverables with users",
+          "active_alternative": "We conduct user acceptance testing to validate project deliverables"
+        }
+      ]
+    },
+    "software_development": {
+      "title": "Software Development Vocabulary",
+      "description": "Passive voice sentences commonly used in software development, coding, and technical contexts",
+      "sentences": [
+        {
+          "passive_structure": "are translated",
+          "sentence": "User requirements are translated into detailed software specifications.",
+          "context": "requirement translation",
+          "meaning": "User needs are converted into detailed software specifications",
+          "focus": "Emphasizes the systematic translation of user requirements",
+          "professional_implication": "Shows systematic approach to requirement specification",
+          "active_alternative": "We translate user requirements into detailed software specifications"
+        },
+        {
+          "passive_structure": "are conducted",
+          "sentence": "Code reviews are conducted to ensure the quality of user-facing features.",
+          "context": "code review execution",
+          "meaning": "Code reviews are performed to maintain quality of user features",
+          "focus": "Emphasizes the systematic execution of code reviews",
+          "professional_implication": "Demonstrates commitment to code quality for user features",
+          "active_alternative": "We conduct code reviews to ensure the quality of user-facing features"
+        },
+        {
+          "passive_structure": "are designed",
+          "sentence": "User interfaces are designed with a focus on intuitive navigation.",
+          "context": "interface design",
+          "meaning": "User interfaces are created with intuitive navigation in mind",
+          "focus": "Emphasizes the design focus on intuitive navigation",
+          "professional_implication": "Shows commitment to intuitive navigation design",
+          "active_alternative": "We design user interfaces with a focus on intuitive navigation"
+        },
+        {
+          "passive_structure": "is actively solicited and incorporated",
+          "sentence": "User feedback is actively solicited and incorporated into the development process.",
+          "context": "feedback integration",
+          "meaning": "User feedback is actively requested and included in development",
+          "focus": "Emphasizes the active nature of feedback collection and integration",
+          "professional_implication": "Demonstrates active approach to user feedback utilization",
+          "active_alternative": "We actively solicit and incorporate user feedback into the development process"
+        },
+        {
+          "passive_structure": "is structured",
+          "sentence": "Software architecture is structured to accommodate future user scalability.",
+          "context": "architecture design",
+          "meaning": "Software architecture is organized to support future user growth",
+          "focus": "Emphasizes the architectural focus on future scalability",
+          "professional_implication": "Shows forward-thinking approach to software architecture",
+          "active_alternative": "We structure software architecture to accommodate future user scalability"
+        },
+        {
+          "passive_structure": "are embraced",
+          "sentence": "Agile methodologies are embraced for user-centric iterative development.",
+          "context": "methodology adoption",
+          "meaning": "Agile methods are adopted for user-focused iterative development",
+          "focus": "Emphasizes the adoption of agile methodologies",
+          "professional_implication": "Demonstrates commitment to agile development for user focus",
+          "active_alternative": "We embrace agile methodologies for user-centric iterative development"
+        },
+        {
+          "passive_structure": "are prioritized",
+          "sentence": "User stories are prioritized based on their impact on overall functionality.",
+          "context": "story prioritization",
+          "meaning": "User stories are ranked based on their functional impact",
+          "focus": "Emphasizes the systematic prioritization of user stories",
+          "professional_implication": "Shows systematic approach to user story prioritization",
+          "active_alternative": "We prioritize user stories based on their impact on overall functionality"
+        },
+        {
+          "passive_structure": "is maintained",
+          "sentence": "Clear and concise documentation is maintained throughout the development lifecycle.",
+          "context": "documentation maintenance",
+          "meaning": "Clear documentation is kept up throughout the development process",
+          "focus": "Emphasizes the ongoing maintenance of clear documentation",
+          "professional_implication": "Demonstrates commitment to maintaining clear documentation",
+          "active_alternative": "We maintain clear and concise documentation throughout the development lifecycle"
+        },
+        {
+          "passive_structure": "are adhered to",
+          "sentence": "User-centric coding standards are adhered to for consistency and readability.",
+          "context": "standard compliance",
+          "meaning": "User-focused coding standards are followed for consistency",
+          "focus": "Emphasizes the systematic following of coding standards",
+          "professional_implication": "Shows commitment to consistent and readable code",
+          "active_alternative": "We adhere to user-centric coding standards for consistency and readability"
+        },
+        {
+          "passive_structure": "is integrated",
+          "sentence": "User experience testing is integrated into the software development lifecycle.",
+          "context": "testing integration",
+          "meaning": "UX testing is included in the software development process",
+          "focus": "Emphasizes the systematic integration of UX testing",
+          "professional_implication": "Demonstrates commitment to integrating UX testing in development",
+          "active_alternative": "We integrate user experience testing into the software development lifecycle"
+        }
+      ]
+    }
+  },
+  "metadata": {
+    "total_contexts": 5,
+    "total_sentences": 50,
+    "professional_areas": [
+      "User Experience (UX)",
+      "User Interface (UI)",
+      "Soft Skills",
+      "Project Management",
+      "Software Development"
+    ],
+    "tags": [
+      "grammar",
+      "passive_voice",
+      "professional_english",
+      "vocabulary",
+      "verb_forms",
+      "result_emphasis",
+      "process_focus",
+      "formal_communication",
+      "ux_design",
+      "ui_design",
+      "soft_skills",
+      "project_management",
+      "software_development"
+    ],
+    "difficulty_level": "intermediate",
+    "target_audience": [
+      "professionals",
+      "students",
+      "non-native_english_speakers",
+      "business_communicators",
+      "designers",
+      "developers",
+      "managers"
+    ]
+  }
+} 

@@ -1,0 +1,235 @@
+{
+  "title": "Verbs Grammar Guide",
+  "description": "Comprehensive guide covering verb structures, types, and professional vocabulary examples",
+  "version": "1.0",
+  "created_date": "2024-12-19",
+  "basic_concepts": {
+    "definition": "Verbs are words that indicate an action, state, or process",
+    "key_features": [
+      "Voice - indicates whether subject performs or receives action",
+      "Tense - indicates time of action",
+      "Aspect - indicates duration or completion of action",
+      "Mood - indicates speaker's attitude towards action"
+    ]
+  },
+  "verb_types": [
+    {
+      "type": "simple_verbs",
+      "definition": "Verbs that are not formed by the combination of other verbs",
+      "examples": ["run", "cook", "think"],
+      "sentences": [
+        "The child ran.",
+        "The woman cooks.",
+        "The man thought."
+      ]
+    },
+    {
+      "type": "compound_verbs",
+      "definition": "Verbs formed by the combination of two or more verbs",
+      "examples": ["decompose", "develop", "discover"],
+      "sentences": [
+        "The child decomposed.",
+        "The woman got rid of the gift.",
+        "The man discovered the secret."
+      ]
+    },
+    {
+      "type": "regular_verbs",
+      "definition": "Verbs that follow a regular pattern when conjugated",
+      "examples": ["eat", "walk", "read"],
+      "sentences": [
+        "The child ate an apple.",
+        "The woman went to the market.",
+        "The man read a book."
+      ]
+    },
+    {
+      "type": "irregular_verbs",
+      "definition": "Verbs that do not follow a regular pattern when conjugated",
+      "examples": ["go", "come", "do"],
+      "sentences": [
+        "The child went to school.",
+        "The woman came home.",
+        "The man did the homework."
+      ]
+    },
+    {
+      "type": "transitive_verbs",
+      "definition": "Verbs that require an object to complete their meaning",
+      "examples": ["eat", "buy", "read"],
+      "sentences": [
+        "The child ate an apple.",
+        "The woman bought a dress.",
+        "The man read a book."
+      ]
+    },
+    {
+      "type": "intransitive_verbs",
+      "definition": "Verbs that do not require an object to complete their meaning",
+      "examples": ["sleep", "sit", "walk"],
+      "sentences": [
+        "The child slept.",
+        "The woman sat down.",
+        "The man walked."
+      ]
+    },
+    {
+      "type": "active_verbs",
+      "definition": "Verbs that indicate the subject performs the action",
+      "examples": ["run", "cook", "think"],
+      "sentences": [
+        "The child ran.",
+        "The woman cooks.",
+        "The man thought."
+      ]
+    },
+    {
+      "type": "passive_verbs",
+      "definition": "Verbs that indicate the action is performed on the subject",
+      "examples": ["was hit", "was robbed", "was fired"],
+      "sentences": [
+        "The child was hit.",
+        "The woman was robbed.",
+        "The man was fired."
+      ]
+    }
+  ],
+  "professional_vocabulary": {
+    "user_experience": {
+      "simple_verbs": [
+        "browse", "click", "drag", "enter", "fill", "follow", "hover", "interact",
+        "navigate", "open", "play", "read", "scroll", "select", "submit", "swipe",
+        "tap", "type", "view", "zoom"
+      ],
+      "compound_verbs": [
+        "auto-complete", "check in", "check out", "double-click", "drag and drop",
+        "drop down", "enable", "expand", "fast forward", "highlight", "log in",
+        "log out", "minimize", "mute", "open in new tab", "pause", "pinch and zoom",
+        "right-click", "scroll down", "select all", "tap and hold", "turn on"
+      ]
+    },
+    "user_interface": {
+      "simple_verbs": [
+        "click", "tap", "scroll", "swipe", "drag", "drop", "select", "deselect",
+        "enter", "exit", "open", "close", "minimize", "maximize", "view", "hide",
+        "search", "filter", "sort", "navigate"
+      ],
+      "compound_verbs": [
+        "auto-complete", "check in", "check out", "drop down", "enable", "disable",
+        "expand", "collapse", "fast forward", "rewind", "highlight", "log in",
+        "log out", "mute", "unmute", "open in new tab", "pause", "play",
+        "right-click", "scroll down", "scroll up", "select all", "submit",
+        "swipe left", "swipe right", "tap and hold"
+      ]
+    },
+    "project_management": {
+      "simple_verbs": [
+        "assign", "begin", "cancel", "close", "complete", "create", "deliver",
+        "delegate", "draft", "end", "evaluate", "execute", "finish", "implement",
+        "initiate", "iterate", "manage", "monitor", "plan", "prioritize"
+      ],
+      "compound_verbs": [
+        "accelerate development", "anticipate risks", "break down tasks",
+        "come up with solutions", "delegate responsibilities", "estimate costs",
+        "facilitate communication", "forecast demand", "generate leads",
+        "identify stakeholders", "implement practices", "improve efficiency"
+      ]
+    },
+    "soft_skills": {
+      "simple_verbs": [
+        "show", "take", "be", "adapt", "collaborate", "communicate", "contribute",
+        "cooperate", "delegate", "empathize", "energize", "excel", "focus",
+        "influence", "inspire", "lead", "listen", "learn", "motivate"
+      ],
+      "compound_verbs": [
+        "build relationships", "come up with solutions", "deal with challenges",
+        "deliver results", "follow through", "get along", "handle situations",
+        "influence others", "manage stress", "mentor others", "motivate others",
+        "negotiate outcomes", "network with others", "prioritize tasks"
+      ]
+    },
+    "software_development": {
+      "simple_verbs": [
+        "write", "test", "design", "debug", "create", "maintain", "analyze",
+        "implement", "optimize", "document", "deploy", "collaborate", "troubleshoot",
+        "use", "conduct", "integrate", "refactor", "work", "provide"
+      ],
+      "compound_verbs": [
+        "troubleshoot and debug", "analyze and optimize", "collaborate on and design",
+        "test and refactor", "write and maintain", "automate and streamline",
+        "design and implement", "handle and optimize", "integrate and synchronize",
+        "architect and implement", "version control and track", "review and refactor"
+      ]
+    }
+  },
+  "grammatical_features": {
+    "voice": {
+      "active": "Subject performs the action",
+      "passive": "Action is performed on the subject"
+    },
+    "aspect": {
+      "imperfective": "Action is ongoing or continuous",
+      "perfective": "Action is completed"
+    },
+    "mood": {
+      "indicative": "States facts or asks questions",
+      "imperative": "Gives commands or instructions",
+      "subjunctive": "Expresses wishes, suggestions, or hypothetical situations",
+      "conditional": "Expresses conditions or possibilities"
+    }
+  },
+  "examples_by_context": {
+    "user_experience": {
+      "active_voice": [
+        "The user can add items to their cart.",
+        "The user can click on the button to submit the form.",
+        "The user can navigate through the website or app."
+      ],
+      "passive_voice": [
+        "Items can be added to the cart.",
+        "The form can be submitted by clicking the button.",
+        "The website or app can be navigated through by clicking on links."
+      ]
+    },
+    "project_management": {
+      "active_voice": [
+        "Complete the project on time and within budget.",
+        "Deliver all deliverables to the client's satisfaction.",
+        "Manage the team effectively and efficiently."
+      ],
+      "passive_voice": [
+        "The project was completed successfully.",
+        "The deliverables were delivered on time and within budget.",
+        "The team was managed effectively and efficiently."
+      ]
+    }
+  },
+  "metadata": {
+    "total_verb_types": 8,
+    "total_examples": 200,
+    "professional_contexts": [
+      "User Experience",
+      "User Interface",
+      "Project Management",
+      "Soft Skills",
+      "Software Development"
+    ],
+    "tags": [
+      "grammar",
+      "verbs",
+      "verb_types",
+      "voice",
+      "aspect",
+      "mood",
+      "professional_english",
+      "vocabulary"
+    ],
+    "difficulty_level": "intermediate",
+    "target_audience": [
+      "professionals",
+      "students",
+      "non-native_english_speakers",
+      "business_communicators"
+    ]
+  }
+} 

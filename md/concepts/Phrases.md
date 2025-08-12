@@ -1,0 +1,256 @@
+    **UX:**
+
+- The ease of use   
+-  the user's needs and preferences in mind  
+- Gathering insights  
+- feedback from users to inform design decisions.  
+-  target user group  
+-  based on demographic and behavioral data.  
+- User Journey  
+- Mapping the steps a user takes to accomplish a task within a product or service.  
+- Findability  
+- Information Architecture  
+- Low-fidelity  
+- Building interactive mockups  
+- Determine which performs better.  
+- Defining the path a user takes to complete a specific task  
+- Designing the behavior and responsiveness of elements within the user interface  
+- Visual Hierarchy: Organizing content to guide users' attention  
+-  A prompt that encourages users to take a specific action  
+- provide feedback to users  
+- Observing users interacting with a product to identify usability issues  
+- Cognitive Load: The mental effort required to use a product  
+-  Affordance: Visual or functional cues that suggest how an element should be used.  
+- The time it takes for a person to make a decision based on the number of choices available.  
+-  avoiding shadows and gradients.  
+- emphasizing depth, light, and shadow  
+- to enhance user engagement and motivation  
+- Presenting information gradually to reduce cognitive overload  
+-  Evaluating a product's usability based on established usability principles  
+-  Collecting user opinions and suggestions to improve the user experience  
+- User Engagement: Measures of user involvement  
+- Metrics related to the number of users who continue to use a product over time  
+- The rate at which users stop using a product  
+- Measuring the rate at which users complete a desired action  
+- Using specialized technology to monitor and analyze  
+- Visualizing where users scroll on a webpage to identify engagement patterns  
+- Measuring how much time users spend on a web page or screen  
+- The visual or textual cues that indicate the relevance and value of a link or button  
+- Providing clear and helpful error messages to guide users through issues  
+- Animations triggered by a user's scrolling behavior.  
+- Popups that appear when users attempt to leave a webpage  
+- Crafting clear and user-friendly text in interfaces  
+- Designing navigation based on user mental models and expectations  
+- Observing users in their natural environment to understand their needs and workflows  
+- display information in a visually appealing manner  
+- Planning and managing content to align with user needs  
+- Reusable design solutions for common user interface problems.  
+- The specific tasks or objectives users want to accomplish with a product  
+- Designing products that are usable and accessible by people of all abilities  
+- Designing interfaces to minimize user errors and prevent mistakes  
+- Checking and validating user input to ensure accuracy and prevent errors  
+- Providing a basic experience for all users and enhancing it for advanced users  
+- Showing content placeholders while a web page or app is loading.  
+- Reducing the time it takes for a website or app to load.  
+- creating smooth and natural animations.  
+- A scrolling effect that creates a 3D-like illusion on a 2D webpage  
+- Scroll Hijacking: Controlling user scrolling behavior to navigate a website or app  
+- touch-based devices  
+- within easy reach  
+- Placing interactive elements within easy reach of the user's thumb.  
+- Thumb-Friendly Design  
+- The selection and use of fonts to enhance readability and visual appeal  
+-  Designing based on the context and environment in which users will interact with a product  
+- Maintaining a consistent design language and patterns throughout a product.  
+- User-friendly  
+-  the overall user experience  
+- multiple design cycles  
+- Improving the rate at which users take desired actions  
+- to gather insights  
+-  qualitative data for shaping design decisions.
+
+**Project Management**   
+
+- defined start and end dates  
+- allocated resources   
+- A temporary endeavor   
+- The boundaries or extent of the work to be performed in a project  
+-  including deliverables and objectives  
+- the project's outcome.  
+- Individuals or groups who have an interest   
+- the estimated costs and expenditures.  
+- The approved financial plan for the project  
+-  Potential events or situations that may have both positive and negative impacts   
+- requirements expected from the project's deliverables  
+- The exchange of information between project stakeholders to ensure everyone is informed and aligned.  
+-  A visual representation of a project schedule  
+-  To bring something new into existence, such as a project plan, deliverable, or solution  
+-  To plan and outline the structure, layout, or specifications of a project  
+- To arrange and structure project elements, resources, and activities in a systematic manner.  
+- To carry out the planned activities and tasks to achieve project objectives.  
+-  To observe and track project progress  
+- the project plan and objectives.  
+- To manage and adjust project activities   
+- To examine and assess the project's performance, status, or deliverables.  
+- To appraise or evaluate the current state or potential risks in a project  
+- To deal with or attend to a particular issue or concern within the project.  
+- To oversee and handle project activities  
+- To guide and direct the project team and its efforts towards achieving objectives.  
+- To entrust tasks or responsibilities to specific team members  
+-  To make processes or activities easier and smoother by providing support and guidance  
+- often across departments or organizations  
+- To involve and actively participate   
+-  the overall organizational goals  
+- To engage in discussions and reach agreements or compromises among stakeholders  
+- ensuring it aligns with the project's goals  
+- To record project-related information, such as plans, progress, and outcomes  
+- maximum output  
+- to gain insights  
+- make informed decisions.  
+- To oversee and be in charge of project activities  
+- To find a solution or address issues  
+- information to reflect the latest developments.  
+-  To record and maintain project-related information  
+- exchange information, ideas, and updates among project stakeholders.  
+- A legally binding agreement between parties, defining roles, responsibilities, and terms for the project.  
+-  The process of controlling and managing changes to the project's scope, schedule, and budget.  
+- addressing the needs and concerns of project stakeholders  
+-  The efficient allocation and utilization of project resources  
+- problems or challenges that arise during the project  
+- The ongoing observation and measurement of project performance   
+-  that may hinder project progress  
+-  The activities to foster collaboration, cohesion, and performance among project team members  
+- applying insights gained from project experiences for future improvement.  
+- The creation and maintenance of project-related records, plans, and reports.  
+- project-related records  
+- project-related teams  
+- project-related schedule  
+- project-related features  
+- project-related maintenance
+
+**Soft Skills**
+
+- The ability to convey ideas, thoughts, or information clearly and accurately  
+- Effective communication involves using appropriate language  
+- fostering better communication and stronger relationships.  
+- The ability to understand and share the feelings and perspectives of others.   
+- Communicating in a brief and to-the-point manner   
+- unnecessary details and helps prevent information overload.  
+-  It plays a crucial role in personal and professional development.  
+- Expressing one's thoughts, opinions, and needs in a direct and confident manner while respecting the rights and viewpoints of others.   
+- strikes a balance between passive and aggressive communication styles  
+- Working together with others to achieve a common goal  
+- Cooperation involves coordinating efforts, sharing information, and aligning actions for collective success.  
+- motivating team members, and facilitating their growth and development.   
+- Guiding and influencing a group towards a shared vision or objective.  
+- The ability to adjust and thrive in changing situations.  
+- to respond to shifting priorities and circumstances without resistance.  
+- Being open to different ways of doing things  
+- Trust: The foundation of successful teamwork  
+-  The process of reaching a consensus  
+- making choices as a team.  
+- Group decision-making involves evaluating options  
+-  considering diverse perspectives  
+-  arriving at solutions that benefit the entire team  
+- The skill of addressing and resolving disagreements or conflicts that may arise within a team.  
+-  Effective conflict resolution involves active listening  
+- finding solutions that satisfy all parties involved  
+- Establishing and nurturing connections  
+-  Strong relationships foster trust  
+- leading to increased collaboration and productivity  
+- The process of analyzing and evaluating information  
+- a logical and systematic manner  
+-  considering alternative perspectives   
+- The ability to generate novel and innovative ideas  
+-  thinking outside the box  
+-  finding unique ways to address challenges.  
+-  gathering relevant information  
+- weighing pros and cons  
+- developing informed strategies to address them.  
+- identifying the root causes of issues   
+- Evaluating and understanding the context, factors, and variables surrounding a problem or challenge.  
+- Solution-oriented individuals identify opportunities within challenges   
+- finding viable solutions rather than dwelling on problems.  
+- adapt in order to thrive despite adversity  
+- The commitment to ongoing personal and professional development  
+- Self-aware individuals  
+- Self-control allows individuals to avoid impulsive or inappropriate behavior  
+- The skill of effectively coping with and reducing stress.   
+- The skill of reaching mutually beneficial agreements through discussion and compromise.  
+- Engaging in meaningful and effective conversations with others.   
+- The process of setting goals, defining tasks, and outlining the steps needed to achieve them.  
+-  time management skills to avoid loss of focus and quality.  
+- Time optimization involves minimizing time wastage   
+- to work towards shared goals  
+- using appropriate strategies to boost morale.  
+- using logic and emotional appeals to sway opinions.  
+- building rapport  
+- decisions are reached collaboratively  
+- reach their potential.  
+- personal growth  
+-  The ability to rapidly acquire new knowledge and skills.  
+- grasp and apply information efficiently  
+- Cognitive flexibility enables individuals to adjust their thinking and problem-solving strategies based on the situation.  
+-  Responding positively and effectively to new circumstances  
+- Resilient individuals are able to cope with challenges and maintain their emotional well-being.  
+- Bouncing back from setbacks, failures, or adversities with determination  
+- Willingness to Learn  
+- ongoing personal and professional growth  
+- Adapting one's actions, strategies, or behaviors to accommodate shifting circumstances.  
+- Thinking and acting creatively and resourcefully in unexpected situations  
+- Following proper conventions and practices when composing and sending emails  
+- Compassionate listening involves showing understanding and empathy without judgment.  
+- Being attuned to others' emotions and being able to grasp and resonate with their feelings.  
+- Acknowledging Others' Needs  
+-  Creating an environment where individuals feel valued, respected, and encouraged to reach their potential.   
+- sense of belonging  
+- Being present and fully engaged in the current moment
+
+**Software development**
+
+- source code   
+-  code management  
+- higher-order functions  
+-  programming paradigm  
+- automated tests  
+- customer involvement throughout the process  
+-  projects are divided into sequential phases  
+- Each phase must be completed before moving to the next.  
+- focuses on defining and testing desired behaviors.  
+- quick development cycles to accelerate software delivery.  
+- A cultural and technical movement that aims to bridge the gap between development and operations teams  
+- leading to improved code quality and knowledge sharing.  
+- Creating the architectural and detailed designs for the software based on the gathered requirements  
+- Writing the actual source code based on the design specifications.  
+- Writing the actual source code   
+- Debugging ensures that the software behaves as intended.  
+- ensure adherence to coding standards.  
+- Testing individual components or units of the software in isolation to verify their correctness  
+- to ensure they work together as expected  
+-  from an end-user perspective  
+- Testing the entire software system as a whole   
+-  The process of releasing the software for use by end-users.  
+-  Serverless architectures can reduce operational overhead.  
+- Scalability can be achieved through horizontal or vertical scaling.  
+-  performance advantages for certain use cases.  
+- Data modeling helps ensure accurate representation and efficient organization of data.  
+- managing large volumes of data from various sources for analysis and reporting  
+- . Full-stack developers can work on all aspects of a web application, from user interfaces to server logic.  
+- to provide an optimal viewing experience across different devices and screen sizes.  
+-  offer a smoother user experience   
+- dynamically updates content as users interact with it.  
+- that streamline the development of mobile applications  
+- Frameworks provide a foundation for building consistent and feature-rich apps.  
+- provide insights into user behavior  
+- Manual testing relies on human testers to validate software behavior.  
+-  Regression testing helps prevent unintended side effects.  
+-   the application's performance under expected and peak load conditions to assess its scalability  
+- Evaluating the user-friendliness and overall user experience of a software application.  
+- Evaluate how well users can navigate and interact with the application.  
+- Technical debt occurs when shortcuts or suboptimal solutions are chosen to meet immediate goals.  
+- Software tools used to simulate various load conditions  
+- A set of tools used to automate and streamline the development  
+- tasks yet to be implemented  
+- Ongoing enhancement of processes.  
+- Isolated branch for working on a specific feature.
+

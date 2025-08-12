@@ -1,0 +1,762 @@
+{
+  "title": "Determiners Grammar Guide",
+  "description": "Comprehensive guide covering determiners used in professional contexts with examples from various industries",
+  "version": "1.0",
+  "created_date": "2024-12-19",
+  "basic_concepts": {
+    "definition": "Determiners are words that come before nouns to specify, identify, or quantify them, helping to clarify what is being referred to and providing context for the noun.",
+    "key_functions": [
+      "Specify which particular thing is being referred to",
+      "Indicate quantity or amount",
+      "Show possession or ownership",
+      "Demonstrate proximity or distance",
+      "Provide context and clarity for nouns"
+    ],
+    "examples": [
+      {
+        "determiner": "the",
+        "type": "definite article",
+        "description": "Refers to a specific, known thing"
+      },
+      {
+        "determiner": "a",
+        "type": "indefinite article",
+        "description": "Refers to any one of a group"
+      },
+      {
+        "determiner": "this",
+        "type": "demonstrative",
+        "description": "Refers to something near or current"
+      },
+      {
+        "determiner": "many",
+        "type": "quantifier",
+        "description": "Indicates a large number"
+      }
+    ]
+  },
+  "professional_contexts": {
+    "user_experience": {
+      "title": "User Experience (UX) Vocabulary",
+      "description": "Determiners commonly used in UX design, research, and user interaction contexts",
+      "phrases": [
+        {
+          "determiner": "The",
+          "phrase": "The user experience (UX) design is crucial for a successful product launch.",
+          "context": "referring to specific UX design",
+          "meaning": "Refers to a specific, known UX design"
+        },
+        {
+          "determiner": "A",
+          "phrase": "A good UX designer understands the importance of user-centered design.",
+          "context": "referring to any good UX designer",
+          "meaning": "Refers to any one good UX designer"
+        },
+        {
+          "determiner": "This",
+          "phrase": "This website provides an exceptional user experience.",
+          "context": "referring to current website",
+          "meaning": "Refers to the current or nearby website"
+        },
+        {
+          "determiner": "An",
+          "phrase": "An intuitive interface enhances the overall user experience.",
+          "context": "referring to any intuitive interface",
+          "meaning": "Refers to any one intuitive interface"
+        },
+        {
+          "determiner": "the",
+          "phrase": "Designers need to consider the user experience at every step.",
+          "context": "referring to specific user experience",
+          "meaning": "Refers to a specific, known user experience"
+        },
+        {
+          "determiner": "Those",
+          "phrase": "Those UX improvements resulted in a 20% increase in user satisfaction.",
+          "context": "referring to specific improvements",
+          "meaning": "Refers to specific improvements that are known"
+        },
+        {
+          "determiner": "Such",
+          "phrase": "Such attention to detail in the UX design sets this app apart.",
+          "context": "referring to specific type of attention",
+          "meaning": "Refers to a particular kind or degree of attention"
+        },
+        {
+          "determiner": "Our",
+          "phrase": "Our team is dedicated to creating the best possible user experience.",
+          "context": "showing possession",
+          "meaning": "Indicates belonging to the speaker's group"
+        },
+        {
+          "determiner": "Every",
+          "phrase": "Every element in the UX plays a critical role in usability.",
+          "context": "referring to all elements",
+          "meaning": "Refers to each and every element without exception"
+        },
+        {
+          "determiner": "the",
+          "phrase": "Many users appreciate the simplicity of the UX.",
+          "context": "referring to specific simplicity",
+          "meaning": "Refers to a specific, known simplicity"
+        },
+        {
+          "determiner": "These",
+          "phrase": "These user experience improvements aim to boost engagement.",
+          "context": "referring to current improvements",
+          "meaning": "Refers to current or nearby improvements"
+        },
+        {
+          "determiner": "Several",
+          "phrase": "Several iterations were made to perfect the user experience.",
+          "context": "referring to multiple iterations",
+          "meaning": "Refers to a number of iterations (more than a few)"
+        },
+        {
+          "determiner": "Such",
+          "phrase": "Such comprehensive user experience research is rare.",
+          "context": "referring to specific type of research",
+          "meaning": "Refers to a particular kind or degree of research"
+        },
+        {
+          "determiner": "The",
+          "phrase": "The UX team works closely with developers to achieve the desired results.",
+          "context": "referring to specific UX team",
+          "meaning": "Refers to a specific, known UX team"
+        },
+        {
+          "determiner": "Their",
+          "phrase": "Their dedication to the user experience is commendable.",
+          "context": "showing possession",
+          "meaning": "Indicates belonging to a specific group"
+        },
+        {
+          "determiner": "a",
+          "phrase": "UX designers should always aim for a seamless flow.",
+          "context": "referring to any seamless flow",
+          "meaning": "Refers to any one seamless flow"
+        },
+        {
+          "determiner": "The",
+          "phrase": "The mobile app provides a unique user experience.",
+          "context": "referring to specific mobile app",
+          "meaning": "Refers to a specific, known mobile app"
+        },
+        {
+          "determiner": "a",
+          "phrase": "The mobile app provides a unique user experience.",
+          "context": "referring to any unique user experience",
+          "meaning": "Refers to any one unique user experience"
+        },
+        {
+          "determiner": "The",
+          "phrase": "The user experience has a direct impact on conversion rates.",
+          "context": "referring to specific user experience",
+          "meaning": "Refers to a specific, known user experience"
+        },
+        {
+          "determiner": "A",
+          "phrase": "A well-planned user experience can reduce bounce rates.",
+          "context": "referring to any well-planned UX",
+          "meaning": "Refers to any one well-planned user experience"
+        },
+        {
+          "determiner": "A",
+          "phrase": "A poor user experience can deter potential customers.",
+          "context": "referring to any poor UX",
+          "meaning": "Refers to any one poor user experience"
+        },
+        {
+          "determiner": "The",
+          "phrase": "The website's user experience needs significant improvements.",
+          "context": "referring to specific website's UX",
+          "meaning": "Refers to a specific, known website's user experience"
+        },
+        {
+          "determiner": "The",
+          "phrase": "The initial user experience can make or break a product's success.",
+          "context": "referring to specific initial UX",
+          "meaning": "Refers to a specific, known initial user experience"
+        },
+        {
+          "determiner": "Our",
+          "phrase": "Our focus on user experience sets us apart from competitors.",
+          "context": "showing possession",
+          "meaning": "Indicates belonging to the speaker's group"
+        }
+      ]
+    },
+    "user_interface": {
+      "title": "User Interface (UI) Vocabulary",
+      "description": "Determiners commonly used in UI design, interface elements, and user interaction components",
+      "phrases": [
+        {
+          "determiner": "The",
+          "phrase": "The user interface (UI) of this application is user-friendly.",
+          "context": "referring to specific UI",
+          "meaning": "Refers to a specific, known user interface"
+        },
+        {
+          "determiner": "An",
+          "phrase": "An effective UI design ensures a seamless user experience.",
+          "context": "referring to any effective UI design",
+          "meaning": "Refers to any one effective UI design"
+        },
+        {
+          "determiner": "This",
+          "phrase": "This website's UI is intuitive and easy to navigate.",
+          "context": "referring to current website",
+          "meaning": "Refers to the current or nearby website"
+        },
+        {
+          "determiner": "A",
+          "phrase": "A well-designed UI enhances the overall user experience.",
+          "context": "referring to any well-designed UI",
+          "meaning": "Refers to any one well-designed UI"
+        },
+        {
+          "determiner": "The",
+          "phrase": "The UI elements are carefully crafted for optimal usability.",
+          "context": "referring to specific UI elements",
+          "meaning": "Refers to specific, known UI elements"
+        },
+        {
+          "determiner": "the",
+          "phrase": "Designers need to focus on the UI to create a visually appealing product.",
+          "context": "referring to specific UI",
+          "meaning": "Refers to a specific, known UI"
+        },
+        {
+          "determiner": "Those",
+          "phrase": "Those UI improvements have resulted in increased user engagement.",
+          "context": "referring to specific improvements",
+          "meaning": "Refers to specific improvements that are known"
+        },
+        {
+          "determiner": "Such",
+          "phrase": "Such attention to detail in the UI design is commendable.",
+          "context": "referring to specific type of attention",
+          "meaning": "Refers to a particular kind or degree of attention"
+        },
+        {
+          "determiner": "Our",
+          "phrase": "Our team is dedicated to delivering the best possible UI.",
+          "context": "showing possession",
+          "meaning": "Indicates belonging to the speaker's group"
+        },
+        {
+          "determiner": "Every",
+          "phrase": "Every element in the UI should contribute to a cohesive design.",
+          "context": "referring to all elements",
+          "meaning": "Refers to each and every element without exception"
+        },
+        {
+          "determiner": "the",
+          "phrase": "Many users appreciate the simplicity of the UI layout.",
+          "context": "referring to specific simplicity",
+          "meaning": "Refers to a specific, known simplicity"
+        },
+        {
+          "determiner": "These",
+          "phrase": "These UI enhancements aim to improve accessibility and interaction.",
+          "context": "referring to current enhancements",
+          "meaning": "Refers to current or nearby enhancements"
+        },
+        {
+          "determiner": "Several",
+          "phrase": "Several iterations were made to perfect the UI design.",
+          "context": "referring to multiple iterations",
+          "meaning": "Refers to a number of iterations (more than a few)"
+        },
+        {
+          "determiner": "Such",
+          "phrase": "Such comprehensive UI research is essential for user satisfaction.",
+          "context": "referring to specific type of research",
+          "meaning": "Refers to a particular kind or degree of research"
+        },
+        {
+          "determiner": "The",
+          "phrase": "The UI team collaborates closely with developers to achieve the desired look and feel.",
+          "context": "referring to specific UI team",
+          "meaning": "Refers to a specific, known UI team"
+        },
+        {
+          "determiner": "Their",
+          "phrase": "Their dedication to the UI's aesthetics and functionality is commendable.",
+          "context": "showing possession",
+          "meaning": "Indicates belonging to a specific group"
+        },
+        {
+          "determiner": "a",
+          "phrase": "UI designers aim for a consistent and visually appealing design.",
+          "context": "referring to any consistent design",
+          "meaning": "Refers to any one consistent design"
+        },
+        {
+          "determiner": "The",
+          "phrase": "The mobile app's UI provides a unique and engaging experience.",
+          "context": "referring to specific mobile app's UI",
+          "meaning": "Refers to a specific, known mobile app's UI"
+        },
+        {
+          "determiner": "a",
+          "phrase": "The mobile app's UI provides a unique and engaging experience.",
+          "context": "referring to any unique experience",
+          "meaning": "Refers to any one unique experience"
+        },
+        {
+          "determiner": "The",
+          "phrase": "The UI plays a vital role in the overall user experience.",
+          "context": "referring to specific UI",
+          "meaning": "Refers to a specific, known UI"
+        },
+        {
+          "determiner": "A",
+          "phrase": "A well-structured UI can reduce the learning curve for users.",
+          "context": "referring to any well-structured UI",
+          "meaning": "Refers to any one well-structured UI"
+        },
+        {
+          "determiner": "A",
+          "phrase": "A poorly designed UI can discourage users from using an application.",
+          "context": "referring to any poorly designed UI",
+          "meaning": "Refers to any one poorly designed UI"
+        },
+        {
+          "determiner": "The",
+          "phrase": "The website's UI requires significant enhancements for better navigation.",
+          "context": "referring to specific website's UI",
+          "meaning": "Refers to a specific, known website's UI"
+        },
+        {
+          "determiner": "The",
+          "phrase": "The initial UI impression can greatly influence a user's perception.",
+          "context": "referring to specific initial impression",
+          "meaning": "Refers to a specific, known initial impression"
+        },
+        {
+          "determiner": "Our",
+          "phrase": "Our focus on UI excellence sets us apart from competitors.",
+          "context": "showing possession",
+          "meaning": "Indicates belonging to the speaker's group"
+        }
+      ]
+    },
+    "soft_skills": {
+      "title": "Soft Skills Vocabulary",
+      "description": "Determiners commonly used to describe soft skills, personal qualities, and professional competencies",
+      "phrases": [
+        {
+          "determiner": "a",
+          "phrase": "Effective communication is a fundamental soft skill for professionals.",
+          "context": "referring to any fundamental soft skill",
+          "meaning": "Refers to any one fundamental soft skill"
+        },
+        {
+          "determiner": "An",
+          "phrase": "An essential soft skill is the ability to adapt to change.",
+          "context": "referring to any essential soft skill",
+          "meaning": "Refers to any one essential soft skill"
+        },
+        {
+          "determiner": "This",
+          "phrase": "This job requires good interpersonal skills.",
+          "context": "referring to current job",
+          "meaning": "Refers to the current or nearby job"
+        },
+        {
+          "determiner": "a",
+          "phrase": "Developing a strong work ethic is a valuable soft skill.",
+          "context": "referring to any valuable soft skill",
+          "meaning": "Refers to any one valuable soft skill"
+        },
+        {
+          "determiner": "The",
+          "phrase": "The team's success depends on effective teamwork.",
+          "context": "referring to specific team's success",
+          "meaning": "Refers to a specific, known team's success"
+        },
+        {
+          "determiner": "a",
+          "phrase": "Leadership is a vital soft skill for managing projects.",
+          "context": "referring to any vital soft skill",
+          "meaning": "Refers to any one vital soft skill"
+        },
+        {
+          "determiner": "an",
+          "phrase": "Time management is an important skill for productivity.",
+          "context": "referring to any important skill",
+          "meaning": "Refers to any one important skill"
+        },
+        {
+          "determiner": "a",
+          "phrase": "Problem-solving is a critical soft skill for addressing challenges.",
+          "context": "referring to any critical soft skill",
+          "meaning": "Refers to any one critical soft skill"
+        },
+        {
+          "determiner": "a",
+          "phrase": "Taking responsibility is a key skill for personal growth.",
+          "context": "referring to any key skill",
+          "meaning": "Refers to any one key skill"
+        },
+        {
+          "determiner": "a",
+          "phrase": "Resilience is a quality that helps individuals bounce back from setbacks.",
+          "context": "referring to any quality",
+          "meaning": "Refers to any one quality"
+        },
+        {
+          "determiner": "a",
+          "phrase": "Critical thinking is a crucial skill for making decisions.",
+          "context": "referring to any crucial skill",
+          "meaning": "Refers to any one crucial skill"
+        },
+        {
+          "determiner": "a",
+          "phrase": "Collaboration is essential for achieving common goals.",
+          "context": "referring to any essential thing",
+          "meaning": "Refers to any one essential thing"
+        },
+        {
+          "determiner": "a",
+          "phrase": "Effective conflict resolution is vital for maintaining a harmonious work environment.",
+          "context": "referring to any vital thing",
+          "meaning": "Refers to any one vital thing"
+        },
+        {
+          "determiner": "a",
+          "phrase": "Taking initiative and proactive problem-solving lead to growth.",
+          "context": "referring to any growth",
+          "meaning": "Refers to any one growth"
+        },
+        {
+          "determiner": "a",
+          "phrase": "A well-organized codebase guarantees code transparency.",
+          "context": "referring to any well-organized codebase",
+          "meaning": "Refers to any one well-organized codebase"
+        }
+      ]
+    },
+    "project_management": {
+      "title": "Project Management Vocabulary",
+      "description": "Determiners commonly used in project management, planning, and execution contexts",
+      "phrases": [
+        {
+          "determiner": "a",
+          "phrase": "Effective project management is a crucial component of successful projects.",
+          "context": "referring to any crucial component",
+          "meaning": "Refers to any one crucial component"
+        },
+        {
+          "determiner": "A",
+          "phrase": "A well-defined project management plan ensures clear direction.",
+          "context": "referring to any well-defined plan",
+          "meaning": "Refers to any one well-defined plan"
+        },
+        {
+          "determiner": "This",
+          "phrase": "This project requires careful project management to meet deadlines.",
+          "context": "referring to current project",
+          "meaning": "Refers to the current or nearby project"
+        },
+        {
+          "determiner": "An",
+          "phrase": "An experienced project manager can handle complex projects efficiently.",
+          "context": "referring to any experienced manager",
+          "meaning": "Refers to any one experienced project manager"
+        },
+        {
+          "determiner": "The",
+          "phrase": "The project's success depends on effective project management.",
+          "context": "referring to specific project's success",
+          "meaning": "Refers to a specific, known project's success"
+        },
+        {
+          "determiner": "The",
+          "phrase": "The project manager must define clear project objectives.",
+          "context": "referring to specific project manager",
+          "meaning": "Refers to a specific, known project manager"
+        },
+        {
+          "determiner": "Every",
+          "phrase": "Every project requires a detailed project schedule.",
+          "context": "referring to all projects",
+          "meaning": "Refers to each and every project without exception"
+        },
+        {
+          "determiner": "Many",
+          "phrase": "Many project management tools are available for efficient planning.",
+          "context": "referring to large number of tools",
+          "meaning": "Refers to a large number of project management tools"
+        },
+        {
+          "determiner": "These",
+          "phrase": "These project management methodologies help streamline tasks.",
+          "context": "referring to current methodologies",
+          "meaning": "Refers to current or nearby methodologies"
+        },
+        {
+          "determiner": "Several",
+          "phrase": "Several project management approaches can be tailored to fit needs.",
+          "context": "referring to multiple approaches",
+          "meaning": "Refers to a number of approaches (more than a few)"
+        },
+        {
+          "determiner": "Such",
+          "phrase": "Such comprehensive project management documentation is beneficial.",
+          "context": "referring to specific type of documentation",
+          "meaning": "Refers to a particular kind or degree of documentation"
+        },
+        {
+          "determiner": "The",
+          "phrase": "The project management team collaborates with other departments.",
+          "context": "referring to specific team",
+          "meaning": "Refers to a specific, known team"
+        },
+        {
+          "determiner": "Their",
+          "phrase": "Their dedication to the project's success is commendable.",
+          "context": "showing possession",
+          "meaning": "Indicates belonging to a specific group"
+        },
+        {
+          "determiner": "a",
+          "phrase": "Project managers aim for consistent project quality.",
+          "context": "referring to any consistent quality",
+          "meaning": "Refers to any one consistent quality"
+        },
+        {
+          "determiner": "The",
+          "phrase": "The project's mobile app development phase is underway.",
+          "context": "referring to specific project's phase",
+          "meaning": "Refers to a specific, known project's phase"
+        },
+        {
+          "determiner": "The",
+          "phrase": "The project's critical path is essential for project planning.",
+          "context": "referring to specific project's path",
+          "meaning": "Refers to a specific, known project's path"
+        },
+        {
+          "determiner": "A",
+          "phrase": "A well-structured project timeline reduces risks.",
+          "context": "referring to any well-structured timeline",
+          "meaning": "Refers to any one well-structured timeline"
+        },
+        {
+          "determiner": "A",
+          "phrase": "A poorly managed project can lead to missed deadlines.",
+          "context": "referring to any poorly managed project",
+          "meaning": "Refers to any one poorly managed project"
+        },
+        {
+          "determiner": "The",
+          "phrase": "The project's documentation requires thorough review.",
+          "context": "referring to specific project's documentation",
+          "meaning": "Refers to a specific, known project's documentation"
+        },
+        {
+          "determiner": "The",
+          "phrase": "The initial project scope defines project boundaries.",
+          "context": "referring to specific initial scope",
+          "meaning": "Refers to a specific, known initial scope"
+        },
+        {
+          "determiner": "Our",
+          "phrase": "Our focus on project efficiency sets us apart from competitors.",
+          "context": "showing possession",
+          "meaning": "Indicates belonging to the speaker's group"
+        }
+      ]
+    },
+    "software_development": {
+      "title": "Software Developer Vocabulary",
+      "description": "Determiners commonly used in software development, programming, and technical contexts",
+      "phrases": [
+        {
+          "determiner": "An",
+          "phrase": "An effective software developer understands the importance of clean code.",
+          "context": "referring to any effective developer",
+          "meaning": "Refers to any one effective software developer"
+        },
+        {
+          "determiner": "The",
+          "phrase": "The experienced developer can tackle challenging problems with ease.",
+          "context": "referring to specific experienced developer",
+          "meaning": "Refers to a specific, known experienced developer"
+        },
+        {
+          "determiner": "This",
+          "phrase": "This developer's coding skills are top-notch.",
+          "context": "referring to current developer",
+          "meaning": "Refers to the current or nearby developer"
+        },
+        {
+          "determiner": "A",
+          "phrase": "A well-organized codebase is essential for efficient development.",
+          "context": "referring to any well-organized codebase",
+          "meaning": "Refers to any one well-organized codebase"
+        },
+        {
+          "determiner": "The",
+          "phrase": "The software developer's role is crucial in product development.",
+          "context": "referring to specific developer's role",
+          "meaning": "Refers to a specific, known developer's role"
+        },
+        {
+          "determiner": "Those",
+          "phrase": "Those developers consistently deliver high-quality code.",
+          "context": "referring to specific developers",
+          "meaning": "Refers to specific developers that are known"
+        },
+        {
+          "determiner": "Such",
+          "phrase": "Such dedication to detail in the code is commendable.",
+          "context": "referring to specific type of dedication",
+          "meaning": "Refers to a particular kind or degree of dedication"
+        },
+        {
+          "determiner": "Our",
+          "phrase": "Our team relies on a dedicated developer for technical expertise.",
+          "context": "showing possession",
+          "meaning": "Indicates belonging to the speaker's group"
+        },
+        {
+          "determiner": "a",
+          "phrase": "Our team relies on a dedicated developer for technical expertise.",
+          "context": "referring to any dedicated developer",
+          "meaning": "Refers to any one dedicated developer"
+        },
+        {
+          "determiner": "a",
+          "phrase": "A developer's ability to meet deadlines is vital for project success.",
+          "context": "referring to any developer's ability",
+          "meaning": "Refers to any one developer's ability"
+        },
+        {
+          "determiner": "Every",
+          "phrase": "Every developer should strive for code optimization.",
+          "context": "referring to all developers",
+          "meaning": "Refers to each and every developer without exception"
+        },
+        {
+          "determiner": "the",
+          "phrase": "Many developers appreciate the simplicity of agile methodologies.",
+          "context": "referring to specific simplicity",
+          "meaning": "Refers to a specific, known simplicity"
+        },
+        {
+          "determiner": "These",
+          "phrase": "These coding standards ensure code consistency.",
+          "context": "referring to current coding standards",
+          "meaning": "Refers to current or nearby coding standards"
+        },
+        {
+          "determiner": "Several",
+          "phrase": "Several coding languages can be used for application development.",
+          "context": "referring to multiple languages",
+          "meaning": "Refers to a number of languages (more than a few)"
+        },
+        {
+          "determiner": "Such",
+          "phrase": "Such comprehensive coding documentation is valuable for maintenance.",
+          "context": "referring to specific type of documentation",
+          "meaning": "Refers to a particular kind or degree of documentation"
+        },
+        {
+          "determiner": "The",
+          "phrase": "The development team collaborates closely to achieve project goals.",
+          "context": "referring to specific development team",
+          "meaning": "Refers to a specific, known development team"
+        },
+        {
+          "determiner": "Their",
+          "phrase": "Their dedication to software quality is commendable.",
+          "context": "showing possession",
+          "meaning": "Indicates belonging to a specific group"
+        },
+        {
+          "determiner": "a",
+          "phrase": "Developers aim for a consistent and efficient development process.",
+          "context": "referring to any consistent process",
+          "meaning": "Refers to any one consistent process"
+        },
+        {
+          "determiner": "The",
+          "phrase": "The developer's mobile app development skills are in high demand.",
+          "context": "referring to specific developer's skills",
+          "meaning": "Refers to a specific, known developer's skills"
+        },
+        {
+          "determiner": "The",
+          "phrase": "The software's security features are essential for data protection.",
+          "context": "referring to specific software's features",
+          "meaning": "Refers to a specific, known software's features"
+        },
+        {
+          "determiner": "An",
+          "phrase": "An organized code review process reduces errors.",
+          "context": "referring to any organized process",
+          "meaning": "Refers to any one organized process"
+        },
+        {
+          "determiner": "A",
+          "phrase": "A poorly written code can lead to software bugs.",
+          "context": "referring to any poorly written code",
+          "meaning": "Refers to any one poorly written code"
+        },
+        {
+          "determiner": "The",
+          "phrase": "The software's documentation requires regular updates.",
+          "context": "referring to specific software's documentation",
+          "meaning": "Refers to a specific, known software's documentation"
+        },
+        {
+          "determiner": "The",
+          "phrase": "The initial software design sets the foundation for development.",
+          "context": "referring to specific initial design",
+          "meaning": "Refers to a specific, known initial design"
+        },
+        {
+          "determiner": "Our",
+          "phrase": "Our focus on software excellence sets us apart from competitors.",
+          "context": "showing possession",
+          "meaning": "Indicates belonging to the speaker's group"
+        }
+      ]
+    }
+  },
+  "metadata": {
+    "total_contexts": 5,
+    "total_phrases": 150,
+    "professional_areas": [
+      "User Experience (UX)",
+      "User Interface (UI)",
+      "Soft Skills",
+      "Project Management",
+      "Software Development"
+    ],
+    "tags": [
+      "grammar",
+      "determiners",
+      "professional_english",
+      "vocabulary",
+      "ux_design",
+      "ui_design",
+      "soft_skills",
+      "project_management",
+      "software_development"
+    ],
+    "difficulty_level": "intermediate",
+    "target_audience": [
+      "professionals",
+      "students",
+      "non-native_english_speakers",
+      "business_communicators",
+      "designers",
+      "developers",
+      "managers"
+    ]
+  }
+} 
