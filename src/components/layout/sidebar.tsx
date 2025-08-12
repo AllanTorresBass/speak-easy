@@ -6,19 +6,20 @@ import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { 
-  BookOpen, 
-  GraduationCap, 
-  Target, 
-  BarChart3,
-  Settings,
-  Menu,
-  X,
-  Home,
-  Users,
-  Trophy,
-  Calendar,
-  BookMarked
-} from 'lucide-react';
+              BookOpen, 
+              GraduationCap, 
+              Target, 
+              BarChart3,
+              Settings,
+              Menu,
+              X,
+              Home,
+              Users,
+              Trophy,
+              Calendar,
+              BookMarked,
+              Brain
+            } from 'lucide-react';
 
 interface SidebarProps {
   collapsed: boolean;
@@ -26,67 +27,73 @@ interface SidebarProps {
 }
 
 const navigation = [
-  { 
-    name: 'Dashboard', 
-    href: '/dashboard', 
-    icon: Home,
-    description: 'Overview and progress'
-  },
-  { 
-    name: 'Vocabulary', 
-    href: '/vocabulary', 
-    icon: BookOpen,
-    description: 'Word lists and practice'
-  },
-  { 
-    name: 'Grammar', 
-    href: '/grammar', 
-    icon: GraduationCap,
-    description: 'Lessons and exercises'
-  },
-  { 
-    name: 'Practice', 
-    href: '/practice', 
-    icon: Target,
-    description: 'Interactive sessions'
-  },
-  { 
-    name: 'Progress', 
-    href: '/progress', 
-    icon: BarChart3,
-    description: 'Learning analytics'
-  },
-  { 
-    name: 'Community', 
-    href: '/community', 
-    icon: Users,
-    description: 'Connect with learners'
-  },
-  { 
-    name: 'Achievements', 
-    href: '/achievements', 
-    icon: Trophy,
-    description: 'Badges and rewards'
-  },
-  { 
-    name: 'Schedule', 
-    href: '/schedule', 
-    icon: Calendar,
-    description: 'Study planning'
-  },
-  { 
-    name: 'Resources', 
-    href: '/resources', 
-    icon: BookMarked,
-    description: 'Additional materials'
-  },
-  { 
-    name: 'Settings', 
-    href: '/settings', 
-    icon: Settings,
-    description: 'Account preferences'
-  },
-];
+              { 
+                name: 'Dashboard', 
+                href: '/dashboard', 
+                icon: Home,
+                description: 'Overview and progress'
+              },
+              { 
+                name: 'Vocabulary', 
+                href: '/vocabulary', 
+                icon: BookOpen,
+                description: 'Word lists and practice'
+              },
+              { 
+                name: 'Grammar', 
+                href: '/grammar', 
+                icon: GraduationCap,
+                description: 'Lessons and exercises'
+              },
+              { 
+                name: 'Advanced Learning', 
+                href: '/advanced-learning', 
+                icon: Brain,
+                description: 'AI-powered learning features'
+              },
+              { 
+                name: 'Practice', 
+                href: '/practice', 
+                icon: Target,
+                description: 'Interactive sessions'
+              },
+              { 
+                name: 'Progress', 
+                href: '/progress', 
+                icon: BarChart3,
+                description: 'Learning analytics'
+              },
+              { 
+                name: 'Community', 
+                href: '/community', 
+                icon: Users,
+                description: 'Connect with learners'
+              },
+              { 
+                name: 'Achievements', 
+                href: '/achievements', 
+                icon: Trophy,
+                description: 'Badges and rewards'
+              },
+              { 
+                name: 'Schedule', 
+                href: '/schedule', 
+                icon: Calendar,
+                description: 'Study planning'
+              },
+              { 
+                name: 'Resources', 
+                href: '/resources', 
+                icon: BookMarked,
+                description: 'Additional materials'
+              },
+              { 
+                name: 'Settings', 
+                href: '/settings', 
+                icon: Settings,
+                description: 'Account preferences'
+              },
+            ];
 
 export function Sidebar({ collapsed, onToggle }: SidebarProps) {
   const pathname = usePathname();

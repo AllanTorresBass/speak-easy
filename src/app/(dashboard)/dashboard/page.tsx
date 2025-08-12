@@ -15,6 +15,7 @@ import {
   Star
 } from 'lucide-react';
 import Link from 'next/link';
+import { PWAInstaller } from '@/components/pwa/pwa-installer';
 
 export default function DashboardPage() {
   return (
@@ -235,6 +236,11 @@ export default function DashboardPage() {
           </div>
         </CardContent>
       </Card>
+
+      {/* PWA Installer */}
+      <div className="flex justify-center">
+        <PWAInstaller />
+      </div>
     </div>
   );
 } 

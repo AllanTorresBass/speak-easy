@@ -3,6 +3,37 @@ import CredentialsProvider from 'next-auth/providers/credentials';
 import bcrypt from 'bcryptjs';
 import { sql } from './db';
 
+// Extend NextAuth types
+declare module 'next-auth' {
+  interface User {
+    id: string;
+    nativeLanguage: string;
+    targetLanguage: string;
+    proficiencyLevel: string;
+  }
+  
+  interface Session {
+    user: {
+      id: string;
+      name?: string | null;
+      email?: string | null;
+      image?: string | null;
+      nativeLanguage: string;
+      targetLanguage: string;
+      proficiencyLevel: string;
+    }
+  }
+}
+
+declare module 'next-auth/jwt' {
+  interface JWT {
+    id: string;
+    nativeLanguage: string;
+    targetLanguage: string;
+    proficiencyLevel: string;
+  }
+}
+
 export const authOptions: NextAuthOptions = {
   providers: [
     CredentialsProvider({
@@ -67,7 +98,6 @@ export const authOptions: NextAuthOptions = {
   },
   pages: {
     signIn: '/auth/signin',
-    signUp: '/auth/signup',
   },
   secret: process.env.NEXTAUTH_SECRET,
 }; 

@@ -1,122 +1,539 @@
-@import "tailwindcss";
-@import "tw-animate-css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@custom-variant dark (&:is(.dark *));
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 84% 4.9%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 84% 4.9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.5rem;
+  }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-  --color-sidebar-ring: var(--sidebar-ring);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar: var(--sidebar);
-  --color-chart-5: var(--chart-5);
-  --color-chart-4: var(--chart-4);
-  --color-chart-3: var(--chart-3);
-  --color-chart-2: var(--chart-2);
-  --color-chart-1: var(--chart-1);
-  --color-ring: var(--ring);
-  --color-input: var(--input);
-  --color-border: var(--border);
-  --color-destructive: var(--destructive);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-accent: var(--accent);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-muted: var(--muted);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-secondary: var(--secondary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-primary: var(--primary);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-popover: var(--popover);
-  --color-card-foreground: var(--card-foreground);
-  --color-card: var(--card);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-}
-
-:root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
-}
-
-.dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 94.1%;
+  }
 }
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border;
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* Mobile-first responsive utilities */
+@layer utilities {
+  /* Touch-friendly button sizes */
+  .touch-target {
+    @apply min-h-[44px] min-w-[44px];
+  }
+  
+  /* Mobile-optimized spacing */
+  .mobile-padding {
+    @apply px-4 py-3;
+  }
+  
+  .mobile-margin {
+    @apply mx-4 my-3;
+  }
+  
+  /* Mobile-optimized text sizes */
+  .mobile-text-sm {
+    @apply text-sm leading-5;
+  }
+  
+  .mobile-text-base {
+    @apply text-base leading-6;
+  }
+  
+  .mobile-text-lg {
+    @apply text-lg leading-7;
+  }
+  
+  /* Mobile-optimized card layouts */
+  .mobile-card {
+    @apply rounded-lg border bg-card text-card-foreground shadow-sm;
+  }
+  
+  .mobile-card-header {
+    @apply flex flex-col space-y-1.5 p-4;
+  }
+  
+  .mobile-card-content {
+    @apply p-4 pt-0;
+  }
+  
+  /* Mobile-optimized grid layouts */
+  .mobile-grid {
+    @apply grid gap-4;
+  }
+  
+  .mobile-grid-1 {
+    @apply grid-cols-1;
+  }
+  
+  .mobile-grid-2 {
+    @apply grid-cols-1 sm:grid-cols-2;
+  }
+  
+  .mobile-grid-3 {
+    @apply grid-cols-1 sm:grid-cols-2 lg:grid-cols-3;
+  }
+  
+  /* Mobile-optimized flexbox */
+  .mobile-flex-col {
+    @apply flex flex-col;
+  }
+  
+  .mobile-flex-row {
+    @apply flex flex-col sm:flex-row;
+  }
+  
+  /* Mobile-optimized spacing */
+  .mobile-space-y {
+    @apply space-y-4;
+  }
+  
+  .mobile-space-x {
+    @apply space-x-4;
+  }
+  
+  /* Mobile-optimized buttons */
+  .mobile-button {
+    @apply inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50;
+  }
+  
+  .mobile-button-primary {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2;
+  }
+  
+  .mobile-button-secondary {
+    @apply bg-secondary text-secondary-foreground hover:bg-secondary/80 h-10 px-4 py-2;
+  }
+  
+  .mobile-button-outline {
+    @apply border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2;
+  }
+  
+  /* Mobile-optimized forms */
+  .mobile-input {
+    @apply flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  
+  .mobile-select {
+    @apply flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  
+  /* Mobile-optimized navigation */
+  .mobile-nav {
+    @apply flex flex-col space-y-2;
+  }
+  
+  .mobile-nav-item {
+    @apply flex items-center space-x-3 rounded-lg px-3 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground;
+  }
+  
+  .mobile-nav-item-active {
+    @apply bg-accent text-accent-foreground;
+  }
+  
+  /* Mobile-optimized tabs */
+  .mobile-tabs {
+    @apply flex space-x-1 rounded-lg bg-muted p-1;
+  }
+  
+  .mobile-tab {
+    @apply inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50;
+  }
+  
+  .mobile-tab-active {
+    @apply bg-background text-foreground shadow-sm;
+  }
+  
+  .mobile-tab-inactive {
+    @apply text-muted-foreground hover:text-foreground;
+  }
+  
+  /* Mobile-optimized modals */
+  .mobile-modal {
+    @apply fixed inset-0 z-50 flex items-center justify-center p-4;
+  }
+  
+  .mobile-modal-overlay {
+    @apply fixed inset-0 bg-background/80 backdrop-blur-sm;
+  }
+  
+  .mobile-modal-content {
+    @apply relative w-full max-w-md rounded-lg border bg-background p-6 shadow-lg;
+  }
+  
+  /* Mobile-optimized tooltips */
+  .mobile-tooltip {
+    @apply absolute z-50 overflow-hidden rounded-md border bg-popover px-3 py-1.5 text-sm text-popover-foreground shadow-md animate-in fade-in-0 zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2;
+  }
+  
+  /* Mobile-optimized badges */
+  .mobile-badge {
+    @apply inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2;
+  }
+  
+  .mobile-badge-default {
+    @apply border-transparent bg-primary text-primary-foreground hover:bg-primary/80;
+  }
+  
+  .mobile-badge-secondary {
+    @apply border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80;
+  }
+  
+  .mobile-badge-outline {
+    @apply text-foreground;
+  }
+  
+  /* Mobile-optimized progress bars */
+  .mobile-progress {
+    @apply relative h-2 w-full overflow-hidden rounded-full bg-secondary;
+  }
+  
+  .mobile-progress-indicator {
+    @apply h-full w-full flex-1 bg-primary transition-all;
+  }
+  
+  /* Mobile-optimized avatars */
+  .mobile-avatar {
+    @apply relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full;
+  }
+  
+  .mobile-avatar-image {
+    @apply aspect-square h-full w-full;
+  }
+  
+  .mobile-avatar-fallback {
+    @apply flex h-full w-full items-center justify-center rounded-full bg-muted;
+  }
+  
+  /* Mobile-optimized cards */
+  .mobile-card-hover {
+    @apply transition-all duration-200 hover:shadow-lg;
+  }
+  
+  .mobile-card-interactive {
+    @apply cursor-pointer transition-all duration-200 hover:shadow-lg active:scale-95;
+  }
+  
+  /* Mobile-optimized animations */
+  .mobile-fade-in {
+    @apply animate-in fade-in-0 duration-300;
+  }
+  
+  .mobile-slide-up {
+    @apply animate-in slide-in-from-bottom-4 duration-300;
+  }
+  
+  .mobile-scale-in {
+    @apply animate-in zoom-in-95 duration-200;
+  }
+  
+  /* Mobile-optimized shadows */
+  .mobile-shadow-sm {
+    @apply shadow-sm;
+  }
+  
+  .mobile-shadow-md {
+    @apply shadow-md;
+  }
+  
+  .mobile-shadow-lg {
+    @apply shadow-lg;
+  }
+  
+  .mobile-shadow-xl {
+    @apply shadow-xl;
+  }
+  
+  /* Mobile-optimized borders */
+  .mobile-border {
+    @apply border border-border;
+  }
+  
+  .mobile-border-t {
+    @apply border-t border-border;
+  }
+  
+  .mobile-border-b {
+    @apply border-b border-border;
+  }
+  
+  .mobile-border-l {
+    @apply border-l border-border;
+  }
+  
+  .mobile-border-r {
+    @apply border-r border-border;
+  }
+  
+  /* Mobile-optimized rounded corners */
+  .mobile-rounded {
+    @apply rounded-md;
+  }
+  
+  .mobile-rounded-lg {
+    @apply rounded-lg;
+  }
+  
+  .mobile-rounded-xl {
+    @apply rounded-xl;
+  }
+  
+  .mobile-rounded-full {
+    @apply rounded-full;
+  }
+  
+  /* Mobile-optimized spacing scale */
+  .mobile-space-1 {
+    @apply space-y-1;
+  }
+  
+  .mobile-space-2 {
+    @apply space-y-2;
+  }
+  
+  .mobile-space-3 {
+    @apply space-y-3;
+  }
+  
+  .mobile-space-4 {
+    @apply space-y-4;
+  }
+  
+  .mobile-space-6 {
+    @apply space-y-6;
+  }
+  
+  .mobile-space-8 {
+    @apply space-y-8;
+  }
+  
+  /* Mobile-optimized padding scale */
+  .mobile-p-1 {
+    @apply p-1;
+  }
+  
+  .mobile-p-2 {
+    @apply p-2;
+  }
+  
+  .mobile-p-3 {
+    @apply p-3;
+  }
+  
+  .mobile-p-4 {
+    @apply p-4;
+  }
+  
+  .mobile-p-6 {
+    @apply p-6;
+  }
+  
+  .mobile-p-8 {
+    @apply p-8;
+  }
+  
+  /* Mobile-optimized margin scale */
+  .mobile-m-1 {
+    @apply m-1;
+  }
+  
+  .mobile-m-2 {
+    @apply m-2;
+  }
+  
+  .mobile-m-3 {
+    @apply m-3;
+  }
+  
+  .mobile-m-4 {
+    @apply m-4;
+  }
+  
+  .mobile-m-6 {
+    @apply m-6;
+  }
+  
+  .mobile-m-8 {
+    @apply m-8;
+  }
+}
+
+/* PWA-specific styles */
+@layer components {
+  /* PWA install prompt */
+  .pwa-install-prompt {
+    @apply fixed bottom-4 left-4 right-4 z-50 rounded-lg border bg-background p-4 shadow-lg;
+  }
+  
+  /* PWA offline indicator */
+  .pwa-offline-indicator {
+    @apply fixed top-4 right-4 z-50 rounded-full bg-red-500 p-2 text-white shadow-lg;
+  }
+  
+  /* PWA update notification */
+  .pwa-update-notification {
+    @apply fixed top-4 left-4 right-4 z-50 rounded-lg border bg-background p-4 shadow-lg;
+  }
+  
+  /* PWA splash screen */
+  .pwa-splash {
+    @apply fixed inset-0 z-50 flex items-center justify-center bg-background;
+  }
+  
+  /* PWA app bar */
+  .pwa-app-bar {
+    @apply fixed top-0 left-0 right-0 z-40 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60;
+  }
+  
+  /* PWA bottom navigation */
+  .pwa-bottom-nav {
+    @apply fixed bottom-0 left-0 right-0 z-40 border-t bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60;
+  }
+}
+
+/* Mobile-specific media queries */
+@media (max-width: 640px) {
+  .mobile-only {
+    @apply block;
+  }
+  
+  .desktop-only {
+    @apply hidden;
+  }
+  
+  .mobile-text-xs {
+    @apply text-xs;
+  }
+  
+  .mobile-text-sm {
+    @apply text-sm;
+  }
+  
+  .mobile-text-base {
+    @apply text-base;
+  }
+  
+  .mobile-text-lg {
+    @apply text-lg;
+  }
+  
+  .mobile-text-xl {
+    @apply text-xl;
+  }
+  
+  .mobile-text-2xl {
+    @apply text-2xl;
+  }
+  
+  .mobile-text-3xl {
+    @apply text-3xl;
+  }
+}
+
+@media (min-width: 641px) {
+  .mobile-only {
+    @apply hidden;
+  }
+  
+  .desktop-only {
+    @apply block;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .touch-optimized {
+    @apply cursor-pointer;
+  }
+  
+  .touch-button {
+    @apply min-h-[44px] min-w-[44px];
+  }
+  
+  .touch-target {
+    @apply min-h-[44px] min-w-[44px];
+  }
+}
+
+/* High DPI display optimizations */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .high-dpi {
+    @apply antialiased;
+  }
+}
+
+/* Dark mode optimizations */
+@media (prefers-color-scheme: dark) {
+  .dark-mode-optimized {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe {
+    @apply transition-none;
+  }
+  
+  .motion-safe\:animate-in {
+    @apply animate-none;
+  }
+  
+  .motion-safe\:animate-out {
+    @apply animate-none;
+  }
+}
+
+/* Print styles */
+@media print {
+  .print-hidden {
+    @apply hidden;
+  }
+  
+  .print-visible {
+    @apply block;
   }
 }
