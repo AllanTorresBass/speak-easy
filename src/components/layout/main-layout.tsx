@@ -34,7 +34,7 @@ export function MainLayout({ children }: MainLayoutProps) {
       
       <div className="flex-1 flex flex-col overflow-hidden">
         {/* Header */}
-        <header className="border-b bg-card/50 backdrop-blur-md sticky top-0 z-40">
+        <header className="border-b bg-card/50 backdrop-blur-md sticky top-0 z-40 h-[65px]">
           <div className="flex items-center justify-between px-6 py-4">
             <div className="flex items-center space-x-4">
               <Button

@@ -84,7 +84,7 @@ export function Breadcrumbs() {
   }
 
   return (
-    <nav className="flex items-center space-x-1 px-6 py-2 text-sm text-muted-foreground bg-muted/30 border-b">
+    <nav className="flex items-center space-x-1 px-6 text-sm text-muted-foreground bg-muted/30 border-b">
       <Link
         href="/"
         className="flex items-center hover:text-foreground transition-colors"
