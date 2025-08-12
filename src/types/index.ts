@@ -16,11 +16,12 @@ export interface VocabularyList {
   id: string;
   title: string;
   description: string;
-  difficultyLevel: 'beginner' | 'intermediate' | 'advanced';
+  difficulty: 'beginner' | 'intermediate' | 'advanced';
   category: string;
   language: string;
   wordCount: number;
-  estimatedTime: string;
+  estimatedTime: number;
+  tags: string[];
   createdAt: Date;
 }
 
@@ -30,7 +31,11 @@ export interface VocabularyWord {
   word: string;
   translation: string;
   partOfSpeech: string;
-  exampleSentence?: string;
+  definition: string;
+  example: string;
+  synonyms: string[];
+  pronunciation: string;
+  difficulty: 'beginner' | 'intermediate' | 'advanced';
   difficultyRank: number;
   createdAt: Date;
 }
@@ -38,11 +43,17 @@ export interface VocabularyWord {
 export interface UserProgress {
   id: string;
   userId: string;
-  wordId: string;
+  vocabularyListId: string;
+  wordId?: string;
+  wordsLearned: number;
+  totalWords: number;
   masteryLevel: number; // 0-5 scale
-  lastReviewed: Date;
-  nextReview: Date;
-  reviewCount: number;
+  averageScore: number;
+  studySessions: number;
+  lastStudied: Date;
+  lastReviewed?: Date;
+  nextReview?: Date;
+  reviewCount?: number;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -51,10 +62,14 @@ export interface GrammarLesson {
   id: string;
   title: string;
   category: string;
-  difficultyLevel: 'beginner' | 'intermediate' | 'advanced';
+  difficulty: 'beginner' | 'intermediate' | 'advanced';
+  description: string;
   content: string;
   examples: string[];
   exercises: Exercise[];
+  tags: string[];
+  lessonCount: number;
+  estimatedTime: number;
   language: string;
   createdAt: Date;
 }

@@ -35,61 +35,61 @@ const navigation = [
               },
               { 
                 name: 'Vocabulary', 
-                href: '/vocabulary', 
+                href: '/dashboard/vocabulary', 
                 icon: BookOpen,
                 description: 'Word lists and practice'
               },
               { 
                 name: 'Grammar', 
-                href: '/grammar', 
+                href: '/dashboard/grammar', 
                 icon: GraduationCap,
                 description: 'Lessons and exercises'
               },
               { 
                 name: 'Advanced Learning', 
-                href: '/advanced-learning', 
+                href: '/dashboard/advanced-learning', 
                 icon: Brain,
                 description: 'AI-powered learning features'
               },
               { 
                 name: 'Practice', 
-                href: '/practice', 
+                href: '/dashboard/practice', 
                 icon: Target,
                 description: 'Interactive sessions'
               },
               { 
                 name: 'Progress', 
-                href: '/progress', 
+                href: '/dashboard/progress', 
                 icon: BarChart3,
                 description: 'Learning analytics'
               },
               { 
                 name: 'Community', 
-                href: '/community', 
+                href: '/dashboard/community', 
                 icon: Users,
                 description: 'Connect with learners'
               },
               { 
                 name: 'Achievements', 
-                href: '/achievements', 
+                href: '/dashboard/achievements', 
                 icon: Trophy,
                 description: 'Badges and rewards'
               },
               { 
                 name: 'Schedule', 
-                href: '/schedule', 
+                href: '/dashboard/schedule', 
                 icon: Calendar,
                 description: 'Study planning'
               },
               { 
                 name: 'Resources', 
-                href: '/resources', 
+                href: '/dashboard/resources', 
                 icon: BookMarked,
                 description: 'Additional materials'
               },
               { 
                 name: 'Settings', 
-                href: '/settings', 
+                href: '/dashboard/settings', 
                 icon: Settings,
                 description: 'Account preferences'
               },

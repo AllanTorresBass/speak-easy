@@ -51,7 +51,7 @@
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-gray-200 dark:border-gray-800;
   }
   body {
     @apply bg-background text-foreground;
@@ -289,23 +289,23 @@
   
   /* Mobile-optimized borders */
   .mobile-border {
-    @apply border border-border;
+    @apply border border-gray-200 dark:border-gray-800;
   }
   
   .mobile-border-t {
-    @apply border-t border-border;
+    @apply border-t border-gray-200 dark:border-gray-800;
   }
   
   .mobile-border-b {
-    @apply border-b border-border;
+    @apply border-b border-gray-200 dark:border-gray-800;
   }
   
   .mobile-border-l {
-    @apply border-l border-border;
+    @apply border-l border-gray-200 dark:border-gray-800;
   }
   
   .mobile-border-r {
-    @apply border-r border-border;
+    @apply border-r border-gray-200 dark:border-gray-800;
   }
   
   /* Mobile-optimized rounded corners */

@@ -10,6 +10,7 @@ interface LanguageContextType {
   setLanguage: (lang: SupportedLanguage) => void;
   t: (key: string, params?: Record<string, string>) => string;
   isRTL: boolean;
+  supportedLanguages: Language[];
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -179,7 +180,8 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
         currentLanguage, 
         setLanguage: handleLanguageChange, 
         t, 
-        isRTL 
+        isRTL,
+        supportedLanguages: Object.values(supportedLanguages)
       }}
     >
       {children}

@@ -1,11 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { LanguageProvider } from '@/contexts/language-context';
-import { ThemeProvider } from '@/contexts/theme-context';
-import { QueryProvider } from '@/components/providers/query-provider';
-import { SessionProvider } from 'next-auth/react';
-import { Toaster } from '@/components/ui/sonner';
+import { ClientProviders } from '@/components/providers/client-providers';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -108,24 +104,13 @@ export default function RootLayout({
         <meta name="apple-touch-fullscreen" content="yes" />
         <meta name="apple-touch-icon" content="/icons/icon-152x152.png" />
         <meta name="apple-touch-icon-precomposed" content="/icons/icon-152x152.png" />
-        <meta name="apple-touch-icon-precomposed" sizes="152x152" content="/icons/icon-152x152.png" />
-        <meta name="apple-touch-icon-precomposed" sizes="167x167" content="/icons/icon-167x167.png" />
-        <meta name="apple-touch-icon-precomposed" sizes="180x180" content="/icons/icon-180x180.png" />
-        <meta name="apple-touch-icon-precomposed" sizes="1024x1024" content="/icons/icon-1024x1024.png" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <SessionProvider>
-          <QueryProvider>
-            <ThemeProvider>
-              <LanguageProvider>
-                {children}
-                <Toaster />
-              </LanguageProvider>
-            </ThemeProvider>
-          </QueryProvider>
-        </SessionProvider>
+        <ClientProviders>
+          {children}
+        </ClientProviders>
       </body>
     </html>
   );
