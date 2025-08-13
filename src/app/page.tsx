@@ -14,7 +14,8 @@ import {
   ArrowRight,
   CheckCircle,
   Volume2,
-  BookMarked
+  BookMarked,
+  FileText
 } from 'lucide-react';
 import { TranslationTest } from '@/components/common/translation-test';
 import { PromovaDataTest } from '@/components/common/promova-data-test';
@@ -22,6 +23,7 @@ import { SimpleDataTest } from '@/components/common/simple-data-test';
 import { ComprehensiveTranslationDashboard } from '@/components/common/comprehensive-translation-dashboard';
 import { TranslationVerification } from '@/components/common/translation-verification';
 import { WordsDataTest } from '@/components/common/words-data-test';
+import { GrammarDataTest } from '@/components/common/grammar-data-test';
 
 export default function Home() {
   return (
@@ -124,6 +126,11 @@ export default function Home() {
             <WordsDataTest />
           </div>
           
+          {/* Grammar Data Test */}
+          <div className="mt-6">
+            <GrammarDataTest />
+          </div>
+          
           <div className="mt-12 flex items-center justify-center space-x-8 text-sm text-gray-500 dark:text-gray-400">
             <div className="flex items-center space-x-2">
               <CheckCircle className="w-4 h-4 text-green-500" />
@@ -216,6 +223,19 @@ export default function Home() {
                 <CardDescription>
                   25 comprehensive English-Spanish vocabulary lists covering business, travel, 
                   family, and everyday communication with audio pronunciation.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+            
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
+              <CardHeader>
+                <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/20 rounded-lg flex items-center justify-center mb-4">
+                  <FileText className="w-6 h-6 text-purple-600 dark:text-purple-400" />
+                </div>
+                <CardTitle>Professional Grammar Guides</CardTitle>
+                <CardDescription>
+                  12 comprehensive grammar guides covering adjectives, adverbs, clauses, and more 
+                  in professional contexts like UX/UI design and software development.
                 </CardDescription>
               </CardHeader>
             </Card>

@@ -205,6 +205,44 @@ export default function GrammarPage() {
         </p>
       </div>
 
+      {/* Grammar Overview Section */}
+      <Card className="mb-8 bg-gradient-to-r from-blue-50 to-indigo-50 border-blue-200">
+        <CardContent className="p-6">
+          <div className="flex flex-col md:flex-row items-center justify-between">
+            <div className="mb-4 md:mb-0">
+              <h2 className="text-2xl font-bold text-blue-900 mb-2">
+                New: Professional Grammar Guides
+              </h2>
+              <p className="text-blue-700 mb-4">
+                Explore 12 comprehensive grammar guides covering adjectives, adverbs, clauses, conjunctions, 
+                and more in professional contexts like UX/UI design, software development, and project management.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                <Badge variant="secondary" className="bg-blue-100 text-blue-800">
+                  <BookOpen className="h-3 w-3 mr-1" />
+                  12 Guides
+                </Badge>
+                <Badge variant="secondary" className="bg-green-100 text-green-800">
+                  <Target className="h-3 w-3 mr-1" />
+                  Professional Contexts
+                </Badge>
+                <Badge variant="secondary" className="bg-purple-100 text-purple-800">
+                  <FileText className="h-3 w-3 mr-1" />
+                  500+ Examples
+                </Badge>
+              </div>
+            </div>
+            <Button asChild className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3">
+              <Link href="/grammar/overview">
+                <BookOpen className="h-4 w-4 mr-2" />
+                Explore Grammar Guides
+                <ArrowRight className="h-4 w-4 ml-2" />
+              </Link>
+            </Button>
+          </div>
+        </CardContent>
+      </Card>
+
       {/* Stats Overview */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8">
         <Card className="h-full">

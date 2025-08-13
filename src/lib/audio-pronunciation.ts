@@ -1,3 +1,5 @@
+import { isBrowserAPI, getBrowserAPI } from './hydration-safe';
+
 // Audio Pronunciation System
 // Provides text-to-speech functionality and audio management for language learning
 
@@ -51,7 +53,7 @@ export class AudioPronunciationSystem {
 
   private constructor() {
     // Only initialize on client side
-    if (typeof window !== 'undefined') {
+    if (isBrowserAPI('speechSynthesis')) {
       this.initializeSpeechSynthesis();
     }
   }
@@ -67,14 +69,17 @@ export class AudioPronunciationSystem {
    * Initialize speech synthesis
    */
   private initializeSpeechSynthesis(): void {
-    if ('speechSynthesis' in window) {
-      this.speechSynthesis = window.speechSynthesis;
-      this.loadAvailableVoices();
-      
-      // Listen for voice changes
-      this.speechSynthesis.addEventListener('voiceschanged', () => {
+    if (isBrowserAPI('speechSynthesis')) {
+      const synthesis = getBrowserAPI<SpeechSynthesis>('speechSynthesis');
+      if (synthesis) {
+        this.speechSynthesis = synthesis;
         this.loadAvailableVoices();
-      });
+        
+        // Listen for voice changes
+        this.speechSynthesis.addEventListener('voiceschanged', () => {
+          this.loadAvailableVoices();
+        });
+      }
     }
   }
 
@@ -460,19 +465,19 @@ export class AudioPronunciationSystem {
   /**
    * Add event listener for audio events
    */
-  public addEventListener(type: string, callback: (event: CustomEvent) => void): void {
-    window.addEventListener('audioEvent', (event: CustomEvent) => {
-      if (event.detail.type === type) {
-        callback(event);
-      }
-    });
+  public addAudioEventListener(callback: (event: CustomEvent) => void): void {
+    if (typeof window !== 'undefined') {
+      window.addEventListener('audioEvent' as any, callback as EventListener);
+    }
   }
 
   /**
-   * Remove event listener
+   * Remove event listener for audio events
    */
-  public removeEventListener(type: string, callback: (event: CustomEvent) => void): void {
-    window.removeEventListener('audioEvent', callback);
+  public removeAudioEventListener(callback: (event: CustomEvent) => void): void {
+    if (typeof window !== 'undefined') {
+      window.removeEventListener('audioEvent' as any, callback as EventListener);
+    }
   }
 }
 

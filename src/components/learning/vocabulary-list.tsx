@@ -17,11 +17,13 @@ import {
   Play,
   BarChart3,
   Star,
-  TrendingUp
+  TrendingUp,
+  BookMarked
 } from 'lucide-react';
 import { useVocabularyLists, useUserProgress } from '@/hooks/use-vocabulary';
 import { useSession } from 'next-auth/react';
 import { PromovaVocabularyCard } from './promova-vocabulary-card';
+import { getDifficultyColorWithDarkMode } from '@/lib/hydration-safe';
 
 export function VocabularyList() {
   const { data: session } = useSession();
@@ -58,20 +60,6 @@ export function VocabularyList() {
   // Get progress for a specific list
   const getProgress = (listId: string) => {
     return userProgress?.find(progress => progress.vocabularyListId === listId);
-  };
-
-  // Get difficulty color
-  const getDifficultyColor = (difficulty: string) => {
-    switch (difficulty) {
-      case 'beginner':
-        return 'bg-green-100 text-green-800 dark:bg-green-900/20 dark:text-green-400';
-      case 'intermediate':
-        return 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/20 dark:text-yellow-400';
-      case 'advanced':
-        return 'bg-red-100 text-red-800 dark:bg-red-900/20 dark:text-red-400';
-      default:
-        return 'bg-gray-100 text-gray-800 dark:bg-gray-900/20 dark:text-gray-400';
-    }
   };
 
   if (listsLoading) {
@@ -208,7 +196,7 @@ export function VocabularyList() {
                       {list.description}
                     </CardDescription>
                   </div>
-                  <Badge className={getDifficultyColor(list.difficulty)}>
+                  <Badge className={getDifficultyColorWithDarkMode(list.difficulty)}>
                     {list.difficulty}
                   </Badge>
                 </div>

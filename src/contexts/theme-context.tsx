@@ -1,6 +1,7 @@
 'use client';
 
-import { createContext, useContext, useEffect, useState, ReactNode } from 'react';
+import { createContext, useContext, useEffect, ReactNode } from 'react';
+import { useLocalStorage } from '@/hooks/use-client-only';
 
 type Theme = 'light' | 'dark' | 'system';
 
@@ -8,23 +9,24 @@ interface ThemeContextType {
   theme: Theme;
   setTheme: (theme: Theme) => void;
   resolvedTheme: 'light' | 'dark';
+  mounted: boolean;
 }
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setTheme] = useState<Theme>('system');
-  const [resolvedTheme, setResolvedTheme] = useState<'light' | 'dark'>('light');
+  const [theme, setTheme] = useLocalStorage<Theme>('speakeasy-theme', 'system');
+  const [resolvedTheme, setResolvedTheme] = useLocalStorage<'light' | 'dark'>('speakeasy-resolved-theme', 'light');
+  const [mounted, setMounted] = useLocalStorage<boolean>('speakeasy-mounted', false);
+
+  // Ensure we only run client-side code after mounting
+  useEffect(() => {
+    setMounted(true);
+  }, [setMounted]);
 
   useEffect(() => {
-    // Get saved theme preference
-    const savedTheme = localStorage.getItem('speakeasy-theme') as Theme;
-    if (savedTheme && ['light', 'dark', 'system'].includes(savedTheme)) {
-      setTheme(savedTheme);
-    }
-  }, []);
-
-  useEffect(() => {
+    if (!mounted) return;
+    
     const root = window.document.documentElement;
     
     // Remove existing theme classes
@@ -53,17 +55,14 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     // Apply theme
     setResolvedTheme(currentTheme);
     root.classList.add(currentTheme);
-    
-    // Save theme preference
-    localStorage.setItem('speakeasy-theme', theme);
-  }, [theme]);
+  }, [theme, mounted, setResolvedTheme]);
 
   const handleThemeChange = (newTheme: Theme) => {
     setTheme(newTheme);
   };
 
   return (
-    <ThemeContext.Provider value={{ theme, setTheme: handleThemeChange, resolvedTheme }}>
+    <ThemeContext.Provider value={{ theme, setTheme: handleThemeChange, resolvedTheme, mounted }}>
       {children}
     </ThemeContext.Provider>
   );
@@ -79,9 +78,11 @@ export const useTheme = () => {
 
 // Theme toggle component hook
 export const useThemeToggle = () => {
-  const { theme, setTheme, resolvedTheme } = useTheme();
+  const { theme, setTheme, resolvedTheme, mounted } = useTheme();
   
   const toggleTheme = () => {
+    if (!mounted) return;
+    
     if (theme === 'system') {
       setTheme(resolvedTheme === 'light' ? 'dark' : 'light');
     } else if (theme === 'light') {
@@ -92,6 +93,8 @@ export const useThemeToggle = () => {
   };
   
   const cycleTheme = () => {
+    if (!mounted) return;
+    
     if (theme === 'light') {
       setTheme('dark');
     } else if (theme === 'dark') {
@@ -107,5 +110,6 @@ export const useThemeToggle = () => {
     setTheme,
     toggleTheme,
     cycleTheme,
+    mounted,
   };
 }; 

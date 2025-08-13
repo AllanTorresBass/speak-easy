@@ -53,9 +53,9 @@ const navigation = [
               },
               { 
                 name: 'Grammar', 
-                href: '/dashboard/grammar', 
+                href: '/grammar/overview', 
                 icon: GraduationCap,
-                description: 'Lessons and exercises'
+                description: 'Professional grammar guides'
               },
               { 
                 name: 'Advanced Learning', 

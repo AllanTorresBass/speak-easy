@@ -7,8 +7,8 @@ export default function GrammarRedirectPage() {
   const router = useRouter();
 
   useEffect(() => {
-    // Redirect to the new grammar route
-    router.replace('/dashboard/grammar');
+    // Redirect to the new grammar overview route
+    router.replace('/grammar/overview');
   }, [router]);
 
   return (
