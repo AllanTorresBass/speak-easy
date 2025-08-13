@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, use } from 'react';
 import { useVocabularyList } from '@/hooks/use-vocabulary';
 import { PromovaVocabularyDetail } from '@/components/learning/promova-vocabulary-detail';
 import { MainLayout } from '@/components/layout/main-layout';
@@ -23,14 +23,15 @@ import { useSession } from 'next-auth/react';
 import { audioPronunciation } from '@/lib/audio-pronunciation';
 
 interface VocabularyDetailPageProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
 export default function VocabularyDetailPage({ params }: VocabularyDetailPageProps) {
   const { data: session } = useSession();
-  const { data: vocabularyList, isLoading, error } = useVocabularyList(params.id);
+  const resolvedParams = use(params);
+  const { data: vocabularyList, isLoading, error } = useVocabularyList(resolvedParams.id);
   const [isPlaying, setIsPlaying] = useState<string | null>(null);
   const [isRepeating, setIsRepeating] = useState<string | null>(null);
 
@@ -153,7 +154,7 @@ export default function VocabularyDetailPage({ params }: VocabularyDetailPagePro
   }
 
   // Check if this is a Promova list
-  if (params.id.startsWith('promova-')) {
+  if (resolvedParams.id.startsWith('promova-')) {
     return (
       <MainLayout>
         <PromovaVocabularyDetail

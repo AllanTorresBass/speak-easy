@@ -16,7 +16,11 @@ import {
   Volume2,
   BookMarked
 } from 'lucide-react';
-import { AudioTestButton } from '@/components/common/audio-test-button';
+import { TranslationTest } from '@/components/common/translation-test';
+import { PromovaDataTest } from '@/components/common/promova-data-test';
+import { SimpleDataTest } from '@/components/common/simple-data-test';
+import { ComprehensiveTranslationDashboard } from '@/components/common/comprehensive-translation-dashboard';
+import { TranslationVerification } from '@/components/common/translation-verification';
 
 export default function Home() {
   return (
@@ -42,6 +46,9 @@ export default function Home() {
             </Link>
             <Link href="#pricing" className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors">
               Pricing
+            </Link>
+            <Link href="#translations" className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors">
+              Translations
             </Link>
           </nav>
           
@@ -96,9 +103,19 @@ export default function Home() {
             </Button>
           </div>
           
-          {/* Audio Test Button */}
+          {/* Translation Test */}
           <div className="mt-6">
-            <AudioTestButton />
+            <TranslationTest />
+          </div>
+          
+          {/* Promova Data Test */}
+          <div className="mt-6">
+            <PromovaDataTest />
+          </div>
+          
+          {/* Simple Data Test */}
+          <div className="mt-6">
+            <SimpleDataTest />
           </div>
           
           <div className="mt-12 flex items-center justify-center space-x-8 text-sm text-gray-500 dark:text-gray-400">
@@ -262,6 +279,20 @@ export default function Home() {
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Comprehensive Translation Dashboard */}
+      <section id="translations" className="py-20 px-4 bg-gray-50 dark:bg-gray-800">
+        <div className="container mx-auto">
+          <ComprehensiveTranslationDashboard />
+        </div>
+      </section>
+
+      {/* Translation Verification Test */}
+      <section id="verification" className="py-20 px-4 bg-white dark:bg-gray-900">
+        <div className="container mx-auto">
+          <TranslationVerification />
         </div>
       </section>
 

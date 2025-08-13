@@ -4,7 +4,7 @@ import { PromovaSearch } from '@/components/learning/promova-search';
 
 export const metadata: Metadata = {
   title: 'Promova Vocabulary Search - SpeakEasy',
-  description: 'Search across all 25 Promova vocabulary lists to find specific words, phrases, or concepts',
+  description: 'Search across all 24 Promova vocabulary lists to find specific words, phrases, or concepts',
 };
 
 export default function PromovaVocabularyPage() {

@@ -25,6 +25,7 @@ import {
 import Link from 'next/link';
 import { VocabularyWord } from '@/types';
 import { audioPronunciation } from '@/lib/audio-pronunciation';
+import { WordDetailDialog } from './word-detail-dialog';
 
 interface PromovaVocabularyDetailProps {
   list: {
@@ -432,9 +433,11 @@ export function PromovaVocabularyDetail({ list, words }: PromovaVocabularyDetail
             <CardHeader className="pb-4 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 rounded-t-lg">
               <div className="flex items-start justify-between">
                 <div className="flex-1">
-                  <CardTitle className="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                    {word.word}
-                  </CardTitle>
+                  <WordDetailDialog word={word} audioSpeed={audioSpeed}>
+                    <CardTitle className="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors cursor-pointer hover:underline">
+                      {word.word}
+                    </CardTitle>
+                  </WordDetailDialog>
                   <div className="flex gap-2">
                     <Badge className="text-xs font-semibold px-3 py-1 bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 border-blue-200 dark:border-blue-700">
                       {word.partOfSpeech}
@@ -591,10 +594,20 @@ export function PromovaVocabularyDetail({ list, words }: PromovaVocabularyDetail
                         </>
                       )}
                     </Button>
+                    <WordDetailDialog word={word} audioSpeed={audioSpeed}>
+                      <Button 
+                        variant="outline" 
+                        size="sm" 
+                        className="h-10 bg-blue-50 hover:bg-blue-100 border-blue-200 text-blue-700 hover:text-blue-800 dark:bg-blue-900/20 dark:hover:bg-blue-900/30 dark:border-blue-700 dark:text-blue-300 dark:hover:text-blue-200 transition-all duration-200 col-span-2"
+                      >
+                        <BookOpen className="w-4 h-4 mr-2" />
+                        View Details
+                      </Button>
+                    </WordDetailDialog>
                     <Button 
                       variant="outline" 
                       size="sm" 
-                      className="h-10 bg-orange-50 hover:bg-orange-100 border-orange-200 text-orange-700 hover:text-orange-800 dark:bg-orange-900/20 dark:hover:bg-orange-900/30 dark:border-orange-700 dark:text-orange-300 dark:hover:text-orange-200 transition-all duration-200 col-span-2"
+                      className="h-10 bg-orange-50 hover:bg-orange-100 border-orange-200 text-orange-700 hover:text-orange-800 dark:bg-orange-900/20 dark:hover:bg-orange-900/30 dark:border-orange-700 dark:text-orange-300 dark:hover:text-orange-200 transition-all duration-200"
                     >
                       <BookOpen className="w-4 h-4 mr-2" />
                       Study Word

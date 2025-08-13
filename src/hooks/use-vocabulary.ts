@@ -1,12 +1,13 @@
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { VocabularyList, VocabularyWord, UserProgress } from '@/types';
 import { loadPromovaVocabulary, loadPromovaVocabularyList } from '@/lib/promova-data';
+import { loadPromovaVocabularySimple, loadPromovaVocabularyListSimple } from '@/lib/promova-data-simple';
 
 // Mock API functions - in production, these would call your actual API endpoints
 const fetchVocabularyLists = async (): Promise<VocabularyList[]> => {
   try {
-    // Load Promova vocabulary lists
-    const promovaLists = await loadPromovaVocabulary();
+    // Load Promova vocabulary lists (using simple version for testing)
+    const promovaLists = await loadPromovaVocabularySimple();
     
     // Combine with existing mock data
     const mockLists = [
@@ -58,7 +59,7 @@ const fetchVocabularyLists = async (): Promise<VocabularyList[]> => {
 const fetchVocabularyList = async (id: string): Promise<VocabularyList & { words: VocabularyWord[] }> => {
   // Check if this is a Promova list
   if (id.startsWith('promova-')) {
-    const promovaList = await loadPromovaVocabularyList(id);
+    const promovaList = await loadPromovaVocabularyListSimple(id);
     if (promovaList) {
       return promovaList;
     }

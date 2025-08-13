@@ -21,6 +21,7 @@ import {
 import { searchPromovaVocabulary } from '@/lib/promova-data';
 import { VocabularyWord } from '@/types';
 import { audioPronunciation } from '@/lib/audio-pronunciation';
+import { WordDetailDialog } from './word-detail-dialog';
 
 export function PromovaSearch() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -249,7 +250,7 @@ export function PromovaSearch() {
           <h1 className="text-3xl font-bold">Promova Vocabulary Search</h1>
         </div>
         <p className="text-muted-foreground max-w-2xl mx-auto">
-          Search across all 25 Promova vocabulary lists to find specific words, phrases, or concepts
+          Search across all 24 Promova vocabulary lists to find specific words, phrases, or concepts
         </p>
       </div>
 
@@ -373,7 +374,11 @@ export function PromovaSearch() {
                       <div className="flex-1">
                         <div className="flex items-center gap-2 mb-2">
                           {getDifficultyIcon(word.difficulty)}
-                          <CardTitle className="text-lg">{word.word}</CardTitle>
+                          <WordDetailDialog word={word} audioSpeed={audioSpeed}>
+                            <CardTitle className="text-lg cursor-pointer hover:text-blue-600 dark:hover:text-blue-400 hover:underline transition-colors">
+                              {word.word}
+                            </CardTitle>
+                          </WordDetailDialog>
                         </div>
                         <div className="flex gap-2 mb-2">
                           <Badge variant="outline" className="text-xs">
@@ -507,6 +512,12 @@ export function PromovaSearch() {
                       </>
                     )}
                   </Button>
+                  <WordDetailDialog word={word} audioSpeed={audioSpeed}>
+                    <Button variant="outline" size="sm" className="flex-1">
+                      <BookOpen className="w-4 h-4 mr-2" />
+                      View Details
+                    </Button>
+                  </WordDetailDialog>
                   <Button variant="outline" size="sm" className="flex-1" asChild>
                     <a href={`/vocabulary/${word.listId}`}>
                       <BookOpen className="w-4 h-4 mr-2" />
@@ -529,7 +540,7 @@ export function PromovaSearch() {
             <Card>
               <CardContent className="p-6 text-center">
                 <BookMarked className="h-8 w-8 text-blue-600 mx-auto mb-2" />
-                <h3 className="text-lg font-semibold">25 Lists</h3>
+                <h3 className="text-lg font-semibold">23 Lists</h3>
                 <p className="text-muted-foreground">Comprehensive vocabulary coverage</p>
               </CardContent>
             </Card>

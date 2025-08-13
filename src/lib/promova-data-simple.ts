@@ -1,5 +1,4 @@
 import { VocabularyList, VocabularyWord } from '@/types';
-import { getComprehensiveTranslation } from './comprehensive-promova-translations';
 
 export interface PromovaVocabularyItem {
   word: string;
@@ -11,10 +10,10 @@ export interface PromovaVocabularyFile {
   concepts: PromovaVocabularyItem[];
 }
 
-// Load all Promova vocabulary files
-export const loadPromovaVocabulary = async (): Promise<VocabularyList[]> => {
+// Simple version without translations for testing
+export const loadPromovaVocabularySimple = async (): Promise<VocabularyList[]> => {
   try {
-    console.log('Starting to load Promova vocabulary...');
+    console.log('Starting to load Promova vocabulary (simple version)...');
     const vocabularyLists: VocabularyList[] = [];
     
     // Load all vocabulary list files (1-24 based on available files)
@@ -55,20 +54,11 @@ export const loadPromovaVocabulary = async (): Promise<VocabularyList[]> => {
           console.warn(`Failed to load vocabulary_list_${i}.json: HTTP ${response.status}`);
         }
       } catch (error) {
-        // Only log warning for missing files, not for other errors
-        if (error instanceof Error && error.message.includes('fetch')) {
-          console.warn(`Failed to load vocabulary_list_${i}.json:`, error);
-        } else {
-          console.error(`Unexpected error loading vocabulary_list_${i}.json:`, error);
-        }
+        console.error(`Error loading vocabulary_list_${i}.json:`, error);
       }
     }
     
-    // Return empty array if no lists were loaded
-    if (vocabularyLists.length === 0) {
-      console.warn('No Promova vocabulary lists were loaded successfully');
-    }
-    
+    console.log(`Total lists loaded: ${vocabularyLists.length}`);
     return vocabularyLists;
   } catch (error) {
     console.error('Error loading Promova vocabulary:', error);
@@ -76,10 +66,10 @@ export const loadPromovaVocabulary = async (): Promise<VocabularyList[]> => {
   }
 };
 
-// Load specific vocabulary list with words
-export const loadPromovaVocabularyList = async (id: string): Promise<VocabularyList & { words: VocabularyWord[] } | null> => {
+// Load specific vocabulary list with words (simple version)
+export const loadPromovaVocabularyListSimple = async (id: string): Promise<VocabularyList & { words: VocabularyWord[] } | null> => {
   try {
-    console.log(`Loading vocabulary list: ${id}`);
+    console.log(`Loading vocabulary list (simple): ${id}`);
     const listNumber = id.replace('promova-', '');
     console.log(`List number: ${listNumber}`);
     
@@ -105,31 +95,29 @@ export const loadPromovaVocabularyList = async (id: string): Promise<VocabularyL
     
     console.log(`Processing ${data.concepts.length} concepts with difficulty: ${difficulty}`);
     
-    // Convert concepts to VocabularyWord format with translations
-    const words: VocabularyWord[] = await Promise.all(
-      data.concepts.map(async (concept, index) => {
-        console.log(`Processing concept ${index + 1}: ${concept.word}`);
-        
-        // Get immediate translation using comprehensive translation system
-        const translation = getComprehensiveTranslation(concept.word);
-        console.log(`Translation for "${concept.word}": ${translation}`);
-        
-        return {
-          id: `${id}-word-${index + 1}`,
-          listId: id,
-          word: concept.word,
-          translation, // Now includes Spanish translation
-          partOfSpeech: detectPartOfSpeech(concept.word, concept.description),
-          definition: concept.description,
-          example: '', // Promova doesn't provide examples
-          synonyms: [], // Promova doesn't provide synonyms
-          pronunciation: '', // Promova doesn't provide pronunciation
-          difficulty,
-          difficultyRank: num,
-          createdAt: new Date(),
-        };
-      })
-    );
+            // Convert concepts to VocabularyWord format WITH simple translations
+        const words: VocabularyWord[] = data.concepts.map((concept, index) => {
+          console.log(`Processing concept ${index + 1}: ${concept.word}`);
+          
+          // Import and use comprehensive translation system
+          const { getComprehensiveTranslation } = require('./comprehensive-promova-translations');
+          const translation = getComprehensiveTranslation(concept.word);
+          
+          return {
+            id: `${id}-word-${index + 1}`,
+            listId: id,
+            word: concept.word,
+            translation, // Now includes Spanish translation
+            partOfSpeech: detectPartOfSpeech(concept.word, concept.description),
+            definition: concept.description,
+            example: '', // Promova doesn't provide examples
+            synonyms: [], // Promova doesn't provide synonyms
+            pronunciation: '', // Promova doesn't provide pronunciation
+            difficulty,
+            difficultyRank: num,
+            createdAt: new Date(),
+          };
+        });
     
     const result = {
       id,
@@ -145,10 +133,10 @@ export const loadPromovaVocabularyList = async (id: string): Promise<VocabularyL
       words,
     };
     
-    console.log(`Returning vocabulary list result:`, result);
+    console.log(`Returning vocabulary list result (simple):`, result);
     return result;
   } catch (error) {
-    console.error('Error loading Promova vocabulary list:', error);
+    console.error('Error loading Promova vocabulary list (simple):', error);
     return null;
   }
 };
@@ -194,61 +182,4 @@ function detectPartOfSpeech(word: string, description: string): string {
   
   // Default to noun for most cases
   return 'noun';
-}
-
-// Search vocabulary across all lists
-export const searchPromovaVocabulary = async (query: string): Promise<VocabularyWord[]> => {
-  try {
-    const allWords: VocabularyWord[] = [];
-    
-    // Search through all vocabulary lists
-    for (let i = 2; i <= 24; i++) {
-      try {
-        const response = await fetch(`/json/promova/vocabulary_list_${i}.json`);
-        if (response.ok) {
-          const data: PromovaVocabularyFile = await response.json();
-          
-          const matchingConcepts = data.concepts.filter(concept =>
-            concept.word.toLowerCase().includes(query.toLowerCase()) ||
-            concept.description.toLowerCase().includes(query.toLowerCase())
-          );
-          
-          if (matchingConcepts.length > 0) {
-            let difficulty: 'beginner' | 'intermediate' | 'advanced' = 'beginner';
-            if (i > 15) difficulty = 'advanced';
-            else if (i > 8) difficulty = 'intermediate';
-            
-            const words = matchingConcepts.map((concept, index) => {
-              // Get immediate translation using comprehensive translation system
-              const translation = getComprehensiveTranslation(concept.word);
-              
-              return {
-                id: `promova-${i}-word-${index + 1}`,
-                listId: `promova-${i}`,
-                word: concept.word,
-                translation, // Now includes Spanish translation
-                partOfSpeech: detectPartOfSpeech(concept.word, concept.description),
-                definition: concept.description,
-                example: '',
-                synonyms: [],
-                pronunciation: '',
-                difficulty,
-                difficultyRank: i,
-                createdAt: new Date(),
-              };
-            });
-            
-            allWords.push(...words);
-          }
-        }
-      } catch (error) {
-        // Continue with next file
-      }
-    }
-    
-    return allWords;
-  } catch (error) {
-    console.error('Error searching Promova vocabulary:', error);
-    return [];
-  }
-}; 
+} 
