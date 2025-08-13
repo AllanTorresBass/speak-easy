@@ -425,6 +425,25 @@
   "metadata": {
     "total_sections": 7,
     "total_examples": 500,
+    "total_phrases": 500,
+    "total_contexts": 7,
+    "difficulty_level": "intermediate",
+    "target_audience": [
+      "Professionals",
+      "Students", 
+      "Non-native English Speakers",
+      "Language Learners",
+      "ESL/EFL Students"
+    ],
+    "professional_areas": [
+      "User Experience",
+      "User Interface",
+      "Soft Skills",
+      "Project Management",
+      "Software Development",
+      "Database Development",
+      "Data Science"
+    ],
     "categories": [
       "Basic Concepts",
       "User Experience",

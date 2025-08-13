@@ -32,6 +32,36 @@ export interface GrammarGuide {
       definition: string;
       examples: string[];
     }>;
+    questions?: Array<{
+      question: string;
+      answer: string;
+    }>;
+    subjects?: {
+      explicit_subjects: {
+        definition: string;
+        example: string;
+      };
+      implicit_subjects: {
+        definition: string;
+        example: string;
+      };
+    };
+    predicates?: {
+      verbal_predicates: {
+        definition: string;
+        example: string;
+      };
+      nominal_predicates: {
+        definition: string;
+        example: string;
+      };
+    };
+    instructions?: string;
+    sentences?: string[];
+    patterns?: Array<{
+      pattern: string;
+      examples: string[];
+    }>;
     vocabulary_examples?: {
       categories: Array<{
         category: string;
@@ -39,6 +69,10 @@ export interface GrammarGuide {
         implicit_subjects: string[];
       }>;
     };
+    categories?: Array<{
+      category: string;
+      examples: string[];
+    }>;
   }>;
   // Support verbs_grammar structure
   professional_vocabulary?: {
