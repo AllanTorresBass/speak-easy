@@ -21,6 +21,7 @@ import { PromovaDataTest } from '@/components/common/promova-data-test';
 import { SimpleDataTest } from '@/components/common/simple-data-test';
 import { ComprehensiveTranslationDashboard } from '@/components/common/comprehensive-translation-dashboard';
 import { TranslationVerification } from '@/components/common/translation-verification';
+import { WordsDataTest } from '@/components/common/words-data-test';
 
 export default function Home() {
   return (
@@ -118,6 +119,11 @@ export default function Home() {
             <SimpleDataTest />
           </div>
           
+          {/* Words Data Test */}
+          <div className="mt-6">
+            <WordsDataTest />
+          </div>
+          
           <div className="mt-12 flex items-center justify-center space-x-8 text-sm text-gray-500 dark:text-gray-400">
             <div className="flex items-center space-x-2">
               <CheckCircle className="w-4 h-4 text-green-500" />
@@ -197,6 +203,19 @@ export default function Home() {
                 <CardDescription>
                   Track your progress with detailed analytics and insights. 
                   See your improvement over time and celebrate milestones.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+            
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow">
+              <CardHeader>
+                <div className="w-12 h-12 bg-green-100 dark:bg-green-900/20 rounded-lg flex items-center justify-center mb-4">
+                  <BookOpen className="w-6 h-6 text-green-600 dark:text-green-400" />
+                </div>
+                <CardTitle>Words Vocabulary</CardTitle>
+                <CardDescription>
+                  25 comprehensive English-Spanish vocabulary lists covering business, travel, 
+                  family, and everyday communication with audio pronunciation.
                 </CardDescription>
               </CardHeader>
             </Card>

@@ -68,6 +68,122 @@ export function Breadcrumbs() {
     );
   }
 
+  // Handle Words vocabulary routes specially
+  if (pathname.startsWith('/vocabulary/words')) {
+    if (pathname === '/vocabulary/words') {
+      return (
+        <nav className="flex items-center space-x-1 px-6 py-2 text-sm text-muted-foreground bg-muted/30 border-b">
+          <Link
+            href="/"
+            className="flex items-center hover:text-foreground transition-colors"
+          >
+            <Home className="h-4 w-4 mr-1" />
+            Home
+          </Link>
+          <ChevronRight className="h-4 w-4" />
+          <Link
+            href="/vocabulary"
+            className="hover:text-foreground transition-colors"
+          >
+            Vocabulary
+          </Link>
+          <ChevronRight className="h-4 w-4" />
+          <span className="text-foreground font-medium">Words Vocabulary</span>
+        </nav>
+      );
+    }
+    
+    // Handle individual words list pages
+    if (pathname.startsWith('/vocabulary/words-list/')) {
+      const listId = pathname.split('/').pop();
+      return (
+        <nav className="flex items-center space-x-1 px-6 py-2 text-sm text-muted-foreground bg-muted/30 border-b">
+          <Link
+            href="/"
+            className="flex items-center hover:text-foreground transition-colors"
+          >
+            <Home className="h-4 w-4 mr-1" />
+            Home
+          </Link>
+          <ChevronRight className="h-4 w-4" />
+          <Link
+            href="/vocabulary"
+            className="hover:text-foreground transition-colors"
+          >
+            Vocabulary
+          </Link>
+          <ChevronRight className="h-4 w-4" />
+          <Link
+            href="/vocabulary/words"
+            className="hover:text-foreground transition-colors"
+          >
+            Words Vocabulary
+          </Link>
+          <ChevronRight className="h-4 w-4" />
+          <span className="text-foreground font-medium">List {listId}</span>
+        </nav>
+      );
+    }
+  }
+
+  // Handle Promova vocabulary routes specially
+  if (pathname.startsWith('/vocabulary/promova')) {
+    if (pathname === '/vocabulary/promova') {
+      return (
+        <nav className="flex items-center space-x-1 px-6 py-2 text-sm text-muted-foreground bg-muted/30 border-b">
+          <Link
+            href="/"
+            className="flex items-center hover:text-foreground transition-colors"
+          >
+            <Home className="h-4 w-4 mr-1" />
+            Home
+          </Link>
+          <ChevronRight className="h-4 w-4" />
+          <Link
+            href="/vocabulary"
+            className="hover:text-foreground transition-colors"
+          >
+            Vocabulary
+          </Link>
+          <ChevronRight className="h-4 w-4" />
+          <span className="text-foreground font-medium">Promova Vocabulary</span>
+        </nav>
+      );
+    }
+    
+    // Handle individual promova list pages
+    if (pathname.startsWith('/vocabulary/')) {
+      const listId = pathname.split('/').pop();
+      return (
+        <nav className="flex items-center space-x-1 px-6 py-2 text-sm text-muted-foreground bg-muted/30 border-b">
+          <Link
+            href="/"
+            className="flex items-center hover:text-foreground transition-colors"
+          >
+            <Home className="h-4 w-4 mr-1" />
+            Home
+          </Link>
+          <ChevronRight className="h-4 w-4" />
+          <Link
+            href="/vocabulary"
+            className="hover:text-foreground transition-colors"
+          >
+            Vocabulary
+          </Link>
+          <ChevronRight className="h-4 w-4" />
+          <Link
+            href="/vocabulary/promova"
+            className="hover:text-foreground transition-colors"
+          >
+            Promova Vocabulary
+          </Link>
+          <ChevronRight className="h-4 w-4" />
+          <span className="text-foreground font-medium">List {listId}</span>
+        </nav>
+      );
+    }
+  }
+
   // For other routes, show standard breadcrumbs
   const segments = pathname
     .split('/')

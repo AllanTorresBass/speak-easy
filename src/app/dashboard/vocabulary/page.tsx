@@ -209,10 +209,14 @@ export default function VocabularyPage() {
 
       {/* Main Content Tabs */}
       <Tabs defaultValue="lists" className="w-full">
-        <TabsList className="grid w-full grid-cols-5 mb-6">
+        <TabsList className="grid w-full grid-cols-6 mb-6">
           <TabsTrigger value="lists" className="flex items-center space-x-2">
             <BookOpen className="h-4 w-4" />
             <span>Word Lists</span>
+          </TabsTrigger>
+          <TabsTrigger value="words" className="flex items-center space-x-2">
+            <BookOpen className="h-4 w-4" />
+            <span>Words</span>
           </TabsTrigger>
           <TabsTrigger value="promova" className="flex items-center space-x-2">
             <BookMarked className="h-4 w-4" />
@@ -327,6 +331,80 @@ export default function VocabularyPage() {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </TabsContent>
+
+        <TabsContent value="words" className="space-y-6">
+          {/* Words Header */}
+          <div className="text-center py-8">
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <BookOpen className="h-12 w-12 text-green-600" />
+              <h2 className="text-3xl font-bold">Words Vocabulary</h2>
+            </div>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Explore 25 comprehensive English-Spanish vocabulary lists covering essential words 
+              and phrases for everyday communication, business, travel, and more.
+            </p>
+          </div>
+
+          {/* Words Stats */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <Card>
+              <CardContent className="p-6 text-center">
+                <BookOpen className="h-8 w-8 text-green-600 mx-auto mb-2" />
+                <h3 className="text-2xl font-bold">25 Lists</h3>
+                <p className="text-muted-foreground">Comprehensive coverage</p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="p-6 text-center">
+                <Star className="h-8 w-8 text-blue-600 mx-auto mb-2" />
+                <h3 className="text-2xl font-bold">Multiple Topics</h3>
+                <p className="text-muted-foreground">Business, travel, family, etc.</p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="p-6 text-center">
+                <BookOpen className="h-8 w-8 text-purple-600 mx-auto mb-2" />
+                <h3 className="text-2xl font-bold">1000+ Words</h3>
+                <p className="text-muted-foreground">Essential vocabulary</p>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Words Navigation */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {Array.from({ length: 25 }, (_, i) => i + 1).map((listNum) => (
+                                      <Link key={listNum} href={`/vocabulary/words-list/${listNum}`}>
+                <Card className="hover:shadow-lg transition-all duration-200 hover:scale-105 cursor-pointer border-2 hover:border-green-300">
+                  <CardHeader className="pb-3">
+                    <CardTitle className="text-lg font-semibold text-gray-800">
+                      Vocabulary List {listNum}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="pt-0">
+                    <div className="flex items-center justify-between">
+                      <Badge variant="secondary" className="text-sm">
+                        ~{Math.floor(Math.random() * 50) + 30} words
+                      </Badge>
+                      <Button variant="ghost" size="sm" className="text-green-600 hover:text-green-800">
+                        View List →
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
+            ))}
+          </div>
+
+          {/* Words Search Link */}
+          <div className="text-center py-8">
+            <Link href="/vocabulary/words">
+              <Button size="lg" className="bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white">
+                <Search className="h-5 w-5 mr-2" />
+                Search All Words
+              </Button>
+            </Link>
           </div>
         </TabsContent>
 

@@ -46,6 +46,12 @@ const navigation = [
                 description: '25 comprehensive vocabulary lists'
               },
               { 
+                name: 'Words Vocabulary', 
+                href: '/vocabulary/words', 
+                icon: BookOpen,
+                description: '25 English-Spanish vocabulary lists'
+              },
+              { 
                 name: 'Grammar', 
                 href: '/dashboard/grammar', 
                 icon: GraduationCap,
