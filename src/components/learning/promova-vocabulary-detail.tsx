@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { Progress } from '@/components/ui/progress';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { 
@@ -48,9 +49,36 @@ export function PromovaVocabularyDetail({ list, words }: PromovaVocabularyDetail
   const [isPlaying, setIsPlaying] = useState<string | null>(null);
   const [isRepeating, setIsRepeating] = useState<string | null>(null);
   const [audioSpeed, setAudioSpeed] = useState<number>(0.7);
+    const [isPlayingAll, setIsPlayingAll] = useState(false);
+  const [currentPlayingIndex, setCurrentPlayingIndex] = useState(0);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
   const isRepeatingRef = useRef<string | null>(null);
-
+  const isPlayingAllRef = useRef<boolean>(false);
+  const isStartingPlayAllRef = useRef<boolean>(false);
+  const audioQueueRef = useRef<boolean>(false);
+  
+  // Function to synchronize state and ref
+  const syncPlayingAllState = (value: boolean) => {
+    console.log(`Syncing state: setting isPlayingAll to ${value}`); // Debug log
+    setIsPlayingAll(value);
+    isPlayingAllRef.current = value;
+  };
+  
+  // Function to check if we should continue playing
+  const shouldContinuePlaying = () => {
+    const shouldContinue = isPlayingAllRef.current;
+    console.log(`Checking if should continue: ref=${isPlayingAllRef.current}, state=${isPlayingAll}, result=${shouldContinue}`); // Debug log
+    return shouldContinue;
+  };
+  
+  // Function to force sync state and ref
+  const forceSyncState = () => {
+    if (isPlayingAllRef.current !== isPlayingAll) {
+      console.log(`Force syncing: ref=${isPlayingAllRef.current}, state=${isPlayingAll}`); // Debug log
+      setIsPlayingAll(isPlayingAllRef.current);
+    }
+  };
+  
   // Handle audio pronunciation
   const handlePlayPronunciation = async (text: string) => {
     console.log('Playing pronunciation:', text); // Debug log
@@ -180,18 +208,231 @@ export function PromovaVocabularyDetail({ list, words }: PromovaVocabularyDetail
     console.log('Interval set with ID:', newIntervalId, 'for word:', word); // Debug log
   };
 
+  // Handle playing all words and descriptions in sequence
+  const handlePlayAllWords = async () => {
+    console.log('Play All button clicked in Promova component!'); // Debug log
+    console.log('Current state:', { isPlayingAll, currentPlayingIndex }); // Debug log
+    console.log('Words available:', words?.length); // Debug log
+    
+    if (isPlayingAll) {
+      console.log('Stopping play all in Promova component...'); // Debug log
+      // Stop playing all
+      syncPlayingAllState(false);
+      setCurrentPlayingIndex(0);
+      audioQueueRef.current = false;
+      audioPronunciation.stopCurrentAudio();
+      return;
+    }
+
+    if (!words || words.length === 0) {
+      console.log('No words available in Promova component, returning early'); // Debug log
+      return;
+    }
+
+    // Prevent multiple simultaneous starts
+    if (isStartingPlayAllRef.current) {
+      console.log('Already starting play all, ignoring click'); // Debug log
+      return;
+    }
+
+    isStartingPlayAllRef.current = true;
+    
+    try {
+      // Stop any currently playing audio first
+      audioPronunciation.stopCurrentAudio();
+      
+      // Small delay to ensure audio is stopped
+      await new Promise(resolve => setTimeout(resolve, 100));
+      
+      syncPlayingAllState(true);
+      setCurrentPlayingIndex(0);
+    
+    const playNextWord = async (index: number) => {
+      console.log(`playNextWord called with index: ${index} in Promova component`); // Debug log
+      console.log(`isPlayingAll state: ${isPlayingAll}, ref: ${isPlayingAllRef.current}, words length: ${words.length}`); // Debug log
+      
+      if (!shouldContinuePlaying() || index >= words.length) {
+        console.log(`Stopping play all in Promova - index: ${index}, isPlayingAll state: ${isPlayingAll}, ref: ${isPlayingAllRef.current}`); // Debug log
+        syncPlayingAllState(false);
+        setCurrentPlayingIndex(0);
+        return;
+      }
+
+      const word = words[index];
+      console.log(`Playing word ${index + 1}/${words.length}: ${word.word} in Promova component`); // Debug log
+      setCurrentPlayingIndex(index);
+      
+      try {
+        const fullText = `Word: ${word.word}. Description: ${word.definition}`;
+        console.log(`Attempting to play in Promova: ${fullText}`); // Debug log
+        
+        // Check if we should still be playing before starting audio
+        if (!isPlayingAllRef.current) {
+          console.log(`Play all was stopped before starting audio, aborting`); // Debug log
+          return;
+        }
+        
+        // Check if audio is already in queue
+        if (audioQueueRef.current) {
+          console.log(`Audio already in queue, skipping word ${index + 1}`); // Debug log
+          // Wait a bit and try the next word
+          setTimeout(() => {
+            if (shouldContinuePlaying()) {
+              playNextWord(index + 1);
+            }
+          }, 1000);
+          return;
+        }
+        
+        // Check if speech synthesis is available and ready
+        if (typeof window !== 'undefined' && !window.speechSynthesis) {
+          console.log(`Speech synthesis not available, skipping word ${index + 1}`); // Debug log
+          // Continue to next word immediately
+          setTimeout(() => {
+            if (shouldContinuePlaying()) {
+              playNextWord(index + 1);
+            }
+          }, 1000);
+          return;
+        }
+        
+        // Check if speech synthesis is currently speaking
+        if (window.speechSynthesis && window.speechSynthesis.speaking) {
+          console.log(`Speech synthesis already speaking, waiting for completion...`); // Debug log
+          // Wait a bit longer for speech synthesis to be ready
+          setTimeout(() => {
+            if (shouldContinuePlaying()) {
+              playNextWord(index); // Retry the same word
+            }
+          }, 500);
+          return;
+        }
+        
+        // Check if speech synthesis has been interrupted recently
+        if (window.speechSynthesis && window.speechSynthesis.paused) {
+          console.log(`Speech synthesis paused, waiting for recovery...`); // Debug log
+          // Wait longer for speech synthesis to recover
+          setTimeout(() => {
+            if (shouldContinuePlaying()) {
+              playNextWord(index); // Retry the same word
+            }
+          }, 1000);
+          return;
+        }
+        
+        // Set audio queue flag to prevent overlapping audio
+        audioQueueRef.current = true;
+        
+        // Retry mechanism for audio playback
+        let retryCount = 0;
+        const maxRetries = 2;
+        
+        const attemptAudioPlayback = async () => {
+          try {
+            // Add a small delay to ensure speech synthesis is ready
+            await new Promise(resolve => setTimeout(resolve, 100));
+            
+            await audioPronunciation.playPronunciation(fullText, 'en', {
+              speed: audioSpeed,
+              pitch: 1.0,
+              volume: 0.8
+            });
+            
+            console.log(`Successfully played word ${index + 1} in Promova, waiting for adaptive delay...`); // Debug log
+            
+            // Clear audio queue flag
+            audioQueueRef.current = false;
+            
+            // Calculate adaptive delay based on word length (minimum 1.5 seconds, maximum 3 seconds)
+            const wordLength = fullText.length;
+            const adaptiveDelay = Math.max(1500, Math.min(3000, wordLength * 50)); // 50ms per character, capped
+            
+            console.log(`Word length: ${wordLength} chars, using delay: ${adaptiveDelay}ms`); // Debug log
+            
+            // Wait adaptive delay before playing the next word
+            setTimeout(() => {
+              console.log(`Timeout finished in Promova, checking if still playing all...`); // Debug log
+              if (shouldContinuePlaying()) {
+                console.log(`Continuing to next word in Promova...`); // Debug log
+                playNextWord(index + 1);
+              } else {
+                console.log(`Play all was stopped in Promova, not continuing`); // Debug log
+              }
+            }, adaptiveDelay);
+          } catch (audioError) {
+            console.error(`Audio error for word ${index + 1} (attempt ${retryCount + 1}):`, audioError);
+            
+            if (retryCount < maxRetries && shouldContinuePlaying()) {
+              retryCount++;
+              console.log(`Retrying audio for word ${index + 1} (attempt ${retryCount + 1})...`); // Debug log
+              // Wait longer before retrying to let speech synthesis recover
+              setTimeout(attemptAudioPlayback, 1000);
+            } else {
+              // Clear audio queue flag on final failure
+              audioQueueRef.current = false;
+              console.log(`Audio failed for word ${index + 1} after ${retryCount + 1} attempts, continuing to next word...`); // Debug log
+              // Even if audio fails, continue to next word after adaptive delay
+              const wordLength = fullText.length;
+              const adaptiveDelay = Math.max(1500, Math.min(3000, wordLength * 50));
+              
+              setTimeout(() => {
+                if (shouldContinuePlaying()) {
+                  playNextWord(index + 1);
+                }
+              }, adaptiveDelay);
+            }
+          }
+        };
+        
+        // Start the audio playback attempt
+        attemptAudioPlayback();
+      } catch (error) {
+        console.error('Error playing word in Promova:', error);
+        // Continue to next word even if there's an error
+        setTimeout(() => {
+          if (isPlayingAllRef.current) {
+            playNextWord(index + 1);
+          }
+        }, 2000);
+      }
+    };
+    
+    playNextWord(0);
+    } catch (error) {
+      console.error('Error starting play all:', error);
+      syncPlayingAllState(false);
+      setCurrentPlayingIndex(0);
+    } finally {
+      isStartingPlayAllRef.current = false;
+    }
+  };
+
   // Stop audio when component unmounts
   useEffect(() => {
     return () => {
       audioPronunciation.stopCurrentAudio();
       setIsRepeating(null);
       isRepeatingRef.current = null;
+      syncPlayingAllState(false);
+      isStartingPlayAllRef.current = false;
+      audioQueueRef.current = false;
       if (intervalRef.current) {
         clearInterval(intervalRef.current);
         intervalRef.current = null;
       }
     };
   }, []);
+  
+  // Periodic state sync to prevent desynchronization
+  useEffect(() => {
+    if (isPlayingAll) {
+      const syncInterval = setInterval(() => {
+        forceSyncState();
+      }, 1000); // Sync every second
+      
+      return () => clearInterval(syncInterval);
+    }
+  }, [isPlayingAll]);
 
   // Filter and sort words
   const filteredWords = words.filter(word => {
@@ -336,6 +577,80 @@ export function PromovaVocabularyDetail({ list, words }: PromovaVocabularyDetail
         </div>
       </div>
 
+      {/* Play All Button */}
+      <div className="flex flex-col items-center mb-6 space-y-4">
+        <Button
+          onClick={handlePlayAllWords}
+          disabled={!words || words.length === 0 || isStartingPlayAllRef.current}
+          className={`px-8 py-3 text-lg font-semibold ${
+            isPlayingAll 
+              ? 'bg-red-600 hover:bg-red-700' 
+              : isStartingPlayAllRef.current
+                ? 'bg-gray-400 cursor-not-allowed'
+                : 'bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700'
+          }`}
+          size="lg"
+        >
+                      {isPlayingAll ? (
+              <>
+                <VolumeX className="w-6 h-6 mr-3 animate-pulse" />
+                Stop Playing All ({currentPlayingIndex + 1}/{words?.length || 0})
+              </>
+            ) : isStartingPlayAllRef.current ? (
+              <>
+                <div className="w-6 h-6 mr-3 animate-spin rounded-full border-2 border-white border-t-transparent"></div>
+                Starting...
+              </>
+            ) : (
+              <>
+                <Play className="w-6 h-6 mr-3" />
+                Play All Words & Descriptions
+              </>
+            )}
+        </Button>
+        
+        {/* Progress Indicator */}
+        {isPlayingAll && words && (
+          <div className="w-full max-w-md">
+            <div className="flex justify-between text-sm text-muted-foreground mb-2">
+              <span>Progress</span>
+              <span>{currentPlayingIndex + 1} / {words.length}</span>
+            </div>
+            <Progress 
+              value={((currentPlayingIndex + 1) / words.length) * 100} 
+              className="h-2"
+            />
+            {words[currentPlayingIndex] && (
+              <p className="text-center text-sm text-muted-foreground mt-2">
+                Currently playing: <span className="font-medium">{words[currentPlayingIndex].word}</span>
+              </p>
+            )}
+          </div>
+        )}
+        
+        {/* Test Audio Button */}
+        <Button
+          onClick={async () => {
+            console.log('Testing basic audio in Promova component...');
+            try {
+              await audioPronunciation.playPronunciation('Test audio', 'en', {
+                speed: audioSpeed,
+                pitch: 1.0,
+                volume: 0.8
+              });
+              console.log('Basic audio test successful in Promova');
+            } catch (error) {
+              console.error('Basic audio test failed in Promova:', error);
+            }
+          }}
+          variant="outline"
+          size="sm"
+          className="bg-green-100 hover:bg-green-200"
+        >
+          Test Basic Audio
+        </Button>
+      </div>
+
       {/* Stats */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
         <Card>
@@ -428,15 +743,27 @@ export function PromovaVocabularyDetail({ list, words }: PromovaVocabularyDetail
 
       {/* Words Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-        {filteredWords.map((word) => (
-          <Card key={word.id} className="group hover:shadow-lg hover:scale-[1.02] transition-all duration-300 border-2 hover:border-blue-200 dark:hover:border-blue-800">
+        {filteredWords.map((word, index) => (
+          <Card 
+            key={word.id} 
+            className={`group hover:shadow-lg hover:scale-[1.02] transition-all duration-300 border-2 hover:border-blue-200 dark:hover:border-blue-800 ${
+              isPlayingAll && currentPlayingIndex === index 
+                ? 'ring-2 ring-purple-500 shadow-lg scale-105' 
+                : ''
+            }`}
+          >
             <CardHeader className="pb-4 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 rounded-t-lg">
               <div className="flex items-start justify-between">
                 <div className="flex-1">
                   <WordDetailDialog word={word} audioSpeed={audioSpeed}>
-                    <CardTitle className="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors cursor-pointer hover:underline">
-                      {word.word}
-                    </CardTitle>
+                    <div className="flex items-center gap-2 mb-3">
+                      <CardTitle className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors cursor-pointer hover:underline">
+                        {word.word}
+                      </CardTitle>
+                      {isPlayingAll && currentPlayingIndex === index && (
+                        <div className="w-3 h-3 bg-purple-500 rounded-full animate-pulse"></div>
+                      )}
+                    </div>
                   </WordDetailDialog>
                   <div className="flex gap-2">
                     <Badge className="text-xs font-semibold px-3 py-1 bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 border-blue-200 dark:border-blue-700">

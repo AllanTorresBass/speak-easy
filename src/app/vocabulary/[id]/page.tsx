@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, use } from 'react';
+import { useState, useEffect, use, useRef } from 'react';
 import { useVocabularyList } from '@/hooks/use-vocabulary';
 import { PromovaVocabularyDetail } from '@/components/learning/promova-vocabulary-detail';
 import { MainLayout } from '@/components/layout/main-layout';
@@ -34,6 +34,9 @@ export default function VocabularyDetailPage({ params }: VocabularyDetailPagePro
   const { data: vocabularyList, isLoading, error } = useVocabularyList(resolvedParams.id);
   const [isPlaying, setIsPlaying] = useState<string | null>(null);
   const [isRepeating, setIsRepeating] = useState<string | null>(null);
+  const [isPlayingAll, setIsPlayingAll] = useState(false);
+  const [currentPlayingIndex, setCurrentPlayingIndex] = useState(0);
+  const isPlayingAllRef = useRef<boolean>(false);
 
   // Handle audio pronunciation
   const handlePlayPronunciation = async (text: string) => {
@@ -68,7 +71,7 @@ export default function VocabularyDetailPage({ params }: VocabularyDetailPagePro
     }
   };
 
-  // Handle infinite replay of word and definition
+    // Handle infinite replay of word and definition
   const handleInfiniteReplay = async (word: string, definition: string) => {
     if (isRepeating === `${word}-replay`) {
       // Stop repeating
@@ -99,8 +102,86 @@ export default function VocabularyDetailPage({ params }: VocabularyDetailPagePro
         setIsRepeating(null);
       }
     };
-
+    
     playLoop();
+  };
+
+  // Handle playing all words and descriptions in sequence
+  const handlePlayAllWords = async () => {
+    console.log('Play All button clicked!'); // Debug log
+    console.log('Current state:', { isPlayingAll, currentPlayingIndex }); // Debug log
+    console.log('Vocabulary list:', vocabularyList); // Debug log
+    console.log('Words available:', vocabularyList?.words?.length); // Debug log
+    
+    if (isPlayingAll) {
+      console.log('Stopping play all...'); // Debug log
+      // Stop playing all
+      setIsPlayingAll(false);
+      isPlayingAllRef.current = false;
+      setCurrentPlayingIndex(0);
+      audioPronunciation.stopCurrentAudio();
+      return;
+    }
+
+    if (!vocabularyList?.words || vocabularyList.words.length === 0) {
+      console.log('No words available, returning early'); // Debug log
+      return;
+    }
+
+    setIsPlayingAll(true);
+    isPlayingAllRef.current = true;
+    setCurrentPlayingIndex(0);
+    
+    const playNextWord = async (index: number) => {
+      console.log(`playNextWord called with index: ${index}`); // Debug log
+      console.log(`isPlayingAll state: ${isPlayingAll}, ref: ${isPlayingAllRef.current}, words length: ${vocabularyList.words.length}`); // Debug log
+      
+      if (!isPlayingAllRef.current || index >= vocabularyList.words.length) {
+        console.log(`Stopping play all - index: ${index}, isPlayingAll state: ${isPlayingAll}, ref: ${isPlayingAllRef.current}`); // Debug log
+        setIsPlayingAll(false);
+        isPlayingAllRef.current = false;
+        setCurrentPlayingIndex(0);
+        return;
+      }
+
+      const word = vocabularyList.words[index];
+      console.log(`Playing word ${index + 1}/${vocabularyList.words.length}: ${word.word}`); // Debug log
+      setCurrentPlayingIndex(index);
+      
+      try {
+        const fullText = `Word: ${word.word}. Description: ${word.definition}`;
+        console.log(`Attempting to play: ${fullText}`); // Debug log
+        
+        await audioPronunciation.playPronunciation(fullText, 'en', {
+          speed: 0.7,
+          pitch: 1.0,
+          volume: 0.8
+        });
+        
+        console.log(`Successfully played word ${index + 1}, waiting 2 seconds...`); // Debug log
+        
+        // Wait 2 seconds before playing the next word
+        setTimeout(() => {
+          console.log(`Timeout finished, checking if still playing all...`); // Debug log
+          if (isPlayingAllRef.current) {
+            console.log(`Continuing to next word...`); // Debug log
+            playNextWord(index + 1);
+          } else {
+            console.log(`Play all was stopped, not continuing`); // Debug log
+          }
+        }, 2000);
+      } catch (error) {
+        console.error('Error playing word:', error);
+        // Continue to next word even if there's an error
+        setTimeout(() => {
+          if (isPlayingAllRef.current) {
+            playNextWord(index + 1);
+          }
+        }, 2000);
+      }
+    };
+    
+    playNextWord(0);
   };
 
 
@@ -110,6 +191,8 @@ export default function VocabularyDetailPage({ params }: VocabularyDetailPagePro
     return () => {
       audioPronunciation.stopCurrentAudio();
       setIsRepeating(null);
+      setIsPlayingAll(false);
+      isPlayingAllRef.current = false;
     };
   }, []);
 
@@ -208,6 +291,87 @@ export default function VocabularyDetailPage({ params }: VocabularyDetailPagePro
           </div>
         </div>
 
+        {/* Play All Button */}
+        <div className="flex flex-col items-center mb-6 space-y-4">
+          <Button
+            onClick={handlePlayAllWords}
+            disabled={!vocabularyList?.words || vocabularyList.words.length === 0}
+            className={`px-8 py-3 text-lg font-semibold ${
+              isPlayingAll 
+                ? 'bg-red-600 hover:bg-red-700' 
+                : 'bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700'
+            }`}
+            size="lg"
+          >
+            {isPlayingAll ? (
+              <>
+                <VolumeX className="w-6 h-6 mr-3 animate-pulse" />
+                Stop Playing All ({currentPlayingIndex + 1}/{vocabularyList?.words?.length || 0})
+              </>
+            ) : (
+              <>
+                <Play className="w-6 h-6 mr-3" />
+                Play All Words & Descriptions
+              </>
+            )}
+          </Button>
+          
+          {/* Debug Info */}
+          <div className="text-xs text-muted-foreground">
+            Debug: Words available: {vocabularyList?.words ? vocabularyList.words.length : 'undefined'}
+          </div>
+          
+          {/* Fallback Button - Always Visible */}
+          <Button
+            onClick={() => console.log('Fallback button clicked - vocabularyList:', vocabularyList)}
+            variant="outline"
+            size="sm"
+          >
+            Debug: Check Console
+          </Button>
+          
+          {/* Test Audio Button */}
+          <Button
+            onClick={async () => {
+              console.log('Testing basic audio...');
+              try {
+                await audioPronunciation.playPronunciation('Test audio', 'en', {
+                  speed: 1.0,
+                  pitch: 1.0,
+                  volume: 0.8
+                });
+                console.log('Basic audio test successful');
+              } catch (error) {
+                console.error('Basic audio test failed:', error);
+              }
+            }}
+            variant="outline"
+            size="sm"
+            className="bg-green-100 hover:bg-green-200"
+          >
+            Test Basic Audio
+          </Button>
+          
+          {/* Progress Indicator */}
+          {isPlayingAll && vocabularyList?.words && (
+            <div className="w-full max-w-md">
+              <div className="flex justify-between text-sm text-muted-foreground mb-2">
+                <span>Progress</span>
+                <span>{currentPlayingIndex + 1} / {vocabularyList.words.length}</span>
+              </div>
+              <Progress 
+                value={((currentPlayingIndex + 1) / vocabularyList.words.length) * 100} 
+                className="h-2"
+              />
+              {vocabularyList.words[currentPlayingIndex] && (
+                <p className="text-center text-sm text-muted-foreground mt-2">
+                  Currently playing: <span className="font-medium">{vocabularyList.words[currentPlayingIndex].word}</span>
+                </p>
+              )}
+            </div>
+          )}
+        </div>
+
         {/* Stats */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
           <Card>
@@ -262,12 +426,24 @@ export default function VocabularyDetailPage({ params }: VocabularyDetailPagePro
         <div className="space-y-4">
           <h2 className="text-2xl font-semibold">Words in this list</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-            {vocabularyList.words.map((word) => (
-              <Card key={word.id} className="hover:shadow-md transition-shadow duration-200">
+            {vocabularyList.words.map((word, index) => (
+              <Card 
+                key={word.id} 
+                className={`hover:shadow-md transition-all duration-200 ${
+                  isPlayingAll && currentPlayingIndex === index 
+                    ? 'ring-2 ring-purple-500 shadow-lg scale-105' 
+                    : ''
+                }`}
+              >
                 <CardHeader className="pb-3">
                   <div className="flex items-start justify-between">
                     <div className="flex-1">
-                      <CardTitle className="text-lg mb-2">{word.word}</CardTitle>
+                      <div className="flex items-center gap-2 mb-2">
+                        <CardTitle className="text-lg">{word.word}</CardTitle>
+                        {isPlayingAll && currentPlayingIndex === index && (
+                          <div className="w-3 h-3 bg-purple-500 rounded-full animate-pulse"></div>
+                        )}
+                      </div>
                       <div className="flex gap-2 mb-2">
                         <Badge variant="outline" className="text-xs">
                           {word.partOfSpeech}

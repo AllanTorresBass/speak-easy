@@ -123,13 +123,26 @@ export class AudioPronunciationSystem {
     
     if (!this.speechSynthesis) {
       console.warn('Speech synthesis not supported');
-      return;
+      throw new Error('Speech synthesis not supported in this browser');
+    }
+
+    // Check if speech synthesis is ready
+    if (this.speechSynthesis.paused || this.speechSynthesis.pending) {
+      console.warn('Speech synthesis is paused or pending, waiting...');
+      // Wait a bit for speech synthesis to be ready
+      await new Promise(resolve => setTimeout(resolve, 100));
     }
 
     // For infinite loops, don't stop current audio - let it finish naturally
     const shouldStopCurrent = !settings?.isInfiniteLoop;
     if (shouldStopCurrent) {
       this.stopCurrentAudio();
+    }
+
+    // Check if we're already speaking and wait a bit
+    if (this.speechSynthesis.speaking) {
+      console.warn('Speech synthesis already speaking, waiting for completion...');
+      await new Promise(resolve => setTimeout(resolve, 200));
     }
 
     try {
@@ -161,8 +174,24 @@ export class AudioPronunciationSystem {
 
       utterance.onerror = (event) => {
         this.isPlaying = false;
-        console.error('Speech synthesis error:', event);
-        this.emitAudioEvent('error', { text, language, error: event.error });
+        // Log the error with more context
+        console.error('Speech synthesis error:', {
+          error: event.error,
+          errorMessage: event.error || 'Unknown error',
+          text: text.substring(0, 50) + (text.length > 50 ? '...' : ''),
+          language,
+          timestamp: new Date().toISOString()
+        });
+        
+        // Emit error event with more details
+        this.emitAudioEvent('error', { 
+          text: text.substring(0, 100), 
+          language, 
+          error: event.error || 'interrupted',
+          errorType: 'speech_synthesis'
+        });
+        
+        // Process next in queue
         this.processNextInQueue();
       };
 
