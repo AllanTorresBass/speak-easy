@@ -17,6 +17,7 @@ export default function TestJsonPage() {
     setTestResults([]);
     
     const testFiles = [
+      // Basic Structure files
       '/json/grammar/basic-structure/adjectives_grammar.json',
       '/json/grammar/basic-structure/adverbs_grammar.json',
       '/json/grammar/basic-structure/clauses_grammar.json',
@@ -28,7 +29,17 @@ export default function TestJsonPage() {
       '/json/grammar/basic-structure/pronouns_grammar.json',
       '/json/grammar/basic-structure/subject_predicate_grammar.json',
       '/json/grammar/basic-structure/verbs_grammar.json',
-      '/json/grammar/basic-structure/advanced_sentences_grammar.json'
+      '/json/grammar/basic-structure/advanced_sentences_grammar.json',
+      // Complex Structure files
+      '/json/grammar/complex-structure/comparative_superlative_grammar.json',
+      '/json/grammar/complex-structure/conditional_grammar.json',
+      '/json/grammar/complex-structure/indirect_questions_grammar.json',
+      '/json/grammar/complex-structure/modifiers_grammar.json',
+      '/json/grammar/complex-structure/passive_voice_grammar.json',
+      '/json/grammar/complex-structure/past_perfect_grammar.json',
+      '/json/grammar/complex-structure/present_perfect_continuous_grammar.json',
+      '/json/grammar/complex-structure/present_perfect_grammar.json',
+      '/json/grammar/complex-structure/subordinate_clauses_grammar.json'
     ];
 
     for (const filePath of testFiles) {

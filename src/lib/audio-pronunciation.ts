@@ -1,7 +1,7 @@
 import { isBrowserAPI, getBrowserAPI } from './hydration-safe';
 
-// Audio Pronunciation System
-// Provides text-to-speech functionality and audio management for language learning
+// Enhanced Audio Pronunciation System
+// Provides realistic, relaxed text-to-speech with natural pauses and voice selection
 
 export interface AudioSettings {
   voice: string;
@@ -11,7 +11,12 @@ export interface AudioSettings {
   autoPlay: boolean;
   showPhonetics: boolean;
   highlightWords: boolean;
-  isInfiniteLoop?: boolean; // Flag to prevent interrupting current audio
+  isInfiniteLoop?: boolean;
+  // New enhanced settings
+  naturalPauses: boolean;
+  emphasisLevel: 'subtle' | 'moderate' | 'strong';
+  breathingSpace: boolean;
+  sentenceRhythm: boolean;
 }
 
 export interface PronunciationData {
@@ -32,6 +37,14 @@ export interface AudioQueueItem {
   timestamp: number;
 }
 
+export interface EnhancedVoice {
+  voice: SpeechSynthesisVoice;
+  quality: 'premium' | 'standard' | 'basic';
+  naturalness: number; // 0-10 scale
+  clarity: number; // 0-10 scale
+  recommended: boolean;
+}
+
 export class AudioPronunciationSystem {
   private static instance: AudioPronunciationSystem;
   private audioQueue: AudioQueueItem[] = [];
@@ -39,16 +52,48 @@ export class AudioPronunciationSystem {
   private currentAudio: HTMLAudioElement | null = null;
   private speechSynthesis: SpeechSynthesis | null = null;
   private availableVoices: SpeechSynthesisVoice[] = [];
+  private enhancedVoices: EnhancedVoice[] = [];
 
-  // Default settings
+  // Enhanced default settings for more natural speech
   private defaultSettings: AudioSettings = {
     voice: 'en-US',
-    speed: 0.8,
-    pitch: 1.0,
-    volume: 0.8,
+    speed: 0.75, // Slightly slower for more natural pace
+    pitch: 0.95, // Slightly lower for more relaxed tone
+    volume: 0.85,
     autoPlay: false,
     showPhonetics: true,
-    highlightWords: true
+    highlightWords: true,
+    naturalPauses: true,
+    emphasisLevel: 'moderate',
+    breathingSpace: true,
+    sentenceRhythm: true
+  };
+
+  // Voice quality mapping for better selection
+  private voiceQualityMap: { [key: string]: { quality: 'premium' | 'standard' | 'basic', naturalness: number, clarity: number } } = {
+    // Premium voices (high quality, natural)
+    'en-US-Neural2-A': { quality: 'premium', naturalness: 9, clarity: 9 },
+    'en-US-Neural2-C': { quality: 'premium', naturalness: 9, clarity: 9 },
+    'en-US-Neural2-D': { quality: 'premium', naturalness: 9, clarity: 9 },
+    'en-US-Neural2-E': { quality: 'premium', naturalness: 9, clarity: 9 },
+    'en-US-Neural2-F': { quality: 'premium', naturalness: 9, clarity: 9 },
+    'en-US-Neural2-G': { quality: 'premium', naturalness: 9, clarity: 9 },
+    'en-US-Neural2-H': { quality: 'premium', naturalness: 9, clarity: 9 },
+    'en-US-Neural2-I': { quality: 'premium', naturalness: 9, clarity: 9 },
+    'en-US-Neural2-J': { quality: 'premium', naturalness: 9, clarity: 9 },
+    'en-US-Standard-A': { quality: 'standard', naturalness: 7, clarity: 8 },
+    'en-US-Standard-B': { quality: 'standard', naturalness: 7, clarity: 8 },
+    'en-US-Standard-C': { quality: 'standard', naturalness: 7, clarity: 8 },
+    'en-US-Standard-D': { quality: 'standard', naturalness: 7, clarity: 8 },
+    'en-US-Standard-E': { quality: 'standard', naturalness: 7, clarity: 8 },
+    'en-US-Standard-F': { quality: 'standard', naturalness: 7, clarity: 8 },
+    'en-US-Standard-G': { quality: 'standard', naturalness: 7, clarity: 8 },
+    'en-US-Standard-H': { quality: 'standard', naturalness: 7, clarity: 8 },
+    'en-US-Standard-I': { quality: 'standard', naturalness: 7, clarity: 8 },
+    'en-US-Standard-J': { quality: 'standard', naturalness: 7, clarity: 8 },
+    // Basic voices (fallback)
+    'en-US': { quality: 'basic', naturalness: 5, clarity: 6 },
+    'en-GB': { quality: 'basic', naturalness: 5, clarity: 6 }
   };
 
   private constructor() {
@@ -66,7 +111,7 @@ export class AudioPronunciationSystem {
   }
 
   /**
-   * Initialize speech synthesis
+   * Initialize speech synthesis with enhanced voice selection
    */
   private initializeSpeechSynthesis(): void {
     if (isBrowserAPI('speechSynthesis')) {
@@ -84,20 +129,126 @@ export class AudioPronunciationSystem {
   }
 
   /**
-   * Load available voices
+   * Load and categorize available voices by quality
    */
   private loadAvailableVoices(): void {
     if (this.speechSynthesis) {
       this.availableVoices = this.speechSynthesis.getVoices();
+      this.categorizeVoices();
     }
   }
 
   /**
-   * Get available voices for a specific language
+   * Categorize voices by quality and naturalness
    */
-  public getVoicesForLanguage(language: string): SpeechSynthesisVoice[] {
-    return this.availableVoices.filter(voice => 
-      voice.lang.startsWith(language) || voice.lang.includes(language)
+  private categorizeVoices(): void {
+    this.enhancedVoices = this.availableVoices
+      .filter(voice => voice.lang.startsWith('en'))
+      .map(voice => {
+        const voiceInfo = this.voiceQualityMap[voice.name] || 
+                         this.voiceQualityMap[voice.lang] || 
+                         { quality: 'basic' as const, naturalness: 5, clarity: 6 };
+        
+        return {
+          voice,
+          quality: voiceInfo.quality,
+          naturalness: voiceInfo.naturalness,
+          clarity: voiceInfo.clarity,
+          recommended: voiceInfo.quality === 'premium' || 
+                      (voiceInfo.quality === 'standard' && voiceInfo.naturalness >= 7)
+        };
+      })
+      .sort((a, b) => {
+        // Sort by quality, then by naturalness, then by clarity
+        const qualityOrder = { premium: 3, standard: 2, basic: 1 };
+        if (qualityOrder[b.quality] !== qualityOrder[a.quality]) {
+          return qualityOrder[b.quality] - qualityOrder[a.quality];
+        }
+        if (b.naturalness !== a.naturalness) {
+          return b.naturalness - a.naturalness;
+        }
+        return b.clarity - a.clarity;
+      });
+  }
+
+  /**
+   * Get the best available voice for natural speech
+   */
+  public getBestNaturalVoice(language: string = 'en'): SpeechSynthesisVoice | null {
+    const recommendedVoices = this.enhancedVoices.filter(v => v.recommended);
+    
+    if (recommendedVoices.length > 0) {
+      // Prefer premium voices, then high-quality standards
+      const premium = recommendedVoices.find(v => v.quality === 'premium');
+      if (premium) return premium.voice;
+      
+      return recommendedVoices[0].voice;
+    }
+    
+    // Fallback to any available voice
+    return this.availableVoices.find(voice => voice.lang.startsWith(language)) || null;
+  }
+
+  /**
+   * Enhance text with natural pauses and rhythm
+   */
+  private enhanceTextWithPauses(text: string): string {
+    if (!this.defaultSettings.naturalPauses) return text;
+    
+    let enhancedText = text;
+    
+    // Add pauses after sentences
+    enhancedText = enhancedText.replace(/([.!?])\s+/g, '$1 <break time="500ms"/> ');
+    
+    // Add pauses after commas
+    enhancedText = enhancedText.replace(/,/g, ', <break time="200ms"/>');
+    
+    // Add pauses after colons and semicolons
+    enhancedText = enhancedText.replace(/([:;])\s*/g, '$1 <break time="300ms"/> ');
+    
+    // Add breathing space between paragraphs
+    if (this.defaultSettings.breathingSpace) {
+      enhancedText = enhancedText.replace(/\n\s*\n/g, '\n<break time="800ms"/>\n');
+    }
+    
+    // Add emphasis for important words (capitalized or in quotes)
+    if (this.defaultSettings.emphasisLevel !== 'subtle') {
+      enhancedText = enhancedText.replace(/"([^"]+)"/g, '<emphasis level="$1">$1</emphasis>');
+      enhancedText = enhancedText.replace(/\b([A-Z][a-z]+)\b/g, (match) => {
+        if (this.defaultSettings.emphasisLevel === 'strong') {
+          return `<prosody rate="0.9" pitch="+10%">${match}</prosody>`;
+        }
+        return match;
+      });
+    }
+    
+    // Add natural rhythm for longer sentences
+    if (this.defaultSettings.sentenceRhythm && text.length > 100) {
+      const sentences = enhancedText.split(/([.!?])\s+/);
+      enhancedText = sentences.map((part, index) => {
+        if (index % 2 === 0 && part.length > 50) {
+          // Add mid-sentence pause for very long sentences
+          const words = part.split(' ');
+          if (words.length > 15) {
+            const midPoint = Math.floor(words.length / 2);
+            words.splice(midPoint, 0, '<break time="150ms"/>');
+            return words.join(' ');
+          }
+        }
+        return part;
+      }).join('');
+    }
+    
+    return enhancedText;
+  }
+
+  /**
+   * Get available voices for a specific language with quality information
+   */
+  public getVoicesForLanguage(language: string): EnhancedVoice[] {
+    return this.enhancedVoices.filter(enhancedVoice => 
+      enhancedVoice.voice.lang.startsWith(language) || 
+      enhancedVoice.voice.lang.includes(language)
     );
   }
 
@@ -105,19 +256,11 @@ export class AudioPronunciationSystem {
    * Get default voice for a language
    */
   public getDefaultVoice(language: string): SpeechSynthesisVoice | null {
-    const voices = this.getVoicesForLanguage(language);
-    if (voices.length === 0) return null;
-
-    // Prefer voices with 'preferred' attribute
-    const preferred = voices.find(voice => voice.default);
-    if (preferred) return preferred;
-
-    // Return first available voice
-    return voices[0];
+    return this.getBestNaturalVoice(language);
   }
 
   /**
-   * Play pronunciation using text-to-speech
+   * Enhanced pronunciation with natural speech patterns
    */
   public async playPronunciation(
     text: string,
@@ -134,7 +277,6 @@ export class AudioPronunciationSystem {
     // Check if speech synthesis is ready
     if (this.speechSynthesis.paused || this.speechSynthesis.pending) {
       console.warn('Speech synthesis is paused or pending, waiting...');
-      // Wait a bit for speech synthesis to be ready
       await new Promise(resolve => setTimeout(resolve, 100));
     }
 
@@ -151,15 +293,19 @@ export class AudioPronunciationSystem {
     }
 
     try {
-      const utterance = new SpeechSynthesisUtterance(text);
+      // Enhance text with natural pauses and rhythm
+      const enhancedText = this.enhanceTextWithPauses(text);
       
-      // Set voice
-      const voice = this.getDefaultVoice(language);
+      const utterance = new SpeechSynthesisUtterance(enhancedText);
+      
+      // Set the best available voice for natural speech
+      const voice = this.getBestNaturalVoice(language);
       if (voice) {
         utterance.voice = voice;
+        console.log(`Using voice: ${voice.name} (${voice.lang})`);
       }
 
-      // Set properties
+      // Enhanced properties for more natural speech
       utterance.rate = finalSettings.speed;
       utterance.pitch = finalSettings.pitch;
       utterance.volume = finalSettings.volume;
@@ -168,18 +314,17 @@ export class AudioPronunciationSystem {
       // Set event handlers
       utterance.onstart = () => {
         this.isPlaying = true;
-        this.emitAudioEvent('start', { text, language });
+        this.emitAudioEvent('start', { text, language, enhancedText });
       };
 
       utterance.onend = () => {
         this.isPlaying = false;
-        this.emitAudioEvent('end', { text, language });
+        this.emitAudioEvent('end', { text, language, enhancedText });
         this.processNextInQueue();
       };
 
       utterance.onerror = (event) => {
         this.isPlaying = false;
-        // Log the error with more context
         console.error('Speech synthesis error:', {
           error: event.error,
           errorMessage: event.error || 'Unknown error',
@@ -188,7 +333,6 @@ export class AudioPronunciationSystem {
           timestamp: new Date().toISOString()
         });
         
-        // Emit error event with more details
         this.emitAudioEvent('error', { 
           text: text.substring(0, 100), 
           language, 
@@ -196,11 +340,10 @@ export class AudioPronunciationSystem {
           errorType: 'speech_synthesis'
         });
         
-        // Process next in queue
         this.processNextInQueue();
       };
 
-      // Speak the text
+      // Speak the enhanced text
       this.speechSynthesis.speak(utterance);
 
     } catch (error) {
@@ -393,37 +536,147 @@ export class AudioPronunciationSystem {
   }
 
   /**
-   * Update audio settings
+   * Get voice information and recommendations
+   */
+  public getVoiceInfo(): {
+    availableVoices: EnhancedVoice[];
+    recommendedVoices: EnhancedVoice[];
+    currentVoice: SpeechSynthesisVoice | null;
+    voiceCapabilities: {
+      premium: number;
+      standard: number;
+      basic: number;
+    };
+  } {
+    const recommendedVoices = this.enhancedVoices.filter(v => v.recommended);
+    const currentVoice = this.getBestNaturalVoice();
+    
+    const voiceCapabilities = {
+      premium: this.enhancedVoices.filter(v => v.quality === 'premium').length,
+      standard: this.enhancedVoices.filter(v => v.quality === 'standard').length,
+      basic: this.enhancedVoices.filter(v => v.quality === 'basic').length
+    };
+
+    return {
+      availableVoices: this.enhancedVoices,
+      recommendedVoices,
+      currentVoice,
+      voiceCapabilities
+    };
+  }
+
+  /**
+   * Set specific voice by name or quality preference
+   */
+  public setVoicePreference(preference: 'premium' | 'standard' | 'basic' | 'auto'): SpeechSynthesisVoice | null {
+    if (preference === 'auto') {
+      return this.getBestNaturalVoice();
+    }
+    
+    const availableVoices = this.enhancedVoices.filter(v => v.quality === preference);
+    if (availableVoices.length > 0) {
+      // Sort by naturalness and clarity
+      availableVoices.sort((a, b) => {
+        if (b.naturalness !== a.naturalness) return b.naturalness - a.naturalness;
+        return b.clarity - a.clarity;
+      });
+      
+      return availableVoices[0].voice;
+    }
+    
+    return null;
+  }
+
+  /**
+   * Update audio settings with enhanced options
    */
   public updateSettings(newSettings: Partial<AudioSettings>): void {
     this.defaultSettings = { ...this.defaultSettings, ...newSettings };
     
+    // If voice quality preference changed, update voice selection
+    if (newSettings.voice && newSettings.voice !== this.defaultSettings.voice) {
+      const newVoice = this.setVoicePreference(newSettings.voice as any);
+      if (newVoice) {
+        console.log(`Voice updated to: ${newVoice.name} (${newVoice.lang})`);
+      }
+    }
+    
     // Emit settings change event
-    this.emitAudioEvent('settingsChanged', { settings: this.defaultSettings });
+    this.emitAudioEvent('settingsChanged', { 
+      settings: this.defaultSettings,
+      voiceInfo: this.getVoiceInfo()
+    });
   }
 
   /**
-   * Get current settings
+   * Get current settings with voice information
    */
-  public getSettings(): AudioSettings {
-    return { ...this.defaultSettings };
+  public getSettings(): AudioSettings & { voiceInfo: ReturnType<typeof this.getVoiceInfo> } {
+    return { 
+      ...this.defaultSettings,
+      voiceInfo: this.getVoiceInfo()
+    };
   }
 
   /**
-   * Reset settings to defaults
+   * Reset settings to enhanced defaults
    */
   public resetSettings(): void {
     this.defaultSettings = {
       voice: 'en-US',
-      speed: 0.8,
-      pitch: 1.0,
-      volume: 0.8,
+      speed: 0.75, // Slightly slower for more natural pace
+      pitch: 0.95, // Slightly lower for more relaxed tone
+      volume: 0.85,
       autoPlay: false,
       showPhonetics: true,
-      highlightWords: true
+      highlightWords: true,
+      naturalPauses: true,
+      emphasisLevel: 'moderate',
+      breathingSpace: true,
+      sentenceRhythm: true
     };
     
-    this.emitAudioEvent('settingsChanged', { settings: this.defaultSettings });
+    this.emitAudioEvent('settingsChanged', { 
+      settings: this.defaultSettings,
+      voiceInfo: this.getVoiceInfo()
+    });
+  }
+
+  /**
+   * Test voice quality with sample text
+   */
+  public async testVoiceQuality(voice: SpeechSynthesisVoice, sampleText: string = "Hello, this is a test of the voice quality. How natural does it sound?"): Promise<{
+    voice: SpeechSynthesisVoice;
+    quality: 'premium' | 'standard' | 'basic';
+    naturalness: number;
+    clarity: number;
+    sampleAudio?: string;
+  }> {
+    const voiceInfo = this.enhancedVoices.find(v => v.voice === voice);
+    
+    if (!voiceInfo) {
+      return {
+        voice,
+        quality: 'basic',
+        naturalness: 5,
+        clarity: 6
+      };
+    }
+
+    // Play sample text to test voice
+    try {
+      await this.playPronunciation(sampleText, voice.lang, {
+        voice: voice.name,
+        speed: 0.8,
+        pitch: 1.0,
+        naturalPauses: true,
+        emphasisLevel: 'moderate'
+      });
+    } catch (error) {
+      console.warn('Could not test voice quality:', error);
+    }
+
+    return voiceInfo;
   }
 
   /**
@@ -434,7 +687,7 @@ export class AudioPronunciationSystem {
   }
 
   /**
-   * Get audio capabilities
+   * Get audio capabilities with enhanced voice information
    */
   public getCapabilities(): {
     speechSynthesis: boolean;
@@ -442,13 +695,27 @@ export class AudioPronunciationSystem {
     voiceSelection: boolean;
     speedControl: boolean;
     pitchControl: boolean;
+    naturalPauses: boolean;
+    voiceQuality: {
+      premium: boolean;
+      standard: boolean;
+      basic: boolean;
+    };
   } {
+    const voiceInfo = this.getVoiceInfo();
+    
     return {
       speechSynthesis: 'speechSynthesis' in window,
       audioPlayback: 'Audio' in window,
-      voiceSelection: this.availableVoices.length > 0,
+      voiceSelection: this.enhancedVoices.length > 0,
       speedControl: 'speechSynthesis' in window,
-      pitchControl: 'speechSynthesis' in window
+      pitchControl: 'speechSynthesis' in window,
+      naturalPauses: true,
+      voiceQuality: {
+        premium: voiceInfo.voiceCapabilities.premium > 0,
+        standard: voiceInfo.voiceCapabilities.standard > 0,
+        basic: voiceInfo.voiceCapabilities.basic > 0
+      }
     };
   }
 

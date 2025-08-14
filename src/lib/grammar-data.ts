@@ -117,6 +117,7 @@ export interface GrammarList {
 
 // List of all available grammar guides - these must match the exact file names
 const GRAMMAR_GUIDES = [
+  // Basic Structure
   'adjectives_grammar',
   'advanced_sentences_grammar', 
   'adverbs_grammar',
@@ -128,7 +129,17 @@ const GRAMMAR_GUIDES = [
   'prepositions_grammar',
   'pronouns_grammar',
   'subject_predicate_grammar',
-  'verbs_grammar'
+  'verbs_grammar',
+  // Complex Structure
+  'comparative_superlative_grammar',
+  'conditional_grammar',
+  'indirect_questions_grammar',
+  'modifiers_grammar',
+  'passive_voice_grammar',
+  'past_perfect_grammar',
+  'present_perfect_continuous_grammar',
+  'present_perfect_grammar',
+  'subordinate_clauses_grammar'
 ];
 
 // Debug: Log the guides array
@@ -138,8 +149,11 @@ console.log('Available grammar guides:', GRAMMAR_GUIDES);
  * Load a specific grammar guide by name
  */
 export async function loadGrammarGuide(guideName: string): Promise<GrammarGuide | null> {
-  const url = `/json/grammar/basic-structure/${guideName}.json`;
-  console.log(`Fetching grammar guide from: ${url}`);
+  // Determine the correct directory based on guide name
+  const directory = getGrammarDirectory(guideName);
+  const url = `/json/grammar/${directory}/${guideName}.json`;
+  
+  console.log(`Trying to fetch grammar guide from: ${url}`);
   
   try {
     // Add a small delay to ensure the server is ready
@@ -152,21 +166,44 @@ export async function loadGrammarGuide(guideName: string): Promise<GrammarGuide 
         'Content-Type': 'application/json',
       },
     });
-    console.log(`Response status for ${guideName}:`, response.status);
-    console.log(`Response headers:`, Object.fromEntries(response.headers.entries()));
+    console.log(`Response status for ${guideName} from ${url}:`, response.status);
     
-    if (!response.ok) {
-      console.warn(`Grammar guide ${guideName} not found - Status: ${response.status} - StatusText: ${response.statusText}`);
-      return null;
+    if (response.ok) {
+      const data: GrammarGuide = await response.json();
+      console.log(`Successfully parsed data for ${guideName} from ${url}:`, data);
+      return data;
     }
-    
-    const data: GrammarGuide = await response.json();
-    console.log(`Successfully parsed data for ${guideName}:`, data);
-    return data;
   } catch (error) {
-    console.error(`Error loading grammar guide ${guideName}:`, error);
-    return null;
+    console.error(`Error loading grammar guide ${guideName} from ${url}:`, error);
   }
+  
+  console.warn(`Grammar guide ${guideName} not found at ${url}`);
+  return null;
+}
+
+/**
+ * Determine the correct directory for a grammar guide
+ */
+function getGrammarDirectory(guideName: string): string {
+  // Complex structure guides
+  if (guideName.includes('comparative') || 
+      guideName.includes('conditional') || 
+      guideName.includes('indirect') || 
+      guideName.includes('modifiers') || 
+      guideName.includes('passive') || 
+      guideName.includes('past_perfect') || 
+      guideName.includes('present_perfect') || 
+      guideName.includes('subordinate')) {
+    return 'complex-structure';
+  }
+  
+  // Verb conjugation guides
+  if (guideName.includes('verbs') || guideName.includes('conjugation')) {
+    return 'verb-conjugation';
+  }
+  
+  // Basic structure guides (default)
+  return 'basic-structure';
 }
 
 /**
@@ -213,22 +250,35 @@ export async function loadAllGrammarGuides(): Promise<GrammarList[]> {
             }
             return sum + (section.content?.length || 0);
           }, 0);
-          professionalAreas = guide.metadata.categories || [];
+          professionalAreas = guide.metadata.professional_areas || [];
           console.log(`Sections structure: ${totalContexts} sections, ${totalPhrases} total examples`);
         } else if (guide.professional_vocabulary) {
           // verbs_grammar structure
           totalContexts = Object.keys(guide.professional_vocabulary).length;
           totalPhrases = Object.values(guide.professional_vocabulary).reduce((sum, vocab) => 
             sum + (vocab.simple_verbs?.length || 0) + (vocab.compound_verbs?.length || 0), 0);
-          professionalAreas = guide.metadata.professional_contexts || [];
+          professionalAreas = guide.metadata.professional_areas || [];
           console.log(`Professional vocabulary structure: ${totalContexts} contexts, ${totalPhrases} verbs`);
         } else if (guide.categories) {
           // prepositional_phrases structure
           totalContexts = guide.categories.length;
           totalPhrases = guide.categories.reduce((sum, category) => 
             sum + (category.phrases?.length || 0), 0);
-          professionalAreas = guide.categories.map(cat => cat.title);
+          professionalAreas = guide.metadata.professional_areas || [];
           console.log(`Categories structure: ${totalContexts} categories, ${totalPhrases} phrases`);
+        }
+        
+        // Determine category based on guide name
+        let category = 'Basic Structure';
+        if (guideName.includes('comparative') || 
+            guideName.includes('conditional') || 
+            guideName.includes('indirect') || 
+            guideName.includes('modifiers') || 
+            guideName.includes('passive') || 
+            guideName.includes('past_perfect') || 
+            guideName.includes('present_perfect') || 
+            guideName.includes('subordinate')) {
+          category = 'Complex Structure';
         }
         
         // Ensure all required fields exist with fallbacks
@@ -237,7 +287,7 @@ export async function loadAllGrammarGuides(): Promise<GrammarList[]> {
           title: guide.title || `Grammar Guide: ${guideName}`,
           description: guide.description || 'Grammar guide description',
           difficulty: guide.metadata.difficulty_level || 'intermediate',
-          category: 'Basic Structure',
+          category: category,
           totalContexts: totalContexts,
           totalPhrases: totalPhrases,
           professionalAreas: professionalAreas,
@@ -275,27 +325,29 @@ export async function searchGrammarContent(query: string): Promise<{
   
   for (const guide of guides) {
     const guideData = await loadGrammarGuide(guide.id);
-    if (!guideData) continue;
-    
-    const matches: GrammarPhrase[] = [];
+    if (!guideData || !guideData.professional_contexts) continue;
     
     // Search through all professional contexts
     for (const [contextName, context] of Object.entries(guideData.professional_contexts)) {
-      for (const phrase of context.phrases) {
-        // Search in phrase text and other relevant fields
-        const searchableText = JSON.stringify(phrase).toLowerCase();
-        if (searchableText.includes(query.toLowerCase())) {
-          matches.push(phrase);
+      const matches: GrammarPhrase[] = [];
+      
+      if (context.phrases) {
+        for (const phrase of context.phrases) {
+          // Search in phrase text and other relevant fields
+          const searchableText = JSON.stringify(phrase).toLowerCase();
+          if (searchableText.includes(query.toLowerCase())) {
+            matches.push(phrase);
+          }
         }
       }
-    }
-    
-    if (matches.length > 0) {
-      results.push({
-        guide,
-        matches,
-        context: contextName
-      });
+      
+      if (matches.length > 0) {
+        results.push({
+          guide,
+          matches,
+          context: contextName
+        });
+      }
     }
   }
   
