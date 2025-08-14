@@ -63,7 +63,7 @@ export interface GrammarGuide {
   // Metadata
   metadata: {
     difficulty: 'beginner' | 'intermediate' | 'advanced';
-    category: 'basic-structure' | 'complex-structure' | 'verb-conjugation' | 'specialized';
+    category: 'basic-structure' | 'complex-structure' | 'verb-conjugation' | 'specialized' | 'cause-effect' | 'concepts' | 'problems' | 'questions' | 'interview';
     totalContent: number;
     totalExercises: number;
     estimatedTime: number;
@@ -131,12 +131,77 @@ export interface LegacyGrammarContext {
 export interface LegacyGrammarGuide {
   title: string;
   description: string;
-  version: string;
-  created_date: string;
-  basic_concepts?: any;
-  professional_contexts?: Record<string, LegacyGrammarContext>;
+  version?: string;
+  created_date?: string;
+  metadata?: {
+    difficulty_level?: string;
+    professional_areas?: string[];
+    tags?: string[];
+    target_audience?: string[];
+  };
+  
+  // Basic concepts structure
+  basic_concepts?: {
+    definition?: string;
+    examples?: any[];
+    key_functions?: string[];
+    formation_rules?: any[];
+  };
+  
+  // Professional contexts structure
+  professional_contexts?: Record<string, {
+    title: string;
+    description: string;
+    phrases?: any[];
+    comparative_adjectives?: any[];
+    superlative_adjectives?: any[];
+    content?: any[];
+    sentences?: any[];
+  }>;
+  
+  // Sections structure (for subject_predicate_grammar)
   sections?: any[];
-  professional_vocabulary?: any;
-  categories?: any[];
-  metadata: any;
+  
+  // Categories structure (for prepositional_phrases)
+  categories?: Record<string, {
+    title: string;
+    description: string;
+    concepts?: any[];
+  }>;
+  
+  // Phases structure (for project management concepts)
+  phases?: Record<string, {
+    title: string;
+    description: string;
+    concepts?: any[];
+  }>;
+  
+  // Specialized areas structure (for project management concepts)
+  specialized_areas?: Record<string, {
+    title: string;
+    description: string;
+    concepts?: any[];
+  }>;
+  
+  // Professional vocabulary structure (for verbs_grammar)
+  professional_vocabulary?: Record<string, any>;
+  
+  // Cause-effect categories structure (for cause-effect grammar)
+  cause_effect_categories?: Record<string, any>;
+  
+  // Software attributes structure (for cause-effect grammar)
+  software_attributes?: any;
+  
+  // Problem categories structure (for problems grammar)
+  problem_categories?: Record<string, {
+    title: string;
+    description: string;
+    problems: Array<{
+      id: number;
+      problem: string;
+      description: string;
+      impact: string;
+      mitigation: string;
+    }>;
+  }>;
 }

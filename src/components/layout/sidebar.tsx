@@ -18,7 +18,8 @@ import {
               Trophy,
               Calendar,
               BookMarked,
-              Brain
+              Brain,
+              AlertTriangle
             } from 'lucide-react';
 
 interface SidebarProps {
@@ -56,6 +57,24 @@ const navigation = [
                 href: '/grammar/overview', 
                 icon: GraduationCap,
                 description: 'Professional grammar guides'
+              },
+              { 
+                name: 'Cause-Effect Grammar', 
+                href: '/grammar/cause-effect', 
+                icon: Brain,
+                description: 'Professional cause-effect relationships'
+              },
+              {
+                name: 'Concepts Grammar',
+                href: '/grammar/concepts',
+                icon: BookOpen,
+                description: 'Professional concepts and terminology'
+              },
+              {
+                name: 'Problems Grammar',
+                href: '/grammar/problems',
+                icon: AlertTriangle,
+                description: 'Common problems and solutions'
               },
               { 
                 name: 'Advanced Learning', 

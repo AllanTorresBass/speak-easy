@@ -40,7 +40,8 @@ import {
   Download,
   Share2,
   SortAsc,
-  SortDesc
+  SortDesc,
+  Briefcase
 } from 'lucide-react';
 import { MainLayout } from '@/components/layout/main-layout';
 import { UnifiedGrammarService } from '@/lib/unified-grammar-service';
@@ -60,36 +61,105 @@ export default function GrammarPage() {
   useEffect(() => {
     const loadData = async () => {
       try {
+        console.log('Starting to load grammar data...');
         setLoading(true);
-        const [guides, grammarStats] = await Promise.all([
-          grammarService.loadAllGrammarGuides(),
-          grammarService.getGrammarStats()
-        ]);
         
-        setGrammarGuides(guides || []);
-        setStats(grammarStats || {
-          totalGuides: 0,
-          totalContexts: 0,
-          totalContent: 0,
-          totalExercises: 0,
-          averageDifficulty: 'Intermediate',
-          professionalAreas: [],
-          categories: {}
+        // Load guides individually instead of all at once
+        const guideIds = [
+          'adjectives_grammar',
+          'adverbs_grammar',
+          'advanced_sentences_grammar',
+          'clauses_grammar',
+          'conjunctions_grammar',
+          'determiners_grammar',
+          'nouns_grammar',
+          'prepositional_phrases',
+          'prepositions_grammar',
+          'pronouns_grammar',
+          'subject_predicate_grammar',
+          'verbs_grammar',
+          'comparative_superlative_grammar',
+          'conditional_grammar',
+          'indirect_questions_grammar',
+          'modifiers_grammar',
+          'passive_voice_grammar',
+          'past_perfect_grammar',
+          'present_perfect_continuous_grammar',
+          'present_perfect_grammar',
+          'subordinate_clauses_grammar',
+          'software_development_cause_effect',
+          'ux_design_cause_effect',
+          'database_improvement_concepts',
+          'phrases_concepts',
+          'project_management_concepts',
+          'soft_skills_concepts',
+          'software_development_concepts',
+          'ui_concepts',
+          'ui_ux_principles',
+          'ux_concepts',
+          'verb_conjugation_guide',
+          'software_development_problems',
+          'software_development_questions'
+        ];
+        
+        console.log('Guide IDs to load:', guideIds);
+        const loadedGuides: GrammarGuide[] = [];
+        
+        for (const guideId of guideIds) {
+          try {
+            console.log(`Loading guide: ${guideId}`);
+            const guide = await grammarService.loadGrammarGuide(guideId);
+            if (guide) {
+              console.log(`Successfully loaded guide: ${guideId} with ${guide.contexts.length} contexts`);
+              loadedGuides.push(guide);
+            } else {
+              console.warn(`Guide ${guideId} returned null`);
+            }
+          } catch (error) {
+            console.warn(`Failed to load guide ${guideId}:`, error);
+            // Continue loading other guides
+          }
+        }
+        
+        console.log(`Total guides loaded: ${loadedGuides.length}`);
+        setGrammarGuides(loadedGuides);
+        
+        // Calculate stats from loaded guides
+        const totalContent = loadedGuides.reduce((sum, guide) => sum + guide.metadata.totalContent, 0);
+        const totalExercises = loadedGuides.reduce((sum, guide) => sum + guide.metadata.totalExercises, 0);
+        const totalGuides = loadedGuides.length;
+        
+        console.log('Calculated stats:', { totalGuides, totalContent, totalExercises });
+        
+        setStats({
+          totalGuides,
+          totalContent,
+          totalExercises,
+          averageDifficulty: 'intermediate',
+          categories: {
+            'basic-structure': loadedGuides.filter(g => g.metadata.category === 'basic-structure').length,
+            'complex-structure': loadedGuides.filter(g => g.metadata.category === 'complex-structure').length,
+            'specialized': loadedGuides.filter(g => g.metadata.category === 'specialized').length,
+            'cause-effect': loadedGuides.filter(g => g.metadata.category === 'cause-effect').length,
+            'concepts': loadedGuides.filter(g => g.metadata.category === 'concepts').length,
+            'problems': loadedGuides.filter(g => g.metadata.category === 'problems').length,
+            'questions': loadedGuides.filter(g => g.metadata.category === 'questions').length,
+            'verb-conjugation': loadedGuides.filter(g => g.metadata.category === 'verb-conjugation').length,
+            'interview': loadedGuides.filter(g => g.metadata.category === 'interview').length
+          }
         });
         
       } catch (error) {
         console.error('Error loading grammar data:', error);
-        setGrammarGuides([]);
         setStats({
           totalGuides: 0,
-          totalContexts: 0,
           totalContent: 0,
           totalExercises: 0,
           averageDifficulty: 'Intermediate',
-          professionalAreas: [],
           categories: {}
         });
       } finally {
+        console.log('Setting loading to false');
         setLoading(false);
       }
     };
@@ -103,7 +173,7 @@ export default function GrammarPage() {
       const matchesSearch = searchQuery === '' || 
         guide.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
         guide.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        guide.metadata.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()));
+        (guide.metadata.tags && guide.metadata.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase())));
       
       const matchesDifficulty = selectedDifficulty === 'all' || 
         guide.metadata.difficulty === selectedDifficulty;
@@ -123,11 +193,22 @@ export default function GrammarPage() {
         case 'content':
           return b.metadata.totalContent - a.metadata.totalContent;
         case 'newest':
-          return new Date(b.metadata.lastUpdated || 0).getTime() - new Date(a.metadata.lastUpdated || 0).getTime();
+          return 0; // Remove lastUpdated sorting for now
         default:
           return 0;
       }
     });
+
+  // Filter guides by category
+  const basicStructureGuides = filteredAndSortedGuides.filter(guide => guide.metadata.category === 'basic-structure');
+  const complexStructureGuides = filteredAndSortedGuides.filter(guide => guide.metadata.category === 'complex-structure');
+  const causeEffectGuides = filteredAndSortedGuides.filter(guide => guide.metadata.category === 'cause-effect');
+           const conceptsGuides = filteredAndSortedGuides.filter(guide => guide.metadata.category === 'concepts');
+         const problemsGuides = filteredAndSortedGuides.filter(guide => guide.metadata.category === 'problems');
+         const questionsGuides = filteredAndSortedGuides.filter(guide => guide.metadata.category === 'questions');
+         const conjugationGuides = filteredAndSortedGuides.filter(guide => guide.metadata.category === 'verb-conjugation');
+  
+  const interviewGuides = filteredAndSortedGuides.filter(guide => guide.metadata.category === 'interview');
 
   const getDifficultyColor = (difficulty: string) => {
     switch (difficulty) {
@@ -163,6 +244,73 @@ export default function GrammarPage() {
         return <BookOpen className="h-4 w-4" />;
     }
   };
+
+  // Sample featured guides for demonstration
+  const featuredGuides = [
+    {
+      id: 'adverbs_grammar',
+      title: 'Adverbs in English',
+      description: 'Learn how to use adverbs effectively in sentences',
+      category: 'basic-structure' as const,
+      difficulty: 'beginner' as const,
+      totalContent: 20,
+      totalExercises: 6
+    },
+    {
+      id: 'comparative_superlative_grammar',
+      title: 'Comparative and Superlative Adjectives',
+      description: 'Learn how to form and use comparative and superlative adjectives',
+      category: 'complex-structure' as const,
+      difficulty: 'intermediate' as const,
+      totalContent: 25,
+      totalExercises: 8
+    },
+    {
+      id: 'conditional_grammar',
+      title: 'Conditional Sentences',
+      description: 'Master the different types of conditional sentences',
+      category: 'complex-structure' as const,
+      difficulty: 'advanced' as const,
+      totalContent: 30,
+      totalExercises: 12
+    },
+    {
+      id: 'software_development_cause_effect',
+      title: 'Software Development Cause-Effect',
+      description: 'Learn cause-effect relationships in software development',
+      category: 'cause-effect' as const,
+      difficulty: 'intermediate' as const,
+      totalContent: 50,
+      totalExercises: 15
+    },
+    {
+      id: 'ux_design_cause_effect',
+      title: 'UX Design Cause-Effect',
+      description: 'Understand cause-effect relationships in UX design',
+      category: 'cause-effect' as const,
+      difficulty: 'intermediate' as const,
+      totalContent: 50,
+      totalExercises: 15
+    },
+    {
+      id: 'software_development_problems',
+      title: 'Software Development Problems',
+      description: 'Learn common problems and solutions in software development',
+      category: 'problems' as const,
+      difficulty: 'intermediate' as const,
+      totalContent: 50,
+      totalExercises: 15
+    },
+    {
+      id: 'software_development_questions',
+      title: 'Software Development Questions',
+      description: 'Master common questions and their contexts in software development',
+      category: 'questions' as const,
+      difficulty: 'intermediate' as const,
+      totalContent: 50,
+      totalExercises: 15
+    }
+  ];
 
   if (loading) {
     return (
@@ -218,10 +366,10 @@ export default function GrammarPage() {
               <CardContent className="p-6">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-sm font-medium text-purple-600">Professional Areas</p>
-                    <p className="text-3xl font-bold text-purple-900">{stats.professionalAreas.length}</p>
+                    <p className="text-sm font-medium text-purple-600">Total Exercises</p>
+                    <p className="text-3xl font-bold text-purple-900">{stats.totalExercises}</p>
                   </div>
-                  <Users className="h-8 w-8 text-purple-600" />
+                  <Target className="h-8 w-8 text-purple-600" />
                 </div>
               </CardContent>
             </Card>
@@ -305,6 +453,12 @@ export default function GrammarPage() {
                   <option value="complex-structure">Complex Structure</option>
                   <option value="verb-conjugation">Verb Conjugation</option>
                   <option value="specialized">Specialized</option>
+                  <option value="cause-effect">Cause-Effect</option>
+                                       <option value="concepts">Concepts</option>
+                     <option value="problems">Problems</option>
+                                       <option value="questions">Questions</option>
+                  <option value="verb-conjugation">Verb Conjugation</option>
+                  <option value="interview">Interview</option>
                 </select>
                 
                 <select
@@ -323,83 +477,283 @@ export default function GrammarPage() {
         </Card>
 
         {/* Featured Grammar Guides */}
-        <div className="mb-8">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-            Featured Grammar Guides
-          </h2>
+        <section className="mb-12">
+          <div className="flex items-center justify-between mb-6">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+              Featured Grammar Guides
+            </h2>
+            <Link 
+              href="/grammar/overview" 
+              className="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+            >
+              View All →
+            </Link>
+          </div>
+          
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredAndSortedGuides.slice(0, 6).map((guide) => (
-              <Card key={guide.id} className="hover:shadow-lg transition-shadow duration-200">
+            {featuredGuides.map((guide) => (
+              <Card key={guide.id} className="hover:shadow-lg transition-shadow">
                 <CardHeader>
-                  <div className="flex items-start justify-between">
-                    <div className="flex-1">
-                      <CardTitle className="text-lg mb-2">{guide.title}</CardTitle>
-                      <CardDescription className="text-sm text-gray-600">
-                        {guide.description}
-                      </CardDescription>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Badge className={getDifficultyColor(guide.metadata.difficulty)}>
-                        <div className="flex items-center gap-1">
-                          {getDifficultyIcon(guide.metadata.difficulty)}
-                          {guide.metadata.difficulty}
-                        </div>
-                      </Badge>
-                    </div>
+                  <div className="flex items-center justify-between">
+                    <Badge variant="outline" className="capitalize">
+                      {guide.category.replace('-', ' ')}
+                    </Badge>
+                    <Badge variant={
+                      guide.difficulty === 'beginner' ? 'default' : 
+                      guide.difficulty === 'intermediate' ? 'secondary' : 
+                      'destructive'
+                    }>
+                      {guide.difficulty}
+                    </Badge>
                   </div>
+                  <CardTitle className="text-lg">{guide.title}</CardTitle>
+                  <CardDescription>{guide.description}</CardDescription>
                 </CardHeader>
-                
                 <CardContent>
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-4 text-sm text-gray-600">
-                      <div className="flex items-center gap-1">
-                        <Users className="h-4 w-4" />
-                        {guide.contexts.length} contexts
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <FileText className="h-4 w-4" />
-                        {guide.metadata.totalContent} items
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <Clock className="h-4 w-4" />
-                        {guide.metadata.estimatedTime} min
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-center gap-2">
-                      <Badge variant="outline" className="text-xs">
-                        <div className="flex items-center gap-1">
-                          {getCategoryIcon(guide.metadata.category)}
-                          {guide.metadata.category.replace('-', ' ')}
-                        </div>
-                      </Badge>
-                    </div>
-                    
-                    <div className="flex flex-wrap gap-1">
-                      {guide.metadata.tags.slice(0, 3).map((tag, index) => (
-                        <Badge key={index} variant="secondary" className="text-xs">
-                          {tag}
-                        </Badge>
-                      ))}
-                      {guide.metadata.tags.length > 3 && (
-                        <Badge variant="secondary" className="text-xs">
-                          +{guide.metadata.tags.length - 3} more
-                        </Badge>
-                      )}
-                    </div>
-                    
-                    <Link href={`/grammar/guide/${guide.id}`}>
-                      <Button className="w-full" size="sm">
-                        Start Learning
-                        <ArrowRight className="h-4 w-4 ml-2" />
-                      </Button>
-                    </Link>
+                  <div className="flex items-center justify-between text-sm text-gray-600 dark:text-gray-400 mb-4">
+                    <span>{guide.totalContent} content items</span>
+                    <span>{guide.totalExercises} exercises</span>
                   </div>
+                  <Link href={`/grammar/guide/${guide.id}`}>
+                    <Button className="w-full">Start Learning</Button>
+                  </Link>
                 </CardContent>
               </Card>
             ))}
           </div>
-        </div>
+        </section>
+
+        {/* Cause-Effect Grammar */}
+        <section className="mb-12">
+          <div className="flex items-center justify-between mb-6">
+            <h2 className="text-2xl font-bold text-purple-600 dark:text-purple-400">
+              Cause-Effect Grammar
+            </h2>
+            <Link
+              href="/grammar/cause-effect"
+              className="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+            >
+              View All Cause-Effect Guides →
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {causeEffectGuides.map((guide) => (
+              <Card key={guide.id} className="hover:shadow-lg transition-shadow">
+                <Link href={`/grammar/guide/${guide.id}`}>
+                  <CardHeader>
+                    <div className="flex items-center justify-between mb-2">
+                      <CardTitle className="text-lg">{guide.title}</CardTitle>
+                      <Badge variant="secondary">{guide.metadata.difficulty}</Badge>
+                    </div>
+                    <CardDescription>{guide.description}</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="flex items-center text-sm text-muted-foreground">
+                      <BookOpen className="h-4 w-4 mr-1" />
+                      {guide.metadata.totalContent} content items
+                    </div>
+                  </CardContent>
+                </Link>
+              </Card>
+            ))}
+          </div>
+        </section>
+
+        {/* Concepts Grammar */}
+        <section className="mb-12">
+          <div className="flex items-center justify-between mb-6">
+            <h2 className="text-2xl font-bold text-blue-600 dark:text-blue-400">
+              Concepts Grammar
+            </h2>
+            <Link
+              href="/grammar/concepts"
+              className="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+            >
+              View All Concepts Guides →
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {conceptsGuides.map((guide) => (
+              <Card key={guide.id} className="hover:shadow-lg transition-shadow">
+                <Link href={`/grammar/guide/${guide.id}`}>
+                  <CardHeader>
+                    <div className="flex items-center justify-between mb-2">
+                      <CardTitle className="text-lg">{guide.title}</CardTitle>
+                      <Badge variant="secondary">{guide.metadata.difficulty}</Badge>
+                    </div>
+                    <CardDescription>{guide.description}</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="flex items-center text-sm text-muted-foreground">
+                      <BookOpen className="h-4 w-4 mr-1" />
+                      {guide.metadata.totalContent} content items
+                    </div>
+                  </CardContent>
+                </Link>
+              </Card>
+            ))}
+          </div>
+        </section>
+
+        {/* Problems Grammar */}
+        <section className="mb-12">
+          <div className="flex items-center justify-between mb-6">
+            <h2 className="text-2xl font-bold text-red-600 dark:text-red-400">
+              Problems Grammar
+            </h2>
+            <Link
+              href="/grammar/problems"
+              className="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+            >
+              View All Problems Guides →
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {problemsGuides.map((guide) => (
+              <Card key={guide.id} className="hover:shadow-lg transition-shadow">
+                <Link href={`/grammar/guide/${guide.id}`}>
+                  <CardHeader>
+                    <div className="flex items-center justify-between mb-2">
+                      <CardTitle className="text-lg">{guide.title}</CardTitle>
+                      <Badge variant="secondary">{guide.metadata.difficulty}</Badge>
+                    </div>
+                    <CardDescription>{guide.description}</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="flex items-center text-sm text-muted-foreground">
+                      <BookOpen className="h-4 w-4 mr-1" />
+                      {guide.metadata.totalContent} content items
+                    </div>
+                  </CardContent>
+                </Link>
+              </Card>
+            ))}
+          </div>
+        </section>
+
+                         {/* Questions Grammar */}
+                 <section className="mb-12">
+                   <div className="flex items-center justify-between mb-6">
+                     <h2 className="text-2xl font-bold text-orange-600 dark:text-orange-400">
+                       Questions Grammar
+                     </h2>
+                     <Link
+                       href="/grammar/questions"
+                       className="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+                     >
+                       View All Questions Guides →
+                     </Link>
+                   </div>
+                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                     {questionsGuides.map((guide) => (
+                       <Card key={guide.id} className="hover:shadow-lg transition-shadow">
+                         <Link href={`/grammar/guide/${guide.id}`}>
+                           <CardHeader>
+                             <div className="flex items-center justify-between mb-2">
+                               <CardTitle className="text-lg">{guide.title}</CardTitle>
+                               <Badge variant="secondary">{guide.metadata.difficulty}</Badge>
+                             </div>
+                             <CardDescription>{guide.description}</CardDescription>
+                           </CardHeader>
+                           <CardContent>
+                             <div className="flex items-center text-sm text-muted-foreground">
+                               <BookOpen className="h-4 w-4 mr-1" />
+                               {guide.metadata.totalContent} questions
+                             </div>
+                           </CardContent>
+                         </Link>
+                       </Card>
+                     ))}
+                   </div>
+                 </section>
+
+                 {/* Verb Conjugation Grammar */}
+                 <section className="mb-12">
+                   <div className="flex items-center justify-between mb-6">
+                     <h2 className="text-2xl font-bold text-purple-600 dark:text-purple-400">
+                       Verb Conjugation Grammar
+                     </h2>
+                     <div className="flex gap-3">
+                       <Link
+                         href="/grammar/verb-conjugation"
+                         className="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+                       >
+                         View All Conjugation Guides →
+                       </Link>
+                       <Link
+                         href="/grammar/guide/verb_conjugation_guide"
+                         className="text-purple-600 hover:text-purple-700 dark:text-purple-400 dark:hover:text-purple-300 font-medium"
+                       >
+                         Study Complete Guide →
+                       </Link>
+                     </div>
+                   </div>
+                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                     {conjugationGuides.map((guide) => (
+                       <Card key={guide.id} className="hover:shadow-lg transition-shadow">
+                         <Link href={`/grammar/guide/${guide.id}`}>
+                           <CardHeader>
+                             <div className="flex items-center justify-between mb-2">
+                               <CardTitle className="text-lg">{guide.title}</CardTitle>
+                               <Badge variant="secondary">{guide.metadata.difficulty}</Badge>
+                             </div>
+                             <CardDescription>{guide.description}</CardDescription>
+                           </CardHeader>
+                           <CardContent>
+                             <div className="flex items-center text-sm text-muted-foreground">
+                               <BookOpen className="h-4 w-4 mr-1" />
+                               {guide.metadata.totalContent} conjugations
+                             </div>
+                           </CardContent>
+                         </Link>
+                       </Card>
+                     ))}
+                   </div>
+                 </section>
+                 
+                 {/* Interview Grammar */}
+                 <section className="mb-12">
+                   <div className="flex items-center justify-between mb-6">
+                     <h2 className="text-2xl font-bold text-blue-600 dark:text-blue-400">
+                       Interview Grammar
+                     </h2>
+                     <div className="flex gap-3">
+                       <Link
+                         href="/grammar/interview"
+                         className="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+                       >
+                         View All Interview Guides →
+                       </Link>
+                       <Link
+                         href="/grammar/guide/interview_preparation_guide"
+                         className="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 font-medium"
+                       >
+                         Study Preparation Guide →
+                       </Link>
+                     </div>
+                   </div>
+                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                     {interviewGuides.map((guide) => (
+                       <Card key={guide.id} className="hover:shadow-lg transition-shadow">
+                         <Link href={`/grammar/guide/${guide.id}`}>
+                           <CardHeader>
+                             <div className="flex items-center justify-between mb-2">
+                               <CardTitle className="text-lg">{guide.title}</CardTitle>
+                               <Badge variant="secondary">{guide.metadata.difficulty}</Badge>
+                             </div>
+                             <CardDescription>{guide.description}</CardDescription>
+                           </CardHeader>
+                           <CardContent>
+                             <div className="flex items-center text-sm text-muted-foreground">
+                               <BookOpen className="h-4 w-4 mr-1" />
+                               {guide.metadata.totalContent} questions
+                             </div>
+                           </CardContent>
+                         </Link>
+                       </Card>
+                     ))}
+                   </div>
+                 </section>
 
         {/* View All Guides Button */}
         {filteredAndSortedGuides.length > 6 && (

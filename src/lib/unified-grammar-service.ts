@@ -29,37 +29,37 @@ export class UnifiedGrammarService {
    * Load a grammar guide with automatic transformation
    */
   async loadGrammarGuide(guideId: string): Promise<GrammarGuide | null> {
-    // Check cache first
-    if (this.isCacheValid(guideId)) {
-      return this.cache.get(guideId)!;
-    }
-    
     try {
-      // Determine the correct directory based on guide ID
-      const directory = this.getGrammarDirectory(guideId);
-      const url = `/json/grammar/${directory}/${guideId}.json`;
+      // Check cache first
+      const cached = this.getCachedGuide(guideId);
+      if (cached) {
+        console.log('Returning cached guide for:', guideId);
+        return cached;
+      }
+
+      console.log('Loading grammar guide:', guideId);
+      const url = `${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3003'}/api/grammar/${guideId}`;
       
-      console.log(`Loading grammar guide from: ${url}`);
+      console.log('Fetching from URL:', url);
       
       const response = await fetch(url);
-      if (response.ok) {
-        const legacyGuide: LegacyGrammarGuide = await response.json();
-        
-        // Transform to unified format
-        const unifiedGuide = GrammarTransformer.transformLegacyGuide(legacyGuide, guideId);
-        
-        // Cache the result
-        this.cache.set(guideId, unifiedGuide);
-        this.cacheExpiry.set(guideId, Date.now() + this.CACHE_DURATION);
-        
-        return unifiedGuide;
+      console.log('Response status:', response.status);
+      
+      if (!response.ok) {
+        console.error('Failed to fetch grammar guide:', response.status, response.statusText);
+        return null;
       }
+
+      const guide = await response.json();
+      console.log('Guide received:', guide.title, 'with', guide.contexts.length, 'contexts');
       
-      console.warn(`Grammar guide ${guideId} not found at ${url}`);
-      return null;
+      // Cache the result
+      this.cache.set(guideId, guide);
+      this.cacheExpiry.set(guideId, Date.now() + this.CACHE_DURATION);
       
+      return guide;
     } catch (error) {
-      console.error(`Error loading grammar guide ${guideId}:`, error);
+      console.error('Error loading grammar guide:', error);
       return null;
     }
   }
@@ -71,8 +71,8 @@ export class UnifiedGrammarService {
     const guideIds = [
       // Basic Structure
       'adjectives_grammar',
-      'advanced_sentences_grammar', 
       'adverbs_grammar',
+      'advanced_sentences_grammar',
       'clauses_grammar',
       'conjunctions_grammar',
       'determiners_grammar',
@@ -91,18 +91,48 @@ export class UnifiedGrammarService {
       'past_perfect_grammar',
       'present_perfect_continuous_grammar',
       'present_perfect_grammar',
-      'subordinate_clauses_grammar'
-    ];
+      'subordinate_clauses_grammar',
+      // Cause-Effect
+      'software_development_cause_effect',
+      'ux_design_cause_effect',
+      // Concepts
+      'database_improvement_concepts',
+      'phrases_concepts',
+      'project_management_concepts',
+      'soft_skills_concepts',
+      'software_development_concepts',
+      'ui_concepts',
+      'ui_ux_principles',
+      'ux_concepts',
+      // Problems
+      'software_development_problems',
+      // Questions
+      'software_development_questions',
+          // Verb Conjugation
+    'verb_conjugation_guide',
+    // Interview
+    'interview_preparation_guide',
+    'interview_qa_simple'
+  ];
     
     const guides: GrammarGuide[] = [];
     
     for (const guideId of guideIds) {
-      const guide = await this.loadGrammarGuide(guideId);
-      if (guide) {
-        guides.push(guide);
+      try {
+        const guide = await this.loadGrammarGuide(guideId);
+        if (guide) {
+          guides.push(guide);
+          console.log(`Successfully loaded guide: ${guideId}`);
+        } else {
+          console.warn(`Failed to load guide: ${guideId} - returned null`);
+        }
+      } catch (error) {
+        console.warn(`Error loading guide ${guideId}:`, error);
+        // Continue loading other guides instead of failing completely
       }
     }
     
+    console.log(`Successfully loaded ${guides.length} out of ${guideIds.length} guides`);
     return guides;
   }
   
@@ -266,7 +296,7 @@ export class UnifiedGrammarService {
       content.context,
       content.meaning,
       content.translation,
-      ...content.tags
+      ...(content.tags || [])
     ].filter(Boolean).join(' ').toLowerCase();
     
     return searchableText.includes(query.toLowerCase());
@@ -292,7 +322,7 @@ export class UnifiedGrammarService {
       }
       
       // Tag match gets lower score
-      if (match.tags.some(tag => tag.toLowerCase().includes(query.toLowerCase()))) {
+      if (match.tags?.some(tag => tag.toLowerCase().includes(query.toLowerCase()))) {
         matchScore += 3;
       }
       
@@ -352,7 +382,42 @@ export class UnifiedGrammarService {
   /**
    * Determine the correct directory for a grammar guide
    */
-  private getGrammarDirectory(guideId: string): string {
+  public getGrammarDirectory(guideId: string): string {
+    console.log('Determining directory for guideId:', guideId);
+    
+    // Cause-effect guides
+    if (guideId.includes('cause_effect') || guideId.includes('cause-effect')) {
+      console.log('Detected cause-effect guide, returning cause-effect directory');
+      return 'cause-effect';
+    }
+    
+    // Concepts guides
+    if (guideId.includes('concepts')) {
+      console.log('Detected concepts guide, returning concepts directory');
+      return 'concepts';
+    }
+    
+    // Verb conjugation guides (only the specific conjugation guide)
+    if (guideId === 'verb_conjugation_guide') {
+      console.log('Detected verb conjugation guide, returning verb-conjugation directory');
+      return 'verb-conjugation';
+    }
+    
+    // Basic structure guides
+    if (guideId.includes('adjectives') || 
+        guideId.includes('adverbs') || 
+        guideId.includes('advanced_sentences') || 
+        guideId.includes('nouns') || 
+        guideId.includes('pronouns') || 
+        guideId.includes('determinants') || 
+        guideId.includes('prepositions') || 
+        guideId.includes('conjunctions') ||
+        guideId.includes('subject_predicate') ||
+        guideId.includes('prepositional_phrases')) {
+      console.log('Detected basic structure guide, returning basic-structure directory');
+      return 'basic-structure';
+    }
+    
     // Complex structure guides
     if (guideId.includes('comparative') || 
         guideId.includes('conditional') || 
@@ -362,15 +427,12 @@ export class UnifiedGrammarService {
         guideId.includes('past_perfect') || 
         guideId.includes('present_perfect') || 
         guideId.includes('subordinate')) {
+      console.log('Detected complex structure guide, returning complex-structure directory');
       return 'complex-structure';
     }
     
-    // Verb conjugation guides
-    if (guideId.includes('verbs') || guideId.includes('conjugation')) {
-      return 'verb-conjugation';
-    }
-    
-    // Basic structure guides (default)
+    // Default to basic-structure for unknown guides
+    console.log('No specific directory detected, defaulting to basic-structure');
     return 'basic-structure';
   }
 

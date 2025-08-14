@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000"),
+      metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3003"),
   openGraph: {
     title: "SpeakEasy - Master English with Confidence",
     description: "Your comprehensive English learning companion with structured vocabulary, grammar lessons, and interactive practice sessions.",

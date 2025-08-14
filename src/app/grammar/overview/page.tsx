@@ -33,7 +33,10 @@ import {
   PenTool,
   Calendar,
   Award,
-  Trophy
+  Trophy,
+  GitBranch,
+  HelpCircle,
+  Briefcase
 } from 'lucide-react';
 import { MainLayout } from '@/components/layout/main-layout';
 import { UnifiedGrammarService } from '@/lib/unified-grammar-service';
@@ -146,6 +149,46 @@ export default function GrammarOverviewPage() {
     }
   };
 
+  // Sample grammar guides for demonstration
+  const sampleGuides = [
+    {
+      id: 'comparative_superlative_grammar',
+      title: 'Comparative and Superlative Adjectives',
+      description: 'Learn how to form and use comparative and superlative adjectives',
+      category: 'complex-structure' as const,
+      difficulty: 'intermediate' as const,
+      totalContent: 25,
+      totalExercises: 8
+    },
+    {
+      id: 'conditional_grammar',
+      title: 'Conditional Sentences',
+      description: 'Master the different types of conditional sentences',
+      category: 'complex-structure' as const,
+      difficulty: 'advanced' as const,
+      totalContent: 30,
+      totalExercises: 12
+    },
+    {
+      id: 'software_development_cause_effect',
+      title: 'Software Development Cause-Effect',
+      description: 'Learn cause-effect relationships in software development',
+      category: 'cause-effect' as const,
+      difficulty: 'intermediate' as const,
+      totalContent: 50,
+      totalExercises: 15
+    },
+    {
+      id: 'ux_design_cause_effect',
+      title: 'UX Design Cause-Effect',
+      description: 'Understand cause-effect relationships in UX design',
+      category: 'cause-effect' as const,
+      difficulty: 'intermediate' as const,
+      totalContent: 50,
+      totalExercises: 15
+    }
+  ];
+
   if (loading) {
     return (
       <MainLayout>
@@ -222,6 +265,110 @@ export default function GrammarOverviewPage() {
           </div>
         )}
 
+        {/* Quick Actions */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          <Card className="hover:shadow-lg transition-shadow cursor-pointer">
+            <Link href="/grammar/guide/comparative_superlative_grammar">
+              <CardContent className="pt-6">
+                <div className="flex items-center justify-between mb-4">
+                  <Brain className="h-8 w-8 text-blue-600" />
+                  <Badge variant="outline">Complex</Badge>
+                </div>
+                <h3 className="text-lg font-semibold mb-2">Comparative & Superlative</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400">Master adjective comparisons</p>
+              </CardContent>
+            </Link>
+          </Card>
+
+          <Card className="hover:shadow-lg transition-shadow cursor-pointer border-purple-200 dark:border-purple-800">
+            <Link href="/grammar/cause-effect">
+              <CardContent className="pt-6">
+                <div className="flex items-center justify-between mb-4">
+                  <GitBranch className="h-8 w-8 text-purple-600" />
+                  <Badge variant="outline" className="bg-purple-50 text-purple-700 border-purple-200 dark:bg-purple-900/20 dark:text-purple-300 dark:border-purple-800">
+                    New
+                  </Badge>
+                </div>
+                <h3 className="text-lg font-semibold mb-2">Cause-Effect Grammar</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400">Professional relationships</p>
+              </CardContent>
+            </Link>
+          </Card>
+
+          <Card className="hover:shadow-lg transition-shadow cursor-pointer">
+            <Link href="/grammar/guide/conditional_grammar">
+              <CardContent className="pt-6">
+                <div className="flex items-center justify-between mb-4">
+                  <Target className="h-8 w-8 text-green-600" />
+                  <Badge variant="outline">Advanced</Badge>
+                </div>
+                <h3 className="text-lg font-semibold mb-2">Conditional Sentences</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400">If-then constructions</p>
+              </CardContent>
+            </Link>
+          </Card>
+
+                       <Card className="hover:shadow-lg transition-shadow cursor-pointer border-orange-200 dark:border-orange-800">
+               <Link href="/grammar/questions">
+                 <CardContent className="pt-6">
+                   <div className="flex items-center justify-between mb-4">
+                     <HelpCircle className="h-8 w-8 text-orange-600" />
+                     <Badge variant="outline" className="bg-orange-50 text-orange-700 border-orange-200 dark:bg-orange-900/20 dark:text-orange-300 dark:border-orange-800">
+                       New
+                     </Badge>
+                   </div>
+                   <h3 className="text-lg font-semibold mb-2">Questions Grammar</h3>
+                   <p className="text-sm text-gray-600 dark:text-gray-400">Professional questioning</p>
+                 </CardContent>
+               </Link>
+             </Card>
+
+             <Card className="hover:shadow-lg transition-shadow cursor-pointer border-purple-200 dark:border-purple-800">
+               <Link href="/grammar/verb-conjugation">
+                 <CardContent className="pt-6">
+                   <div className="flex items-center justify-between mb-4">
+                     <Languages className="h-8 w-8 text-purple-600" />
+                     <Badge variant="outline" className="bg-purple-50 text-purple-700 border-purple-200 dark:bg-purple-900/20 dark:text-purple-300 dark:border-purple-800">
+                       New
+                     </Badge>
+                   </div>
+                   <h3 className="text-lg font-semibold mb-2">Verb Conjugation</h3>
+                   <p className="text-sm text-gray-600 dark:text-gray-400">Tense mastery</p>
+                 </CardContent>
+               </Link>
+             </Card>
+             
+             <Card className="hover:shadow-lg transition-shadow cursor-pointer border-blue-200 dark:border-blue-800 bg-gradient-to-br from-blue-50 to-purple-50">
+               <Link href="/grammar/guide/verb_conjugation_guide">
+                 <CardContent className="pt-6">
+                   <div className="flex items-center justify-between mb-4">
+                     <BookOpen className="h-8 w-8 text-blue-600" />
+                     <Badge variant="outline" className="bg-blue-50 text-blue-700 border-blue-200 dark:bg-blue-900/20 dark:text-blue-300 dark:border-blue-800">
+                       Direct Access
+                     </Badge>
+                   </div>
+                   <h3 className="text-lg font-semibold mb-2">Study Complete Guide</h3>
+                   <p className="text-sm text-gray-600 dark:text-gray-400">53 conjugations • 9 categories</p>
+                 </CardContent>
+               </Link>
+             </Card>
+             
+             <Card className="hover:shadow-lg transition-shadow cursor-pointer border-blue-200 dark:border-blue-800">
+               <Link href="/grammar/interview">
+                 <CardContent className="pt-6">
+                   <div className="flex items-center justify-between mb-4">
+                     <Briefcase className="h-8 w-8 text-blue-600" />
+                     <Badge variant="outline" className="bg-blue-50 text-blue-700 border-blue-200 dark:bg-blue-900/20 dark:text-blue-300 dark:border-blue-800">
+                       New
+                     </Badge>
+                   </div>
+                   <h3 className="text-lg font-semibold mb-2">Interview Grammar</h3>
+                   <p className="text-sm text-gray-600 dark:text-gray-400">20+ questions • Preparation strategies</p>
+                 </CardContent>
+               </Link>
+             </Card>
+        </div>
+
         {/* Search and Filters */}
         <Card className="mb-8">
           <CardContent className="pt-6">
@@ -259,6 +406,11 @@ export default function GrammarOverviewPage() {
                   <option value="complex-structure">Complex Structure</option>
                   <option value="verb-conjugation">Verb Conjugation</option>
                   <option value="specialized">Specialized</option>
+                  <option value="cause-effect">Cause-Effect</option>
+                  <option value="concepts">Concepts</option>
+                  <option value="problems">Problems</option>
+                  <option value="questions">Questions</option>
+                  <option value="interview">Interview</option>
                 </select>
               </div>
             </div>
