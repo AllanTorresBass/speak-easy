@@ -722,8 +722,8 @@ export class GrammarTransformer {
   /**
    * Transform section content
    */
-  private static transformSectionContent(contentItems: any[], content: GrammarContent[]): void {
-    contentItems.forEach((item: any, index: number) => {
+  private static transformSectionContent(contentItems: unknown[], content: GrammarContent[]): void {
+    contentItems.forEach((item: unknown, index: number) => {
       content.push({
         id: `content-${index}`,
         type: 'definition',
@@ -750,11 +750,11 @@ export class GrammarTransformer {
   /**
    * Transform verb examples
    */
-  private static transformVerbExamples(verbExamples: any): GrammarContext {
+  private static transformVerbExamples(verbExamples: unknown): GrammarContext {
     const content: GrammarContent[] = [];
 
     if (verbExamples.verbs) {
-      verbExamples.verbs.forEach((verb: any, index: number) => {
+      (verbExamples as { verbs: unknown[] }).verbs.forEach((verb: unknown, index: number) => {
         // Add the verb itself
         content.push({
           id: `verb-${index}`,
@@ -810,10 +810,10 @@ export class GrammarTransformer {
   /**
    * Transform interview category
    */
-  private static transformInterviewCategory(category: any, categoryId: string): GrammarContext {
+  private static transformInterviewCategory(category: unknown, categoryId: string): GrammarContext {
     const content: GrammarContent[] = [];
     if (category.questions) {
-      category.questions.forEach((question: any, index: number) => {
+      (category as { questions: unknown[] }).questions.forEach((question: unknown, index: number) => {
         content.push({
           id: `question_${categoryId}_${index}`,
           type: 'example',
@@ -849,7 +849,7 @@ export class GrammarTransformer {
   /**
    * Transform interview Q&A
    */
-  private static transformInterviewQA(qaData: any): GrammarContext {
+  private static transformInterviewQA(qaData: unknown): GrammarContext {
     const content: GrammarContent[] = [];
     Object.entries(qaData).forEach(([question, answers], index) => {
       content.push({
@@ -882,12 +882,12 @@ export class GrammarTransformer {
   /**
    * Transform verb conjugation category
    */
-  private static transformVerbConjugationCategory(category: any, categoryId: string): GrammarContext {
+  private static transformVerbConjugationCategory(category: unknown, categoryId: string): GrammarContext {
     const content: GrammarContent[] = [];
 
     // Transform forms (basic_forms category)
     if (category.forms) {
-      category.forms.forEach((form: any, index: number) => {
+      (category as { forms: unknown[] }).forms.forEach((form: unknown, index: number) => {
         content.push({
           id: `form-${index}`,
           type: 'example',
@@ -902,7 +902,7 @@ export class GrammarTransformer {
 
     // Transform tenses (simple_tenses, continuous_tenses, perfect_tenses, etc.)
     if (category.tenses) {
-      category.tenses.forEach((tense: any, index: number) => {
+      (category as { tenses: unknown[] }).tenses.forEach((tense: unknown, index: number) => {
         content.push({
           id: `tense-${index}`,
           type: 'sentence',
@@ -921,7 +921,7 @@ export class GrammarTransformer {
 
     // Transform modals (modal_verbs category)
     if (category.modals) {
-      category.modals.forEach((modal: any, index: number) => {
+      (category as { modals: unknown[] }).modals.forEach((modal: unknown, index: number) => {
         content.push({
           id: `modal-${index}`,
           type: 'sentence',
@@ -929,7 +929,7 @@ export class GrammarTransformer {
           context: categoryId,
           meaning: modal.description,
           difficulty: 'intermediate',
-          tags: modal.conjugations?.map((c: any) => c.tense) || [],
+          tags: (modal as { conjugations?: unknown[] }).conjugations?.map((c: unknown) => (c as { tense: string }).tense) || [],
           metadata: {
             conjugations: modal.conjugations
           }
@@ -939,7 +939,7 @@ export class GrammarTransformer {
 
     // Transform semi-modals
     if (category.semi_modals) {
-      category.semi_modals.forEach((semiModal: any, index: number) => {
+      (category as { semi_modals: unknown[] }).semi_modals.forEach((semiModal: unknown, index: number) => {
         content.push({
           id: `semi-modal-${index}`,
           type: 'sentence',
@@ -947,7 +947,7 @@ export class GrammarTransformer {
           context: categoryId,
           meaning: semiModal.description,
           difficulty: 'intermediate',
-          tags: semiModal.conjugations?.map((c: any) => c.tense) || [],
+          tags: (semiModal as { conjugations?: unknown[] }).conjugations?.map((c: unknown) => (c as { tense: string }).tense) || [],
           metadata: {
             conjugations: semiModal.conjugations
           }
@@ -970,8 +970,8 @@ export class GrammarTransformer {
   /**
    * Transform questions
    */
-  private static transformQuestions(questions: any[], content: GrammarContent[]): void {
-    questions.forEach((question: any, index: number) => {
+  private static transformQuestions(questions: unknown[], content: GrammarContent[]): void {
+    questions.forEach((question: unknown, index: number) => {
       content.push({
         id: `question-${index}`,
         type: 'sentence',
@@ -1000,8 +1000,8 @@ export class GrammarTransformer {
   /**
    * Transform vocabulary examples
    */
-  private static transformVocabularyExamples(categories: any[], content: GrammarContent[]): void {
-    categories.forEach((cat: any, catIndex: number) => {
+  private static transformVocabularyExamples(categories: unknown[], content: GrammarContent[]): void {
+    categories.forEach((cat: unknown, catIndex: number) => {
       [...(cat.explicit_subjects || []), ...(cat.implicit_subjects || [])].forEach((example: string, exIndex: number) => {
         content.push({
           id: `vocab-${catIndex}-${exIndex}`,
@@ -1017,8 +1017,8 @@ export class GrammarTransformer {
   /**
    * Transform patterns
    */
-  private static transformPatterns(patterns: any[], content: GrammarContent[]): void {
-    patterns.forEach((pattern: any, index: number) => {
+  private static transformPatterns(patterns: unknown[], content: GrammarContent[]): void {
+    patterns.forEach((pattern: unknown, index: number) => {
       content.push({
         id: `pattern-${index}`,
         type: 'pattern',
@@ -1047,7 +1047,7 @@ export class GrammarTransformer {
   /**
    * Transform individual phrase to unified format
    */
-  private static transformPhrase(phrase: any, phraseId: string): GrammarContent {
+  private static transformPhrase(phrase: unknown, phraseId: string): GrammarContent {
     // Handle different phrase structures
     const text = phrase.phrase || phrase.clause || phrase.adjective || 
                  phrase.adverb || phrase.conjunction || phrase.noun || 
@@ -1071,7 +1071,7 @@ export class GrammarTransformer {
   /**
    * Determine content type based on phrase structure
    */
-  private static determineContentType(phrase: any): 'phrase' | 'sentence' | 'example' | 'definition' | 'pattern' {
+  private static determineContentType(phrase: unknown): 'phrase' | 'sentence' | 'example' | 'definition' | 'pattern' {
     if (phrase.clause_type) return 'phrase';
     if (phrase.sentence) return 'sentence';
     if (phrase.example) return 'example';
@@ -1158,7 +1158,7 @@ export class GrammarTransformer {
   /**
    * Calculate metadata with error handling
    */
-  private static calculateMetadata(contexts: GrammarContext[], category: 'basic-structure' | 'complex-structure' | 'verb-conjugation' | 'specialized' | 'cause-effect' | 'concepts' | 'problems' | 'questions' | 'interview', legacyGuide: any) {
+  private static calculateMetadata(contexts: GrammarContext[], category: 'basic-structure' | 'complex-structure' | 'verb-conjugation' | 'specialized' | 'cause-effect' | 'concepts' | 'problems' | 'questions' | 'interview', legacyGuide: unknown) {
     const totalContent = contexts.reduce((sum, context) => {
       try {
         return sum + (context.content?.length || 0) + (context.examples?.length || 0);
