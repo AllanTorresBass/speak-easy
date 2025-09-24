@@ -30,7 +30,8 @@ import {
   CalendarRange,
   CalendarClock,
   CalendarOff,
-  Target
+  Target,
+  Headphones
 } from 'lucide-react';
 
 // Mock data - in a real app, this would come from your API
