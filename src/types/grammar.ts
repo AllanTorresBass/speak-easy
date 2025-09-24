@@ -10,7 +10,7 @@ export interface GrammarContent {
   translation?: string;
   difficulty?: 'beginner' | 'intermediate' | 'advanced';
   tags?: string[];
-  metadata?: Record<string, any>;
+  metadata?: Record<string, unknown>;
 }
 
 export interface GrammarContext {
@@ -22,7 +22,7 @@ export interface GrammarContext {
   content: GrammarContent[];
   examples?: GrammarContent[];
   exercises?: GrammarExercise[];
-  metadata?: Record<string, any>;
+  metadata?: Record<string, unknown>;
 }
 
 export interface GrammarExercise {
@@ -119,7 +119,7 @@ export interface GrammarSession {
 
 // Utility types for backward compatibility
 export interface LegacyGrammarPhrase {
-  [key: string]: any;
+  [key: string]: unknown;
 }
 
 export interface LegacyGrammarContext {
@@ -143,54 +143,54 @@ export interface LegacyGrammarGuide {
   // Basic concepts structure
   basic_concepts?: {
     definition?: string;
-    examples?: any[];
+    examples?: unknown[];
     key_functions?: string[];
-    formation_rules?: any[];
+    formation_rules?: unknown[];
   };
   
   // Professional contexts structure
   professional_contexts?: Record<string, {
     title: string;
     description: string;
-    phrases?: any[];
-    comparative_adjectives?: any[];
-    superlative_adjectives?: any[];
-    content?: any[];
-    sentences?: any[];
+    phrases?: unknown[];
+    comparative_adjectives?: unknown[];
+    superlative_adjectives?: unknown[];
+    content?: unknown[];
+    sentences?: unknown[];
   }>;
   
   // Sections structure (for subject_predicate_grammar)
-  sections?: any[];
+  sections?: unknown[];
   
   // Categories structure (for prepositional_phrases)
   categories?: Record<string, {
     title: string;
     description: string;
-    concepts?: any[];
+    concepts?: unknown[];
   }>;
   
   // Phases structure (for project management concepts)
   phases?: Record<string, {
     title: string;
     description: string;
-    concepts?: any[];
+    concepts?: unknown[];
   }>;
   
   // Specialized areas structure (for project management concepts)
   specialized_areas?: Record<string, {
     title: string;
     description: string;
-    concepts?: any[];
+    concepts?: unknown[];
   }>;
   
   // Professional vocabulary structure (for verbs_grammar)
-  professional_vocabulary?: Record<string, any>;
+  professional_vocabulary?: Record<string, unknown>;
   
   // Cause-effect categories structure (for cause-effect grammar)
-  cause_effect_categories?: Record<string, any>;
+  cause_effect_categories?: Record<string, unknown>;
   
   // Software attributes structure (for cause-effect grammar)
-  software_attributes?: any;
+  software_attributes?: unknown;
   
   // Problem categories structure (for problems grammar)
   problem_categories?: Record<string, {

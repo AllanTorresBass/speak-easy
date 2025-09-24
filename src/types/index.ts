@@ -90,7 +90,7 @@ export interface LearningSession {
   durationMinutes: number;
   wordsLearned: number;
   accuracyPercentage: number;
-  sessionData: Record<string, any>;
+  sessionData: Record<string, unknown>;
   createdAt: Date;
 }
 

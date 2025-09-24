@@ -282,7 +282,7 @@ export interface Notification {
   readAt?: Date;
   createdAt: Date;
   actionUrl?: string;
-  metadata?: Record<string, any>;
+  metadata?: Record<string, unknown>;
   priority: 'low' | 'medium' | 'high';
 }
 

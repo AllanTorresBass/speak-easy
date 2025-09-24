@@ -456,12 +456,12 @@ export async function testGrammarDataLoading(): Promise<{
   success: boolean;
   guidesLoaded: number;
   errors: string[];
-  details: any;
+  details: unknown;
 }> {
   console.log('🧪 Testing grammar data loading...');
   
   const errors: string[] = [];
-  const details: any = {};
+  const details: Record<string, unknown> = {};
   
   try {
     // Test 1: Load all guides

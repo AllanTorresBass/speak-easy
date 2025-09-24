@@ -245,11 +245,11 @@ export class WritingExerciseSystem {
 
     const exercise: WritingExercise = {
       id: this.generateId(),
-      type: template.type as any,
+      type: template.type as 'essay' | 'paragraph' | 'sentence' | 'creative',
       title,
       description,
       difficulty,
-      category: template.category as any,
+      category: template.category as 'grammar' | 'vocabulary' | 'structure' | 'creativity',
       estimatedTime: template.estimatedTime || 15,
       wordCount: template.wordCount || { min: 50, max: 150, target: 100 },
       instructions: template.instructions || [],

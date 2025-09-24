@@ -96,11 +96,11 @@ export const loadPromovaVocabularyListSimple = async (id: string): Promise<Vocab
     console.log(`Processing ${data.concepts.length} concepts with difficulty: ${difficulty}`);
     
             // Convert concepts to VocabularyWord format WITH simple translations
-        const words: VocabularyWord[] = data.concepts.map((concept, index) => {
+        const words: VocabularyWord[] = await Promise.all(data.concepts.map(async (concept, index) => {
           console.log(`Processing concept ${index + 1}: ${concept.word}`);
           
           // Import and use comprehensive translation system
-          const { getComprehensiveTranslation } = require('./comprehensive-promova-translations');
+          const { getComprehensiveTranslation } = await import('./comprehensive-promova-translations');
           const translation = getComprehensiveTranslation(concept.word);
           
           return {
@@ -117,7 +117,7 @@ export const loadPromovaVocabularyListSimple = async (id: string): Promise<Vocab
             difficultyRank: num,
             createdAt: new Date(),
           };
-        });
+        }));
     
     const result = {
       id,
