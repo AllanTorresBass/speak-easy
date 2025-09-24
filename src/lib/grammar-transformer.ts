@@ -70,7 +70,7 @@ export class GrammarTransformer {
   /**
    * Transform all context types from legacy guide
    */
-  private static transformAllContexts(legacyGuide: any, guideId: string, contexts: GrammarContext[]): void {
+  private static transformAllContexts(legacyGuide: LegacyGrammarGuide, guideId: string, contexts: GrammarContext[]): void {
     // Professional contexts
     if (legacyGuide.professional_contexts) {
       Object.entries(legacyGuide.professional_contexts).forEach(([contextKey, context]) => {
@@ -80,14 +80,14 @@ export class GrammarTransformer {
     
     // Sections (for subject_predicate_grammar structure)
     if (legacyGuide.sections) {
-      legacyGuide.sections.forEach((section: any, index: number) => {
+      legacyGuide.sections.forEach((section: unknown, index: number) => {
         contexts.push(this.transformSection(section, `section-${index}`));
       });
     }
     
     // Categories (for prepositional_phrases structure - array format)
     if (legacyGuide.categories && Array.isArray(legacyGuide.categories)) {
-      legacyGuide.categories.forEach((category: any, index: number) => {
+      legacyGuide.categories.forEach((category: unknown, index: number) => {
         contexts.push(this.transformCategory(category, `category-${index}`));
       });
     }
@@ -174,19 +174,19 @@ export class GrammarTransformer {
   /**
    * Transform professional context to unified format
    */
-  private static transformProfessionalContext(context: any, contextKey: string): GrammarContext {
+  private static transformProfessionalContext(context: unknown, contextKey: string): GrammarContext {
     const content: GrammarContent[] = [];
     
     // Transform phrases
-    if (context.phrases) {
-      context.phrases.forEach((phrase: any, index: number) => {
+    if ((context as { phrases?: unknown[] }).phrases) {
+      (context as { phrases: unknown[] }).phrases.forEach((phrase: unknown, index: number) => {
         content.push({
           id: `phrase-${index}`,
           type: 'phrase',
-          text: phrase.phrase || phrase.text || '',
-          context: phrase.context || 'professional context',
-          meaning: phrase.meaning || phrase.description || 'professional phrase',
-          tags: phrase.tags || [],
+          text: (phrase as { phrase?: string; text?: string }).phrase || (phrase as { phrase?: string; text?: string }).text || '',
+          context: (phrase as { context?: string }).context || 'professional context',
+          meaning: (phrase as { meaning?: string; description?: string }).meaning || (phrase as { meaning?: string; description?: string }).description || 'professional phrase',
+          tags: (phrase as { tags?: string[] }).tags || [],
           difficulty: 'intermediate'
         });
       });
@@ -227,7 +227,7 @@ export class GrammarTransformer {
   /**
    * Transform section to unified format
    */
-  private static transformSection(section: any, sectionId: string): GrammarContext {
+  private static transformSection(section: unknown, sectionId: string): GrammarContext {
     const content: GrammarContent[] = [];
     
     // Transform content items
@@ -270,11 +270,11 @@ export class GrammarTransformer {
   /**
    * Transform category to unified format
    */
-  private static transformCategory(category: any, categoryId: string): GrammarContext {
+  private static transformCategory(category: unknown, categoryId: string): GrammarContext {
     const content: GrammarContent[] = [];
     
     if (category.phrases) {
-      category.phrases.forEach((phrase: any, index: number) => {
+      (category as { phrases: unknown[] }).phrases.forEach((phrase: unknown, index: number) => {
         content.push({
           id: `phrase-${index}`,
           type: 'phrase',
@@ -302,7 +302,7 @@ export class GrammarTransformer {
   /**
    * Transform professional vocabulary to unified format
    */
-  private static transformProfessionalVocabulary(vocab: any, vocabKey: string): GrammarContext {
+  private static transformProfessionalVocabulary(vocab: unknown, vocabKey: string): GrammarContext {
     const content: GrammarContent[] = [];
     
     if (vocab.simple_verbs) {
@@ -344,11 +344,11 @@ export class GrammarTransformer {
   /**
    * Transform cause-effect category to unified format
    */
-  private static transformCauseEffectCategory(category: any, categoryId: string): GrammarContext {
+  private static transformCauseEffectCategory(category: unknown, categoryId: string): GrammarContext {
     const content: GrammarContent[] = [];
 
     if (category.verbs) {
-      category.verbs.forEach((verb: any, index: number) => {
+      (category as { verbs: unknown[] }).verbs.forEach((verb: unknown, index: number) => {
         content.push({
           id: `verb-${index}`,
           type: 'phrase',
@@ -376,11 +376,11 @@ export class GrammarTransformer {
   /**
    * Transform concepts category to unified format
    */
-  private static transformConceptsCategory(category: any, categoryId: string): GrammarContext {
+  private static transformConceptsCategory(category: unknown, categoryId: string): GrammarContext {
     const content: GrammarContent[] = [];
 
     if (category.concepts) {
-      category.concepts.forEach((concept: any, index: number) => {
+      (category as { concepts: unknown[] }).concepts.forEach((concept: unknown, index: number) => {
         content.push({
           id: `concept-${index}`,
           type: 'definition',
@@ -407,11 +407,11 @@ export class GrammarTransformer {
   /**
    * Transform concepts phase to unified format
    */
-  private static transformConceptsPhase(phase: any, phaseId: string): GrammarContext {
+  private static transformConceptsPhase(phase: unknown, phaseId: string): GrammarContext {
     const content: GrammarContent[] = [];
 
     if (phase.phases) {
-      phase.phases.forEach((subPhase: any, index: number) => {
+      (phase as { phases: unknown[] }).phases.forEach((subPhase: unknown, index: number) => {
         content.push({
           id: `phase-${index}`,
           type: 'definition',
@@ -438,11 +438,11 @@ export class GrammarTransformer {
   /**
    * Transform concepts specialized area to unified format
    */
-  private static transformConceptsSpecializedArea(area: any, areaId: string): GrammarContext {
+  private static transformConceptsSpecializedArea(area: unknown, areaId: string): GrammarContext {
     const content: GrammarContent[] = [];
 
     if (area.specialized_areas) {
-      area.specialized_areas.forEach((subArea: any, index: number) => {
+      (area as { specialized_areas: unknown[] }).specialized_areas.forEach((subArea: unknown, index: number) => {
         content.push({
           id: `specialized-area-${index}`,
           type: 'definition',
@@ -469,11 +469,11 @@ export class GrammarTransformer {
   /**
    * Transform problem category to unified format
    */
-  private static transformProblemCategory(category: any, categoryId: string): GrammarContext {
+  private static transformProblemCategory(category: unknown, categoryId: string): GrammarContext {
     const content: GrammarContent[] = [];
 
     if (category.problems) {
-      category.problems.forEach((problem: any, index: number) => {
+      (category as { problems: unknown[] }).problems.forEach((problem: unknown, index: number) => {
         content.push({
           id: `problem-${index}`,
           type: 'definition',
@@ -505,7 +505,7 @@ export class GrammarTransformer {
   /**
    * Transform software attributes to unified format
    */
-  private static transformSoftwareAttributes(attributes: any): GrammarContext {
+  private static transformSoftwareAttributes(attributes: unknown): GrammarContext {
     const content: GrammarContent[] = [];
 
     if (attributes.attributes) {
