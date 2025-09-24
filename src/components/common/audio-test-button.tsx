@@ -189,19 +189,19 @@ export const AudioTestButton: React.FC<AudioTestButtonProps> = ({
                     <div className="grid grid-cols-3 gap-2 text-sm">
                       <div className="text-center p-2 bg-green-50 rounded">
                         <div className="font-medium text-green-800">
-                          {(settings.voiceInfo as any)?.voiceCapabilities?.premium || 0}
+                          {(settings.voiceInfo as { voiceCapabilities?: { premium?: number } })?.voiceCapabilities?.premium || 0}
                         </div>
                         <div className="text-green-600">Premium</div>
                       </div>
                       <div className="text-center p-2 bg-blue-50 rounded">
                         <div className="font-medium text-blue-800">
-                          {(settings.voiceInfo as any)?.voiceCapabilities?.standard || 0}
+                          {(settings.voiceInfo as { voiceCapabilities?: { standard?: number } })?.voiceCapabilities?.standard || 0}
                         </div>
                         <div className="text-blue-600">Standard</div>
                       </div>
                       <div className="text-center p-2 bg-gray-50 rounded">
                         <div className="font-medium text-gray-800">
-                          {(settings.voiceInfo as any)?.voiceCapabilities?.basic || 0}
+                          {(settings.voiceInfo as { voiceCapabilities?: { basic?: number } })?.voiceCapabilities?.basic || 0}
                         </div>
                         <div className="text-gray-600">Basic</div>
                       </div>
@@ -220,7 +220,7 @@ export const AudioTestButton: React.FC<AudioTestButtonProps> = ({
                   <CardContent>
                     <div className="space-y-3">
                       {['premium', 'standard', 'basic'].map((quality) => {
-                        const voiceInfo = settings.voiceInfo as any;
+                        const voiceInfo = settings.voiceInfo as { voiceCapabilities?: Record<string, number> };
                         const count = voiceInfo?.voiceCapabilities?.[quality] || 0;
                         return (
                           <div key={quality} className="flex items-center justify-between p-2 border rounded">
