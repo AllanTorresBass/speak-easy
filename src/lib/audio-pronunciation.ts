@@ -734,7 +734,7 @@ export class AudioPronunciationSystem {
    */
   public addAudioEventListener(callback: (event: CustomEvent) => void): void {
     if (typeof window !== 'undefined') {
-      window.addEventListener('audioEvent' as any, callback as EventListener);
+      window.addEventListener('audioEvent' as keyof WindowEventMap, callback as EventListener);
     }
   }
 
@@ -743,7 +743,7 @@ export class AudioPronunciationSystem {
    */
   public removeAudioEventListener(callback: (event: CustomEvent) => void): void {
     if (typeof window !== 'undefined') {
-      window.removeEventListener('audioEvent' as any, callback as EventListener);
+      window.removeEventListener('audioEvent' as keyof WindowEventMap, callback as EventListener);
     }
   }
 }

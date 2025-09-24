@@ -59,7 +59,7 @@ const fetchGrammarLessons = async (): Promise<GrammarLesson[]> => {
   ];
 };
 
-const fetchGrammarLesson = async (id: string): Promise<GrammarLesson & { lessons: any[] }> => {
+const fetchGrammarLesson = async (id: string): Promise<GrammarLesson & { lessons: unknown[] }> => {
   await new Promise(resolve => setTimeout(resolve, 300));
   
   // Mock lesson content based on your grammar JSON files
