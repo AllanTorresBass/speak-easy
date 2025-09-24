@@ -30,7 +30,6 @@ import {
   CalendarRange,
   CalendarClock,
   CalendarOff,
-  CalendarTime,
   CalendarWeek,
   CalendarMonth,
   CalendarYear,
