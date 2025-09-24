@@ -30,9 +30,6 @@ import {
   CalendarRange,
   CalendarClock,
   CalendarOff,
-  CalendarWeek,
-  CalendarMonth,
-  CalendarYear,
   Target
 } from 'lucide-react';
 
