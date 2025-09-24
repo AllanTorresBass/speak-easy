@@ -12,8 +12,8 @@ import { getWordsTranslation } from '@/lib/comprehensive-words-translations';
 import { audioPronunciation } from '@/lib/audio-pronunciation';
 
 export function WordsDataTest() {
-  const [stats, setStats] = useState<any>(null);
-  const [sampleList, setSampleList] = useState<any>(null);
+  const [stats, setStats] = useState<unknown>(null);
+  const [sampleList, setSampleList] = useState<unknown>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [audioSpeed, setAudioSpeed] = useState(1);
@@ -160,7 +160,7 @@ export function WordsDataTest() {
 
             {/* Sample Words Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {sampleList.concepts.slice(0, 6).map((item: any, index: number) => (
+              {sampleList.concepts.slice(0, 6).map((item: unknown, index: number) => (
                 <Card key={index} className="hover:shadow-md transition-shadow">
                   <CardHeader className="pb-3">
                     <CardTitle className="text-base font-semibold text-gray-800">

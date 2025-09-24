@@ -48,7 +48,7 @@ import { GrammarGuide } from '@/types/grammar';
 
 export default function GrammarPage() {
   const [grammarGuides, setGrammarGuides] = useState<GrammarGuide[]>([]);
-  const [stats, setStats] = useState<any>(null);
+  const [stats, setStats] = useState<unknown>(null);
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedDifficulty, setSelectedDifficulty] = useState<string>('all');

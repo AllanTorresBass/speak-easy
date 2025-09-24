@@ -26,13 +26,13 @@ export function SimpleDataTest() {
         setTestResults(prev => [...prev, `✅ JSON loaded: ${data.title} with ${data.concepts.length} concepts`]);
         
         // Test 2: Check first few words
-        const firstWords = data.concepts.slice(0, 3).map((c: any) => c.word);
+        const firstWords = data.concepts.slice(0, 3).map((c: unknown) => (c as { word: string }).word);
         setTestResults(prev => [...prev, `✅ First words: ${firstWords.join(', ')}`]);
         
         // Test 3: Check data structure
         const hasTitle = !!data.title;
         const hasConcepts = Array.isArray(data.concepts);
-        const hasWordStructure = data.concepts.every((c: any) => c.word && c.description);
+        const hasWordStructure = data.concepts.every((c: unknown) => (c as { word: string; description: string }).word && (c as { word: string; description: string }).description);
         
         setTestResults(prev => [...prev, `✅ Data structure: title=${hasTitle}, concepts=${hasConcepts}, wordStructure=${hasWordStructure}`]);
         

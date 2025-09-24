@@ -25,7 +25,7 @@ export function ComprehensiveTranslationDashboard() {
   const [filteredTranslations, setFilteredTranslations] = useState<TranslationEntry[]>([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
-  const [stats, setStats] = useState<any>(null);
+  const [stats, setStats] = useState<unknown>(null);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {

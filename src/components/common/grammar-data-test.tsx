@@ -7,8 +7,8 @@ import { Badge } from '@/components/ui/badge';
 import { loadAllGrammarGuides, getGrammarStats, loadGrammarGuide, testGrammarDataLoading } from '@/lib/grammar-data';
 
 export function GrammarDataTest() {
-  const [guides, setGuides] = useState<any[]>([]);
-  const [stats, setStats] = useState<any>(null);
+  const [guides, setGuides] = useState<unknown[]>([]);
+  const [stats, setStats] = useState<unknown>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [testResults, setTestResults] = useState<string[]>([]);

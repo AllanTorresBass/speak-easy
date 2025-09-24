@@ -9,9 +9,9 @@ import { loadPromovaVocabularySimple, loadPromovaVocabularyListSimple } from '@/
 
 export function PromovaDataTest() {
   const [isLoading, setIsLoading] = useState(false);
-  const [lists, setLists] = useState<any[]>([]);
-  const [selectedList, setSelectedList] = useState<any>(null);
-  const [listWords, setListWords] = useState<any[]>([]);
+  const [lists, setLists] = useState<unknown[]>([]);
+  const [selectedList, setSelectedList] = useState<unknown>(null);
+  const [listWords, setListWords] = useState<unknown[]>([]);
   const [error, setError] = useState<string>('');
 
   const testDataLoading = async () => {
