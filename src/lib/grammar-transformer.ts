@@ -509,7 +509,7 @@ export class GrammarTransformer {
     const content: GrammarContent[] = [];
 
     if (attributes.attributes) {
-      attributes.attributes.forEach((attr: any, index: number) => {
+      (attributes as { attributes: unknown[] }).attributes.forEach((attr: unknown, index: number) => {
         content.push({
           id: `attribute-${index}`,
           type: 'definition',
@@ -536,11 +536,11 @@ export class GrammarTransformer {
   /**
    * Transform question category to unified format
    */
-  private static transformQuestionCategory(category: any, categoryId: string): GrammarContext {
+  private static transformQuestionCategory(category: unknown, categoryId: string): GrammarContext {
     const content: GrammarContent[] = [];
 
-    if (category.questions) {
-      category.questions.forEach((question: any, index: number) => {
+    if ((category as { questions?: unknown[] }).questions) {
+      (category as { questions: unknown[] }).questions.forEach((question: unknown, index: number) => {
         content.push({
           id: `question-${index}`,
           type: 'sentence',
@@ -577,7 +577,7 @@ export class GrammarTransformer {
   /**
    * Transform basic concepts to unified format
    */
-  private static transformBasicConcepts(basicConcepts: any): GrammarContent[] {
+  private static transformBasicConcepts(basicConcepts: unknown): GrammarContent[] {
     const examples: GrammarContent[] = [];
     
     // Handle formation rules with examples
@@ -601,7 +601,7 @@ export class GrammarTransformer {
     
     // Handle simple examples array
     if (basicConcepts.examples) {
-      basicConcepts.examples.forEach((example: any, index: number) => {
+      (basicConcepts as { examples: unknown[] }).examples.forEach((example: unknown, index: number) => {
         if (typeof example === 'string') {
           examples.push({
             id: `basic-example-${index}`,
@@ -630,8 +630,8 @@ export class GrammarTransformer {
   /**
    * Transform sentences with condition and consequence
    */
-  private static transformSentences(sentences: any[], content: GrammarContent[]): void {
-    sentences.forEach((sentence: any, index: number) => {
+  private static transformSentences(sentences: unknown[], content: GrammarContent[]): void {
+    sentences.forEach((sentence: unknown, index: number) => {
       content.push({
         id: `sentence-${index}`,
         type: 'sentence',
@@ -672,8 +672,8 @@ export class GrammarTransformer {
   /**
    * Transform comparative adjectives
    */
-  private static transformComparativeAdjectives(comparativeAdjectives: any[], content: GrammarContent[]): void {
-    comparativeAdjectives.forEach((item: any, index: number) => {
+  private static transformComparativeAdjectives(comparativeAdjectives: unknown[], content: GrammarContent[]): void {
+    comparativeAdjectives.forEach((item: unknown, index: number) => {
       content.push({
         id: `comparative-${index}`,
         type: 'phrase',
@@ -689,8 +689,8 @@ export class GrammarTransformer {
   /**
    * Transform superlative adjectives
    */
-  private static transformSuperlativeAdjectives(superlativeAdjectives: any[], content: GrammarContent[]): void {
-    superlativeAdjectives.forEach((item: any, index: number) => {
+  private static transformSuperlativeAdjectives(superlativeAdjectives: unknown[], content: GrammarContent[]): void {
+    superlativeAdjectives.forEach((item: unknown, index: number) => {
       content.push({
         id: `superlative-${index}`,
         type: 'phrase',
@@ -706,8 +706,8 @@ export class GrammarTransformer {
   /**
    * Transform generic content
    */
-  private static transformGenericContent(contentItems: any[], content: GrammarContent[]): void {
-    contentItems.forEach((item: any, index: number) => {
+  private static transformGenericContent(contentItems: unknown[], content: GrammarContent[]): void {
+    contentItems.forEach((item: unknown, index: number) => {
       content.push({
         id: `content-${index}`,
         type: 'definition',
