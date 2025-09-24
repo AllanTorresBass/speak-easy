@@ -6,9 +6,40 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { loadAllGrammarGuides, getGrammarStats, loadGrammarGuide, testGrammarDataLoading } from '@/lib/grammar-data';
 
+interface GrammarList {
+  id: string;
+  title: string;
+  difficulty: string;
+  totalPhrases: number;
+  category: string;
+  professionalAreas: string[];
+  tags: string[];
+}
+
+interface GrammarStats {
+  totalGuides: number;
+  totalContexts: number;
+  totalPhrases: number;
+  averageDifficulty: string;
+  professionalAreas: string[];
+}
+
+interface TestDetails {
+  guides?: GrammarList[];
+  guidesCount?: number;
+  stats?: GrammarStats;
+  individualGuide?: unknown;
+  directAccess?: {
+    status: number;
+    ok: boolean;
+    statusText: string;
+  };
+  error?: string;
+}
+
 export function GrammarDataTest() {
-  const [guides, setGuides] = useState<unknown[]>([]);
-  const [stats, setStats] = useState<unknown>(null);
+  const [guides, setGuides] = useState<GrammarList[]>([]);
+  const [stats, setStats] = useState<GrammarStats | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [testResults, setTestResults] = useState<string[]>([]);
@@ -29,8 +60,9 @@ export function GrammarDataTest() {
       
       if (testResult.success) {
         addLog('✅ All tests passed successfully!');
-        setGuides(testResult.details.guides || []);
-        setStats(testResult.details.stats || null);
+        const details = testResult.details as TestDetails;
+        setGuides(details.guides || []);
+        setStats(details.stats || null);
       } else {
         addLog(`❌ Tests failed with ${testResult.errors.length} errors:`);
         testResult.errors.forEach(error => addLog(`  - ${error}`));
@@ -43,8 +75,9 @@ export function GrammarDataTest() {
       addLog(`  - Success: ${testResult.success}`);
       
       // Log detailed results
-      if (testResult.details.directAccess) {
-        addLog(`🌐 Direct file access: ${testResult.details.directAccess.status} - ${testResult.details.directAccess.statusText}`);
+      const details = testResult.details as TestDetails;
+      if (details.directAccess) {
+        addLog(`🌐 Direct file access: ${details.directAccess.status} - ${details.directAccess.statusText}`);
       }
       
     } catch (err) {
