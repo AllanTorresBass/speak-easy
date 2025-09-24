@@ -774,7 +774,7 @@ export class GrammarTransformer {
 
         // Add conjugations if they exist
         if (verb.conjugations) {
-          Object.entries(verb.conjugations).forEach(([tenseKey, conjugation]: [string, any]) => {
+          Object.entries(verb.conjugations).forEach(([tenseKey, conjugation]: [string, unknown]) => {
             content.push({
               id: `verb-${index}-${tenseKey}`,
               type: 'sentence',
