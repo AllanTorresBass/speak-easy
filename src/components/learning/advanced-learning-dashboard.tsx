@@ -17,6 +17,7 @@ import {
   BookOpen,
   GraduationCap,
   Play,
+  Pause,
   RotateCcw,
   Settings,
   BarChart3,

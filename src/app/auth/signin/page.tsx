@@ -134,7 +134,7 @@ export default function SignInPage() {
               <div className="text-center text-sm text-gray-600 dark:text-gray-400">
                 <span>Demo credentials: </span>
                 <code className="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded text-xs">
-                  demo@speakeasy.com / demo123
+                  admin / admin
                 </code>
               </div>
             </form>

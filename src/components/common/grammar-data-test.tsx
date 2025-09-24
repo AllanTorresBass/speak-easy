@@ -133,7 +133,7 @@ export function GrammarDataTest() {
               <div key={index} className="mb-1">{log}</div>
             ))}
             {testResults.length === 0 && (
-              <div className="text-gray-500">No test results yet. Click "Test Data Loading" to start.</div>
+              <div className="text-gray-500">No test results yet. Click &quot;Test Data Loading&quot; to start.</div>
             )}
           </div>
         </div>

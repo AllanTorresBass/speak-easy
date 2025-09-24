@@ -11,7 +11,8 @@ import {
   TrendingUp,
   BookMarked,
   Lightbulb,
-  BookOpen
+  BookOpen,
+  Target
 } from 'lucide-react';
 import Link from 'next/link';
 

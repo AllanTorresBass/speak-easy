@@ -51,8 +51,8 @@ export const authOptions: NextAuthOptions = {
           // In production, this would query the database
           const mockUser = {
             id: '1',
-            email: 'demo@speakeasy.com',
-            name: 'Demo User',
+            email: 'admin',
+            name: 'Admin User',
             avatarUrl: null,
             nativeLanguage: 'en',
             targetLanguage: 'en',
@@ -60,7 +60,7 @@ export const authOptions: NextAuthOptions = {
           };
 
           // Mock password check (in production, check against database)
-          if (credentials.email === 'demo@speakeasy.com' && credentials.password === 'demo123') {
+          if (credentials.email === 'admin' && credentials.password === 'admin') {
             return mockUser;
           }
 

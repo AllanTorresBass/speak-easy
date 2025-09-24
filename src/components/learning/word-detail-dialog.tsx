@@ -5,7 +5,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
-import { Volume2, VolumeX, Languages, Mic } from 'lucide-react';
+import { Volume2, VolumeX, Languages, Mic, Play, BookOpen } from 'lucide-react';
 import { VocabularyWord } from '@/types';
 import { audioPronunciation } from '@/lib/audio-pronunciation';
 

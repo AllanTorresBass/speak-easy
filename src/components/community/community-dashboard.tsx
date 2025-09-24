@@ -436,7 +436,7 @@ export function CommunityDashboard() {
             <CardContent>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <h4 className="font-medium text-green-700 dark:text-green-400">✅ Do's</h4>
+                  <h4 className="font-medium text-green-700 dark:text-green-400">✅ Do&apos;s</h4>
                   <ul className="text-sm space-y-1 text-muted-foreground">
                     <li>• Be respectful and supportive</li>
                     <li>• Ask clear, specific questions</li>

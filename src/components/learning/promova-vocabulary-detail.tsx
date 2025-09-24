@@ -18,6 +18,9 @@ import {
   BookText,
   Eye,
   Volume2,
+  Play,
+  BookOpen,
+  Target,
   VolumeX
 } from 'lucide-react';
 import Link from 'next/link';
