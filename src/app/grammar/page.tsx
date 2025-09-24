@@ -46,9 +46,19 @@ import { MainLayout } from '@/components/layout/main-layout';
 import { UnifiedGrammarService } from '@/lib/unified-grammar-service';
 import { GrammarGuide } from '@/types/grammar';
 
+interface GrammarStats {
+  totalGuides: number;
+  totalContexts: number;
+  totalContent: number;
+  totalExercises: number;
+  averageDifficulty: string;
+  professionalAreas: string[];
+  categories: Record<string, number>;
+}
+
 export default function GrammarPage() {
   const [grammarGuides, setGrammarGuides] = useState<GrammarGuide[]>([]);
-  const [stats, setStats] = useState<unknown>(null);
+  const [stats, setStats] = useState<GrammarStats | null>(null);
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedDifficulty, setSelectedDifficulty] = useState<string>('all');
@@ -126,15 +136,24 @@ export default function GrammarPage() {
         // Calculate stats from loaded guides
         const totalContent = loadedGuides.reduce((sum, guide) => sum + guide.metadata.totalContent, 0);
         const totalExercises = loadedGuides.reduce((sum, guide) => sum + guide.metadata.totalExercises, 0);
+        const totalContexts = loadedGuides.reduce((sum, guide) => sum + guide.contexts.length, 0);
         const totalGuides = loadedGuides.length;
         
-        console.log('Calculated stats:', { totalGuides, totalContent, totalExercises });
+        // Calculate professional areas
+        const allProfessionalAreas = new Set<string>();
+        loadedGuides.forEach(guide => {
+          guide.metadata.professionalAreas.forEach(area => allProfessionalAreas.add(area));
+        });
+        
+        console.log('Calculated stats:', { totalGuides, totalContent, totalExercises, totalContexts });
         
         setStats({
           totalGuides,
           totalContent,
           totalExercises,
+          totalContexts,
           averageDifficulty: 'intermediate',
+          professionalAreas: Array.from(allProfessionalAreas),
           categories: {
             'basic-structure': loadedGuides.filter(g => g.metadata.category === 'basic-structure').length,
             'complex-structure': loadedGuides.filter(g => g.metadata.category === 'complex-structure').length,
@@ -154,7 +173,9 @@ export default function GrammarPage() {
           totalGuides: 0,
           totalContent: 0,
           totalExercises: 0,
+          totalContexts: 0,
           averageDifficulty: 'Intermediate',
+          professionalAreas: [],
           categories: {}
         });
       } finally {

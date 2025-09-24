@@ -41,9 +41,19 @@ import { MainLayout } from '@/components/layout/main-layout';
 import { UnifiedGrammarService } from '@/lib/unified-grammar-service';
 import { GrammarGuide } from '@/types/grammar';
 
+interface GrammarStats {
+  totalGuides: number;
+  totalContexts: number;
+  totalContent: number;
+  totalExercises: number;
+  averageDifficulty: string;
+  professionalAreas: string[];
+  categories: Record<string, number>;
+}
+
 export default function GrammarOverviewPage() {
   const [grammarGuides, setGrammarGuides] = useState<GrammarGuide[]>([]);
-  const [stats, setStats] = useState<unknown>(null);
+  const [stats, setStats] = useState<GrammarStats | null>(null);
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedDifficulty, setSelectedDifficulty] = useState<string>('all');
@@ -219,7 +229,7 @@ export default function GrammarOverviewPage() {
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="text-sm font-medium text-blue-600">Total Guides</p>
-                    <p className="text-3xl font-bold text-blue-900">{(stats as { totalGuides?: number })?.totalGuides || 0}</p>
+                    <p className="text-3xl font-bold text-blue-900">{stats?.totalGuides || 0}</p>
                   </div>
                   <BookOpen className="h-8 w-8 text-blue-600" />
                 </div>
@@ -231,7 +241,7 @@ export default function GrammarOverviewPage() {
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="text-sm font-medium text-green-600">Total Content</p>
-                    <p className="text-3xl font-bold text-green-900">{(stats as { totalContent?: number })?.totalContent || 0}</p>
+                    <p className="text-3xl font-bold text-green-900">{stats?.totalContent || 0}</p>
                   </div>
                   <FileText className="h-8 w-8 text-green-600" />
                 </div>
@@ -243,7 +253,7 @@ export default function GrammarOverviewPage() {
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="text-sm font-medium text-purple-600">Professional Areas</p>
-                    <p className="text-3xl font-bold text-purple-900">{(stats as { professionalAreas?: unknown[] })?.professionalAreas?.length || 0}</p>
+                    <p className="text-3xl font-bold text-purple-900">{stats?.professionalAreas?.length || 0}</p>
                   </div>
                   <Users className="h-8 w-8 text-purple-600" />
                 </div>
@@ -255,7 +265,7 @@ export default function GrammarOverviewPage() {
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="text-sm font-medium text-orange-600">Avg Difficulty</p>
-                    <p className="text-3xl font-bold text-orange-900">{(stats as { averageDifficulty?: string })?.averageDifficulty || 'Intermediate'}</p>
+                    <p className="text-3xl font-bold text-orange-900">{stats?.averageDifficulty || 'Intermediate'}</p>
                   </div>
                   <TrendingUp className="h-8 w-8 text-orange-600" />
                 </div>

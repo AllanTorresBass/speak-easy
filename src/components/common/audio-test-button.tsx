@@ -50,7 +50,7 @@ export const AudioTestButton: React.FC<AudioTestButtonProps> = ({
       setSettings(currentSettings);
       setAvailableVoices(currentSettings.voiceInfo.availableVoices);
       setCurrentVoice(currentSettings.voiceInfo.currentVoice ? 
-        currentSettings.voiceInfo.availableVoices.find(v => v.voice === currentSettings.voiceInfo.currentVoice) || null : null);
+        currentSettings.voiceInfo.availableVoices.find((v: EnhancedVoice) => v.voice === currentSettings.voiceInfo.currentVoice) || null : null);
     };
 
     loadSettings();
@@ -123,7 +123,7 @@ export const AudioTestButton: React.FC<AudioTestButtonProps> = ({
   return (
     <div className="flex items-center gap-2">
       <Button
-        size={size}
+        size={size === 'md' ? 'default' : size}
         variant={variant}
         onClick={handlePlayAudio}
         disabled={isPlaying}
@@ -142,7 +142,7 @@ export const AudioTestButton: React.FC<AudioTestButtonProps> = ({
         <Dialog open={isSettingsOpen} onOpenChange={setIsSettingsOpen}>
           <DialogTrigger asChild>
             <Button
-              size={size}
+              size={size === 'md' ? 'default' : size}
               variant="outline"
               className={`${buttonSize[size]} p-0`}
             >
@@ -189,19 +189,19 @@ export const AudioTestButton: React.FC<AudioTestButtonProps> = ({
                     <div className="grid grid-cols-3 gap-2 text-sm">
                       <div className="text-center p-2 bg-green-50 rounded">
                         <div className="font-medium text-green-800">
-                          {settings.voiceInfo.voiceCapabilities.premium}
+                          {(settings.voiceInfo as any)?.voiceCapabilities?.premium || 0}
                         </div>
                         <div className="text-green-600">Premium</div>
                       </div>
                       <div className="text-center p-2 bg-blue-50 rounded">
                         <div className="font-medium text-blue-800">
-                          {settings.voiceInfo.voiceCapabilities.standard}
+                          {(settings.voiceInfo as any)?.voiceCapabilities?.standard || 0}
                         </div>
                         <div className="text-blue-600">Standard</div>
                       </div>
                       <div className="text-center p-2 bg-gray-50 rounded">
                         <div className="font-medium text-gray-800">
-                          {settings.voiceInfo.voiceCapabilities.basic}
+                          {(settings.voiceInfo as any)?.voiceCapabilities?.basic || 0}
                         </div>
                         <div className="text-gray-600">Basic</div>
                       </div>
@@ -220,7 +220,8 @@ export const AudioTestButton: React.FC<AudioTestButtonProps> = ({
                   <CardContent>
                     <div className="space-y-3">
                       {['premium', 'standard', 'basic'].map((quality) => {
-                        const count = settings.voiceInfo.voiceCapabilities[quality as keyof typeof settings.voiceInfo.voiceCapabilities];
+                        const voiceInfo = settings.voiceInfo as any;
+                        const count = voiceInfo?.voiceCapabilities?.[quality] || 0;
                         return (
                           <div key={quality} className="flex items-center justify-between p-2 border rounded">
                             <div className="flex items-center gap-2">
@@ -234,7 +235,7 @@ export const AudioTestButton: React.FC<AudioTestButtonProps> = ({
                               onClick={() => {
                                 const voice = audioPronunciation.setVoicePreference(quality as 'premium' | 'standard' | 'basic' | 'auto');
                                 if (voice) {
-                                  setCurrentVoice(availableVoices.find(v => v.voice === voice) || null);
+                                  setCurrentVoice(availableVoices.find((v: EnhancedVoice) => v.voice === voice) || null);
                                 }
                               }}
                               disabled={count === 0}
