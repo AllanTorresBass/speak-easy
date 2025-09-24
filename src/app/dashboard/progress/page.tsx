@@ -53,7 +53,8 @@ import {
   SkipBack,
   SkipForward,
   Target,
-  Trophy
+  Trophy,
+  Headphones
 } from 'lucide-react';
 
 // Mock data - in a real app, this would come from your API
