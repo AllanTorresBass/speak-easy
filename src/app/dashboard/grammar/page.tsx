@@ -123,7 +123,7 @@ export default function GrammarPage() {
                 <BookOpen className="h-6 w-6 text-blue-600 dark:text-blue-400" />
               </div>
               <h3 className="text-2xl font-bold text-blue-900 dark:text-blue-100 mb-1">
-                {stats?.totalGuides || 0}
+                {(stats as { totalGuides?: number })?.totalGuides || 0}
               </h3>
               <p className="text-blue-700 dark:text-blue-300 text-sm">Total Guides</p>
             </div>
@@ -133,7 +133,7 @@ export default function GrammarPage() {
                 <FileText className="h-6 w-6 text-green-600 dark:text-green-400" />
               </div>
               <h3 className="text-2xl font-bold text-green-900 dark:text-green-100 mb-1">
-                {stats?.totalContent || 0}
+                {(stats as { totalContent?: number })?.totalContent || 0}
               </h3>
               <p className="text-green-700 dark:text-green-300 text-sm">Content Items</p>
             </div>
@@ -143,7 +143,7 @@ export default function GrammarPage() {
                 <Users className="h-6 w-6 text-purple-600 dark:text-purple-400" />
               </div>
               <h3 className="text-2xl font-bold text-purple-900 dark:text-purple-100 mb-1">
-                {stats?.professionalAreas?.length || 0}
+                {(stats as { professionalAreas?: unknown[] })?.professionalAreas?.length || 0}
               </h3>
               <p className="text-purple-700 dark:text-purple-300 text-sm">Professional Areas</p>
             </div>
@@ -153,7 +153,7 @@ export default function GrammarPage() {
                 <TrendingUp className="h-6 w-6 text-orange-600 dark:text-orange-400" />
               </div>
               <h3 className="text-2xl font-bold text-orange-900 dark:text-orange-100 mb-1">
-                {stats?.averageDifficulty || 'Intermediate'}
+                {(stats as { averageDifficulty?: string })?.averageDifficulty || 'Intermediate'}
               </h3>
               <p className="text-orange-700 dark:text-orange-300 text-sm">Avg Difficulty</p>
             </div>
