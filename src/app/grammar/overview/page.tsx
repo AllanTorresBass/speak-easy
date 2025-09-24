@@ -219,7 +219,7 @@ export default function GrammarOverviewPage() {
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="text-sm font-medium text-blue-600">Total Guides</p>
-                    <p className="text-3xl font-bold text-blue-900">{stats.totalGuides}</p>
+                    <p className="text-3xl font-bold text-blue-900">{(stats as { totalGuides?: number })?.totalGuides || 0}</p>
                   </div>
                   <BookOpen className="h-8 w-8 text-blue-600" />
                 </div>
@@ -231,7 +231,7 @@ export default function GrammarOverviewPage() {
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="text-sm font-medium text-green-600">Total Content</p>
-                    <p className="text-3xl font-bold text-green-900">{stats.totalContent}</p>
+                    <p className="text-3xl font-bold text-green-900">{(stats as { totalContent?: number })?.totalContent || 0}</p>
                   </div>
                   <FileText className="h-8 w-8 text-green-600" />
                 </div>
@@ -243,7 +243,7 @@ export default function GrammarOverviewPage() {
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="text-sm font-medium text-purple-600">Professional Areas</p>
-                    <p className="text-3xl font-bold text-purple-900">{stats.professionalAreas.length}</p>
+                    <p className="text-3xl font-bold text-purple-900">{(stats as { professionalAreas?: unknown[] })?.professionalAreas?.length || 0}</p>
                   </div>
                   <Users className="h-8 w-8 text-purple-600" />
                 </div>
@@ -255,7 +255,7 @@ export default function GrammarOverviewPage() {
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="text-sm font-medium text-orange-600">Avg Difficulty</p>
-                    <p className="text-3xl font-bold text-orange-900">{stats.averageDifficulty}</p>
+                    <p className="text-3xl font-bold text-orange-900">{(stats as { averageDifficulty?: string })?.averageDifficulty || 'Intermediate'}</p>
                   </div>
                   <TrendingUp className="h-8 w-8 text-orange-600" />
                 </div>
