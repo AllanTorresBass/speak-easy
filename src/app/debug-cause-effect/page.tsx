@@ -19,7 +19,8 @@ export default function DebugCauseEffectPage() {
       
       if (data.cause_effect_categories) {
         Object.entries(data.cause_effect_categories).forEach(([key, category]: [string, unknown]) => {
-          info += `- ${key}: ${category.title} (${category.verbs?.length || 0} verbs)\n`;
+          const typedCategory = category as { title?: string; verbs?: unknown[] };
+          info += `- ${key}: ${typedCategory.title || 'No title'} (${typedCategory.verbs?.length || 0} verbs)\n`;
         });
       }
       
