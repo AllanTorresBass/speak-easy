@@ -20,12 +20,18 @@ interface TranslationEntry {
   category: string;
 }
 
+interface TranslationStats {
+  totalWords: number;
+  translatedWords: number;
+  coveragePercentage: number;
+}
+
 export function ComprehensiveTranslationDashboard() {
   const [translations, setTranslations] = useState<Record<string, string>>({});
   const [filteredTranslations, setFilteredTranslations] = useState<TranslationEntry[]>([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
-  const [stats, setStats] = useState<unknown>(null);
+  const [stats, setStats] = useState<TranslationStats | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -180,15 +186,15 @@ export function ComprehensiveTranslationDashboard() {
           <CardContent>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div className="text-center">
-                <div className="text-2xl font-bold text-blue-600">{stats.totalWords}</div>
+                <div className="text-2xl font-bold text-blue-600">{stats?.totalWords || 0}</div>
                 <div className="text-sm text-gray-600">Total Words</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-green-600">{stats.translatedWords}</div>
+                <div className="text-2xl font-bold text-green-600">{stats?.translatedWords || 0}</div>
                 <div className="text-sm text-gray-600">Translated</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-purple-600">{stats.coveragePercentage}%</div>
+                <div className="text-2xl font-bold text-purple-600">{stats?.coveragePercentage || 0}%</div>
                 <div className="text-sm text-gray-600">Coverage</div>
               </div>
             </div>
