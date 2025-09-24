@@ -6,12 +6,13 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { BookMarked, Loader2, CheckCircle, XCircle } from 'lucide-react';
 import { loadPromovaVocabularySimple, loadPromovaVocabularyListSimple } from '@/lib/promova-data-simple';
+import { VocabularyList, VocabularyWord } from '@/types';
 
 export function PromovaDataTest() {
   const [isLoading, setIsLoading] = useState(false);
-  const [lists, setLists] = useState<unknown[]>([]);
-  const [selectedList, setSelectedList] = useState<unknown>(null);
-  const [listWords, setListWords] = useState<unknown[]>([]);
+  const [lists, setLists] = useState<VocabularyList[]>([]);
+  const [selectedList, setSelectedList] = useState<VocabularyList | null>(null);
+  const [listWords, setListWords] = useState<VocabularyWord[]>([]);
   const [error, setError] = useState<string>('');
 
   const testDataLoading = async () => {
