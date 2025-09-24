@@ -8,10 +8,7 @@ import { Progress } from '@/components/ui/progress';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { 
-  BookOpen, 
   Clock, 
-  Target, 
-  Play,
   Star,
   TrendingUp,
   BookMarked,
@@ -810,7 +807,7 @@ export function PromovaVocabularyDetail({ list, words }: PromovaVocabularyDetail
                     <p className="text-sm font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wide">Example</p>
                   </div>
                   <p className="text-sm italic text-gray-600 dark:text-gray-400 pl-4 border-l-2 border-purple-200 dark:border-purple-700">
-                    "{word.example}"
+                    &quot;{word.example}&quot;
                   </p>
                 </div>
               )}

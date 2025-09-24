@@ -1,5 +1,5 @@
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
-import { GrammarLesson, Exercise, UserProgress } from '@/types';
+import { GrammarLesson, UserProgress } from '@/types';
 
 // Mock API functions - in production, these would call your actual API endpoints
 const fetchGrammarLessons = async (): Promise<GrammarLesson[]> => {

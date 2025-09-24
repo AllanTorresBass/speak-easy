@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
+
 import { UnifiedGrammarGuide } from '@/components/grammar/unified-grammar-guide';
 import { UnifiedGrammarService } from '@/lib/unified-grammar-service';
 

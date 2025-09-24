@@ -219,8 +219,8 @@ export class DifficultyAdaptationSystem {
   static generateLearningPath(
     profile: DifficultyProfile,
     metrics: PerformanceMetrics,
-    availableContent: any[]
-  ): any[] {
+    availableContent: unknown[]
+  ): unknown[] {
     const prioritizedContent = availableContent.map(content => ({
       ...content,
       priority: this.calculateContentPriority(content, profile, metrics)
@@ -234,7 +234,7 @@ export class DifficultyAdaptationSystem {
    * Calculate content priority for learning path
    */
   private static calculateContentPriority(
-    content: any,
+    content: unknown,
     profile: DifficultyProfile,
     metrics: PerformanceMetrics
   ): number {

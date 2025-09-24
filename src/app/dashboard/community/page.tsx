@@ -13,7 +13,6 @@ import {
   MessageCircle, 
   Search, 
   Plus, 
-  Filter, 
   Globe, 
   Calendar, 
   MapPin, 
@@ -22,13 +21,10 @@ import {
   Heart, 
   Share2, 
   BookOpen, 
-  Target, 
   Clock,
   UserPlus,
   Users2,
-  TrendingUp,
-  Award,
-  Languages
+  Target
 } from 'lucide-react';
 
 // Mock data - in a real app, this would come from your API

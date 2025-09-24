@@ -11,9 +11,7 @@ import {
   TrendingUp, 
   Calendar, 
   Clock, 
-  Target, 
   Star, 
-  Trophy, 
   Award,
   BookOpen,
   Brain,
@@ -21,7 +19,6 @@ import {
   MessageCircle,
   PenTool,
   Mic,
-  Headphones,
   Type,
   Globe,
   Zap,
@@ -44,11 +41,9 @@ import {
   RefreshCw,
   Settings,
   Lightbulb,
-  Target as TargetIcon,
   CalendarDays,
   Clock3,
   TrendingDown,
-  Award as AwardIcon,
   BookMarked,
   Languages,
   Smartphone,
@@ -56,7 +51,9 @@ import {
   Play,
   Pause,
   SkipBack,
-  SkipForward
+  SkipForward,
+  Target,
+  Trophy
 } from 'lucide-react';
 
 // Mock data - in a real app, this would come from your API
@@ -425,7 +422,7 @@ export default function ProgressPage() {
             Timeline
           </TabsTrigger>
           <TabsTrigger value="goals" className="flex items-center gap-2">
-            <TargetIcon className="h-4 w-4" />
+            <Target className="h-4 w-4" />
             Goals
           </TabsTrigger>
           <TabsTrigger value="achievements" className="flex items-center gap-2">
@@ -490,7 +487,7 @@ export default function ProgressPage() {
                       Consistent Learning
                     </p>
                     <p className="text-xs text-green-600 dark:text-green-400">
-                      You've maintained a 12-day study streak
+                      You&apos;ve maintained a 12-day study streak
                     </p>
                   </div>
                 </div>
@@ -714,7 +711,7 @@ export default function ProgressPage() {
           <div className="flex items-center justify-between">
             <h3 className="text-lg font-semibold">Your Learning Goals</h3>
             <Button>
-              <TargetIcon className="h-4 w-4 mr-2" />
+              <Target className="h-4 w-4 mr-2" />
               Add New Goal
             </Button>
           </div>

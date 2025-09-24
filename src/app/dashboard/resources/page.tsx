@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { BookOpen, Download, ExternalLink, Search, Filter, BookMarked, FileText, Video, Headphones, Globe, Star, Clock, Users } from 'lucide-react';
+import { BookOpen, Download, ExternalLink, Search, BookMarked, FileText, Video, Headphones, Globe, Star, Clock, Users } from 'lucide-react';
 
 // Mock data - in a real app, this would come from your API
 const mockResources = [

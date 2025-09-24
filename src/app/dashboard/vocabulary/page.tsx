@@ -13,7 +13,6 @@ import { useVocabularyLists, useUserProgress } from '@/hooks/use-vocabulary';
 import { useSession } from 'next-auth/react';
 import {
   BookOpen,
-  Target,
   TrendingUp,
   Clock,
   Search,
@@ -22,19 +21,12 @@ import {
   Star,
   Play,
   Volume2,
-  Eye,
-  EyeOff,
   CheckCircle,
-  XCircle,
-  ArrowRight,
-  RefreshCw,
+  BookMarked,
+  Target,
   Settings,
-  Download,
-  Share2,
-  Filter,
-  SortAsc,
-  SortDesc,
-  BookMarked
+  Eye,
+  Download
 } from 'lucide-react';
 
 // Mock data - in a real app, this would come from your API
@@ -477,7 +469,7 @@ export default function VocabularyPage() {
             <Card>
               <CardHeader>
                 <CardTitle>Recent Words</CardTitle>
-                <CardDescription>Words you've studied recently</CardDescription>
+                <CardDescription>Words you&apos;ve studied recently</CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="space-y-3">

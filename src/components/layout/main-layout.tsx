@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Sidebar } from './sidebar';
 import { Breadcrumbs } from './breadcrumbs';
 import { Button } from '@/components/ui/button';

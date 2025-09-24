@@ -163,7 +163,7 @@ export default function WordsVocabularyPage() {
         {filteredLists.length === 0 && searchQuery && (
           <div className="text-center py-12">
             <p className="text-gray-500 text-lg">
-              No vocabulary lists found matching "{searchQuery}"
+              No vocabulary lists found matching &quot;{searchQuery}&quot;
             </p>
             <Button 
               variant="outline" 

@@ -9,43 +9,17 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Input } from '@/components/ui/input';
 import {
   BookOpen,
-  Target,
   TrendingUp,
   Clock,
   Search,
-  Play,
   Bookmark,
   Star,
   Brain,
-  Lightbulb,
-  CheckCircle,
-  XCircle,
-  ArrowRight,
-  RefreshCw,
-  Settings,
-  Download,
-  Share2,
-  Filter,
-  SortAsc,
-  SortDesc,
   GraduationCap,
   FileText,
-  Video,
-  Headphones,
-  PenTool,
   Users,
-  Calendar,
-  Award,
-  Trophy,
-  Zap,
-  Flame,
-  TrendingDown,
-  BookMarked,
-  Home,
-  Monitor,
-  Smartphone,
-  Globe,
-  Languages
+  ArrowRight,
+  Target
 } from 'lucide-react';
 import { UnifiedGrammarService } from '@/lib/unified-grammar-service';
 import { GrammarGuide } from '@/types/grammar';
@@ -55,7 +29,7 @@ export default function GrammarPage() {
   const [selectedDifficulty, setSelectedDifficulty] = useState('all');
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [grammarGuides, setGrammarGuides] = useState<GrammarGuide[]>([]);
-  const [stats, setStats] = useState<any>(null);
+  const [stats, setStats] = useState<unknown>(null);
   const [loading, setLoading] = useState(true);
 
   const grammarService = UnifiedGrammarService.getInstance();

@@ -6,14 +6,12 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
 import { 
-  BookOpen, 
   Clock, 
-  Target, 
-  Play,
   Star,
   TrendingUp,
   BookMarked,
-  Lightbulb
+  Lightbulb,
+  BookOpen
 } from 'lucide-react';
 import Link from 'next/link';
 

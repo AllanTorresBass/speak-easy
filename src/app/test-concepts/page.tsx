@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { UnifiedGrammarService } from '@/lib/unified-grammar-service';
@@ -127,7 +127,7 @@ export default function TestConceptsPage() {
             <CardContent>
               <div className="max-h-96 overflow-y-auto bg-gray-50 p-3 rounded text-sm font-mono">
                 {logs.length === 0 ? (
-                  <p className="text-gray-500">No logs yet. Click "Test Concepts Loading" to start.</p>
+                  <p className="text-gray-500">No logs yet. Click &quot;Test Concepts Loading&quot; to start.</p>
                 ) : (
                   logs.map((log, index) => (
                     <div key={index} className="mb-1">
@@ -147,7 +147,7 @@ export default function TestConceptsPage() {
           <CardContent>
             <div className="space-y-2 text-sm">
               <p><strong>Environment:</strong> {process.env.NODE_ENV}</p>
-              <p><strong>Base URL:</strong> {process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3003'}</p>
+              <p><strong>Base URL:</strong> {process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3003"}</p>
               <p><strong>Current Time:</strong> {new Date().toISOString()}</p>
             </div>
           </CardContent>

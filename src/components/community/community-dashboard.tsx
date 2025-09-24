@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+
 import { 
   Users, 
   MessageSquare, 
@@ -14,7 +14,6 @@ import {
   TrendingUp,
   Plus,
   Search,
-  Filter,
   Globe,
   Clock,
   MapPin,
@@ -23,8 +22,7 @@ import {
   Target,
   Star,
   Heart,
-  Share2,
-  MoreHorizontal
+  Share2
 } from 'lucide-react';
 import { useSession } from 'next-auth/react';
 import { 
@@ -36,7 +34,7 @@ import {
   useCommunityMetrics,
   useJoinStudyGroup
 } from '@/hooks/use-community';
-import { StudyGroup, CommunityEvent, ForumCategory } from '@/types/community';
+
 import { StudyGroupCard } from './study-group-card';
 import { EventCard } from './event-card';
 
@@ -447,7 +445,7 @@ export function CommunityDashboard() {
                   </ul>
                 </div>
                 <div className="space-y-2">
-                  <h4 className="font-medium text-red-700 dark:text-red-400">❌ Don'ts</h4>
+                  <h4 className="font-medium text-red-700 dark:text-red-400">❌ Don&apos;ts</h4>
                   <ul className="text-sm space-y-1 text-muted-foreground">
                     <li>• Spam or self-promote</li>
                     <li>• Use offensive language</li>

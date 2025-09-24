@@ -1,5 +1,11 @@
 'use client';
 
+// Type definition for PWA install prompt
+interface BeforeInstallPromptEvent extends Event {
+  prompt(): Promise<void>;
+  userChoice: Promise<{ outcome: 'accepted' | 'dismissed' }>;
+}
+
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -93,7 +99,7 @@ export function PWAInstaller() {
     // Listen for beforeinstallprompt event
     window.addEventListener('beforeinstallprompt', (e) => {
       e.preventDefault();
-      setInstallPrompt(e as any);
+      setInstallPrompt(e as BeforeInstallPromptEvent);
       setShowInstallPrompt(true);
     });
 

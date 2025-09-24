@@ -1,6 +1,6 @@
 // Grammar data service for loading and managing grammar content
 export interface GrammarPhrase {
-  [key: string]: any; // Dynamic structure based on grammar type
+  [key: string]: unknown; // Dynamic structure based on grammar type
 }
 
 export interface GrammarContext {
@@ -18,7 +18,7 @@ export interface GrammarGuide {
   basic_concepts?: {
     definition: string;
     key_functions: string[];
-    examples?: any[];
+    examples?: unknown[];
   };
   professional_contexts?: {
     [key: string]: GrammarContext;

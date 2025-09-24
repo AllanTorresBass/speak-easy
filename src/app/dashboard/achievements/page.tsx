@@ -141,7 +141,7 @@ export default function AchievementsPage() {
               </CardHeader>
               <CardContent className="pt-0">
                 <div className="flex items-center justify-between text-sm text-gray-600 dark:text-gray-400">
-                  <span>Unlocked on {new Date(achievement.unlockedAt).toLocaleDateString()}</span>
+                  <span>Unlocked on {achievement.unlockedAt ? new Date(achievement.unlockedAt).toLocaleDateString() : 'N/A'}</span>
                   <Award className="h-4 w-4 text-green-500 flex-shrink-0" />
                 </div>
               </CardContent>

@@ -21,16 +21,7 @@ import {
   Download, 
   Trash2,
   Camera,
-  Save,
-  Eye,
-  EyeOff,
-  Mail,
-  Phone,
-  MapPin,
-  Calendar,
-  Target,
-  Clock,
-  Languages
+  Save
 } from 'lucide-react';
 
 export default function SettingsPage() {

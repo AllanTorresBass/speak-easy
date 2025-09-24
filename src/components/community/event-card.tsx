@@ -214,7 +214,7 @@ export function EventCard({
           {isRegistered && (
             <div className="p-2 bg-green-50 dark:bg-green-900/20 rounded text-sm text-green-700 dark:text-green-300">
               <CheckCircle className="h-4 w-4 inline mr-2" />
-              You're registered!
+              You&apos;re registered!
             </div>
           )}
         </div>

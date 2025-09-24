@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -16,10 +17,13 @@ export function WordsDataTest() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [audioSpeed, setAudioSpeed] = useState(1);
+  const [audioSystemAvailable, setAudioSystemAvailable] = useState<boolean | null>(null);
 
   useEffect(() => {
     loadStats();
     loadSampleList();
+    // Check audio system availability on client side only
+    setAudioSystemAvailable(typeof window !== 'undefined' && !!window.speechSynthesis);
   }, []);
 
   const loadStats = async () => {
@@ -227,16 +231,16 @@ export function WordsDataTest() {
         {/* Navigation Links */}
         <div className="flex flex-wrap gap-4 justify-center">
           <Button asChild variant="outline">
-            <a href="/vocabulary/words">
+            <Link href="/vocabulary/words">
               <BookOpen className="h-4 w-4 mr-2" />
               Browse All Words Lists
-            </a>
+            </Link>
           </Button>
           <Button asChild variant="outline">
-                            <a href="/vocabulary/words-list/1">
+            <Link href="/vocabulary/words-list/1">
               <Search className="h-4 w-4 mr-2" />
               View Sample List
-            </a>
+            </Link>
           </Button>
         </div>
 
@@ -246,7 +250,7 @@ export function WordsDataTest() {
           <div className="text-sm text-gray-600 space-y-1">
             <p><strong>Stats Loaded:</strong> {stats ? 'Yes' : 'No'}</p>
             <p><strong>Sample List Loaded:</strong> {sampleList ? 'Yes' : 'No'}</p>
-            <p><strong>Audio System:</strong> {typeof window !== 'undefined' && window.speechSynthesis ? 'Available' : 'Not Available'}</p>
+            <p><strong>Audio System:</strong> {audioSystemAvailable === null ? 'Checking...' : audioSystemAvailable ? 'Available' : 'Not Available'}</p>
             <p><strong>Translation System:</strong> Working</p>
           </div>
         </div>

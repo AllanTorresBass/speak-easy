@@ -38,7 +38,7 @@ export class UnifiedGrammarService {
       }
 
       console.log('Loading grammar guide:', guideId);
-      const url = `${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3003'}/api/grammar/${guideId}`;
+      const url = `/api/grammar/${guideId}?t=${Date.now()}`;
       
       console.log('Fetching from URL:', url);
       
@@ -46,11 +46,11 @@ export class UnifiedGrammarService {
       console.log('Response status:', response.status);
       
       if (!response.ok) {
-        console.error('Failed to fetch grammar guide:', response.status, response.statusText);
+        console.error(`Failed to fetch grammar guide ${guideId}:`, response.status, response.statusText);
         return null;
       }
 
-      const guide = await response.json();
+      const guide = await response.json() as GrammarGuide;
       console.log('Guide received:', guide.title, 'with', guide.contexts.length, 'contexts');
       
       // Cache the result
@@ -65,7 +65,7 @@ export class UnifiedGrammarService {
   }
   
   /**
-   * Load all grammar guides
+   * Load all grammar guides with rate limiting
    */
   async loadAllGrammarGuides(): Promise<GrammarGuide[]> {
     const guideIds = [
@@ -117,18 +117,29 @@ export class UnifiedGrammarService {
     
     const guides: GrammarGuide[] = [];
     
-    for (const guideId of guideIds) {
-      try {
-        const guide = await this.loadGrammarGuide(guideId);
-        if (guide) {
-          guides.push(guide);
-          console.log(`Successfully loaded guide: ${guideId}`);
-        } else {
-          console.warn(`Failed to load guide: ${guideId} - returned null`);
+    // Load guides in batches to prevent overwhelming the server
+    const batchSize = 5;
+    for (let i = 0; i < guideIds.length; i += batchSize) {
+      const batch = guideIds.slice(i, i + batchSize);
+      
+      await Promise.all(batch.map(async (guideId) => {
+        try {
+          console.log(`Attempting to load guide: ${guideId}`);
+          const guide = await this.loadGrammarGuide(guideId);
+          if (guide) {
+            guides.push(guide);
+            console.log(`Successfully loaded guide: ${guideId}`);
+          } else {
+            console.warn(`Failed to load guide: ${guideId} - returned null`);
+          }
+        } catch (error) {
+          console.error(`Error loading guide ${guideId}:`, error);
         }
-      } catch (error) {
-        console.warn(`Error loading guide ${guideId}:`, error);
-        // Continue loading other guides instead of failing completely
+      }));
+      
+      // Small delay between batches
+      if (i + batchSize < guideIds.length) {
+        await new Promise(resolve => setTimeout(resolve, 100));
       }
     }
     

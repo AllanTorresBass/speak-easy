@@ -4,10 +4,10 @@ import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Badge } from '@/components/ui/badge';
+
 import { Search, Volume2, RotateCcw, Info } from 'lucide-react';
 import { searchWordsVocabulary } from '@/lib/words-data';
-import { getWordsTranslation } from '@/lib/comprehensive-words-translations';
+
 import { audioPronunciation } from '@/lib/audio-pronunciation';
 import { WordsVocabularyItem } from '@/lib/words-data';
 
@@ -149,7 +149,7 @@ export default function WordsSearch() {
         {!loading && searchQuery && searchResults.length === 0 && (
           <div className="text-center py-8">
             <p className="text-gray-500 text-lg">
-              No results found for "{searchQuery}"
+              No results found for &quot;{searchQuery}&quot;
             </p>
             <p className="text-gray-400 text-sm mt-2">
               Try different keywords or check your spelling
@@ -161,7 +161,7 @@ export default function WordsSearch() {
           <div className="space-y-4">
             <div className="text-center">
               <p className="text-gray-600">
-                Found {searchResults.length} result{searchResults.length !== 1 ? 's' : ''} for "{searchQuery}"
+                Found {searchResults.length} result{searchResults.length !== 1 ? 's' : ''} for &quot;{searchQuery}&quot;
               </p>
             </div>
 
@@ -242,17 +242,17 @@ export default function WordsSearch() {
                 <div className="text-left">
                   <p className="font-medium mb-2">Search by English words:</p>
                   <ul className="space-y-1">
-                    <li>• "business" - finds business-related terms</li>
-                    <li>• "travel" - finds travel vocabulary</li>
-                    <li>• "family" - finds family-related words</li>
+                    <li>• &quot;business&quot; - finds business-related terms</li>
+                    <li>• &quot;travel&quot; - finds travel vocabulary</li>
+                    <li>• &quot;family&quot; - finds family-related words</li>
                   </ul>
                 </div>
                 <div className="text-left">
                   <p className="font-medium mb-2">Search by Spanish translations:</p>
                   <ul className="space-y-1">
-                    <li>• "trabajo" - finds work-related terms</li>
-                    <li>• "viaje" - finds travel vocabulary</li>
-                    <li>• "familia" - finds family-related words</li>
+                    <li>• &quot;trabajo&quot; - finds work-related terms</li>
+                    <li>• &quot;viaje&quot; - finds travel vocabulary</li>
+                    <li>• &quot;familia&quot; - finds family-related words</li>
                   </ul>
                 </div>
               </div>

@@ -2,14 +2,9 @@ import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { 
   StudyGroup, 
   ForumCategory, 
-  ForumThread, 
-  ForumPost, 
   CommunityEvent,
   UserProfile,
-  Conversation,
-  DirectMessage,
   Notification,
-  StudyPartner,
   CommunityMetrics
 } from '@/types/community';
 

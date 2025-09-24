@@ -4,7 +4,7 @@ import { isBrowserAPI, getBrowserAPI } from './hydration-safe';
 // Provides realistic, relaxed text-to-speech with natural pauses and voice selection
 
 export interface AudioSettings {
-  voice: string;
+  voice: 'premium' | 'standard' | 'basic' | 'auto';
   speed: number; // 0.5 to 2.0
   pitch: number; // 0.5 to 2.0
   volume: number; // 0.0 to 1.0
@@ -56,7 +56,7 @@ export class AudioPronunciationSystem {
 
   // Enhanced default settings for more natural speech
   private defaultSettings: AudioSettings = {
-    voice: 'en-US',
+    voice: 'auto',
     speed: 0.75, // Slightly slower for more natural pace
     pitch: 0.95, // Slightly lower for more relaxed tone
     volume: 0.85,
@@ -595,7 +595,7 @@ export class AudioPronunciationSystem {
     
     // If voice quality preference changed, update voice selection
     if (newSettings.voice && newSettings.voice !== this.defaultSettings.voice) {
-      const newVoice = this.setVoicePreference(newSettings.voice as any);
+      const newVoice = this.setVoicePreference(newSettings.voice);
       if (newVoice) {
         console.log(`Voice updated to: ${newVoice.name} (${newVoice.lang})`);
       }
@@ -623,7 +623,7 @@ export class AudioPronunciationSystem {
    */
   public resetSettings(): void {
     this.defaultSettings = {
-      voice: 'en-US',
+      voice: 'auto',
       speed: 0.75, // Slightly slower for more natural pace
       pitch: 0.95, // Slightly lower for more relaxed tone
       volume: 0.85,
@@ -722,7 +722,7 @@ export class AudioPronunciationSystem {
   /**
    * Emit audio events for external listeners
    */
-  private emitAudioEvent(type: string, data: any): void {
+  private emitAudioEvent(type: string, data: unknown): void {
     const event = new CustomEvent('audioEvent', {
       detail: { type, data, timestamp: Date.now() }
     });

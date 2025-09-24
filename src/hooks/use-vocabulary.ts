@@ -1,6 +1,6 @@
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { VocabularyList, VocabularyWord, UserProgress } from '@/types';
-import { loadPromovaVocabulary, loadPromovaVocabularyList } from '@/lib/promova-data';
+
 import { loadPromovaVocabularySimple, loadPromovaVocabularyListSimple } from '@/lib/promova-data-simple';
 
 // Mock API functions - in production, these would call your actual API endpoints

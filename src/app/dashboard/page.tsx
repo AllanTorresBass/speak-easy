@@ -1,30 +1,24 @@
 'use client';
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
 import {
   BookOpen,
-  Target,
-  Trophy,
   Clock,
   TrendingUp,
-  Users,
-  Calendar,
-  Star,
-  Flame,
   Brain,
   Mic,
   Headphones,
   PenTool,
   BookMarked,
-  ArrowRight,
   Play,
-  CalendarDays,
-  Award,
-  Zap,
-  Lightbulb
+  Target,
+  Flame,
+  ArrowRight,
+  Lightbulb,
+  Zap
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -150,7 +144,7 @@ export default function DashboardPage() {
           Welcome back! 👋
         </h1>
         <p className="text-gray-600 dark:text-gray-400">
-          Ready to continue your English learning journey? Here's your progress overview.
+          Ready to continue your English learning journey? Here&apos;s your progress overview.
         </p>
       </div>
 

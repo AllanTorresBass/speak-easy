@@ -14,13 +14,13 @@ export async function GET(
     
     // Determine the directory based on the guide ID
     let directory = 'basic-structure';
-    if (guideId.includes('questions')) {
-      directory = 'questions';
-    } else if (guideId.includes('conditional') || guideId.includes('passive') || guideId.includes('perfect') || guideId.includes('clauses') || guideId.includes('modifiers')) {
+    if (guideId.includes('conditional') || guideId.includes('passive') || guideId.includes('perfect') || guideId.includes('modifiers') || guideId.includes('comparative') || guideId.includes('superlative') || guideId.includes('indirect_questions') || guideId.includes('subordinate_clauses')) {
       directory = 'complex-structure';
+    } else if (guideId.includes('questions')) {
+      directory = 'questions';
     } else if (guideId.includes('cause_effect')) {
       directory = 'cause-effect';
-    } else if (guideId.includes('concepts')) {
+    } else if (guideId.includes('concepts') || guideId.includes('ui_ux_principles')) {
       directory = 'concepts';
                } else if (guideId.includes('conjugation')) {
              directory = 'verb-conjugation';

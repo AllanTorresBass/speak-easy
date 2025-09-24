@@ -4,7 +4,7 @@ import { useState, useEffect, use, useRef } from 'react';
 import { useVocabularyList } from '@/hooks/use-vocabulary';
 import { PromovaVocabularyDetail } from '@/components/learning/promova-vocabulary-detail';
 import { MainLayout } from '@/components/layout/main-layout';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
@@ -472,7 +472,7 @@ export default function VocabularyDetailPage({ params }: VocabularyDetailPagePro
                   {word.example && (
                     <div>
                       <p className="text-sm text-muted-foreground mb-1">Example:</p>
-                      <p className="text-sm italic text-muted-foreground">"{word.example}"</p>
+                      <p className="text-sm italic text-muted-foreground">&quot;{word.example}&quot;</p>
                     </div>
                   )}
                   

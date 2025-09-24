@@ -19,7 +19,6 @@ import {
   Star,
   Clock,
   Calendar,
-  Tag,
   Info,
   Eye,
   EyeOff,
@@ -36,7 +35,7 @@ import {
 } from 'lucide-react';
 import { MainLayout } from '@/components/layout/main-layout';
 import { UnifiedGrammarService } from '@/lib/unified-grammar-service';
-import { GrammarGuide, GrammarContext, GrammarContent } from '@/types/grammar';
+import { GrammarGuide, GrammarContext } from '@/types/grammar';
 import { getDifficultyColor } from '@/lib/hydration-safe';
 import Link from 'next/link';
 

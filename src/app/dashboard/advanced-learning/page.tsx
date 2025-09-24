@@ -6,27 +6,17 @@ import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
 import { 
   Brain, 
-  Zap, 
-  Target, 
   BookOpen, 
   Mic, 
-  Headphones, 
   PenTool, 
-  Users,
-  Star,
   TrendingUp,
-  Lightbulb,
-  ArrowRight,
-  Play,
-  Settings,
-  BarChart3,
   MessageCircle,
-  Globe,
-  Smartphone,
-  Monitor,
-  Award,
+  Star,
   Clock,
-  CheckCircle
+  Play,
+  ArrowRight,
+  Lightbulb,
+  Zap
 } from 'lucide-react';
 
 // Mock data - in a real app, this would come from your API

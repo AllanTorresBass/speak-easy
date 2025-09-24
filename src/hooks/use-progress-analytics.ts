@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { UserProgress } from '@/types';
+
 
 // Mock API functions - in production, these would call your actual API endpoints
 const fetchUserProgressAnalytics = async (userId: string) => {

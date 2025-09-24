@@ -29,7 +29,7 @@ export class GrammarTransformer {
         title: 'Basic Concepts',
         definition: legacyGuide.basic_concepts.definition || '',
         examples: this.transformBasicConcepts(legacyGuide.basic_concepts),
-        rules: legacyGuide.basic_concepts.key_functions || legacyGuide.basic_concepts.formation_rules?.map((rule: any) => rule.rule) || [],
+        rules: legacyGuide.basic_concepts.key_functions || legacyGuide.basic_concepts.formation_rules?.map((rule: unknown) => (rule as { rule: string }).rule) || [],
         relatedConcepts: []
       });
     }
@@ -582,15 +582,16 @@ export class GrammarTransformer {
     
     // Handle formation rules with examples
     if (basicConcepts.formation_rules) {
-      basicConcepts.formation_rules.forEach((rule: any, index: number) => {
-        if (rule.examples && Array.isArray(rule.examples)) {
-          rule.examples.forEach((example: string, exIndex: number) => {
+      basicConcepts.formation_rules.forEach((rule: unknown, index: number) => {
+        const typedRule = rule as { examples?: string[]; rule?: string };
+        if (typedRule.examples && Array.isArray(typedRule.examples)) {
+          typedRule.examples.forEach((example: string, exIndex: number) => {
             examples.push({
               id: `rule-example-${index}-${exIndex}`,
               type: 'example',
               text: example,
-              context: rule.rule || 'formation rule',
-              meaning: `Example of ${rule.rule || 'formation rule'}`,
+              context: typedRule.rule || 'formation rule',
+              meaning: `Example of ${typedRule.rule || 'formation rule'}`,
               difficulty: 'beginner'
             });
           });

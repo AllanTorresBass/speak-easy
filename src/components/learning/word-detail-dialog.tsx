@@ -5,7 +5,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
-import { Volume2, VolumeX, Play, BookOpen, Languages, Mic } from 'lucide-react';
+import { Volume2, VolumeX, Languages, Mic } from 'lucide-react';
 import { VocabularyWord } from '@/types';
 import { audioPronunciation } from '@/lib/audio-pronunciation';
 
@@ -340,7 +340,7 @@ export function WordDetailDialog({ word, audioSpeed, children }: WordDetailDialo
                   <h3 className="font-semibold text-purple-800 dark:text-purple-300">Example Sentence</h3>
                 </div>
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed italic">
-                  "{word.example}"
+                  &quot;{word.example}&quot;
                 </p>
               </CardContent>
             </Card>

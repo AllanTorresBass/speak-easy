@@ -412,7 +412,7 @@ export function PromovaSearch() {
                     {word.example && (
                       <div>
                         <p className="text-sm text-muted-foreground mb-1">Example:</p>
-                        <p className="text-sm italic text-muted-foreground">"{word.example}"</p>
+                        <p className="text-sm italic text-muted-foreground">&quot;{word.example}&quot;</p>
                       </div>
                     )}
                     

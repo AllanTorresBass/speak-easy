@@ -3,14 +3,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
+
 import { Progress } from '@/components/ui/progress';
-import { Play, Pause, RotateCcw, Volume2, VolumeX, Settings, Info } from 'lucide-react';
+import { Play, Pause, RotateCcw, Volume2, Settings, Info } from 'lucide-react';
 import { loadWordsVocabularyList } from '@/lib/words-data';
-import { getWordsTranslation } from '@/lib/comprehensive-words-translations';
 import { audioPronunciation } from '@/lib/audio-pronunciation';
 import { MainLayout } from '@/components/layout/main-layout';
-import { WordsVocabularyList, WordsVocabularyItem } from '@/lib/words-data';
+import { WordsVocabularyList } from '@/lib/words-data';
 
 interface PageProps {
   params: Promise<{ listId: string }>;
