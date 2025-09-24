@@ -22,7 +22,7 @@ export default function InterviewGrammarPage() {
     const loadInterviewGuides = async () => {
       try {
         setLoading(true);
-        const service = new UnifiedGrammarService();
+        const service = UnifiedGrammarService.getInstance();
         
         // Load specific interview guides
         const loadedGuides: GrammarGuide[] = [];
