@@ -39,7 +39,7 @@ export const AudioTestButton: React.FC<AudioTestButtonProps> = ({
 }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
-  const [settings, setSettings] = useState<AudioSettings & { voiceInfo: any }>();
+  const [settings, setSettings] = useState<AudioSettings & { voiceInfo: unknown }>();
   const [availableVoices, setAvailableVoices] = useState<EnhancedVoice[]>([]);
   const [currentVoice, setCurrentVoice] = useState<EnhancedVoice | null>(null);
 
@@ -82,7 +82,7 @@ export const AudioTestButton: React.FC<AudioTestButtonProps> = ({
     }
   };
 
-  const handleSettingsChange = (key: keyof AudioSettings, value: any) => {
+  const handleSettingsChange = (key: keyof AudioSettings, value: unknown) => {
     if (!settings) return;
 
     const newSettings = { ...settings, [key]: value };
@@ -232,7 +232,7 @@ export const AudioTestButton: React.FC<AudioTestButtonProps> = ({
                               size="sm"
                               variant="outline"
                               onClick={() => {
-                                const voice = audioPronunciation.setVoicePreference(quality as any);
+                                const voice = audioPronunciation.setVoicePreference(quality as 'premium' | 'standard' | 'basic' | 'auto');
                                 if (voice) {
                                   setCurrentVoice(availableVoices.find(v => v.voice === voice) || null);
                                 }

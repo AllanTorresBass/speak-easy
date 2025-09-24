@@ -18,7 +18,7 @@ export default function DebugCauseEffectPage() {
       info += `Categories count: ${Object.keys(data.cause_effect_categories || {}).length}\n`;
       
       if (data.cause_effect_categories) {
-        Object.entries(data.cause_effect_categories).forEach(([key, category]: [string, any]) => {
+        Object.entries(data.cause_effect_categories).forEach(([key, category]: [string, unknown]) => {
           info += `- ${key}: ${category.title} (${category.verbs?.length || 0} verbs)\n`;
         });
       }
@@ -32,7 +32,7 @@ export default function DebugCauseEffectPage() {
       info += 'Service instance created\n';
       
       // Test directory detection
-      const directory = (service as any).getGrammarDirectory('software_development_cause_effect');
+      const directory = (service as { getGrammarDirectory?: (id: string) => string }).getGrammarDirectory?.('software_development_cause_effect') || 'unknown';
       info += `Directory detected: ${directory}\n`;
       
       // Test loading
