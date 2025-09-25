@@ -11,9 +11,25 @@ import { getWordsVocabularyStats, loadWordsVocabularyList } from '@/lib/words-da
 import { getWordsTranslation } from '@/lib/comprehensive-words-translations';
 import { audioPronunciation } from '@/lib/audio-pronunciation';
 
+interface WordsStats {
+  totalLists: number;
+  totalWords: number;
+  averageWordsPerList: number;
+}
+
+interface WordsList {
+  id: string;
+  title: string;
+  words: Array<{
+    word: string;
+    translation: string;
+    partOfSpeech: string;
+  }>;
+}
+
 export function WordsDataTest() {
-  const [stats, setStats] = useState<unknown>(null);
-  const [sampleList, setSampleList] = useState<unknown>(null);
+  const [stats, setStats] = useState<WordsStats | null>(null);
+  const [sampleList, setSampleList] = useState<WordsList | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [audioSpeed, setAudioSpeed] = useState(1);
@@ -138,7 +154,7 @@ export function WordsDataTest() {
           <div className="space-y-4">
             <h3 className="text-lg font-semibold">Sample List: {sampleList.title}</h3>
             <p className="text-sm text-gray-600">
-              This list contains {sampleList.concepts.length} words and phrases
+              This list contains {sampleList.words.length} words and phrases
             </p>
             
             {/* Speed Control */}
@@ -160,7 +176,7 @@ export function WordsDataTest() {
 
             {/* Sample Words Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {sampleList.concepts.slice(0, 6).map((item: unknown, index: number) => (
+              {sampleList.words.slice(0, 6).map((item, index: number) => (
                 <Card key={index} className="hover:shadow-md transition-shadow">
                   <CardHeader className="pb-3">
                     <CardTitle className="text-base font-semibold text-gray-800">
@@ -168,13 +184,13 @@ export function WordsDataTest() {
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="pt-0 space-y-3">
-                    <p className="text-sm text-gray-600">{item.translated}</p>
+                    <p className="text-sm text-gray-600">{item.translation}</p>
                     
                     {/* Audio Controls */}
                     <div className="flex flex-wrap gap-2">
                       <Button
                         size="sm"
-                        onClick={() => handlePlayWord(item.word, item.translated)}
+                        onClick={() => handlePlayWord(item.word, item.translation)}
                         className="bg-green-600 hover:bg-green-700 text-white"
                       >
                         <Volume2 className="h-3 w-3 mr-1" />
@@ -193,7 +209,7 @@ export function WordsDataTest() {
                       <Button
                         size="sm"
                         variant="outline"
-                        onClick={() => handlePlayDescriptionOnly(item.translated)}
+                        onClick={() => handlePlayDescriptionOnly(item.translation)}
                       >
                         <Volume2 className="h-3 w-3 mr-1" />
                         Desc
@@ -202,7 +218,7 @@ export function WordsDataTest() {
                       <Button
                         size="sm"
                         variant="outline"
-                        onClick={() => handleLoopWord(item.word, item.translated)}
+                        onClick={() => handleLoopWord(item.word, item.translation)}
                       >
                         <RotateCcw className="h-3 w-3 mr-1" />
                         Loop
