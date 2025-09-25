@@ -52,15 +52,15 @@ export function SimpleDataTest() {
             successCount++;
           }
           totalCount++;
-        } catch (err) {
+        } catch {
           totalCount++;
         }
       }
       
       setTestResults(prev => [...prev, `✅ File access: ${successCount}/${totalCount} files accessible`]);
       
-    } catch (err) {
-      const errorMessage = err instanceof Error ? err.message : 'Unknown error';
+    } catch {
+      const errorMessage = 'Unknown error';
       setError(errorMessage);
       setTestResults(prev => [...prev, `❌ Test failed: ${errorMessage}`]);
     } finally {

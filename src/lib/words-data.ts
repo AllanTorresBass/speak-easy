@@ -22,8 +22,8 @@ export async function loadWordsVocabularyList(listNumber: number): Promise<Words
     const data: WordsVocabularyList = await response.json();
     console.log('Loaded data:', data);
     return data;
-  } catch (error) {
-    console.error(`Error loading words vocabulary list ${listNumber}:`, error);
+  } catch {
+    console.error(`Error loading words vocabulary list ${listNumber}`);
     return null;
   }
 }
@@ -36,7 +36,7 @@ export async function loadWordsVocabularyListSimple(listNumber: number): Promise
     }
     const data: WordsVocabularyList = await response.json();
     return data;
-  } catch (error) {
+  } catch {
     return null;
   }
 }
@@ -51,8 +51,8 @@ export async function loadAllWordsVocabularyLists(): Promise<WordsVocabularyList
       if (list) {
         lists.push(list);
       }
-    } catch (error) {
-      console.warn(`Failed to load words vocabulary list ${i}:`, error);
+    } catch {
+      console.warn(`Failed to load words vocabulary list ${i}`);
     }
   }
   

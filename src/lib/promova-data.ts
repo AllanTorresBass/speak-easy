@@ -237,7 +237,7 @@ export const searchPromovaVocabulary = async (query: string): Promise<Vocabulary
             allWords.push(...words);
           }
         }
-      } catch (error) {
+      } catch {
         // Continue with next file
       }
     }
