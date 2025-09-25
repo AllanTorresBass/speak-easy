@@ -300,7 +300,6 @@ export const comprehensivePromovaTranslations: Record<string, string> = {
   'endangered species': 'especies en peligro de extinción',
 
   // Vocabulary List 13 - COMPLETE
-  'glass ceiling': 'techo de cristal',
   'glove compartment': 'gaveta de guantes',
   'graduate': 'graduado, licenciado',
   'grasp the importance': 'comprender la importancia',
@@ -355,7 +354,6 @@ export const comprehensivePromovaTranslations: Record<string, string> = {
   // Vocabulary List 15 - COMPLETE
   'to be serious about taking action': 'ser serio sobre tomar acción',
   'memory keeper': 'guardiana de recuerdos',
-  'merger': 'fusión',
   'meticulous': 'meticuloso, cuidadoso',
   'mind one\'s own business': 'ocuparse de sus propios asuntos',
   'mugging': 'robo con violencia',
@@ -390,7 +388,6 @@ export const comprehensivePromovaTranslations: Record<string, string> = {
   // Vocabulary List 17 - COMPLETE
   'click on': 'hacer clic en',
   'clipboard': 'portapapeles',
-  'commence': 'comenzar, iniciar',
   'commuter benefits': 'beneficios para viajeros',
   'company values': 'valores de la empresa',
   'competent': 'competente, capaz',
@@ -416,7 +413,6 @@ export const comprehensivePromovaTranslations: Record<string, string> = {
 
   // Vocabulary List 18 - COMPLETE
   'accounts': 'contabilidad',
-  'acquisition': 'adquisición',
   'administration': 'administración',
   'advertise a vacancy': 'anunciar una vacante',
   'aha moment': 'momento de comprensión',
@@ -427,7 +423,6 @@ export const comprehensivePromovaTranslations: Record<string, string> = {
   'annual bonus': 'bono anual',
   'appearance': 'apariencia',
   'apply for a job': 'solicitar un trabajo',
-  'apprentice': 'aprendiz',
   'apprenticeship': 'aprendizaje',
   'assist': 'ayudar',
   'at the helm': 'al mando',
@@ -442,8 +437,6 @@ export const comprehensivePromovaTranslations: Record<string, string> = {
   'bar graph': 'gráfico de barras',
 
   // Vocabulary List 19 - COMPLETE
-  'onboarding': 'integración',
-  'one-horse race': 'carrera de un solo caballo',
   'overtime': 'horas extra',
   'pace': 'caminar de un lado a otro',
   'paid vacation': 'vacaciones pagadas',
@@ -451,7 +444,6 @@ export const comprehensivePromovaTranslations: Record<string, string> = {
   'parent': 'empresa matriz',
   'part-time': 'tiempo parcial',
   'pass probation': 'pasar el período de prueba',
-  'pass the buck': 'pasar la pelota',
   'patient': 'paciente',
   'pay lip service': 'dar solo palabras',
   'pay raise': 'aumento de salario',
@@ -501,7 +493,6 @@ export const comprehensivePromovaTranslations: Record<string, string> = {
   'unlock': 'desbloquear',
   'up to speed': 'al día, actualizado',
   'update': 'actualizar',
-  'venture': 'empresa, aventura empresarial',
   'viable': 'viable, factible',
   'vote by proxy': 'votar por poder',
   'warehouse': 'almacén',
@@ -525,7 +516,6 @@ export const comprehensivePromovaTranslations: Record<string, string> = {
   'take a rain check': 'dejar para después',
   'take over': 'tomar el control',
   'take with a grain of salt': 'tomar con pinzas',
-  'talk at cross-purposes': 'hablar sin entenderse',
   'tap': 'tocar ligeramente',
   'tap one\'s foot': 'golpear el pie en el suelo',
   'team lead': 'líder de equipo',
@@ -567,8 +557,6 @@ export const comprehensivePromovaTranslations: Record<string, string> = {
 
   // Vocabulary List 24 - COMPLETE
   'focused': 'enfocado, concentrado',
-  'forge an alliance with': 'forjar una alianza con',
-  'franchise': 'franquicia',
   'freeze': 'congelarse, fallar',
   'friendly': 'amigable, cordial',
   'fruitful discussion': 'discusión fructífera',
@@ -579,8 +567,6 @@ export const comprehensivePromovaTranslations: Record<string, string> = {
   'get an offer': 'recibir una oferta',
   'get kicked out': 'ser expulsado',
   'get the ball rolling': 'poner en marcha',
-  'get to the bottom of': 'llegar al fondo del asunto',
-  'glass ceiling': 'techo de cristal',
   'go bankrupt': 'ir a la bancarrota',
   'go down': 'dejar de funcionar',
   'go down badly': 'ser mal recibido',

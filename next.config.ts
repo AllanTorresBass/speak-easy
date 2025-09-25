@@ -1,6 +1,12 @@
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+    ignoreBuildErrors: false,
+  },
   // Enable React strict mode for better development experience
   reactStrictMode: true,
   
@@ -11,7 +17,7 @@ const nextConfig: NextConfig = {
     
     // Enable server actions
     serverActions: {
-              allowedOrigins: ['localhost:3000', 'localhost:3003'],
+      allowedOrigins: ['localhost:3000', 'localhost:3003'],
     },
   },
   

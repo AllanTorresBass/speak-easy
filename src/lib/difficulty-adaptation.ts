@@ -222,7 +222,7 @@ export class DifficultyAdaptationSystem {
     availableContent: unknown[]
   ): unknown[] {
     const prioritizedContent = availableContent.map(content => ({
-      ...content,
+      ...(content as Record<string, unknown>),
       priority: this.calculateContentPriority(content, profile, metrics)
     }));
 
@@ -242,22 +242,22 @@ export class DifficultyAdaptationSystem {
 
     // Base priority from content difficulty match
     const userLevel = profile.overallProficiency;
-    const contentLevel = this.getContentLevel(content.difficulty);
+    const contentLevel = this.getContentLevel((content as any).difficulty);
     const levelMatch = 100 - Math.abs(userLevel - contentLevel);
     priority += levelMatch * 0.4;
 
     // Priority boost for weak areas
-    if (metrics.weaknessAreas.includes(content.category)) {
+    if (metrics.weaknessAreas.includes((content as any).category)) {
       priority += 30;
     }
 
     // Priority boost for prerequisite completion
-    if (this.arePrerequisitesMet(content.prerequisites, profile)) {
+    if (this.arePrerequisitesMet((content as any).prerequisites, profile)) {
       priority += 20;
     }
 
     // Priority reduction for recently completed content
-    if (content.lastCompleted && this.isRecentlyCompleted(content.lastCompleted)) {
+    if ((content as any).lastCompleted && this.isRecentlyCompleted((content as any).lastCompleted)) {
       priority -= 15;
     }
 

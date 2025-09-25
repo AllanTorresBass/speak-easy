@@ -23,13 +23,13 @@ export class GrammarTransformer {
     const contexts: GrammarContext[] = [];
     
     // Transform basic concepts
-    if (legacyGuide.basic_concepts) {
+    if ((legacyGuide as any).basic_concepts) {
       concepts.push({
         id: 'basic-concepts',
         title: 'Basic Concepts',
-        definition: legacyGuide.basic_concepts.definition || '',
-        examples: this.transformBasicConcepts(legacyGuide.basic_concepts),
-        rules: legacyGuide.basic_concepts.key_functions || legacyGuide.basic_concepts.formation_rules?.map((rule: unknown) => (rule as { rule: string }).rule) || [],
+        definition: (legacyGuide as any).basic_concepts.definition || '',
+        examples: this.transformBasicConcepts((legacyGuide as any).basic_concepts),
+        rules: (legacyGuide as any).basic_concepts.key_functions || (legacyGuide as any).basic_concepts.formation_rules?.map((rule: unknown) => (rule as { rule: string }).rule) || [],
         relatedConcepts: []
       });
     }
@@ -45,10 +45,10 @@ export class GrammarTransformer {
     
     return {
       id: guideId,
-      title: legacyGuide.title,
-      description: legacyGuide.description,
-      version: legacyGuide.version,
-      createdDate: legacyGuide.created_date,
+      title: (legacyGuide as any).title,
+      description: (legacyGuide as any).description,
+      version: (legacyGuide as any).version || '1.0',
+      createdDate: (legacyGuide as any).created_date || new Date().toISOString(),
       concepts,
       contexts,
       metadata,
@@ -72,102 +72,102 @@ export class GrammarTransformer {
    */
   private static transformAllContexts(legacyGuide: LegacyGrammarGuide, guideId: string, contexts: GrammarContext[]): void {
     // Professional contexts
-    if (legacyGuide.professional_contexts) {
-      Object.entries(legacyGuide.professional_contexts).forEach(([contextKey, context]) => {
+    if ((legacyGuide as any).professional_contexts) {
+      Object.entries((legacyGuide as any).professional_contexts).forEach(([contextKey, context]) => {
         contexts.push(this.transformProfessionalContext(context, contextKey));
       });
     }
     
     // Sections (for subject_predicate_grammar structure)
-    if (legacyGuide.sections) {
-      legacyGuide.sections.forEach((section: unknown, index: number) => {
+    if ((legacyGuide as any).sections) {
+      (legacyGuide as any).sections.forEach((section: unknown, index: number) => {
         contexts.push(this.transformSection(section, `section-${index}`));
       });
     }
     
     // Categories (for prepositional_phrases structure - array format)
-    if (legacyGuide.categories && Array.isArray(legacyGuide.categories)) {
-      legacyGuide.categories.forEach((category: unknown, index: number) => {
+    if ((legacyGuide as any).categories && Array.isArray((legacyGuide as any).categories)) {
+      (legacyGuide as any).categories.forEach((category: unknown, index: number) => {
         contexts.push(this.transformCategory(category, `category-${index}`));
       });
     }
     
     // Professional vocabulary (for verbs_grammar structure)
-    if (legacyGuide.professional_vocabulary) {
-      Object.entries(legacyGuide.professional_vocabulary).forEach(([vocabKey, vocab]) => {
+    if ((legacyGuide as any).professional_vocabulary) {
+      Object.entries((legacyGuide as any).professional_vocabulary).forEach(([vocabKey, vocab]) => {
         contexts.push(this.transformProfessionalVocabulary(vocab, vocabKey));
       });
     }
     
     // Cause-effect categories
-    if (legacyGuide.cause_effect_categories) {
-      Object.entries(legacyGuide.cause_effect_categories).forEach(([categoryKey, category]) => {
+    if ((legacyGuide as any).cause_effect_categories) {
+      Object.entries((legacyGuide as any).cause_effect_categories).forEach(([categoryKey, category]) => {
         contexts.push(this.transformCauseEffectCategory(category, categoryKey));
       });
     }
     
     // Concepts categories (for concepts grammar structure - object format)
-    if (legacyGuide.categories && typeof legacyGuide.categories === 'object' && !Array.isArray(legacyGuide.categories) && guideId.includes('concepts')) {
-      Object.entries(legacyGuide.categories).forEach(([categoryKey, category]) => {
+    if ((legacyGuide as any).categories && typeof (legacyGuide as any).categories === 'object' && !Array.isArray((legacyGuide as any).categories) && guideId.includes('concepts')) {
+      Object.entries((legacyGuide as any).categories).forEach(([categoryKey, category]) => {
         contexts.push(this.transformConceptsCategory(category, categoryKey));
       });
     }
     
     // Problem categories
-    if (legacyGuide.problem_categories && guideId.includes('problems')) {
-      Object.entries(legacyGuide.problem_categories).forEach(([categoryKey, category]) => {
+    if ((legacyGuide as any).problem_categories && guideId.includes('problems')) {
+      Object.entries((legacyGuide as any).problem_categories).forEach(([categoryKey, category]) => {
         contexts.push(this.transformProblemCategory(category, categoryKey));
       });
     }
     
     // Project management phases
-    if (legacyGuide.phases) {
-      Object.entries(legacyGuide.phases).forEach(([phaseKey, phase]) => {
+    if ((legacyGuide as any).phases) {
+      Object.entries((legacyGuide as any).phases).forEach(([phaseKey, phase]) => {
         contexts.push(this.transformConceptsPhase(phase, phaseKey));
       });
     }
     
     // Specialized areas
-    if (legacyGuide.specialized_areas) {
-      Object.entries(legacyGuide.specialized_areas).forEach(([areaKey, area]) => {
+    if ((legacyGuide as any).specialized_areas) {
+      Object.entries((legacyGuide as any).specialized_areas).forEach(([areaKey, area]) => {
         contexts.push(this.transformConceptsSpecializedArea(area, areaKey));
       });
     }
     
     // Software attributes
-    if (legacyGuide.software_attributes) {
-      contexts.push(this.transformSoftwareAttributes(legacyGuide.software_attributes));
+    if ((legacyGuide as any).software_attributes) {
+      contexts.push(this.transformSoftwareAttributes((legacyGuide as any).software_attributes));
     }
     
     // Question categories (for questions grammar structure)
-    if (legacyGuide.question_categories && guideId.includes('questions')) {
-      Object.entries(legacyGuide.question_categories).forEach(([categoryKey, category]) => {
+    if ((legacyGuide as any).question_categories && guideId.includes('questions')) {
+      Object.entries((legacyGuide as any).question_categories).forEach(([categoryKey, category]) => {
         contexts.push(this.transformQuestionCategory(category, categoryKey));
       });
     }
     
     // Verb conjugation categories
-    if (legacyGuide.conjugation_categories && guideId.includes('conjugation')) {
-      Object.entries(legacyGuide.conjugation_categories).forEach(([categoryKey, category]) => {
+    if ((legacyGuide as any).conjugation_categories && guideId.includes('conjugation')) {
+      Object.entries((legacyGuide as any).conjugation_categories).forEach(([categoryKey, category]) => {
         contexts.push(this.transformVerbConjugationCategory(category, categoryKey));
       });
     }
     
                // Verb examples (for verb conjugation guide)
-           if (legacyGuide.verb_examples && guideId.includes('conjugation')) {
-             contexts.push(this.transformVerbExamples(legacyGuide.verb_examples));
+           if ((legacyGuide as any).verb_examples && guideId.includes('conjugation')) {
+             contexts.push(this.transformVerbExamples((legacyGuide as any).verb_examples));
            }
            
            // Interview guide structure (for interview preparation guide)
-           if (legacyGuide.guide_structure && guideId.includes('interview')) {
-             Object.entries(legacyGuide.guide_structure).forEach(([categoryKey, category]) => {
+           if ((legacyGuide as any).guide_structure && guideId.includes('interview')) {
+             Object.entries((legacyGuide as any).guide_structure).forEach(([categoryKey, category]) => {
                contexts.push(this.transformInterviewCategory(category, categoryKey));
              });
            }
            
            // Interview Q&A (for simple interview format)
-           if (legacyGuide.questions_and_answers && guideId.includes('interview')) {
-             contexts.push(this.transformInterviewQA(legacyGuide.questions_and_answers));
+           if ((legacyGuide as any).questions_and_answers && guideId.includes('interview')) {
+             contexts.push(this.transformInterviewQA((legacyGuide as any).questions_and_answers));
            }
          }
   
@@ -193,29 +193,29 @@ export class GrammarTransformer {
     }
     
     // Transform sentences (for conditional grammar structure)
-    if (context.sentences) {
-      this.transformSentences(context.sentences, content);
+    if ((context as any).sentences) {
+      this.transformSentences((context as any).sentences, content);
     }
     
     // Transform comparative adjectives
-    if (context.comparative_adjectives) {
-      this.transformComparativeAdjectives(context.comparative_adjectives, content);
+    if ((context as any).comparative_adjectives) {
+      this.transformComparativeAdjectives((context as any).comparative_adjectives, content);
     }
     
     // Transform superlative adjectives
-    if (context.superlative_adjectives) {
-      this.transformSuperlativeAdjectives(context.superlative_adjectives, content);
+    if ((context as any).superlative_adjectives) {
+      this.transformSuperlativeAdjectives((context as any).superlative_adjectives, content);
     }
     
     // Handle other content types
-    if (context.content) {
-      this.transformGenericContent(context.content, content);
+    if ((context as any).content) {
+      this.transformGenericContent((context as any).content, content);
     }
     
     return {
       id: contextKey,
-      title: context.title,
-      description: context.description,
+      title: (context as any).title,
+      description: (context as any).description,
       category: 'professional',
       difficulty: 'intermediate',
       content,
@@ -231,34 +231,34 @@ export class GrammarTransformer {
     const content: GrammarContent[] = [];
     
     // Transform content items
-    if (section.content) {
-      this.transformSectionContent(section.content, content);
+    if ((section as any).content) {
+      this.transformSectionContent((section as any).content, content);
     }
     
     // Transform questions
-    if (section.questions) {
-      this.transformQuestions(section.questions, content);
+    if ((section as any).questions) {
+      this.transformQuestions((section as any).questions, content);
     }
     
     // Transform sentences
-    if (section.sentences) {
-      this.transformSectionSentences(section.sentences, content);
+    if ((section as any).sentences) {
+      this.transformSectionSentences((section as any).sentences, content);
     }
     
     // Transform vocabulary examples
-    if (section.vocabulary_examples?.categories) {
-      this.transformVocabularyExamples(section.vocabulary_examples.categories, content);
+    if ((section as any).vocabulary_examples?.categories) {
+      this.transformVocabularyExamples((section as any).vocabulary_examples.categories, content);
     }
     
     // Transform patterns
-    if (section.patterns) {
-      this.transformPatterns(section.patterns, content);
+    if ((section as any).patterns) {
+      this.transformPatterns((section as any).patterns, content);
     }
     
     return {
       id: sectionId,
-      title: section.title,
-      description: section.instructions || 'Grammar section',
+      title: (section as any).title,
+      description: (section as any).instructions || 'Grammar section',
       category: 'grammar',
       difficulty: 'intermediate',
       content,
@@ -273,15 +273,15 @@ export class GrammarTransformer {
   private static transformCategory(category: unknown, categoryId: string): GrammarContext {
     const content: GrammarContent[] = [];
     
-    if (category.phrases) {
+    if ((category as any).phrases) {
       (category as { phrases: unknown[] }).phrases.forEach((phrase: unknown, index: number) => {
         content.push({
           id: `phrase-${index}`,
           type: 'phrase',
-          text: phrase.phrase,
-          context: phrase.context,
-          meaning: phrase.example,
-          tags: [phrase.preposition],
+          text: (phrase as any).phrase,
+          context: (phrase as any).context,
+          meaning: (phrase as any).example,
+          tags: [(phrase as any).preposition],
           difficulty: 'intermediate'
         });
       });
@@ -289,8 +289,8 @@ export class GrammarTransformer {
     
     return {
       id: categoryId,
-      title: category.title,
-      description: category.description,
+      title: (category as any).title,
+      description: (category as any).description,
       category: 'prepositional',
       difficulty: 'intermediate',
       content,
@@ -305,8 +305,8 @@ export class GrammarTransformer {
   private static transformProfessionalVocabulary(vocab: unknown, vocabKey: string): GrammarContext {
     const content: GrammarContent[] = [];
     
-    if (vocab.simple_verbs) {
-      vocab.simple_verbs.forEach((verb: string, index: number) => {
+    if ((vocab as any).simple_verbs) {
+      (vocab as any).simple_verbs.forEach((verb: string, index: number) => {
         content.push({
           id: `simple-verb-${index}`,
           type: 'phrase',
@@ -317,8 +317,8 @@ export class GrammarTransformer {
       });
     }
     
-    if (vocab.compound_verbs) {
-      vocab.compound_verbs.forEach((verb: string, index: number) => {
+    if ((vocab as any).compound_verbs) {
+      (vocab as any).compound_verbs.forEach((verb: string, index: number) => {
         content.push({
           id: `compound-verb-${index}`,
           type: 'phrase',
@@ -347,15 +347,15 @@ export class GrammarTransformer {
   private static transformCauseEffectCategory(category: unknown, categoryId: string): GrammarContext {
     const content: GrammarContent[] = [];
 
-    if (category.verbs) {
+    if ((category as any).verbs) {
       (category as { verbs: unknown[] }).verbs.forEach((verb: unknown, index: number) => {
         content.push({
           id: `verb-${index}`,
           type: 'phrase',
-          text: verb.verb || '',
-          context: verb.context || 'cause-effect',
-          meaning: verb.example || '',
-          tags: verb.related_areas || [],
+          text: (verb as any).verb || '',
+          context: (verb as any).context || 'cause-effect',
+          meaning: (verb as any).example || '',
+          tags: (verb as any).related_areas || [],
           difficulty: 'intermediate'
         });
       });
@@ -363,8 +363,8 @@ export class GrammarTransformer {
 
     return {
       id: categoryId,
-      title: category.title,
-      description: category.description,
+      title: (category as any).title,
+      description: (category as any).description,
       category: 'cause-effect',
       difficulty: 'intermediate',
       content,
@@ -379,14 +379,14 @@ export class GrammarTransformer {
   private static transformConceptsCategory(category: unknown, categoryId: string): GrammarContext {
     const content: GrammarContent[] = [];
 
-    if (category.concepts) {
+    if ((category as any).concepts) {
       (category as { concepts: unknown[] }).concepts.forEach((concept: unknown, index: number) => {
         content.push({
           id: `concept-${index}`,
           type: 'definition',
-          text: concept.concept || concept.definition || '',
+          text: (concept as any).concept || (concept as any).definition || '',
           context: categoryId,
-          meaning: concept.description || '',
+          meaning: (concept as any).description || '',
           difficulty: 'intermediate'
         });
       });
@@ -394,8 +394,8 @@ export class GrammarTransformer {
 
     return {
       id: categoryId,
-      title: category.title || categoryId,
-      description: category.description || '',
+      title: (category as any).title || categoryId,
+      description: (category as any).description || '',
       category: 'concepts',
       difficulty: 'intermediate',
       content,
@@ -410,14 +410,14 @@ export class GrammarTransformer {
   private static transformConceptsPhase(phase: unknown, phaseId: string): GrammarContext {
     const content: GrammarContent[] = [];
 
-    if (phase.phases) {
+    if ((phase as any).phases) {
       (phase as { phases: unknown[] }).phases.forEach((subPhase: unknown, index: number) => {
         content.push({
           id: `phase-${index}`,
           type: 'definition',
-          text: subPhase.definition || '',
+          text: (subPhase as any).definition || '',
           context: phaseId,
-          meaning: subPhase.description || '',
+          meaning: (subPhase as any).description || '',
           difficulty: 'intermediate'
         });
       });
@@ -425,8 +425,8 @@ export class GrammarTransformer {
 
     return {
       id: phaseId,
-      title: phase.title,
-      description: phase.description,
+      title: (phase as any).title,
+      description: (phase as any).description,
       category: 'concepts',
       difficulty: 'intermediate',
       content,
@@ -441,14 +441,14 @@ export class GrammarTransformer {
   private static transformConceptsSpecializedArea(area: unknown, areaId: string): GrammarContext {
     const content: GrammarContent[] = [];
 
-    if (area.specialized_areas) {
+    if ((area as any).specialized_areas) {
       (area as { specialized_areas: unknown[] }).specialized_areas.forEach((subArea: unknown, index: number) => {
         content.push({
           id: `specialized-area-${index}`,
           type: 'definition',
-          text: subArea.definition || '',
+          text: (subArea as any).definition || '',
           context: areaId,
-          meaning: subArea.description || '',
+          meaning: (subArea as any).description || '',
           difficulty: 'intermediate'
         });
       });
@@ -456,8 +456,8 @@ export class GrammarTransformer {
 
     return {
       id: areaId,
-      title: area.title,
-      description: area.description,
+      title: (area as any).title,
+      description: (area as any).description,
       category: 'concepts',
       difficulty: 'intermediate',
       content,
@@ -472,19 +472,19 @@ export class GrammarTransformer {
   private static transformProblemCategory(category: unknown, categoryId: string): GrammarContext {
     const content: GrammarContent[] = [];
 
-    if (category.problems) {
+    if ((category as any).problems) {
       (category as { problems: unknown[] }).problems.forEach((problem: unknown, index: number) => {
         content.push({
           id: `problem-${index}`,
           type: 'definition',
-          text: problem.problem || '',
+          text: (problem as any).problem || '',
           context: categoryId,
-          meaning: problem.description || '',
+          meaning: (problem as any).description || '',
           difficulty: 'intermediate',
-          tags: [problem.impact, problem.mitigation].filter(Boolean),
+          tags: [(problem as any).impact, (problem as any).mitigation].filter(Boolean),
           metadata: {
-            impact: problem.impact,
-            mitigation: problem.mitigation
+            impact: (problem as any).impact,
+            mitigation: (problem as any).mitigation
           }
         });
       });
@@ -492,8 +492,8 @@ export class GrammarTransformer {
 
     return {
       id: categoryId,
-      title: category.title || categoryId,
-      description: category.description || '',
+      title: (category as any).title || categoryId,
+      description: (category as any).description || '',
       category: 'problems',
       difficulty: 'intermediate',
       content,
@@ -508,14 +508,14 @@ export class GrammarTransformer {
   private static transformSoftwareAttributes(attributes: unknown): GrammarContext {
     const content: GrammarContent[] = [];
 
-    if (attributes.attributes) {
+    if ((attributes as any).attributes) {
       (attributes as { attributes: unknown[] }).attributes.forEach((attr: unknown, index: number) => {
         content.push({
           id: `attribute-${index}`,
           type: 'definition',
-          text: attr.definition || '',
+          text: (attr as any).definition || '',
           context: 'software attribute',
-          meaning: attr.description || '',
+          meaning: (attr as any).description || '',
           difficulty: 'intermediate'
         });
       });
@@ -544,15 +544,15 @@ export class GrammarTransformer {
         content.push({
           id: `question-${index}`,
           type: 'sentence',
-          text: question.question || '',
+          text: (question as any).question || '',
           context: categoryId,
-          meaning: question.description || '',
+          meaning: (question as any).description || '',
           difficulty: 'intermediate',
-          tags: question.related_areas || [],
+          tags: (question as any).related_areas || [],
           metadata: {
-            importance: question.importance,
-            context: question.context,
-            relatedAreas: question.related_areas
+            importance: (question as any).importance,
+            context: (question as any).context,
+            relatedAreas: (question as any).related_areas
           }
         });
       });
@@ -560,8 +560,8 @@ export class GrammarTransformer {
 
     return {
       id: categoryId,
-      title: category.title || categoryId,
-      description: category.description || '',
+      title: (category as any).title || categoryId,
+      description: (category as any).description || '',
       category: 'questions',
       difficulty: 'intermediate',
       content,
@@ -581,8 +581,8 @@ export class GrammarTransformer {
     const examples: GrammarContent[] = [];
     
     // Handle formation rules with examples
-    if (basicConcepts.formation_rules) {
-      basicConcepts.formation_rules.forEach((rule: unknown, index: number) => {
+    if ((basicConcepts as any).formation_rules) {
+      (basicConcepts as any).formation_rules.forEach((rule: unknown, index: number) => {
         const typedRule = rule as { examples?: string[]; rule?: string };
         if (typedRule.examples && Array.isArray(typedRule.examples)) {
           typedRule.examples.forEach((example: string, exIndex: number) => {
@@ -600,7 +600,7 @@ export class GrammarTransformer {
     }
     
     // Handle simple examples array
-    if (basicConcepts.examples) {
+    if ((basicConcepts as any).examples) {
       (basicConcepts as { examples: unknown[] }).examples.forEach((example: unknown, index: number) => {
         if (typeof example === 'string') {
           examples.push({
@@ -610,13 +610,14 @@ export class GrammarTransformer {
             context: 'basic concept',
             difficulty: 'beginner'
           });
-        } else if (typeof example === 'object') {
-          const key = Object.keys(example)[0];
+        } else if (typeof example === 'object' && example !== null) {
+          const exampleObj = example as Record<string, any>;
+          const key = Object.keys(exampleObj)[0];
           examples.push({
             id: `basic-example-${index}`,
             type: 'example',
-            text: example[key] || '',
-            meaning: example.description || '',
+            text: exampleObj[key] || '',
+            meaning: exampleObj.description || '',
             context: 'basic concept',
             difficulty: 'beginner'
           });
@@ -632,37 +633,38 @@ export class GrammarTransformer {
    */
   private static transformSentences(sentences: unknown[], content: GrammarContent[]): void {
     sentences.forEach((sentence: unknown, index: number) => {
+      const sentenceObj = sentence as any;
       content.push({
         id: `sentence-${index}`,
         type: 'sentence',
-        text: sentence.sentence || sentence.text || '',
-        context: sentence.context || '',
-        meaning: sentence.meaning || sentence.description || '',
-        tags: [sentence.conditional_type || 'conditional', sentence.probability || ''],
+        text: sentenceObj.sentence || sentenceObj.text || '',
+        context: sentenceObj.context || '',
+        meaning: sentenceObj.meaning || sentenceObj.description || '',
+        tags: [sentenceObj.conditional_type || 'conditional', sentenceObj.probability || ''],
         difficulty: 'intermediate'
       });
       
       // Add the condition and consequence as separate content items
-      if (sentence.condition) {
+      if (sentenceObj.condition) {
         content.push({
           id: `condition-${index}`,
           type: 'definition',
-          text: sentence.condition,
+          text: sentenceObj.condition,
           context: 'condition',
           meaning: 'Condition part of conditional sentence',
-          tags: ['condition', sentence.conditional_type || 'conditional'],
+          tags: ['condition', sentenceObj.conditional_type || 'conditional'],
           difficulty: 'intermediate'
         });
       }
       
-      if (sentence.consequence) {
+      if (sentenceObj.consequence) {
         content.push({
           id: `consequence-${index}`,
           type: 'definition',
-          text: sentence.consequence,
+          text: sentenceObj.consequence,
           context: 'consequence',
           meaning: 'Consequence part of conditional sentence',
-          tags: ['consequence', sentence.conditional_type || 'conditional'],
+          tags: ['consequence', sentenceObj.conditional_type || 'conditional'],
           difficulty: 'intermediate'
         });
       }
@@ -674,13 +676,14 @@ export class GrammarTransformer {
    */
   private static transformComparativeAdjectives(comparativeAdjectives: unknown[], content: GrammarContent[]): void {
     comparativeAdjectives.forEach((item: unknown, index: number) => {
+      const itemObj = item as any;
       content.push({
         id: `comparative-${index}`,
         type: 'phrase',
-        text: item.phrase || '',
-        context: item.context || '',
-        meaning: item.meaning || '',
-        tags: ['comparative', item.adjective || ''],
+        text: itemObj.phrase || '',
+        context: itemObj.context || '',
+        meaning: itemObj.meaning || '',
+        tags: ['comparative', itemObj.adjective || ''],
         difficulty: 'intermediate'
       });
     });
@@ -691,13 +694,14 @@ export class GrammarTransformer {
    */
   private static transformSuperlativeAdjectives(superlativeAdjectives: unknown[], content: GrammarContent[]): void {
     superlativeAdjectives.forEach((item: unknown, index: number) => {
+      const itemObj = item as any;
       content.push({
         id: `superlative-${index}`,
         type: 'phrase',
-        text: item.phrase || '',
-        context: item.context || '',
-        meaning: item.meaning || '',
-        tags: ['superlative', item.adjective || ''],
+        text: itemObj.phrase || '',
+        context: itemObj.context || '',
+        meaning: itemObj.meaning || '',
+        tags: ['superlative', itemObj.adjective || ''],
         difficulty: 'intermediate'
       });
     });
@@ -708,12 +712,13 @@ export class GrammarTransformer {
    */
   private static transformGenericContent(contentItems: unknown[], content: GrammarContent[]): void {
     contentItems.forEach((item: unknown, index: number) => {
+      const itemObj = item as any;
       content.push({
         id: `content-${index}`,
         type: 'definition',
-        text: item.definition || item.text || '',
-        context: item.concept || item.context || '',
-        meaning: item.meaning || '',
+        text: itemObj.definition || itemObj.text || '',
+        context: itemObj.concept || itemObj.context || '',
+        meaning: itemObj.meaning || '',
         difficulty: 'intermediate'
       });
     });
@@ -724,22 +729,23 @@ export class GrammarTransformer {
    */
   private static transformSectionContent(contentItems: unknown[], content: GrammarContent[]): void {
     contentItems.forEach((item: unknown, index: number) => {
+      const itemObj = item as any;
       content.push({
         id: `content-${index}`,
         type: 'definition',
-        text: item.definition || '',
-        context: item.concept || '',
+        text: itemObj.definition || '',
+        context: itemObj.concept || '',
         difficulty: 'intermediate'
       });
       
       // Add examples
-      if (item.examples) {
-        item.examples.forEach((example: string, exIndex: number) => {
+      if (itemObj.examples) {
+        itemObj.examples.forEach((example: string, exIndex: number) => {
           content.push({
             id: `example-${index}-${exIndex}`,
             type: 'example',
             text: example,
-            context: item.concept || '',
+            context: itemObj.concept || '',
             difficulty: 'intermediate'
           });
         });
@@ -753,41 +759,43 @@ export class GrammarTransformer {
   private static transformVerbExamples(verbExamples: unknown): GrammarContext {
     const content: GrammarContent[] = [];
 
-    if (verbExamples.verbs) {
-      (verbExamples as { verbs: unknown[] }).verbs.forEach((verb: unknown, index: number) => {
+    const verbExamplesObj = verbExamples as any;
+    if (verbExamplesObj.verbs) {
+      verbExamplesObj.verbs.forEach((verb: unknown, index: number) => {
         // Add the verb itself
         content.push({
           id: `verb-${index}`,
           type: 'example',
-          text: verb.infinitive,
+          text: (verb as any).infinitive,
           context: 'verb_examples',
-          meaning: `Verb: ${verb.infinitive}`,
+          meaning: `Verb: ${(verb as any).infinitive}`,
           difficulty: 'intermediate',
-          tags: [verb.simple_past, verb.past_participle, verb.verb_ing],
+          tags: [(verb as any).simple_past, (verb as any).past_participle, (verb as any).verb_ing],
           metadata: {
-            simplePast: verb.simple_past,
-            pastParticiple: verb.past_participle,
-            verbIng: verb.verb_ing,
-            conjugations: verb.conjugations
+            simplePast: (verb as any).simple_past,
+            pastParticiple: (verb as any).past_participle,
+            verbIng: (verb as any).verb_ing,
+            conjugations: (verb as any).conjugations
           }
         });
 
         // Add conjugations if they exist
-        if (verb.conjugations) {
-          Object.entries(verb.conjugations).forEach(([tenseKey, conjugation]: [string, unknown]) => {
+        if ((verb as any).conjugations) {
+          Object.entries((verb as any).conjugations).forEach(([tenseKey, conjugation]: [string, unknown]) => {
+            const conjugationObj = conjugation as any;
             content.push({
               id: `verb-${index}-${tenseKey}`,
               type: 'sentence',
-              text: `${conjugation.english} / ${conjugation.spanish}`,
+              text: `${conjugationObj.english} / ${conjugationObj.spanish}`,
               context: 'verb_examples',
-              meaning: `${tenseKey}: ${conjugation.english}`,
+              meaning: `${tenseKey}: ${conjugationObj.english}`,
               difficulty: 'intermediate',
-              tags: [tenseKey, verb.infinitive],
+              tags: [tenseKey, (verb as any).infinitive],
               metadata: {
                 tense: tenseKey,
-                english: conjugation.english,
-                spanish: conjugation.spanish,
-                verb: verb.infinitive
+                english: conjugationObj.english,
+                spanish: conjugationObj.spanish,
+                verb: (verb as any).infinitive
               }
             });
           });
@@ -797,8 +805,8 @@ export class GrammarTransformer {
 
     return {
       id: 'verb_examples',
-      title: verbExamples.title || 'Verb Examples',
-      description: verbExamples.description || 'Detailed verb conjugations',
+      title: verbExamplesObj.title || 'Verb Examples',
+      description: verbExamplesObj.description || 'Detailed verb conjugations',
       category: 'verb-conjugation',
       difficulty: 'intermediate',
       content,
@@ -812,32 +820,32 @@ export class GrammarTransformer {
    */
   private static transformInterviewCategory(category: unknown, categoryId: string): GrammarContext {
     const content: GrammarContent[] = [];
-    if (category.questions) {
+    if ((category as any).questions) {
       (category as { questions: unknown[] }).questions.forEach((question: unknown, index: number) => {
         content.push({
           id: `question_${categoryId}_${index}`,
           type: 'example',
-          text: question.question || '',
+          text: (question as any).question || '',
           context: categoryId,
-          meaning: question.purpose || '',
-          difficulty: question.difficulty || 'intermediate',
-          tags: [question.category, question.importance],
+          meaning: (question as any).purpose || '',
+          difficulty: (question as any).difficulty || 'intermediate',
+          tags: [(question as any).category, (question as any).importance],
           metadata: {
-            questionId: question.id,
-            category: question.category,
-            difficulty: question.difficulty,
-            importance: question.importance,
-            purpose: question.purpose,
-            sampleAnswer: question.sample_answer,
-            preparationTips: question.preparation_tips
+            questionId: (question as any).id,
+            category: (question as any).category,
+            difficulty: (question as any).difficulty,
+            importance: (question as any).importance,
+            purpose: (question as any).purpose,
+            sampleAnswer: (question as any).sample_answer,
+            preparationTips: (question as any).preparation_tips
           }
         });
       });
     }
     return {
       id: categoryId,
-      title: category.title || categoryId,
-      description: category.description || '',
+      title: (category as any).title || categoryId,
+      description: (category as any).description || '',
       category: 'interview',
       difficulty: 'intermediate',
       content,
@@ -851,7 +859,8 @@ export class GrammarTransformer {
    */
   private static transformInterviewQA(qaData: unknown): GrammarContext {
     const content: GrammarContent[] = [];
-    Object.entries(qaData).forEach(([question, answers], index) => {
+    const qaDataObj = qaData as Record<string, any>;
+    Object.entries(qaDataObj).forEach(([question, answers], index) => {
       content.push({
         id: `qa_${index}`,
         type: 'example',
@@ -886,70 +895,74 @@ export class GrammarTransformer {
     const content: GrammarContent[] = [];
 
     // Transform forms (basic_forms category)
-    if (category.forms) {
-      (category as { forms: unknown[] }).forms.forEach((form: unknown, index: number) => {
-        content.push({
-          id: `form-${index}`,
-          type: 'example',
-          text: form.form,
-          context: categoryId,
-          meaning: form.description,
+    if ((category as any).forms) {
+      (category as { forms: unknown[] }).        forms.forEach((form: unknown, index: number) => {
+          const formObj = form as any;
+          content.push({
+            id: `form-${index}`,
+            type: 'example',
+            text: formObj.form,
+            context: categoryId,
+            meaning: formObj.description,
           difficulty: 'intermediate',
-          tags: [form.example]
+          tags: [formObj.example]
         });
       });
     }
 
     // Transform tenses (simple_tenses, continuous_tenses, perfect_tenses, etc.)
-    if (category.tenses) {
-      (category as { tenses: unknown[] }).tenses.forEach((tense: unknown, index: number) => {
-        content.push({
-          id: `tense-${index}`,
-          type: 'sentence',
-          text: tense.tense,
-          context: categoryId,
-          meaning: tense.description,
+    if ((category as any).tenses) {
+      (category as { tenses: unknown[] }).        tenses.forEach((tense: unknown, index: number) => {
+          const tenseObj = tense as any;
+          content.push({
+            id: `tense-${index}`,
+            type: 'sentence',
+            text: tenseObj.tense,
+            context: categoryId,
+            meaning: tenseObj.description,
           difficulty: 'intermediate',
-          tags: [tense.structure],
+          tags: [tenseObj.structure],
           metadata: {
-            structure: tense.structure,
-            examples: tense.examples
+            structure: tenseObj.structure,
+            examples: tenseObj.examples
           }
         });
       });
     }
 
     // Transform modals (modal_verbs category)
-    if (category.modals) {
-      (category as { modals: unknown[] }).modals.forEach((modal: unknown, index: number) => {
-        content.push({
-          id: `modal-${index}`,
-          type: 'sentence',
-          text: modal.modal,
-          context: categoryId,
-          meaning: modal.description,
+    if ((category as any).modals) {
+      (category as { modals: unknown[] }).        modals.forEach((modal: unknown, index: number) => {
+          const modalObj = modal as any;
+          content.push({
+            id: `modal-${index}`,
+            type: 'sentence',
+            text: modalObj.modal,
+            context: categoryId,
+            meaning: modalObj.description,
           difficulty: 'intermediate',
-          tags: (modal as { conjugations?: unknown[] }).conjugations?.map((c: unknown) => (c as { tense: string }).tense) || [],
+          tags: modalObj.conjugations?.map((c: unknown) => (c as { tense: string }).tense) || [],
           metadata: {
-            conjugations: modal.conjugations
+            conjugations: modalObj.conjugations
           }
         });
       });
     }
 
     // Transform semi-modals
-    if (category.semi_modals) {
+    if ((category as any).semi_modals) {
       (category as { semi_modals: unknown[] }).semi_modals.forEach((semiModal: unknown, index: number) => {
+        const semiModalObj = semiModal as any;
         content.push({
           id: `semi-modal-${index}`,
           type: 'sentence',
-          text: semiModal.semi_modal,
+          text: semiModalObj.semi_modal,
           context: categoryId,
-          meaning: semiModal.description,
+          meaning: semiModalObj.description,
           difficulty: 'intermediate',
-          tags: (semiModal as { conjugations?: unknown[] }).conjugations?.map((c: unknown) => (c as { tense: string }).tense) || [],
+          tags: semiModalObj.conjugations?.map((c: unknown) => (c as { tense: string }).tense) || [],
           metadata: {
-            conjugations: semiModal.conjugations
+            conjugations: semiModalObj.conjugations
           }
         });
       });
@@ -957,8 +970,8 @@ export class GrammarTransformer {
 
     return {
       id: categoryId,
-      title: category.title || categoryId,
-      description: category.description || '',
+      title: (category as any).title || categoryId,
+      description: (category as any).description || '',
       category: 'verb-conjugation',
       difficulty: 'intermediate',
       content,
@@ -975,7 +988,7 @@ export class GrammarTransformer {
       content.push({
         id: `question-${index}`,
         type: 'sentence',
-        text: `${question.question} ${question.answer}`,
+        text: `${(question as any).question} ${(question as any).answer}`,
         context: 'practice',
         difficulty: 'intermediate'
       });
@@ -1002,12 +1015,13 @@ export class GrammarTransformer {
    */
   private static transformVocabularyExamples(categories: unknown[], content: GrammarContent[]): void {
     categories.forEach((cat: unknown, catIndex: number) => {
-      [...(cat.explicit_subjects || []), ...(cat.implicit_subjects || [])].forEach((example: string, exIndex: number) => {
+      const catObj = cat as any;
+      [...(catObj.explicit_subjects || []), ...(catObj.implicit_subjects || [])].forEach((example: string, exIndex: number) => {
         content.push({
           id: `vocab-${catIndex}-${exIndex}`,
           type: 'example',
           text: example,
-          context: cat.category,
+          context: catObj.category,
           difficulty: 'intermediate'
         });
       });
@@ -1019,21 +1033,22 @@ export class GrammarTransformer {
    */
   private static transformPatterns(patterns: unknown[], content: GrammarContent[]): void {
     patterns.forEach((pattern: unknown, index: number) => {
+      const patternObj = pattern as any;
       content.push({
         id: `pattern-${index}`,
         type: 'pattern',
-        text: pattern.pattern,
+        text: patternObj.pattern,
         context: 'sentence-pattern',
         difficulty: 'intermediate'
       });
       
       // Add pattern examples
-      pattern.examples.forEach((example: string, exIndex: number) => {
+      patternObj.examples.forEach((example: string, exIndex: number) => {
         content.push({
           id: `pattern-example-${index}-${exIndex}`,
           type: 'example',
           text: example,
-          context: pattern.pattern,
+          context: patternObj.pattern,
           difficulty: 'intermediate'
         });
       });
@@ -1049,10 +1064,10 @@ export class GrammarTransformer {
    */
   private static transformPhrase(phrase: unknown, phraseId: string): GrammarContent {
     // Handle different phrase structures
-    const text = phrase.phrase || phrase.clause || phrase.adjective || 
-                 phrase.adverb || phrase.conjunction || phrase.noun || 
-                 phrase.verb || phrase.preposition || phrase.pronoun || 
-                 phrase.determiner || phrase.sentence || '';
+    const text = (phrase as any).phrase || (phrase as any).clause || (phrase as any).adjective || 
+                 (phrase as any).adverb || (phrase as any).conjunction || (phrase as any).noun || 
+                 (phrase as any).verb || (phrase as any).preposition || (phrase as any).pronoun || 
+                 (phrase as any).determiner || (phrase as any).sentence || '';
     
     const type = this.determineContentType(phrase);
     
@@ -1060,11 +1075,11 @@ export class GrammarTransformer {
       id: phraseId,
       type,
       text,
-      context: phrase.context || phrase.clause_type || phrase.type,
-      meaning: phrase.meaning || phrase.description,
+      context: (phrase as any).context || (phrase as any).clause_type || (phrase as any).type,
+      meaning: (phrase as any).meaning || (phrase as any).description,
       difficulty: 'intermediate',
-      tags: phrase.tags || [],
-      metadata: phrase
+      tags: (phrase as any).tags || [],
+      metadata: phrase as Record<string, unknown>
     };
   }
   
@@ -1072,11 +1087,11 @@ export class GrammarTransformer {
    * Determine content type based on phrase structure
    */
   private static determineContentType(phrase: unknown): 'phrase' | 'sentence' | 'example' | 'definition' | 'pattern' {
-    if (phrase.clause_type) return 'phrase';
-    if (phrase.sentence) return 'sentence';
-    if (phrase.example) return 'example';
-    if (phrase.definition) return 'definition';
-    if (phrase.pattern) return 'pattern';
+    if ((phrase as any).clause_type) return 'phrase';
+    if ((phrase as any).sentence) return 'sentence';
+    if ((phrase as any).example) return 'example';
+    if ((phrase as any).definition) return 'definition';
+    if ((phrase as any).pattern) return 'pattern';
     return 'phrase';
   }
   
@@ -1161,7 +1176,7 @@ export class GrammarTransformer {
   private static calculateMetadata(contexts: GrammarContext[], category: 'basic-structure' | 'complex-structure' | 'verb-conjugation' | 'specialized' | 'cause-effect' | 'concepts' | 'problems' | 'questions' | 'interview', legacyGuide: unknown) {
     const totalContent = contexts.reduce((sum, context) => {
       try {
-        return sum + (context.content?.length || 0) + (context.examples?.length || 0);
+        return sum + ((context as any).content?.length || 0) + ((context as any).examples?.length || 0);
       } catch (error) {
         console.warn('Error calculating content length for context:', context?.id || 'unknown', error);
         return sum;
@@ -1170,7 +1185,7 @@ export class GrammarTransformer {
     
     const totalExercises = contexts.reduce((sum, context) => {
       try {
-        return sum + (context.exercises?.length || 0);
+        return sum + ((context as any).exercises?.length || 0);
       } catch (error) {
         console.warn('Error calculating exercises length for context:', context?.id || 'unknown', error);
         return sum;
@@ -1178,14 +1193,14 @@ export class GrammarTransformer {
     }, 0);
     
     return {
-      difficulty: this.normalizeDifficulty(legacyGuide.metadata?.difficulty_level),
+      difficulty: this.normalizeDifficulty((legacyGuide as any).metadata?.difficulty_level),
       category,
       totalContent,
       totalExercises,
       estimatedTime: this.calculateEstimatedTime(totalContent, totalExercises),
-      professionalAreas: legacyGuide.metadata?.professional_areas || [],
-      tags: legacyGuide.metadata?.tags || [],
-      targetAudience: legacyGuide.metadata?.target_audience || []
+      professionalAreas: (legacyGuide as any).metadata?.professional_areas || [],
+      tags: (legacyGuide as any).metadata?.tags || [],
+      targetAudience: (legacyGuide as any).metadata?.target_audience || []
     };
   }
 }

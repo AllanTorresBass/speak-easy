@@ -116,7 +116,7 @@ export function getBrowserAPI<T>(apiName: string): T | undefined {
     return undefined;
   }
   
-  return (window as Record<string, unknown>)[apiName];
+  return (window as unknown as Record<string, unknown>)[apiName] as T | undefined;
 }
 
 /**

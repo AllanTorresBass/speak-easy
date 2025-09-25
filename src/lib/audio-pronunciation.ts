@@ -665,8 +665,8 @@ export class AudioPronunciationSystem {
 
     // Play sample text to test voice
     try {
-      await this.playPronunciation(sampleText, (voice.voice as any).lang || 'en-US', {
-        voice: voice.quality,
+      await this.playPronunciation(sampleText, (voice as any).lang || 'en-US', {
+        voice: 'auto',
         speed: 0.8,
         pitch: 1.0,
         naturalPauses: true,
