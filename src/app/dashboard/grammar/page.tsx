@@ -31,10 +31,6 @@ export default function GrammarPage() {
 
   const grammarService = UnifiedGrammarService.getInstance();
 
-  useEffect(() => {
-    loadGrammarData();
-  }, [loadGrammarData]);
-
   const loadGrammarData = useCallback(async () => {
     try {
       setLoading(true);
@@ -51,6 +47,10 @@ export default function GrammarPage() {
       setLoading(false);
     }
   }, [grammarService]);
+
+  useEffect(() => {
+    loadGrammarData();
+  }, [loadGrammarData]);
 
   // Filter guides based on search and filters
   const filteredGuides = grammarGuides.filter(guide => {
