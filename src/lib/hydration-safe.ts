@@ -44,7 +44,7 @@ export function safeDateFormat(
     };
     
     return new Intl.DateTimeFormat('en-US', defaultOptions).format(dateObj);
-  } catch (error) {
+  } catch {
     return 'Invalid Date';
   }
 }
@@ -74,7 +74,7 @@ export function safeTimeFormat(
     };
     
     return new Intl.DateTimeFormat('en-US', defaultOptions).format(dateObj);
-  } catch (error) {
+  } catch {
     return 'Invalid Time';
   }
 }

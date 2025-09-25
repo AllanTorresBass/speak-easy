@@ -1,10 +1,10 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { BookMarked, Loader2, CheckCircle, XCircle } from 'lucide-react';
+import { BookMarked, Loader2, XCircle } from 'lucide-react';
 import { loadPromovaVocabularySimple, loadPromovaVocabularyListSimple } from '@/lib/promova-data-simple';
 import { VocabularyList, VocabularyWord } from '@/types';
 

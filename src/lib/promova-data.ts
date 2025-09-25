@@ -54,13 +54,9 @@ export const loadPromovaVocabulary = async (): Promise<VocabularyList[]> => {
         } else {
           console.warn(`Failed to load vocabulary_list_${i}.json: HTTP ${response.status}`);
         }
-      } catch (error) {
+      } catch {
         // Only log warning for missing files, not for other errors
-        if (error instanceof Error && error.message.includes('fetch')) {
-          console.warn(`Failed to load vocabulary_list_${i}.json:`, error);
-        } else {
-          console.error(`Unexpected error loading vocabulary_list_${i}.json:`, error);
-        }
+        console.warn(`Failed to load vocabulary_list_${i}.json`);
       }
     }
     
