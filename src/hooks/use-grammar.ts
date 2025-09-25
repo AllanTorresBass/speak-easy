@@ -18,7 +18,10 @@ const fetchGrammarLessons = async (): Promise<GrammarLesson[]> => {
       lessonCount: 5,
       tags: ['basic', 'structure', 'sentences'],
       createdAt: new Date('2024-01-01'),
-      updatedAt: new Date('2024-01-01'),
+      content: 'Basic sentence structure in English follows a subject-verb-object pattern.',
+      examples: ['The cat sat on the mat.', 'She reads books every day.'],
+      exercises: [],
+      language: 'en'
     },
     {
       id: 'complex-structure',
@@ -30,7 +33,10 @@ const fetchGrammarLessons = async (): Promise<GrammarLesson[]> => {
       lessonCount: 8,
       tags: ['complex', 'clauses', 'advanced'],
       createdAt: new Date('2024-01-02'),
-      updatedAt: new Date('2024-01-02'),
+      content: 'Complex sentences contain one independent clause and at least one dependent clause.',
+      examples: ['Although it was raining, we went for a walk.', 'She studied hard because she wanted to pass.'],
+      exercises: [],
+      language: 'en'
     },
     {
       id: 'verb-conjugation',
@@ -42,7 +48,10 @@ const fetchGrammarLessons = async (): Promise<GrammarLesson[]> => {
       lessonCount: 6,
       tags: ['verbs', 'tenses', 'conjugation'],
       createdAt: new Date('2024-01-03'),
-      updatedAt: new Date('2024-01-03'),
+      content: 'English verbs change form based on tense, person, and number.',
+      examples: ['I walk to school.', 'She walked to school yesterday.', 'They will walk to school tomorrow.'],
+      exercises: [],
+      language: 'en'
     },
     {
       id: 'cause-effect',
@@ -54,7 +63,10 @@ const fetchGrammarLessons = async (): Promise<GrammarLesson[]> => {
       lessonCount: 7,
       tags: ['cause-effect', 'relationships', 'advanced'],
       createdAt: new Date('2024-01-04'),
-      updatedAt: new Date('2024-01-04'),
+      content: 'Cause and effect relationships show how one action leads to another.',
+      examples: ['Because it rained, the ground became wet.', 'The heavy traffic caused us to be late.'],
+      exercises: [],
+      language: 'en'
     },
   ];
 };
@@ -125,7 +137,10 @@ const fetchGrammarLesson = async (id: string): Promise<GrammarLesson & { lessons
     lessonCount: lessons.length,
     tags: ['grammar', 'lessons'],
     createdAt: new Date(),
-    updatedAt: new Date(),
+    content: 'This is a comprehensive grammar lesson covering multiple topics.',
+    examples: ['Example sentence 1', 'Example sentence 2'],
+    exercises: [],
+    language: 'en',
     lessons,
   };
 };
@@ -144,6 +159,8 @@ const fetchUserGrammarProgress = async (userId: string): Promise<UserProgress[]>
       masteryLevel: 0.6,
       studySessions: 4,
       averageScore: 78,
+      createdAt: new Date('2024-01-01'),
+      updatedAt: new Date('2024-01-15'),
     },
     {
       id: '2',
@@ -155,6 +172,8 @@ const fetchUserGrammarProgress = async (userId: string): Promise<UserProgress[]>
       masteryLevel: 0.25,
       studySessions: 2,
       averageScore: 65,
+      createdAt: new Date('2024-01-02'),
+      updatedAt: new Date('2024-01-14'),
     },
   ];
 };

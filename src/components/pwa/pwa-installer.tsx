@@ -152,8 +152,8 @@ export function PWAInstaller() {
   };
 
   const showUpdateNotification = () => {
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.postMessage({
+    if ('serviceWorker' in navigator && navigator.serviceWorker.controller) {
+      navigator.serviceWorker.controller.postMessage({
         type: 'SKIP_WAITING'
       });
     }

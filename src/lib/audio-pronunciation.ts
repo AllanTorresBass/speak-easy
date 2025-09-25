@@ -611,7 +611,7 @@ export class AudioPronunciationSystem {
   /**
    * Get current settings with voice information
    */
-  public getSettings(): AudioSettings & { voiceInfo: ReturnType<typeof this.getVoiceInfo> } {
+  public getSettings(): AudioSettings & { voiceInfo: ReturnType<AudioPronunciationSystem['getVoiceInfo']> } {
     return { 
       ...this.defaultSettings,
       voiceInfo: this.getVoiceInfo()
@@ -665,8 +665,8 @@ export class AudioPronunciationSystem {
 
     // Play sample text to test voice
     try {
-      await this.playPronunciation(sampleText, voice.lang, {
-        voice: voice.name,
+      await this.playPronunciation(sampleText, (voice.voice as any).lang || 'en-US', {
+        voice: voice.quality,
         speed: 0.8,
         pitch: 1.0,
         naturalPauses: true,

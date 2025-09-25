@@ -37,13 +37,17 @@ export function AdvancedLearningDashboard() {
   const [activeTab, setActiveTab] = useState('overview');
   const [isAudioPlaying, setIsAudioPlaying] = useState(false);
   const [audioSettings, setAudioSettings] = useState<AudioSettings>({
-    voice: 'en-US',
+    voice: 'auto',
     speed: 0.8,
     pitch: 1.0,
     volume: 0.8,
     autoPlay: false,
     showPhonetics: true,
-    highlightWords: true
+    highlightWords: true,
+    naturalPauses: true,
+    emphasisLevel: 'moderate',
+    breathingSpace: true,
+    sentenceRhythm: true
   });
 
   // Mock data for demonstration
@@ -80,16 +84,7 @@ export function AdvancedLearningDashboard() {
     // Initialize mock data
     initializeMockData();
     
-    // Set up audio event listeners
-    audioPronunciation.addEventListener('start', handleAudioStart);
-    audioPronunciation.addEventListener('end', handleAudioEnd);
-    audioPronunciation.addEventListener('error', handleAudioError);
-
-    return () => {
-      audioPronunciation.removeEventListener('start', handleAudioStart);
-      audioPronunciation.removeEventListener('end', handleAudioEnd);
-      audioPronunciation.removeEventListener('error', handleAudioError);
-    };
+    // Audio event listeners are handled internally by the audioPronunciation system
   }, []);
 
   const initializeMockData = () => {

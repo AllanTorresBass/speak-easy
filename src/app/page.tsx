@@ -15,13 +15,8 @@ import {
   BookMarked,
   FileText
 } from 'lucide-react';
-import { TranslationTest } from '@/components/common/translation-test';
-import { PromovaDataTest } from '@/components/common/promova-data-test';
-import { SimpleDataTest } from '@/components/common/simple-data-test';
 import { ComprehensiveTranslationDashboard } from '@/components/common/comprehensive-translation-dashboard';
 import { TranslationVerification } from '@/components/common/translation-verification';
-import { WordsDataTest } from '@/components/common/words-data-test';
-import { GrammarDataTest } from '@/components/common/grammar-data-test';
 
 export default function Home() {
   return (
@@ -104,30 +99,6 @@ export default function Home() {
             </Button>
           </div>
           
-          {/* Translation Test */}
-          <div className="mt-6">
-            <TranslationTest />
-          </div>
-          
-          {/* Promova Data Test */}
-          <div className="mt-6">
-            <PromovaDataTest />
-          </div>
-          
-          {/* Simple Data Test */}
-          <div className="mt-6">
-            <SimpleDataTest />
-          </div>
-          
-          {/* Words Data Test */}
-          <div className="mt-6">
-            <WordsDataTest />
-          </div>
-          
-          {/* Grammar Data Test */}
-          <div className="mt-6">
-            <GrammarDataTest />
-          </div>
           
           <div className="mt-12 flex items-center justify-center space-x-8 text-sm text-gray-500 dark:text-gray-400">
             <div className="flex items-center space-x-2">

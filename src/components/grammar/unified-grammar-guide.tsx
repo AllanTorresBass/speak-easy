@@ -651,23 +651,23 @@ export function UnifiedGrammarGuide({ guideId }: UnifiedGrammarGuideProps) {
                                   {/* Impact and Mitigation for Problems */}
                                   {grammarGuide.metadata.category === 'problems' && content.metadata && (
                                     <div className="space-y-4">
-                                      {content.metadata.impact && (
+                                      {(content.metadata.impact as string) && (
                                         <div className="p-4 bg-red-50 rounded-lg border border-red-200">
                                           <h5 className="text-sm font-semibold text-red-800 mb-2 flex items-center gap-2">
                                             <Target className="h-4 w-4" />
                                             Impact:
                                           </h5>
-                                          <p className="text-red-700">{content.metadata.impact}</p>
+                                          <p className="text-red-700">{content.metadata.impact as string}</p>
                                         </div>
                                       )}
                                       
-                                      {content.metadata.mitigation && (
+                                      {(content.metadata.mitigation as string) && (
                                         <div className="p-4 bg-green-50 rounded-lg border border-green-200">
                                           <h5 className="text-sm font-semibold text-green-800 mb-2 flex items-center gap-2">
                                             <Lightbulb className="h-4 w-4" />
                                             Mitigation:
                                           </h5>
-                                          <p className="text-green-700">{content.metadata.mitigation}</p>
+                                          <p className="text-green-700">{content.metadata.mitigation as string}</p>
                                         </div>
                                       )}
                                     </div>

@@ -142,6 +142,8 @@ const fetchUserProgress = async (userId: string): Promise<UserProgress[]> => {
       masteryLevel: 0.8,
       studySessions: 5,
       averageScore: 85,
+      createdAt: new Date('2024-01-01'),
+      updatedAt: new Date('2024-01-15'),
     },
     {
       id: '2',
@@ -153,6 +155,8 @@ const fetchUserProgress = async (userId: string): Promise<UserProgress[]> => {
       masteryLevel: 0.5,
       studySessions: 3,
       averageScore: 72,
+      createdAt: new Date('2024-01-01'),
+      updatedAt: new Date('2024-01-14'),
     },
   ];
 };
