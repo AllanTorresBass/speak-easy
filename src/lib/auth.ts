@@ -98,5 +98,5 @@ export const authOptions: NextAuthOptions = {
   pages: {
     signIn: '/auth/signin',
   },
-  secret: process.env.NEXTAUTH_SECRET || (process.env.NODE_ENV === 'production' ? undefined : 'fallback-secret-for-development-only'),
+  secret: process.env.NEXTAUTH_SECRET || (process.env.NODE_ENV === 'production' ? 'production-fallback-secret-please-set-nexauth-secret' : 'fallback-secret-for-development-only'),
 }; 
